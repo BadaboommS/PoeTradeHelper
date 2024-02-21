@@ -10219,7 +10219,7 @@
 	    setTimeout(() => {
 	      setLoader(false);
 	      setReload(true);
-	    }, 500);
+	    }, 800);
 	  }
 	  async function handleObjects(tempItemArray) {
 	    //fetch and translate mods for filter
