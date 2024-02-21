@@ -111,7 +111,7 @@ export function App() {
       setTimeout(() => {
          setLoader(false);
          setReload(true);
-      }, 500);
+      }, 800);
    };
 
    async function handleObjects(tempItemArray){
