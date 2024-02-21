@@ -32,8 +32,6 @@ const StyledLink = styled.a`
     background-color: #EEEEEE;
     text-decoration: inherit;
     font-family: 'Fontin SmallCaps Regular';
-    width: 50px;
-    height: 25px;
     padding: 5px;
 `
 const StyledSplit = styled.p`
@@ -209,7 +207,7 @@ export function ItemTrade({item , league, itemName, itemNumber}){
                 <StyledFlex>
                     <StyledLink href={tradeUrl} target="_blank" rel="noopener noreferrer">Trade</StyledLink>
                     <p>|</p>
-                    <p><strong>Estimed Value:</strong></p>
+                    <p><strong>Estimed Value:</strong> (Not implemented yet)</p>
                 </StyledFlex>
             </StyledSection>
     )

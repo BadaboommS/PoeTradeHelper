@@ -1,12 +1,12 @@
 {
-  "homepage": "https://BadaboommS.githug.io/PoeTradeHelper",
+  "homepage": "https://BadaboommS.github.io/PoeTradeHelper",
   "name": "react-manual",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d public",
     "build": "rollup -c",
     "start": "serve ./public",
     "test": "echo \"Error: no test specified\" && exit 1"

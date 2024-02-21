@@ -9995,8 +9995,6 @@
     background-color: #EEEEEE;
     text-decoration: inherit;
     font-family: 'Fontin SmallCaps Regular';
-    width: 50px;
-    height: 25px;
     padding: 5px;
 `;
 	const StyledSplit$1 = ut.p`
@@ -10176,7 +10174,7 @@
 	    href: tradeUrl,
 	    target: "_blank",
 	    rel: "noopener noreferrer"
-	  }, "Trade"), /*#__PURE__*/React.createElement("p", null, "|"), /*#__PURE__*/React.createElement("p", null, /*#__PURE__*/React.createElement("strong", null, "Estimed Value:"))));
+	  }, "Trade"), /*#__PURE__*/React.createElement("p", null, "|"), /*#__PURE__*/React.createElement("p", null, /*#__PURE__*/React.createElement("strong", null, "Estimed Value:"), " (Not implemented yet)")));
 	}
 
 	//styledComponents
