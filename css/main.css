@@ -71,6 +71,9 @@ p{
 }
 
 /*Item border*/
+.item_border-normal{
+    border: 1px solid var(--color-normal);
+}
 .item_border-magic{
     border: 1px solid var(--color-magic);
 }
