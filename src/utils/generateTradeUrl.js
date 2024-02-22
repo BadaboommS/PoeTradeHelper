@@ -23,7 +23,11 @@ export function generateTradeUrl(tradeIlv, tradeLinks, tradeCorrupted, tradeDefe
       if(item.base === "Abyss Jewel"){
         itemBaseQuery = ``;
         itemCategory = `,"category": {"option": "jewel.abyss"}`
-     }
+      }
+      if(item.base === "energy blade"){
+        itemBaseQuery = ``;
+        itemCategory = `,"category": {"option": "weapon.one"}`;
+      }
     }
 
     //armour Filter

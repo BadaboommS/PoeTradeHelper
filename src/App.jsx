@@ -86,7 +86,7 @@ export function App() {
          setReload(true);
          return
       }
-      //console.log(htmlItems);
+      console.log(htmlItems);
 
       //Create item obj for each item
       let tempItemArray = [];
@@ -94,7 +94,6 @@ export function App() {
          let temp = createItemObj(i);
          tempItemArray.push(temp);
       }
-       
       handleObjects(tempItemArray); 
 
       //sort
@@ -111,11 +110,12 @@ export function App() {
       setTimeout(() => {
          setLoader(false);
          setReload(true);
-      }, 800);
+      }, 1000);
    };
 
    async function handleObjects(tempItemArray){
       //fetch and translate mods for filter
+      console.log(tempItemArray);
       const allModifiers = await fetchData('./item_mods/allModifiers.json');
       const allItems = await fetchData('./item_mods/allItems.json');
       tempItemArray.map((item) => {

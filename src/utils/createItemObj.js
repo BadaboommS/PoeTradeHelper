@@ -6,19 +6,36 @@ export function createItemObj(item){
 
     //retrieving item info for itemsArray init
 
+    //Item Rarity
+    let itemRarity;
+    try{
+        if(cleanItemInfoArray[0].includes('Rarity:')){
+            itemRarity = cleanItemInfoArray[0].split(': ')[1];
+        }else{
+            console.log('No rarity!')
+        }
+        if(itemRarity === "RELIC"){
+            itemRarity = 'UNIQUE';
+        }
+    }catch(err){
+        console.log(err);
+    }
+
     //Item Name & Base
     let itemName = cleanItemInfoArray[1];
     let itemBase;
     try{
         if(itemName.includes("Charm")){
-        itemBase = "Charm";
+            itemBase = "Charm";
         }else if(itemName.includes("Flask") || itemName.includes("Tincture")){
-        let tempBase = itemName.split(' ');
-        itemBase = tempBase[1] + ' ' + tempBase[2];
+            let tempBase = itemName.split(' ');
+            itemBase = tempBase[1] + ' ' + tempBase[2];
         }else if(itemName.includes('Eye Jewel')){
             itemBase = "Abyss Jewel";
         }else{
-        itemBase = cleanItemInfoArray[2];
+            if(item.rarity !== "NORMAL"){
+                itemBase = cleanItemInfoArray[2];
+            }
         }
     }catch(err){
         console.log(err);
@@ -32,21 +49,6 @@ export function createItemObj(item){
                 itemDefences.push(line);
             }
         })
-    }catch(err){
-        console.log(err);
-    }
-
-    //Item Rarity
-    let itemRarity;
-    try{
-        if(cleanItemInfoArray[0].includes('Rarity:')){
-            itemRarity = cleanItemInfoArray[0].split(': ')[1];
-        }else{
-            console.log('No rarity!')
-        }
-        if(itemRarity === "RELIC"){
-            itemRarity = 'UNIQUE';
-        }
     }catch(err){
         console.log(err);
     }

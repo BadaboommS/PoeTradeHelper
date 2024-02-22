@@ -9444,6 +9444,21 @@
 
 	  //retrieving item info for itemsArray init
 
+	  //Item Rarity
+	  let itemRarity;
+	  try {
+	    if (cleanItemInfoArray[0].includes('Rarity:')) {
+	      itemRarity = cleanItemInfoArray[0].split(': ')[1];
+	    } else {
+	      console.log('No rarity!');
+	    }
+	    if (itemRarity === "RELIC") {
+	      itemRarity = 'UNIQUE';
+	    }
+	  } catch (err) {
+	    console.log(err);
+	  }
+
 	  //Item Name & Base
 	  let itemName = cleanItemInfoArray[1];
 	  let itemBase;
@@ -9456,7 +9471,9 @@
 	    } else if (itemName.includes('Eye Jewel')) {
 	      itemBase = "Abyss Jewel";
 	    } else {
-	      itemBase = cleanItemInfoArray[2];
+	      if (item.rarity !== "NORMAL") {
+	        itemBase = cleanItemInfoArray[2];
+	      }
 	    }
 	  } catch (err) {
 	    console.log(err);
@@ -9470,21 +9487,6 @@
 	        itemDefences.push(line);
 	      }
 	    });
-	  } catch (err) {
-	    console.log(err);
-	  }
-
-	  //Item Rarity
-	  let itemRarity;
-	  try {
-	    if (cleanItemInfoArray[0].includes('Rarity:')) {
-	      itemRarity = cleanItemInfoArray[0].split(': ')[1];
-	    } else {
-	      console.log('No rarity!');
-	    }
-	    if (itemRarity === "RELIC") {
-	      itemRarity = 'UNIQUE';
-	    }
 	  } catch (err) {
 	    console.log(err);
 	  }
@@ -9694,15 +9696,20 @@
 	  if (item.rarity !== 'UNIQUE') {
 	    itemSearch = item.base;
 	  }
-	  for (let i = 0, l = allItems.length; i < l; i++) {
-	    for (let j = 0, m = allItems[i].entries.length; j < m; j++) {
-	      if (allItems[i].entries[j].text.includes(itemSearch)) {
-	        itemOrder = allItems[i].id;
-	        break;
+	  if (item.name.includes('Energy Blade')) {
+	    item.order = 'weapons';
+	    item.base = 'energy blade';
+	  } else {
+	    for (let i = 0, l = allItems.length; i < l; i++) {
+	      for (let j = 0, m = allItems[i].entries.length; j < m; j++) {
+	        if (allItems[i].entries[j].text.includes(itemSearch)) {
+	          itemOrder = allItems[i].id;
+	          break;
+	        }
 	      }
 	    }
+	    item.order = itemOrder;
 	  }
-	  item.order = itemOrder;
 	}
 
 	function generateTradeUrl(tradeIlv, tradeLinks, tradeCorrupted, tradeDefence, tradeImplicits, tradeExplicits, item, league) {
@@ -9730,6 +9737,10 @@
 	    if (item.base === "Abyss Jewel") {
 	      itemBaseQuery = ``;
 	      itemCategory = `,"category": {"option": "jewel.abyss"}`;
+	    }
+	    if (item.base === "energy blade") {
+	      itemBaseQuery = ``;
+	      itemCategory = `,"category": {"option": "weapon.one"}`;
 	    }
 	  }
 
@@ -10042,9 +10053,12 @@
 	  league,
 	  itemNumber
 	}) {
-	  let itemName = item.base;
+	  let itemName = item.name;
 	  if (item.rarity === "UNIQUE") {
 	    itemName = item.name + " - " + item.base;
+	  }
+	  if (item.rarity !== "NORMAL") {
+	    itemName = item.base;
 	  }
 	  return /*#__PURE__*/React.createElement(StyledDiv$1, null, /*#__PURE__*/React.createElement(StyledContainer, null, /*#__PURE__*/React.createElement(StyledTitle, {
 	    className: `item_border-${item.rarity.toLowerCase()} item_background-${item.rarity.toLowerCase()}`
@@ -10196,7 +10210,7 @@
 	      setReload(true);
 	      return;
 	    }
-	    //console.log(htmlItems);
+	    console.log(htmlItems);
 
 	    //Create item obj for each item
 	    let tempItemArray = [];
@@ -10219,10 +10233,11 @@
 	    setTimeout(() => {
 	      setLoader(false);
 	      setReload(true);
-	    }, 500);
+	    }, 1000);
 	  }
 	  async function handleObjects(tempItemArray) {
 	    //fetch and translate mods for filter
+	    console.log(tempItemArray);
 	    const allModifiers = await fetchData('./item_mods/allModifiers.json');
 	    const allItems = await fetchData('./item_mods/allItems.json');
 	    tempItemArray.map(item => {

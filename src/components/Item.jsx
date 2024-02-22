@@ -41,12 +41,14 @@ const StyledSection = styled.section`
 
 
 export function Item({item, league, itemNumber}){
-
-    let itemName = item.base;
+    
+    let itemName = item.name;
     if(item.rarity === "UNIQUE"){
         itemName = item.name + " - " + item.base;
     }
-
+    if(item.rarity !== "NORMAL"){
+        itemName = item.base;
+    }
     return(
         <StyledDiv>
             <StyledContainer>
