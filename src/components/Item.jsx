@@ -46,9 +46,7 @@ export function Item({item, league, itemNumber}){
     if(item.rarity === "UNIQUE"){
         itemName = item.name + " - " + item.base;
     }
-    if(item.rarity !== "NORMAL"){
-        itemName = item.base;
-    }
+    
     return(
         <StyledDiv>
             <StyledContainer>

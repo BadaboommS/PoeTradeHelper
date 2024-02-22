@@ -33,7 +33,7 @@ export function createItemObj(item){
         }else if(itemName.includes('Eye Jewel')){
             itemBase = "Abyss Jewel";
         }else{
-            if(item.rarity !== "NORMAL"){
+            if(item.rarity !== "NORMAL" || item.rarity !== "MAGIC"){
                 itemBase = cleanItemInfoArray[2];
             }
         }
@@ -70,7 +70,7 @@ export function createItemObj(item){
     try{
         cleanItemInfoArray.map((line) => {
             if(line.includes("Sockets:")){
-                itemSockets = line.split(": ")[1].split('-');
+                itemSockets = line.split(": ")[1].split(/-| /);
             }
         })
     }catch(err){

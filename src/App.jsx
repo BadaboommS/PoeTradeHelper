@@ -86,7 +86,7 @@ export function App() {
          setReload(true);
          return
       }
-      console.log(htmlItems);
+      //console.log(htmlItems);
 
       //Create item obj for each item
       let tempItemArray = [];
@@ -105,7 +105,7 @@ export function App() {
          let tempArrayJewel = tempItemArray.filter((item) => item.order === "jewels");
          let tempArrayUndefined = tempItemArray.filter((item) => item.order === undefined);
          buildItemArray = [...tempArrayWeapons, ...tempArrayArmour, ...tempArrayAccessories, ...tempArrayFlask, ...tempArrayJewel, ...tempArrayUndefined];
-      }, 400)
+      }, 500)
       
       setTimeout(() => {
          setLoader(false);
@@ -115,7 +115,6 @@ export function App() {
 
    async function handleObjects(tempItemArray){
       //fetch and translate mods for filter
-      console.log(tempItemArray);
       const allModifiers = await fetchData('./item_mods/allModifiers.json');
       const allItems = await fetchData('./item_mods/allItems.json');
       tempItemArray.map((item) => {

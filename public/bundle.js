@@ -9471,7 +9471,7 @@
 	    } else if (itemName.includes('Eye Jewel')) {
 	      itemBase = "Abyss Jewel";
 	    } else {
-	      if (item.rarity !== "NORMAL") {
+	      if (item.rarity !== "NORMAL" || item.rarity !== "MAGIC") {
 	        itemBase = cleanItemInfoArray[2];
 	      }
 	    }
@@ -9508,7 +9508,7 @@
 	  try {
 	    cleanItemInfoArray.map(line => {
 	      if (line.includes("Sockets:")) {
-	        itemSockets = line.split(": ")[1].split('-');
+	        itemSockets = line.split(": ")[1].split(/-| /);
 	      }
 	    });
 	  } catch (err) {
@@ -9696,7 +9696,9 @@
 	  if (item.rarity !== 'UNIQUE') {
 	    itemSearch = item.base;
 	  }
-	  if (item.name.includes('Energy Blade')) {
+	  if (item.rarity === "MAGIC" && item.sockets.length != 0) {
+	    item.order = 'weapons';
+	  } else if (item.name.includes('Energy Blade')) {
 	    item.order = 'weapons';
 	    item.base = 'energy blade';
 	  } else {
@@ -9741,6 +9743,15 @@
 	    if (item.base === "energy blade") {
 	      itemBaseQuery = ``;
 	      itemCategory = `,"category": {"option": "weapon.one"}`;
+	    }
+	    if (item.rarity === "MAGIC" || item.base !== "Charm" || !item.base.includes('Jewel')) {
+	      if (item.sockets.length > 3) {
+	        itemBaseQuery = ``;
+	        itemCategory = `,"category": {"option": "weapon"}`;
+	      } else {
+	        itemBaseQuery = ``;
+	        itemCategory = `,"category": {"option": "weapon.one"}`;
+	      }
 	    }
 	  }
 
@@ -10057,9 +10068,6 @@
 	  if (item.rarity === "UNIQUE") {
 	    itemName = item.name + " - " + item.base;
 	  }
-	  if (item.rarity !== "NORMAL") {
-	    itemName = item.base;
-	  }
 	  return /*#__PURE__*/React.createElement(StyledDiv$1, null, /*#__PURE__*/React.createElement(StyledContainer, null, /*#__PURE__*/React.createElement(StyledTitle, {
 	    className: `item_border-${item.rarity.toLowerCase()} item_background-${item.rarity.toLowerCase()}`
 	  }, /*#__PURE__*/React.createElement("span", {
@@ -10210,7 +10218,7 @@
 	      setReload(true);
 	      return;
 	    }
-	    console.log(htmlItems);
+	    //console.log(htmlItems);
 
 	    //Create item obj for each item
 	    let tempItemArray = [];
@@ -10229,7 +10237,7 @@
 	      let tempArrayJewel = tempItemArray.filter(item => item.order === "jewels");
 	      let tempArrayUndefined = tempItemArray.filter(item => item.order === undefined);
 	      buildItemArray = [...tempArrayWeapons, ...tempArrayArmour, ...tempArrayAccessories, ...tempArrayFlask, ...tempArrayJewel, ...tempArrayUndefined];
-	    }, 400);
+	    }, 500);
 	    setTimeout(() => {
 	      setLoader(false);
 	      setReload(true);
@@ -10237,7 +10245,6 @@
 	  }
 	  async function handleObjects(tempItemArray) {
 	    //fetch and translate mods for filter
-	    console.log(tempItemArray);
 	    const allModifiers = await fetchData('./item_mods/allModifiers.json');
 	    const allItems = await fetchData('./item_mods/allItems.json');
 	    tempItemArray.map(item => {

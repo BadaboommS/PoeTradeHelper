@@ -4,7 +4,9 @@ export function addOrder(item, allItems){
     if(item.rarity !== 'UNIQUE'){
         itemSearch = item.base;
     }
-    if(item.name.includes('Energy Blade')){
+    if(item.rarity === "MAGIC" && item.sockets.length != 0){
+        item.order = 'weapons';
+    }else if(item.name.includes('Energy Blade')){
         item.order = 'weapons';
         item.base = 'energy blade';
     }else{

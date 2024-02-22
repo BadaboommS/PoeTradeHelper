@@ -28,6 +28,15 @@ export function generateTradeUrl(tradeIlv, tradeLinks, tradeCorrupted, tradeDefe
         itemBaseQuery = ``;
         itemCategory = `,"category": {"option": "weapon.one"}`;
       }
+      if(item.rarity === "MAGIC" || item.base !== "Charm" || !item.base.includes('Jewel')){
+        if(item.sockets.length > 3){
+          itemBaseQuery = ``;
+          itemCategory = `,"category": {"option": "weapon"}`;
+        }else{
+          itemBaseQuery = ``;
+          itemCategory = `,"category": {"option": "weapon.one"}`;
+        }
+      }
     }
 
     //armour Filter
