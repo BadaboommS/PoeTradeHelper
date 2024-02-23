@@ -66,10 +66,18 @@ export function translateModifiers(allModifiers, modArray, type){
                         modOption = tempOptionId;
                     }
                 }else{
-                    for(let i = 0, l = allModifiers[2].entries.length; i < l; i++){
-                        if(allModifiers[2].entries[i].text.includes(modId)){
-                            modFilter = allModifiers[2].entries[i].id;
+                    for(let i = 0, l = allModifiers[0].entries.length; i < l; i++){
+                        if(allModifiers[0].entries[i].text === modId){
+                            modFilter = allModifiers[0].entries[i].id;
                             break;
+                        }
+                    }
+                    if(modFilter === undefined){
+                        for(let i = 0, l = allModifiers[0].entries.length; i < l; i++){
+                            if(allModifiers[0].entries[i].text.includes(modId)){
+                                modFilter = allModifiers[0].entries[i].id;
+                                break;
+                            }
                         }
                     }
                 }
@@ -91,10 +99,34 @@ export function translateModifiers(allModifiers, modArray, type){
                         }
                     }
                 }else{
-                    for(let i = 0, l = allModifiers[1].entries.length; i < l; i++){
-                        if(allModifiers[1].entries[i].text.includes(modId)){
-                            modFilter = allModifiers[1].entries[i].id;
+                    for(let i = 0, l = allModifiers[0].entries.length; i < l; i++){
+                        if(allModifiers[0].entries[i].text === modId){
+                            modFilter = allModifiers[0].entries[i].id;
                             break;
+                        }
+                    }
+                    if(modFilter === undefined){
+                        for(let i = 0, l = allModifiers[1].entries.length; i < l; i++){
+                            if(allModifiers[1].entries[i].text.includes(modId)){
+                                modFilter = allModifiers[1].entries[i].id;
+                                break;
+                            }
+                        }
+                    }
+                    if(modFilter === undefined){
+                        for(let i = 0, l = allModifiers[1].entries.length; i < l; i++){
+                            if(allModifiers[1].entries[i].text === modId){
+                                modFilter = allModifiers[1].entries[i].id;
+                                break;
+                            }
+                        }
+                    }
+                    if(modFilter === undefined){
+                        for(let i = 0, l = allModifiers[1].entries.length; i < l; i++){
+                            if(allModifiers[1].entries[i].text.includes(modId)){
+                                modFilter = allModifiers[1].entries[i].id;
+                                break;
+                            }
                         }
                     }
                 }

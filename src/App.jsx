@@ -5,6 +5,7 @@ import { isIterable } from './utils/isIterable';
 import { codeDecompress } from './utils/codeDecompress';
 import { createItemObj } from './utils/createItemObj';
 import { fetchData } from './utils/fetchData';
+import { handleMagic } from './utils/handleMagic';
 import { translateModifiers } from './utils/translateModifiers';
 import { addOrder } from './utils/addOrder';
 //components
@@ -94,8 +95,8 @@ export function App() {
          let temp = createItemObj(i);
          tempItemArray.push(temp);
       }
-      handleObjects(tempItemArray); 
-
+      handleObjects(tempItemArray);
+      
       //sort
       setTimeout(() => {
          let tempArrayWeapons = tempItemArray.filter((item) => item.order === "weapons");
@@ -110,7 +111,7 @@ export function App() {
       setTimeout(() => {
          setLoader(false);
          setReload(true);
-      }, 1000);
+      }, 500);
    };
 
    async function handleObjects(tempItemArray){
@@ -118,6 +119,7 @@ export function App() {
       const allModifiers = await fetchData('./item_mods/allModifiers.json');
       const allItems = await fetchData('./item_mods/allItems.json');
       tempItemArray.map((item) => {
+         handleMagic(item, allItems);
          addOrder(item, allItems);
          translateModifiers(allModifiers, item.implicits, 'implicit');
          translateModifiers(allModifiers, item.explicits, 'explicit');

@@ -42,7 +42,7 @@ const StyledSection = styled.section`
 
 export function Item({item, league, itemNumber}){
     
-    let itemName = item.name;
+    let itemName = item.base;
     if(item.rarity === "UNIQUE"){
         itemName = item.name + " - " + item.base;
     }

@@ -9471,9 +9471,7 @@
 	    } else if (itemName.includes('Eye Jewel')) {
 	      itemBase = "Abyss Jewel";
 	    } else {
-	      if (item.rarity !== "NORMAL" || item.rarity !== "MAGIC") {
-	        itemBase = cleanItemInfoArray[2];
-	      }
+	      itemBase = cleanItemInfoArray[2];
 	    }
 	  } catch (err) {
 	    console.log(err);
@@ -9583,6 +9581,26 @@
 	  return await dataResult;
 	}
 
+	function handleMagic(item, allItems) {
+	  let itemOrder;
+	  let itemBase;
+	  if (item.rarity === "MAGIC") {
+	    for (let i = 0, l = allItems.length; i < l; i++) {
+	      for (let j = 0, m = allItems[i].entries.length; j < m; j++) {
+	        if (allItems[i].entries[j].text.includes(item.name) || item.name.includes(allItems[i].entries[j].text)) {
+	          itemOrder = allItems[i].id;
+	          itemBase = allItems[i].entries[j].type;
+	          break;
+	        }
+	      }
+	    }
+	    if (itemOrder !== undefined) {
+	      item.base = itemBase;
+	      item.order = itemOrder;
+	    }
+	  }
+	}
+
 	function translateModifiers(allModifiers, modArray, type) {
 	  try {
 	    modArray.map(mod => {
@@ -9649,10 +9667,18 @@
 	            modOption = tempOptionId;
 	          }
 	        } else {
-	          for (let i = 0, l = allModifiers[2].entries.length; i < l; i++) {
-	            if (allModifiers[2].entries[i].text.includes(modId)) {
-	              modFilter = allModifiers[2].entries[i].id;
+	          for (let i = 0, l = allModifiers[0].entries.length; i < l; i++) {
+	            if (allModifiers[0].entries[i].text === modId) {
+	              modFilter = allModifiers[0].entries[i].id;
 	              break;
+	            }
+	          }
+	          if (modFilter === undefined) {
+	            for (let i = 0, l = allModifiers[0].entries.length; i < l; i++) {
+	              if (allModifiers[0].entries[i].text.includes(modId)) {
+	                modFilter = allModifiers[0].entries[i].id;
+	                break;
+	              }
 	            }
 	          }
 	        }
@@ -9673,10 +9699,34 @@
 	            }
 	          }
 	        } else {
-	          for (let i = 0, l = allModifiers[1].entries.length; i < l; i++) {
-	            if (allModifiers[1].entries[i].text.includes(modId)) {
-	              modFilter = allModifiers[1].entries[i].id;
+	          for (let i = 0, l = allModifiers[0].entries.length; i < l; i++) {
+	            if (allModifiers[0].entries[i].text === modId) {
+	              modFilter = allModifiers[0].entries[i].id;
 	              break;
+	            }
+	          }
+	          if (modFilter === undefined) {
+	            for (let i = 0, l = allModifiers[1].entries.length; i < l; i++) {
+	              if (allModifiers[1].entries[i].text.includes(modId)) {
+	                modFilter = allModifiers[1].entries[i].id;
+	                break;
+	              }
+	            }
+	          }
+	          if (modFilter === undefined) {
+	            for (let i = 0, l = allModifiers[1].entries.length; i < l; i++) {
+	              if (allModifiers[1].entries[i].text === modId) {
+	                modFilter = allModifiers[1].entries[i].id;
+	                break;
+	              }
+	            }
+	          }
+	          if (modFilter === undefined) {
+	            for (let i = 0, l = allModifiers[1].entries.length; i < l; i++) {
+	              if (allModifiers[1].entries[i].text.includes(modId)) {
+	                modFilter = allModifiers[1].entries[i].id;
+	                break;
+	              }
 	            }
 	          }
 	        }
@@ -9696,8 +9746,11 @@
 	  if (item.rarity !== 'UNIQUE') {
 	    itemSearch = item.base;
 	  }
-	  if (item.rarity === "MAGIC" && item.sockets.length != 0) {
-	    item.order = 'weapons';
+	  /* if(item.rarity === "MAGIC" && item.sockets.length != 0){
+	      item.order = 'weapons';
+	  } */
+	  if (item.order !== undefined) {
+	    return null;
 	  } else if (item.name.includes('Energy Blade')) {
 	    item.order = 'weapons';
 	    item.base = 'energy blade';
@@ -9743,15 +9796,6 @@
 	    if (item.base === "energy blade") {
 	      itemBaseQuery = ``;
 	      itemCategory = `,"category": {"option": "weapon.one"}`;
-	    }
-	    if (item.rarity === "MAGIC" || item.base !== "Charm" || !item.base.includes('Jewel')) {
-	      if (item.sockets.length > 3) {
-	        itemBaseQuery = ``;
-	        itemCategory = `,"category": {"option": "weapon"}`;
-	      } else {
-	        itemBaseQuery = ``;
-	        itemCategory = `,"category": {"option": "weapon.one"}`;
-	      }
 	    }
 	  }
 
@@ -10064,7 +10108,7 @@
 	  league,
 	  itemNumber
 	}) {
-	  let itemName = item.name;
+	  let itemName = item.base;
 	  if (item.rarity === "UNIQUE") {
 	    itemName = item.name + " - " + item.base;
 	  }
@@ -10241,13 +10285,14 @@
 	    setTimeout(() => {
 	      setLoader(false);
 	      setReload(true);
-	    }, 1000);
+	    }, 500);
 	  }
 	  async function handleObjects(tempItemArray) {
 	    //fetch and translate mods for filter
 	    const allModifiers = await fetchData('./item_mods/allModifiers.json');
 	    const allItems = await fetchData('./item_mods/allItems.json');
 	    tempItemArray.map(item => {
+	      handleMagic(item, allItems);
 	      addOrder(item, allItems);
 	      translateModifiers(allModifiers, item.implicits, 'implicit');
 	      translateModifiers(allModifiers, item.explicits, 'explicit');

@@ -33,9 +33,7 @@ export function createItemObj(item){
         }else if(itemName.includes('Eye Jewel')){
             itemBase = "Abyss Jewel";
         }else{
-            if(item.rarity !== "NORMAL" || item.rarity !== "MAGIC"){
                 itemBase = cleanItemInfoArray[2];
-            }
         }
     }catch(err){
         console.log(err);
