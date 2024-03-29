@@ -139,11 +139,11 @@ export function App() {
             <StyledForm onSubmit={handleSubmit}>
                <textarea placeholder="Put build import code here" type="text" name="importCode" rows='5' cols="50" required></textarea>
                <StyledSection>
-                  <StyledSelect defaultValue="Affliction" id="leagueSelect">
-                     <option value="Affliction">Affliction</option>
-                     <option value="Hardcore%20Affliction">Hardcore Affliction</option>
-                     <option value="Ruthless%20Affliction">Ruthless Affliction</option>
-                     <option value="HC%20Ruthless%20Affliction">HardCore Ruthless Affliction</option>
+                  <StyledSelect defaultValue="Necropolis" id="leagueSelect">
+                     <option value="Necropolis">Necropolis</option>
+                     <option value="Hardcore%20Necropolis">Hardcore Necropolis</option>
+                     <option value="Ruthless%20Necropolis">Ruthless Necropolis</option>
+                     <option value="HC%20Ruthless%20Necropolis">HardCore Ruthless Necropolis</option>
                      <option value="Standard">Standard</option>
                      <option value="Hardcore">Hardcore</option>
                      <option value="Ruthless">Ruthless</option>
