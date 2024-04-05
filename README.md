@@ -1,7 +1,7 @@
 <h1 align="center">Hi 👋, I'm BadaboommS</h1>
 <h3 align="center">Self taught full-stack dev</h3>
 
-- 🔭 I’m currently working on **Learning ReactJS**
+- 🔭 I’m currently working on **Understanding POE explicit system**
 
 - 🌱 I’m currently learning **ReactJs and NodeJs**
 
