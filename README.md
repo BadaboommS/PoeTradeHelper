@@ -1,3 +1,7 @@
+POE TRADE HELPER
+Application pour générer des query pour le site de trade POE TRADE du jeu Path Of Exile.
+(Encore en béta, beaucoup de bugs à corriger)
+
 <h1 align="center">Hi 👋, I'm BadaboommS</h1>
 <h3 align="center">Self taught full-stack dev</h3>
 
