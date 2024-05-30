@@ -10262,7 +10262,8 @@
 	      setReload(true);
 	      return;
 	    }
-	    //console.log(htmlItems);
+	    console.log(htmlItems);
+	    // console.log(typeof htmlItems);
 
 	    //Create item obj for each item
 	    let tempItemArray = [];
@@ -10312,17 +10313,17 @@
 	    cols: "50",
 	    required: true
 	  }), /*#__PURE__*/React.createElement(StyledSection, null, /*#__PURE__*/React.createElement(StyledSelect, {
-	    defaultValue: "Affliction",
+	    defaultValue: "Necropolis",
 	    id: "leagueSelect"
 	  }, /*#__PURE__*/React.createElement("option", {
-	    value: "Affliction"
-	  }, "Affliction"), /*#__PURE__*/React.createElement("option", {
-	    value: "Hardcore%20Affliction"
-	  }, "Hardcore Affliction"), /*#__PURE__*/React.createElement("option", {
-	    value: "Ruthless%20Affliction"
-	  }, "Ruthless Affliction"), /*#__PURE__*/React.createElement("option", {
-	    value: "HC%20Ruthless%20Affliction"
-	  }, "HardCore Ruthless Affliction"), /*#__PURE__*/React.createElement("option", {
+	    value: "Necropolis"
+	  }, "Necropolis"), /*#__PURE__*/React.createElement("option", {
+	    value: "Hardcore%20Necropolis"
+	  }, "Hardcore Necropolis"), /*#__PURE__*/React.createElement("option", {
+	    value: "Ruthless%20Necropolis"
+	  }, "Ruthless Necropolis"), /*#__PURE__*/React.createElement("option", {
+	    value: "HC%20Ruthless%20Necropolis"
+	  }, "HardCore Ruthless Necropolis"), /*#__PURE__*/React.createElement("option", {
 	    value: "Standard"
 	  }, "Standard"), /*#__PURE__*/React.createElement("option", {
 	    value: "Hardcore"

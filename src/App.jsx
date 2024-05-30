@@ -87,7 +87,8 @@ export function App() {
          setReload(true);
          return
       }
-      //console.log(htmlItems);
+      console.log(htmlItems);
+      // console.log(typeof htmlItems);
 
       //Create item obj for each item
       let tempItemArray = [];
