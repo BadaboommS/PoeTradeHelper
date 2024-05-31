@@ -1,8 +1,7 @@
 export function createItemObj(item){
-    let itemContent = item.textContent.replace(/\t/g, '');;
+    let itemContent = item.textContent.replace(/\t/g, '');
     let itemInfoArray = itemContent.split('\n');
     let cleanItemInfoArray = itemInfoArray.filter((str) => str != '');
-    //console.log(cleanItemInfoArray);
 
     //retrieving item info for itemsArray init
 

@@ -118,11 +118,11 @@ export function App() {
          {loader? <div className="lds-dual-ring"></div> : <></>}
          {inputError? <p className='text-white text-center'>Build code not recognized! Try another Code.</p> : ''}
          <article className='flex flex-col items-center gap-4 m-10 text-white'>
-         {!loader && !inputError && buildItemArray[0]?
-               <ItemFeed items={buildItemArray} leagueChoice={leagueChoice} />
-            :
-               <></>
-         }
+            {!loader && !inputError && buildItemArray[0]?
+                  <ItemFeed items={buildItemArray} leagueChoice={leagueChoice} />
+               :
+                  <></>
+            }
          </article>
       </div>
    )
