@@ -7854,7 +7854,7 @@
 	  }
 	}
 
-	var css_248z = "/*! tailwindcss v3.4.3 | MIT License | https://tailwindcss.com*/*,:after,:before{border:0 solid #e5e7eb;box-sizing:border-box}:after,:before{--tw-content:\"\"}:host,html{-webkit-text-size-adjust:100%;font-feature-settings:normal;-webkit-tap-highlight-color:transparent;font-family:ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-variation-settings:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4}body{line-height:inherit;margin:0}hr{border-top-width:1px;color:inherit;height:0}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-feature-settings:normal;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-size:1em;font-variation-settings:normal}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{border-collapse:collapse;border-color:inherit;text-indent:0}button,input,optgroup,select,textarea{font-feature-settings:inherit;color:inherit;font-family:inherit;font-size:100%;font-variation-settings:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{color:#9ca3af;opacity:1}input::placeholder,textarea::placeholder{color:#9ca3af;opacity:1}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{height:auto;max-width:100%}[hidden]{display:none}*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }h1{font-size:1.5rem;line-height:2rem}h2{font-size:1.25rem}h2,h3{line-height:1.75rem}h3{font-size:1.125rem}button{background-color:#fff}.m-10{margin:2.5rem}.block{display:block}.flex{display:flex}.h-10{height:2.5rem}.min-w-10{min-width:2.5rem}.flex-row{flex-direction:row}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.justify-center{justify-content:center}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.rounded-md{border-radius:.375rem}.rounded-sm{border-radius:.125rem}.border{border-width:1px}.p-1{padding:.25rem}.p-2{padding:.5rem}.text-center{text-align:center}.text-sm{font-size:.875rem;line-height:1.25rem}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity))}.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}@media (min-width:768px){.md\\:flex-row{flex-direction:row}}";
+	var css_248z = "/*! tailwindcss v3.4.3 | MIT License | https://tailwindcss.com*/*,:after,:before{border:0 solid #e5e7eb;box-sizing:border-box}:after,:before{--tw-content:\"\"}:host,html{-webkit-text-size-adjust:100%;font-feature-settings:normal;-webkit-tap-highlight-color:transparent;font-family:ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-variation-settings:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4}body{line-height:inherit;margin:0}hr{border-top-width:1px;color:inherit;height:0}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-feature-settings:normal;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-size:1em;font-variation-settings:normal}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{border-collapse:collapse;border-color:inherit;text-indent:0}button,input,optgroup,select,textarea{font-feature-settings:inherit;color:inherit;font-family:inherit;font-size:100%;font-variation-settings:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{color:#9ca3af;opacity:1}input::placeholder,textarea::placeholder{color:#9ca3af;opacity:1}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{height:auto;max-width:100%}[hidden]{display:none}*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }h1{font-size:1.5rem;line-height:2rem}h2{font-size:1.25rem}h2,h3{line-height:1.75rem}h3{font-size:1.125rem}button{background-color:#fff}.m-10{margin:2.5rem}.mx-10{margin-left:2.5rem;margin-right:2.5rem}.block{display:block}.flex{display:flex}.h-10{height:2.5rem}.w-80{width:20rem}.w-3\\/12{width:25%}.w-full{width:100%}.min-w-10{min-width:2.5rem}.flex-row{flex-direction:row}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-start{justify-content:flex-start}.justify-center{justify-content:center}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.rounded-md{border-radius:.375rem}.rounded-sm{border-radius:.125rem}.border{border-width:1px}.p-1{padding:.25rem}.p-2{padding:.5rem}.p-5{padding:1.25rem}.text-center{text-align:center}.text-start{text-align:start}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-2xl{font-size:1.5rem;line-height:2rem}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity))}.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}@media (min-width:768px){.md\\:w-min{width:-moz-min-content;width:min-content}.md\\:w-fit{width:-moz-fit-content;width:fit-content}.md\\:w-40{width:10rem}.md\\:w-4\\/12{width:33.333333%}.md\\:w-6\\/12{width:50%}.md\\:flex-row{flex-direction:row}}@media (min-width:1024px){.lg\\:w-4\\/12{width:33.333333%}.lg\\:w-7\\/12{width:58.333333%}.lg\\:w-5\\/12{width:41.666667%}.lg\\:w-6\\/12{width:50%}}";
 	styleInject(css_248z,{"insertAt":"top"});
 
 	/******************************************************************************
@@ -10122,35 +10122,33 @@
 	  return encodeURI(tempRequest);
 	}
 
+	function handleExplicitClass(item) {
+	  switch (true) {
+	    case /{crafted}/i.test(item):
+	      return 'item_crafted';
+	    case /{enchanted}/i.test(item):
+	      return 'item_enchanted';
+	    case /{fractured}/i.test(item):
+	      return 'item_fractured';
+	    default:
+	      return '';
+	  }
+	}
+
 	//styledComponents
-	const StyledItemModifierSection = ut.section`
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: start;
-`;
 	const StyledFlex = ut.div`
+    width: 100%;
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    margin-top: 10px;
+    gap: 20px;
     align-items: center;
 `;
-	const StyledSection$1 = ut.section`
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    width: 50vw;
-    @media screen and (max-width: 768px){
-        width: 90vw;
-    }
-`;
 	const StyledLink = ut.a`
-    border: 1px solid black;
     border-radius: 5px;
     color: black;
     background-color: #EEEEEE;
     text-decoration: inherit;
-    font-family: 'Fontin SmallCaps Regular';
     padding: 5px;
 `;
 	const StyledSplit$2 = ut.p`
@@ -10213,11 +10211,15 @@
 	  reactExports.useEffect(() => {
 	    tradeUrl = generateTradeUrl(tradeIlv, tradeLinks, tradeCorrupted, tradeDefence, tradeImplicits, tradeExplicits, item, league);
 	  }, []);
-	  return /*#__PURE__*/React.createElement(StyledSection$1, null, /*#__PURE__*/React.createElement("p", null, "Select desired modifiers for trade:"), /*#__PURE__*/React.createElement(StyledSplit$2, {
+	  return /*#__PURE__*/React.createElement("section", {
+	    className: "flex flex-col p-5 w-full lg:w-6/12"
+	  }, /*#__PURE__*/React.createElement("p", null, "Select desired modifiers for trade:"), /*#__PURE__*/React.createElement(StyledSplit$2, {
 	    className: `item_split-${item.rarity.toLowerCase()}`
-	  }), /*#__PURE__*/React.createElement(StyledItemModifierSection, {
-	    className: "item_stats"
-	  }, /*#__PURE__*/React.createElement("div", null, item.defence[0] ? item.defence.map((def, i) => {
+	  }), /*#__PURE__*/React.createElement("div", {
+	    className: "flex flex-col items-start text-start item_stats"
+	  }, /*#__PURE__*/React.createElement("div", {
+	    className: "text-center"
+	  }, item.defence[0] ? item.defence.map((def, i) => {
 	    return /*#__PURE__*/React.createElement(StyledFlex, {
 	      key: i
 	    }, /*#__PURE__*/React.createElement("input", {
@@ -10229,7 +10231,7 @@
 	    }, /*#__PURE__*/React.createElement("strong", {
 	      className: "item_rarity-normal"
 	    }, def.split(': ')[0], ":"), " ", def.split(': ')[1]));
-	  }) : /*#__PURE__*/React.createElement(React.Fragment, null), /*#__PURE__*/React.createElement(StyledFlex, null, /*#__PURE__*/React.createElement("input", {
+	  }) : /*#__PURE__*/React.createElement(React.Fragment, null), item.ilv ? /*#__PURE__*/React.createElement(StyledFlex, null, /*#__PURE__*/React.createElement("input", {
 	    type: "checkbox",
 	    id: `${itemNumber}_${itemName}_ilv`,
 	    onChange: () => handleChangeIlv(item.iLv)
@@ -10237,7 +10239,7 @@
 	    htmlFor: `${itemNumber}_${itemName}_ilv`
 	  }, /*#__PURE__*/React.createElement("strong", {
 	    className: "item_rarity-normal"
-	  }, "Item level:"), " ", item.iLv)), item.sockets[0] ? /*#__PURE__*/React.createElement(StyledFlex, null, /*#__PURE__*/React.createElement("input", {
+	  }, "Item level:"), " ", item.iLv)) : /*#__PURE__*/React.createElement(React.Fragment, null), item.sockets[0] ? /*#__PURE__*/React.createElement(StyledFlex, null, /*#__PURE__*/React.createElement("input", {
 	    type: "checkbox",
 	    id: `${itemNumber}_${itemName}_link`,
 	    onChange: () => handleChangeLinks(item.sockets.length)
@@ -10252,33 +10254,11 @@
 	  }), /*#__PURE__*/React.createElement("label", {
 	    htmlFor: `${itemNumber}_${itemName}_corrupted`,
 	    className: "item_corrupted"
-	  }, "Corrupted")) : /*#__PURE__*/React.createElement(React.Fragment, null)), item.implicits.length ? /*#__PURE__*/React.createElement(StyledSplit$2, {
+	  }, "Corrupted")) : /*#__PURE__*/React.createElement(React.Fragment, null)), item.implicits.length ? /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(StyledSplit$2, {
 	    className: `item_split-${item.rarity.toLowerCase()}`
-	  }) : /*#__PURE__*/React.createElement(React.Fragment, null), /*#__PURE__*/React.createElement("div", null, item.implicits.length ? /*#__PURE__*/React.createElement("p", null, "Implicits: ") : /*#__PURE__*/React.createElement(React.Fragment, null), item.implicits.length ? item.implicits.map((implicit, i) => {
-	    if (implicit.text.includes('{crafted}')) {
-	      return /*#__PURE__*/React.createElement(StyledFlex, {
-	        key: i
-	      }, /*#__PURE__*/React.createElement("input", {
-	        type: "checkbox",
-	        id: `${itemNumber}_${itemName}_implicit_${i}`,
-	        onChange: () => handleChangeImplicits(implicit.text)
-	      }), /*#__PURE__*/React.createElement("label", {
-	        htmlFor: `${itemNumber}_${itemName}_implicit_${i}`,
-	        className: "item_crafted"
-	      }, implicit.text));
-	    }
-	    if (implicit.text.includes('{enchanted}')) {
-	      return /*#__PURE__*/React.createElement(StyledFlex, {
-	        key: i
-	      }, /*#__PURE__*/React.createElement("input", {
-	        type: "checkbox",
-	        id: `${itemNumber}_${itemName}_implicit_${i}`,
-	        onChange: () => handleChangeImplicits(implicit.text)
-	      }), /*#__PURE__*/React.createElement("label", {
-	        htmlFor: `${itemNumber}_${itemName}_implicit_${i}`,
-	        className: "item_enchanted"
-	      }, implicit.text));
-	    }
+	  }), /*#__PURE__*/React.createElement("p", {
+	    className: "text-center"
+	  }, "Implicits: ")), /*#__PURE__*/React.createElement("div", null, item.implicits.map((implicit, i) => {
 	    return /*#__PURE__*/React.createElement(StyledFlex, {
 	      key: i
 	    }, /*#__PURE__*/React.createElement("input", {
@@ -10286,35 +10266,14 @@
 	      id: `${itemNumber}_${itemName}_implicit_${i}`,
 	      onChange: () => handleChangeImplicits(implicit.text)
 	    }), /*#__PURE__*/React.createElement("label", {
-	      htmlFor: `${itemNumber}_${itemName}_implicit_${i}`
+	      htmlFor: `${itemNumber}_${itemName}_implicit_${i}`,
+	      className: handleExplicitClass(implicit.text)
 	    }, implicit.text));
-	  }) : /*#__PURE__*/React.createElement(React.Fragment, null)), /*#__PURE__*/React.createElement(StyledSplit$2, {
+	  }))) : /*#__PURE__*/React.createElement(React.Fragment, null), item.explicits.length ? /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(StyledSplit$2, {
 	    className: `item_split-${item.rarity.toLowerCase()}`
-	  }), /*#__PURE__*/React.createElement("div", null, item.explicits.length ? /*#__PURE__*/React.createElement("p", null, "Explicits: ") : /*#__PURE__*/React.createElement(React.Fragment, null), item.explicits.length ? item.explicits.map((explicit, i) => {
-	    if (explicit.text.includes('{crafted}')) {
-	      return /*#__PURE__*/React.createElement(StyledFlex, {
-	        key: i
-	      }, /*#__PURE__*/React.createElement("input", {
-	        type: "checkbox",
-	        id: `${itemNumber}_${itemName}_explicit_${i}`,
-	        onChange: () => handleChangeExplicits(explicit.text)
-	      }), /*#__PURE__*/React.createElement("label", {
-	        htmlFor: `${itemNumber}_${itemName}_explicit_${i}`,
-	        className: "item_crafted"
-	      }, explicit.text));
-	    }
-	    if (explicit.text.includes('{fractured}')) {
-	      return /*#__PURE__*/React.createElement(StyledFlex, {
-	        key: i
-	      }, /*#__PURE__*/React.createElement("input", {
-	        type: "checkbox",
-	        id: `${itemNumber}_${itemName}_explicit_${i}`,
-	        onChange: () => handleChangeExplicits(explicit.text)
-	      }), /*#__PURE__*/React.createElement("label", {
-	        htmlFor: `${itemNumber}_${itemName}_explicit_${i}`,
-	        className: "item_fractured"
-	      }, explicit.text));
-	    }
+	  }), /*#__PURE__*/React.createElement("p", {
+	    className: "text-center"
+	  }, "Explicits: "), item.explicits.map((explicit, i) => {
 	    return /*#__PURE__*/React.createElement(StyledFlex, {
 	      key: i
 	    }, /*#__PURE__*/React.createElement("input", {
@@ -10322,51 +10281,74 @@
 	      id: `${itemNumber}_${itemName}_explicit_${i}`,
 	      onChange: () => handleChangeExplicits(explicit.text)
 	    }), /*#__PURE__*/React.createElement("label", {
-	      htmlFor: `${itemNumber}_${itemName}_explicit_${i}`
+	      htmlFor: `${itemNumber}_${itemName}_explicit_${i}`,
+	      className: handleExplicitClass(explicit.text)
 	    }, explicit.text));
-	  }) : /*#__PURE__*/React.createElement(React.Fragment, null))), /*#__PURE__*/React.createElement(StyledSplit$2, {
+	  })) : /*#__PURE__*/React.createElement(React.Fragment, null)), /*#__PURE__*/React.createElement(StyledSplit$2, {
 	    className: `item_split-${item.rarity.toLowerCase()}`
-	  }), /*#__PURE__*/React.createElement(StyledFlex, null, /*#__PURE__*/React.createElement(StyledLink, {
+	  }), /*#__PURE__*/React.createElement(StyledFlex, {
+	    className: "justify-center"
+	  }, /*#__PURE__*/React.createElement(StyledLink, {
 	    href: tradeUrl,
 	    target: "_blank",
 	    rel: "noopener noreferrer"
 	  }, "Trade"), /*#__PURE__*/React.createElement("p", null, "|"), /*#__PURE__*/React.createElement("p", null, /*#__PURE__*/React.createElement("strong", null, "Estimed Value:"), " (Not implemented yet)")));
 	}
 
-	//styledComponents
-	const StyledDiv = ut.div`
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: 10px 0;
-    gap: 20px;
-    text-align: center;
-    justify-content: center;
-    @media screen and (min-width: 768px){
-        padding: 30px 40px;
-    }
-`;
-	const StyledContainer = ut.div`
-    width: 30vw;
-    @media screen and (max-width: 768px){
-        width: 80vw;
-    }
-`;
-	const StyledTitle = ut.div`
-    height: 50px;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    font-size: calc(15px + 0.4vw);
-    padding: 10px;
-`;
-	const StyledSection = ut.section`
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-`;
+	function ItemInfo({
+	  item,
+	  itemName
+	}) {
+	  return /*#__PURE__*/React.createElement("div", {
+	    className: "w-full lg:w-5/12"
+	  }, /*#__PURE__*/React.createElement("div", {
+	    className: `item_border-${item.rarity.toLowerCase()} item_background-${item.rarity.toLowerCase()} p-5`
+	  }, /*#__PURE__*/React.createElement("span", {
+	    className: `item_rarity-${item.rarity.toLowerCase()} text-2xl`
+	  }, /*#__PURE__*/React.createElement("strong", null, itemName))), /*#__PURE__*/React.createElement("section", {
+	    className: `item_border-${item.rarity.toLowerCase()} item_background-${item.rarity.toLowerCase()} p-5 flex flex-col items-center`
+	  }, /*#__PURE__*/React.createElement("div", null, item.defence[0] ? item.defence.map((def, i) => {
+	    return /*#__PURE__*/React.createElement("p", {
+	      key: i
+	    }, /*#__PURE__*/React.createElement("strong", {
+	      className: "item_rarity-normal"
+	    }, def.split(': ')[0], ":"), " ", def.split(': ')[1]);
+	  }) : /*#__PURE__*/React.createElement(React.Fragment, null), item.rarity ? /*#__PURE__*/React.createElement("p", null, /*#__PURE__*/React.createElement("strong", {
+	    className: "item_rarity-normal"
+	  }, "Rarity:"), " ", /*#__PURE__*/React.createElement("span", {
+	    className: `item_rarity-${item.rarity.toLowerCase()}`
+	  }, item.rarity)) : /*#__PURE__*/React.createElement(React.Fragment, null), item.iLv ? /*#__PURE__*/React.createElement("p", null, /*#__PURE__*/React.createElement("strong", {
+	    className: "item_rarity-normal"
+	  }, "Item Level:"), " ", item.iLv) : /*#__PURE__*/React.createElement(React.Fragment, null), item.sockets[0] ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("p", null, /*#__PURE__*/React.createElement("strong", {
+	    className: "item_rarity-normal"
+	  }, "Sockets:"), " ", item.sockets.map((socket, i) => /*#__PURE__*/React.createElement("span", {
+	    key: i,
+	    className: `socket-${socket}`
+	  }, socket))), /*#__PURE__*/React.createElement("p", null, /*#__PURE__*/React.createElement("strong", {
+	    className: "item_rarity-normal"
+	  }, "Links:"), " ", item.sockets.length)) : /*#__PURE__*/React.createElement(React.Fragment, null)), /*#__PURE__*/React.createElement("div", {
+	    className: "item_stats"
+	  }, item.implicits.length ? /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("p", {
+	    className: `item_split-${item.rarity.toLowerCase()}`
+	  }), item.implicits.map((implicit, i) => {
+	    return /*#__PURE__*/React.createElement("p", {
+	      key: i,
+	      className: handleExplicitClass(implicit.text)
+	    }, implicit.text);
+	  })) : /*#__PURE__*/React.createElement(React.Fragment, null), item.explicits.length ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("p", {
+	    className: `item_split-${item.rarity.toLowerCase()}`
+	  }), item.explicits.map((explicit, i) => {
+	    return /*#__PURE__*/React.createElement("p", {
+	      key: i,
+	      className: handleExplicitClass(explicit.text)
+	    }, explicit.text);
+	  })) : /*#__PURE__*/React.createElement(React.Fragment, null), item.corrupted ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("p", {
+	    className: `item_split-${item.rarity.toLowerCase()}`
+	  }), /*#__PURE__*/React.createElement("p", {
+	    className: "item_corrupted"
+	  }, "Corrupted")) : /*#__PURE__*/React.createElement(React.Fragment, null))));
+	}
+
 	function Item({
 	  item,
 	  league,
@@ -10376,74 +10358,12 @@
 	  if (item.rarity === "UNIQUE") {
 	    itemName = item.name + " - " + item.base;
 	  }
-	  return /*#__PURE__*/React.createElement(StyledDiv, null, /*#__PURE__*/React.createElement(StyledContainer, null, /*#__PURE__*/React.createElement(StyledTitle, {
-	    className: `item_border-${item.rarity.toLowerCase()} item_background-${item.rarity.toLowerCase()}`
-	  }, /*#__PURE__*/React.createElement("span", {
-	    className: `item_rarity-${item.rarity.toLowerCase()}`
-	  }, /*#__PURE__*/React.createElement("strong", null, itemName))), /*#__PURE__*/React.createElement(StyledSection, {
-	    className: `item_border-${item.rarity.toLowerCase()} item_background-${item.rarity.toLowerCase()}`
-	  }, /*#__PURE__*/React.createElement("div", null, item.defence[0] ? item.defence.map((def, i) => {
-	    return /*#__PURE__*/React.createElement("p", {
-	      key: i
-	    }, /*#__PURE__*/React.createElement("strong", {
-	      className: "item_rarity-normal"
-	    }, def.split(': ')[0], ":"), " ", def.split(': ')[1]);
-	  }) : /*#__PURE__*/React.createElement(React.Fragment, null), /*#__PURE__*/React.createElement("p", null, /*#__PURE__*/React.createElement("strong", {
-	    className: "item_rarity-normal"
-	  }, "Rarity:"), " ", /*#__PURE__*/React.createElement("span", {
-	    className: `item_rarity-${item.rarity.toLowerCase()}`
-	  }, item.rarity)), /*#__PURE__*/React.createElement("p", null, /*#__PURE__*/React.createElement("strong", {
-	    className: "item_rarity-normal"
-	  }, "Item Level:"), " ", item.iLv), item.sockets[0] ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("p", null, /*#__PURE__*/React.createElement("strong", {
-	    className: "item_rarity-normal"
-	  }, "Sockets:"), " ", item.sockets.map((socket, i) => /*#__PURE__*/React.createElement("span", {
-	    key: i,
-	    className: `socket-${socket}`
-	  }, socket))), /*#__PURE__*/React.createElement("p", null, /*#__PURE__*/React.createElement("strong", {
-	    className: "item_rarity-normal"
-	  }, "Links:"), " ", item.sockets.length)) : /*#__PURE__*/React.createElement(React.Fragment, null)), /*#__PURE__*/React.createElement("div", {
-	    className: "item_stats"
-	  }, item.implicits.length ? /*#__PURE__*/React.createElement("p", {
-	    className: `item_split-${item.rarity.toLowerCase()}`
-	  }) : /*#__PURE__*/React.createElement(React.Fragment, null), item.implicits.length ? item.implicits.map((implicit, i) => {
-	    if (implicit.text.includes('{crafted}')) {
-	      return /*#__PURE__*/React.createElement("p", {
-	        key: i,
-	        className: "item_crafted"
-	      }, implicit.text);
-	    }
-	    if (implicit.text.includes('{enchanted}')) {
-	      return /*#__PURE__*/React.createElement("p", {
-	        key: i,
-	        className: "item_enchanted"
-	      }, implicit.text);
-	    }
-	    return /*#__PURE__*/React.createElement("p", {
-	      key: i
-	    }, implicit.text);
-	  }) : /*#__PURE__*/React.createElement(React.Fragment, null), /*#__PURE__*/React.createElement("p", {
-	    className: `item_split-${item.rarity.toLowerCase()}`
-	  }), item.explicits.length ? item.explicits.map((explicits, i) => {
-	    if (explicits.text.includes('{crafted}')) {
-	      return /*#__PURE__*/React.createElement("p", {
-	        key: i,
-	        className: "item_crafted"
-	      }, explicits.text);
-	    }
-	    if (explicits.text.includes('{fractured}')) {
-	      return /*#__PURE__*/React.createElement("p", {
-	        key: i,
-	        className: "item_fractured"
-	      }, explicits.text);
-	    }
-	    return /*#__PURE__*/React.createElement("p", {
-	      key: i
-	    }, explicits.text);
-	  }) : /*#__PURE__*/React.createElement(React.Fragment, null), item.corrupted ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("p", {
-	    className: `item_split-${item.rarity.toLowerCase()}`
-	  }), /*#__PURE__*/React.createElement("p", {
-	    className: "item_corrupted"
-	  }, "Corrupted")) : /*#__PURE__*/React.createElement(React.Fragment, null)))), /*#__PURE__*/React.createElement(ItemTrade, {
+	  return /*#__PURE__*/React.createElement("div", {
+	    className: "flex flex-row flex-wrap mx-10 gap-4 text-center justify-start items-center w-full"
+	  }, /*#__PURE__*/React.createElement(ItemInfo, {
+	    item: item,
+	    itemName: itemName
+	  }), /*#__PURE__*/React.createElement(ItemTrade, {
 	    item: item,
 	    league: league,
 	    itemName: itemName,
@@ -10455,10 +10375,10 @@
 	const StyledSplit$1 = ut.p`
     margin: 1rem auto;
 `;
-	const ItemFeed = ({
+	function ItemFeed({
 	  items,
 	  leagueChoice
-	}) => {
+	}) {
 	  return items.map((item, i) => {
 	    return /*#__PURE__*/React.createElement(reactExports.Fragment, {
 	      key: i
@@ -10470,7 +10390,7 @@
 	      className: `item_split-normal`
 	    }));
 	  });
-	};
+	}
 
 	//init
 	let buildItemArray = [];
