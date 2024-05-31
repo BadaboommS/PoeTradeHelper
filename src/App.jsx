@@ -16,45 +16,6 @@ let buildItemArray = [];
 let leagueChoice = "Standard";
 
 //styledComponents
-const StyledP = styled.p`
-   color: white;
-   text-align: center;
-`
-const StyledForm = styled.form`
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   gap: 20px;
-`
-const StyledSection = styled.section`
-   display: flex;
-   flex-direction: row;
-   flex-wrap: wrap;
-   justify-content: center;
-   align-items: center;
-   gap: 20px;
-`
-const StyledSelect = styled.select`
-   font-family: 'Fontin SmallCaps Regular';
-   height: 30px;
-   text-align: center;
-`
-const StyledButton = styled.button`
-   font-family: 'Fontin SmallCaps Regular';
-   min-width: 50px;
-   height: 30px;
-   text-align: center;
-`
-const StyledDiv = styled.div`
-   display: flex;
-   flex-direction: column;
-   flex-wrap: wrap;
-   align-items: baseline;
-   gap: 10px;
-   margin: 10px 0;
-   color: white;
-`
 const StyledSplit = styled.p`
     margin: 1rem auto;
 `
@@ -133,34 +94,36 @@ export function App() {
          <div>
             <h1 className='text-white text-center'>POE Build Trade Helper</h1>
             <p className='text-white text-center'>Put build import code and generate POE.trade URL for each Item!</p>
-            <StyledForm onSubmit={handleSubmit}>
-               <textarea placeholder="Put build import code here" type="text" name="importCode" rows='5' cols="50" required></textarea>
-               <StyledSection>
-                  <StyledSelect defaultValue="Necropolis" id="leagueSelect">
+            <form className='flex flex-col justify-center items-center gap-2' onSubmit={handleSubmit}>
+               <textarea className="rounded-sm p-2 text-sm" placeholder="Put build import code here" type="text" name="importCode" rows='5' cols="50" required></textarea>
+               <div className='flex flex-col md:flex-row justify-center items-center gap-2'>
+                  <select className='w-50 h-10 text-center' defaultValue="Necropolis" id="leagueSelect">
                      <option value="Necropolis">Necropolis</option>
-                     <option value="Hardcore%20Necropolis">Hardcore Necropolis</option>
-                     <option value="Ruthless%20Necropolis">Ruthless Necropolis</option>
-                     <option value="HC%20Ruthless%20Necropolis">HardCore Ruthless Necropolis</option>
                      <option value="Standard">Standard</option>
-                     <option value="Hardcore">Hardcore</option>
+                     <option value="Ruthless%20Necropolis">Ruthless Necropolis</option>
                      <option value="Ruthless">Ruthless</option>
+                     <option value="Hardcore%20Necropolis">Hardcore Necropolis</option>
+                     <option value="Hardcore">Hardcore</option>      
+                     <option value="HC%20Ruthless%20Necropolis">HardCore Ruthless Necropolis</option>
                      <option value="Hardcore%20Ruthless">Hardcore Ruthless</option>
-                  </StyledSelect>
-                  <StyledButton>Go</StyledButton>
-                  <StyledButton onClick={(event) => {event.preventDefault();location.reload()}}>Restart</StyledButton>
-               </StyledSection>
-            </StyledForm>
+                  </select>
+                  <div className='flex flex-row gap-3'>
+                     <button className='text-center min-w-10 p-1 rounded-md'>Go</button>
+                     <button className='text-center min-w-10 p-1 rounded-md' onClick={(event) => {event.preventDefault();location.reload()}}>Restart</button>
+                  </div>
+               </div>
+            </form>
          </div>
          <StyledSplit className={`item_split-normal`}></StyledSplit>
          {loader? <div className="lds-dual-ring"></div> : <></>}
          {inputError? <p className='text-white text-center'>Build code not recognized! Try another Code.</p> : ''}
-         <StyledDiv>
+         <article className='flex flex-col items-center gap-4 m-10 text-white'>
          {!loader && !inputError && buildItemArray[0]?
                <ItemFeed items={buildItemArray} leagueChoice={leagueChoice} />
             :
                <></>
          }
-         </StyledDiv>
+         </article>
       </div>
    )
 };

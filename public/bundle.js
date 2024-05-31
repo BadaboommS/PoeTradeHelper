@@ -7854,7 +7854,7 @@
 	  }
 	}
 
-	var css_248z = "/*! tailwindcss v3.4.3 | MIT License | https://tailwindcss.com*/*,:after,:before{border:0 solid #e5e7eb;box-sizing:border-box}:after,:before{--tw-content:\"\"}:host,html{-webkit-text-size-adjust:100%;font-feature-settings:normal;-webkit-tap-highlight-color:transparent;font-family:ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-variation-settings:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4}body{line-height:inherit;margin:0}hr{border-top-width:1px;color:inherit;height:0}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-feature-settings:normal;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-size:1em;font-variation-settings:normal}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{border-collapse:collapse;border-color:inherit;text-indent:0}button,input,optgroup,select,textarea{font-feature-settings:inherit;color:inherit;font-family:inherit;font-size:100%;font-variation-settings:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{color:#9ca3af;opacity:1}input::placeholder,textarea::placeholder{color:#9ca3af;opacity:1}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{height:auto;max-width:100%}[hidden]{display:none}*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }.block{display:block}.flex{display:flex}.flex-wrap{flex-wrap:wrap}.border{border-width:1px}.text-center{text-align:center}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity))}.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}";
+	var css_248z = "/*! tailwindcss v3.4.3 | MIT License | https://tailwindcss.com*/*,:after,:before{border:0 solid #e5e7eb;box-sizing:border-box}:after,:before{--tw-content:\"\"}:host,html{-webkit-text-size-adjust:100%;font-feature-settings:normal;-webkit-tap-highlight-color:transparent;font-family:ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-variation-settings:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4}body{line-height:inherit;margin:0}hr{border-top-width:1px;color:inherit;height:0}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-feature-settings:normal;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-size:1em;font-variation-settings:normal}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{border-collapse:collapse;border-color:inherit;text-indent:0}button,input,optgroup,select,textarea{font-feature-settings:inherit;color:inherit;font-family:inherit;font-size:100%;font-variation-settings:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{color:#9ca3af;opacity:1}input::placeholder,textarea::placeholder{color:#9ca3af;opacity:1}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{height:auto;max-width:100%}[hidden]{display:none}*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }h1{font-size:1.5rem;line-height:2rem}h2{font-size:1.25rem}h2,h3{line-height:1.75rem}h3{font-size:1.125rem}button{background-color:#fff}.m-10{margin:2.5rem}.block{display:block}.flex{display:flex}.h-10{height:2.5rem}.min-w-10{min-width:2.5rem}.flex-row{flex-direction:row}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.justify-center{justify-content:center}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.rounded-md{border-radius:.375rem}.rounded-sm{border-radius:.125rem}.border{border-width:1px}.p-1{padding:.25rem}.p-2{padding:.5rem}.text-center{text-align:center}.text-sm{font-size:.875rem;line-height:1.25rem}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity))}.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}@media (min-width:768px){.md\\:flex-row{flex-direction:row}}";
 	styleInject(css_248z,{"insertAt":"top"});
 
 	/******************************************************************************
@@ -10135,7 +10135,7 @@
     gap: 10px;
     align-items: center;
 `;
-	const StyledSection$2 = ut.section`
+	const StyledSection$1 = ut.section`
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -10213,7 +10213,7 @@
 	  reactExports.useEffect(() => {
 	    tradeUrl = generateTradeUrl(tradeIlv, tradeLinks, tradeCorrupted, tradeDefence, tradeImplicits, tradeExplicits, item, league);
 	  }, []);
-	  return /*#__PURE__*/React.createElement(StyledSection$2, null, /*#__PURE__*/React.createElement("p", null, "Select desired modifiers for trade:"), /*#__PURE__*/React.createElement(StyledSplit$2, {
+	  return /*#__PURE__*/React.createElement(StyledSection$1, null, /*#__PURE__*/React.createElement("p", null, "Select desired modifiers for trade:"), /*#__PURE__*/React.createElement(StyledSplit$2, {
 	    className: `item_split-${item.rarity.toLowerCase()}`
 	  }), /*#__PURE__*/React.createElement(StyledItemModifierSection, {
 	    className: "item_stats"
@@ -10334,7 +10334,7 @@
 	}
 
 	//styledComponents
-	const StyledDiv$1 = ut.div`
+	const StyledDiv = ut.div`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -10361,7 +10361,7 @@
     font-size: calc(15px + 0.4vw);
     padding: 10px;
 `;
-	const StyledSection$1 = ut.section`
+	const StyledSection = ut.section`
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -10376,11 +10376,11 @@
 	  if (item.rarity === "UNIQUE") {
 	    itemName = item.name + " - " + item.base;
 	  }
-	  return /*#__PURE__*/React.createElement(StyledDiv$1, null, /*#__PURE__*/React.createElement(StyledContainer, null, /*#__PURE__*/React.createElement(StyledTitle, {
+	  return /*#__PURE__*/React.createElement(StyledDiv, null, /*#__PURE__*/React.createElement(StyledContainer, null, /*#__PURE__*/React.createElement(StyledTitle, {
 	    className: `item_border-${item.rarity.toLowerCase()} item_background-${item.rarity.toLowerCase()}`
 	  }, /*#__PURE__*/React.createElement("span", {
 	    className: `item_rarity-${item.rarity.toLowerCase()}`
-	  }, /*#__PURE__*/React.createElement("strong", null, itemName))), /*#__PURE__*/React.createElement(StyledSection$1, {
+	  }, /*#__PURE__*/React.createElement("strong", null, itemName))), /*#__PURE__*/React.createElement(StyledSection, {
 	    className: `item_border-${item.rarity.toLowerCase()} item_background-${item.rarity.toLowerCase()}`
 	  }, /*#__PURE__*/React.createElement("div", null, item.defence[0] ? item.defence.map((def, i) => {
 	    return /*#__PURE__*/React.createElement("p", {
@@ -10477,45 +10477,6 @@
 	let leagueChoice = "Standard";
 
 	//styledComponents
-	ut.p`
-   color: white;
-   text-align: center;
-`;
-	const StyledForm = ut.form`
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   gap: 20px;
-`;
-	const StyledSection = ut.section`
-   display: flex;
-   flex-direction: row;
-   flex-wrap: wrap;
-   justify-content: center;
-   align-items: center;
-   gap: 20px;
-`;
-	const StyledSelect = ut.select`
-   font-family: 'Fontin SmallCaps Regular';
-   height: 30px;
-   text-align: center;
-`;
-	const StyledButton = ut.button`
-   font-family: 'Fontin SmallCaps Regular';
-   min-width: 50px;
-   height: 30px;
-   text-align: center;
-`;
-	const StyledDiv = ut.div`
-   display: flex;
-   flex-direction: column;
-   flex-wrap: wrap;
-   align-items: baseline;
-   gap: 10px;
-   margin: 10px 0;
-   color: white;
-`;
 	const StyledSplit = ut.p`
     margin: 1rem auto;
 `;
@@ -10587,46 +10548,58 @@
 	    className: "text-white text-center"
 	  }, "POE Build Trade Helper"), /*#__PURE__*/React.createElement("p", {
 	    className: "text-white text-center"
-	  }, "Put build import code and generate POE.trade URL for each Item!"), /*#__PURE__*/React.createElement(StyledForm, {
+	  }, "Put build import code and generate POE.trade URL for each Item!"), /*#__PURE__*/React.createElement("form", {
+	    className: "flex flex-col justify-center items-center gap-2",
 	    onSubmit: handleSubmit
 	  }, /*#__PURE__*/React.createElement("textarea", {
+	    className: "rounded-sm p-2 text-sm",
 	    placeholder: "Put build import code here",
 	    type: "text",
 	    name: "importCode",
 	    rows: "5",
 	    cols: "50",
 	    required: true
-	  }), /*#__PURE__*/React.createElement(StyledSection, null, /*#__PURE__*/React.createElement(StyledSelect, {
+	  }), /*#__PURE__*/React.createElement("div", {
+	    className: "flex flex-col md:flex-row justify-center items-center gap-2"
+	  }, /*#__PURE__*/React.createElement("select", {
+	    className: "w-50 h-10 text-center",
 	    defaultValue: "Necropolis",
 	    id: "leagueSelect"
 	  }, /*#__PURE__*/React.createElement("option", {
 	    value: "Necropolis"
 	  }, "Necropolis"), /*#__PURE__*/React.createElement("option", {
-	    value: "Hardcore%20Necropolis"
-	  }, "Hardcore Necropolis"), /*#__PURE__*/React.createElement("option", {
-	    value: "Ruthless%20Necropolis"
-	  }, "Ruthless Necropolis"), /*#__PURE__*/React.createElement("option", {
-	    value: "HC%20Ruthless%20Necropolis"
-	  }, "HardCore Ruthless Necropolis"), /*#__PURE__*/React.createElement("option", {
 	    value: "Standard"
 	  }, "Standard"), /*#__PURE__*/React.createElement("option", {
-	    value: "Hardcore"
-	  }, "Hardcore"), /*#__PURE__*/React.createElement("option", {
+	    value: "Ruthless%20Necropolis"
+	  }, "Ruthless Necropolis"), /*#__PURE__*/React.createElement("option", {
 	    value: "Ruthless"
 	  }, "Ruthless"), /*#__PURE__*/React.createElement("option", {
+	    value: "Hardcore%20Necropolis"
+	  }, "Hardcore Necropolis"), /*#__PURE__*/React.createElement("option", {
+	    value: "Hardcore"
+	  }, "Hardcore"), /*#__PURE__*/React.createElement("option", {
+	    value: "HC%20Ruthless%20Necropolis"
+	  }, "HardCore Ruthless Necropolis"), /*#__PURE__*/React.createElement("option", {
 	    value: "Hardcore%20Ruthless"
-	  }, "Hardcore Ruthless")), /*#__PURE__*/React.createElement(StyledButton, null, "Go"), /*#__PURE__*/React.createElement(StyledButton, {
+	  }, "Hardcore Ruthless")), /*#__PURE__*/React.createElement("div", {
+	    className: "flex flex-row gap-3"
+	  }, /*#__PURE__*/React.createElement("button", {
+	    className: "text-center min-w-10 p-1 rounded-md"
+	  }, "Go"), /*#__PURE__*/React.createElement("button", {
+	    className: "text-center min-w-10 p-1 rounded-md",
 	    onClick: event => {
 	      event.preventDefault();
 	      location.reload();
 	    }
-	  }, "Restart")))), /*#__PURE__*/React.createElement(StyledSplit, {
+	  }, "Restart"))))), /*#__PURE__*/React.createElement(StyledSplit, {
 	    className: `item_split-normal`
 	  }), loader ? /*#__PURE__*/React.createElement("div", {
 	    className: "lds-dual-ring"
 	  }) : /*#__PURE__*/React.createElement(React.Fragment, null), inputError ? /*#__PURE__*/React.createElement("p", {
 	    className: "text-white text-center"
-	  }, "Build code not recognized! Try another Code.") : '', /*#__PURE__*/React.createElement(StyledDiv, null, !loader && !inputError && buildItemArray[0] ? /*#__PURE__*/React.createElement(ItemFeed, {
+	  }, "Build code not recognized! Try another Code.") : '', /*#__PURE__*/React.createElement("article", {
+	    className: "flex flex-col items-center gap-4 m-10 text-white"
+	  }, !loader && !inputError && buildItemArray[0] ? /*#__PURE__*/React.createElement(ItemFeed, {
 	    items: buildItemArray,
 	    leagueChoice: leagueChoice
 	  }) : /*#__PURE__*/React.createElement(React.Fragment, null)));

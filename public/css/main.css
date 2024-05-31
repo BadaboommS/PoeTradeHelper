@@ -28,6 +28,9 @@ body{
 p{
     margin: 0.5em;
 }
+textarea::placeholder{
+    font-size:20px;
+}
 
 /*Item socket*/
 .socket-R{
