@@ -118,13 +118,13 @@
                         {
                             "stat_type": "DEX",
                             "list": [
-                                "Shabby Jerkin", "Scale Vest", "Light Brigandine", "Strapped Leather", "Buckskin Tunic", "Scale Doublet", "Infantry Brigandine", "Wild Leather", "Full Leather", "Full Scale Armour", "Sun Leather", "Soldiers Brigandine", "Thiefs Garb", "Field Lamellar", "Eelskin Tunic", "Wyrmscale Doublet", "Frontier Leather", "Hussar Brigandine", "Glorious Leather", "Full Wyrmscale", "Coronal Leather", "Commanders Brigandine", "Cutthroats Garb", "Battle Lamellar", "Sharkskin Tunic", "Dragonscale Doublet", "Destiny Leather", "Desert Brigandine", "Exquisite Leather", "Full Dragonscale", "Zodiac Leather", "Generals Brigandine", "Assassins Garb", "Triumphant Lamellar", "Sacrificial Garb"
+                                "Shabby Jerkin", "Strapped Leather", "Buckskin Tunic", "Wild Leather", "Full Leather", "Sun Leather", "Thiefs Garb", "Eelskin Tunic", "Frontier Leather", "Glorious Leather", "Coronal Leather", "Cutthroats Garb", "Sharkskin Tunic", "Destiny Leather", "Exquisite Leather", "Zodiac Leather", "Assassins Garb"
                             ]
                         },
                         {
                             "stat_type": "INT",
                             "list": [
-                                "Simple Robe", "Chainmail Vest", "Padded Vest", "Chainmail Tunic", "Oiled Vest", "Silken Vest", "Ringmail Coat", "Scholars Robe", "Padded Jacket", "Chainmail Doublet", "Oiled Coat", "Silken Garb", "Mages Vestment", "Full Ringmail", "Scarlet Raiment", "Silk Robe", "Full Chainmail", "Waxed Garb", "Cabalist Regalia", "Holy Chainmail", "Bone Armour", "Sages Robe", "Latticed Ringmail", "Quilted Jacket", "Silken Wrap", "Crusader Chainmail", "Sleek Coat", "Conjurers Vestment", "Ornate Ringmail", "Crimson Raiment", "Spidersilk Robe", "Chain Hauberk", "Lacquered Garb", "Destroyer Regalia", "Devout Chainmail", "Savants Robe", "Crypt Armour", "Loricated Ringmail", "Necromancer Silks", "Sentinel Jacket", "Conquest Chainmail", "Occultists Vestment", "Varnished Coat", "Elegant Ringmail", "Widowsilk Robe", "Blood Raiment", "Saints Hauberk", "Vaal Regalia", "Sadist Garb", "Saintly Chainmail", "Carnal Armour"
+                                "Simple Robe", "Silken Vest", "Scholars Robe", "Silken Garb", "Mages Vestment", "Silk Robe", "Cabalist Regalia", "Sages Robe", "Silken Wrap", "Conjurers Vestment", "Spidersilk Robe", "Destroyer Regalia", "Savants Robe", "Necromancer Silks", "Occultists Vestment", "Widowsilk Robe", "Vaal Regalia"
                             ]
                         },
                         {
@@ -167,13 +167,13 @@
                         {
                             "stat_type": "DEX",
                             "list": [
-                                "Rawhide Boots", "Leatherscale Boots", "Goathide Boots", "Ironscale Boots", "Deerskin Boots", "Bronzescale Boots", "Nubuck Boots", "Steelscale Boots", "Eelskin Boots", "Serpentscale Boots", "Sharkskin Boots", "Wyrmscale Boots", "Shagreen Boots", "Hydrascale Boots", "Stealth Boots", "Dragonscale Boots", "Slink Boots", "Two-Toned Boots"
+                                "Rawhide Boots", "Goathide Boots", "Deerskin Boots", "Nubuck Boots", "Eelskin Boots", "Sharkskin Boots", "Shagreen Boots", "Stealth Boots", "Slink Boots"
                             ]
                         },
                         {
                             "stat_type": "INT",
                             "list": [
-                                "Wool Shoes", "Chain Boots", "Wrapped Boots", "Velvet Slippers", "Ringmail Boots", "Strapped Boots", "Silk Slippers", "Clasped Boots", "Mesh Boots", "Scholar Boots", "Shackled Boots", "Riveted Boots", "Satin Slippers", "Zealot Boots", "Trapper Boots", "Samite Slippers", "Ambush Boots", "Soldier Boots", "Conjurer Boots", "Carnal Boots", "Legion Boots", "Arcanist Slippers", "Assassins Boots", "Crusader Boots", "Sorcerer Boots", "Murder Boots", "Two-Toned Boots", "Two-Toned Boots"
+                                "Wool Shoes", "Velvet Slippers", "Silk Slippers", "Scholar Boots", "Satin Slippers", "Samite Slippers", "Conjurer Boots", "Arcanist Slippers", "Sorcerer Boots"
                             ]
                         },
                         {
@@ -210,13 +210,13 @@
                         {
                             "stat_type": "DEX",
                             "list": [
-                                "Rawhide Gloves", "Fishscale Gauntlets", "Wrapped Mitts", "Goathide Gloves", "Ironscale Gauntlets", "Strapped Mitts", "Deerskin Gloves", "Bronzescale Gauntlets", "Clasped Mitts", "Nubuck Gloves", "Steelscale Gauntlets", "Trapper Mitts", "Eelskin Gloves", "Serpentscale Gauntlets", "Sharkskin Gloves", "Ambush Mitts", "Wyrmscale Gauntlets", "Carnal Mitts", "Shagreen Gloves", "Assassins Mitts", "Hydrascale Gauntlets", "Stealth Gloves", "Dragonscale Gauntlets", "Murder Mitts", "Gripped Gloves", "Slink Gloves"
+                                "Rawhide Gloves", "Goathide Gloves", "Deerskin Gloves", "Nubuck Gloves", "Eelskin Gloves", "Sharkskin Gloves", "Shagreen Gloves", "Stealth Gloves", "Gripped Gloves", "Slink Gloves"
                             ]
                         },
                         {
                             "stat_type": "INT",
                             "list": [
-                                "Wool Gloves", "Chain Gloves", "Velvet Gloves", "Ringmail Gloves", "Silk Gloves", "Mesh Gloves", "Embroidered Gloves", "Riveted Gloves", "Satin Gloves", "Zealot Gloves", "Samite Gloves", "Soldier Gloves", "Conjurer Gloves", "Legion Gloves", "Arcanist Gloves", "Crusader Gloves", "Sorcerer Gloves", "Fingerless Silk Gloves"
+                                "Wool Gloves", "Velvet Gloves", "Silk Gloves", "Embroidered Gloves", "Satin Gloves", "Samite Gloves", "Conjurer Gloves", "Arcanist Gloves", "Sorcerer Gloves", "Fingerless Silk Gloves"
                             ]  
                         },
                         {
@@ -253,13 +253,13 @@
                         {
                             "stat_type": "DEX",
                             "list": [
-                                "Leather Cap", "Battered Helm", "Scare Mask", "Tricorne", "Plague Mask", "Sallet", "Iron Mask", "Leather Hood", "Visored Sallet", "Festival Mask", "Wolf Pelt", "Gilded Sallet", "Golden Mask", "Secutor Helm", "Raven Mask", "Hunter Hood", "Fencer Helm", "Callous Mask", "Noble Tricorne", "Lacquered Helmet", "Regicide Mask", "Ursine Pelt", "Harlequin Mask", "Fluted Bascinet", "Silken Hood", "Vaal Mask", "Pig-Faced Bascinet", "Sinner Tricorne", "Nightmare Bascinet", "Deicide Mask", "Lion Pelt"
+                                "Leather Cap", "Tricorne", "Leather Hood", "Wolf Pelt", "Hunter Hood", "Noble Tricorne", "Ursine Pelt", "Silken Hood", "Sinner Tricorne", "Lion Pelt"
                             ]
                         },
                         {
                             "stat_type": "INT",
                             "list": [
-                                "Vine Circlet", "Rusted Coif", "Iron Circlet", "Soldier Helmet", "Torture Cage", "Great Helmet", "Tribal Circlet", "Crusader Helmet", "Bone Circlet", "Aventail Helmet", "Lunaris Circlet", "Zealot Helmet", "Steel Circlet", "Great Crown", "Necromancer Circlet", "Magistrate Crown", "Solaris Circlet", "Prophet Crown", "Mind Cage", "Praetor Crown", "Hubris Circlet", "Bone Helmet"
+                                "Vine Circlet", "Iron Circlet", "Torture Cage", "Tribal Circlet", "Bone Circlet", "Lunaris Circlet", "Steel Circlet", "Necromancer Circlet", "Solaris Circlet", "Mind Cage", "Hubris Circlet"
                             ]
                         },
                         {
@@ -296,13 +296,13 @@
                         {
                             "stat_type": "DEX",
                             "list": [
-                                "Goathide Buckler", "Rotted Round Shield", "Spiked Bundle", "Pine Buckler", "Fir Round Shield", "Driftwood Spiked Shield", "Painted Buckler", "Studded Round Shield", "Alloyed Spiked Shield", "Hammered Buckler", "Scarlet Round Shield", "Burnished Spiked Shield", "War Buckler", "Splendid Round Shield", "Ornate Spiked Shield", "Gilded Buckler", "Oak Buckler", "Maple Round Shield", "Redwood Spiked Shield", "Enameled Buckler", "Spiked Round Shield", "Compound Spiked Shield", "Corrugated Buckler", "Crimson Round Shield", "Polished Spiked Shield", "Battle Buckler", "Golden Buckler", "Baroque Round Shield", "Sovereign Spiked Shield", "Ironwood Buckler", "Teak Round Shield", "Alder Spiked Shield", "Lacquered Buckler", "Spiny Round Shield", "Ezomyte Spiked Shield", "Vaal Buckler", "Crusader Buckler", "Cardinal Round Shield", "Mirrored Spiked Shield", "Imperial Buckler", "Elegant Round Shield", "Supreme Spiked Shield"
+                                "Goathide Buckler", "Pine Buckler", "Painted Buckler", "Hammered Buckler", "War Buckler", "Gilded Buckler", "Oak Buckler", "Enameled Buckler", "Corrugated Buckler", "Battle Buckler", "Golden Buckler", "Ironwood Buckler", "Lacquered Buckler", "Vaal Buckler", "Crusader Buckler", "Imperial Buckler"
                             ]
                         },
                         {
                             "stat_type": "INT",
                             "list": [
-                                "Twig Spirit Shield", "Plank Kite Shield", "Yew Spirit Shield", "Linden Kite Shield", "Bone Spirit Shield", "Reinforced Kite Shield", "Tarnished Spirit Shield", "Layered Kite Shield", "Jingling Spirit Shield", "Brass Spirit Shield", "Ceremonial Kite Shield", "Walnut Spirit Shield", "Etched Kite Shield", "Ivory Spirit Shield", "Ancient Spirit Shield", "Steel Kite Shield", "Chiming Spirit Shield", "Laminated Kite Shield", "Thorium Spirit Shield", "Angelic Kite Shield", "Lacewood Spirit Shield", "Fossilised Spirit Shield", "Branded Kite Shield", "Vaal Spirit Shield", "Champion Kite Shield", "Harmonic Spirit Shield", "Mosaic Kite Shield", "Titanium Spirit Shield", "Archon Kite Shield"
+                                "Twig Spirit Shield", "Yew Spirit Shield", "Bone Spirit Shield", "Tarnished Spirit Shield", "Jingling Spirit Shield", "Brass Spirit Shield", "Walnut Spirit Shield", "Ivory Spirit Shield", "Ancient Spirit Shield", "Chiming Spirit Shield", "Thorium Spirit Shield", "Lacewood Spirit Shield", "Fossilised Spirit Shield", "Vaal Spirit Shield", "Harmonic Spirit Shield", "Titanium Spirit Shield"
                             ]
                         },
                         {
