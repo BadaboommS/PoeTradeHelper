@@ -3,6 +3,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import babel from '@rollup/plugin-babel';
 import replace from '@rollup/plugin-replace';
 import typescript from '@rollup/plugin-typescript';
+import postcss from 'rollup-plugin-postcss';
 
 export default {
    input: 'src/index.js',
@@ -11,6 +12,16 @@ export default {
       format: 'iife'
    },
    plugins: [
+      postcss({
+         config: {
+           path: './postcss.config.js',
+         },
+         extensions: ['.css'],
+         minimize: true,
+         inject: {
+           insertAt: 'top',
+         },
+       }),
       nodeResolve({
          extensions: ['.js', '.jsx']
       }),

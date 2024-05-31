@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 //utils
 import { isIterable } from './utils/isIterable';
@@ -9,17 +9,13 @@ import { handleMagic } from './utils/handleMagic';
 import { translateModifiers } from './utils/translateModifiers';
 import { addOrder } from './utils/addOrder';
 //components
-import { Item } from './components/Item';
+import ItemFeed from './components/ItemFeed';
 
 //init
 let buildItemArray = [];
 let leagueChoice = "Standard";
 
 //styledComponents
-const StyledH1 = styled.h1`
-   color: white;
-   text-align: center;
-`
 const StyledP = styled.p`
    color: white;
    text-align: center;
@@ -135,8 +131,8 @@ export function App() {
    return (
       <div>
          <div>
-            <StyledH1>POE Build Trade Helper</StyledH1>
-            <StyledP>Put build import code and generate POE.trade URL for each Item!</StyledP>
+            <h1 className='text-white text-center'>POE Build Trade Helper</h1>
+            <p className='text-white text-center'>Put build import code and generate POE.trade URL for each Item!</p>
             <StyledForm onSubmit={handleSubmit}>
                <textarea placeholder="Put build import code here" type="text" name="importCode" rows='5' cols="50" required></textarea>
                <StyledSection>
@@ -157,21 +153,10 @@ export function App() {
          </div>
          <StyledSplit className={`item_split-normal`}></StyledSplit>
          {loader? <div className="lds-dual-ring"></div> : <></>}
-         {inputError? <StyledP>Build code not recognized! Try another Code.</StyledP> : ''}
+         {inputError? <p className='text-white text-center'>Build code not recognized! Try another Code.</p> : ''}
          <StyledDiv>
-         {buildItemArray[0]?
-               buildItemArray.map((item, i) => {
-                  return (
-                     <Fragment key={i}>
-                        <Item 
-                           itemNumber = {i}
-                           item = {item}
-                           league = {leagueChoice}
-                        />
-                        <StyledSplit className={`item_split-normal`}></StyledSplit>
-                     </Fragment>
-                  );
-               })
+         {!loader && !inputError && buildItemArray[0]?
+               <ItemFeed items={buildItemArray} leagueChoice={leagueChoice} />
             :
                <></>
          }
