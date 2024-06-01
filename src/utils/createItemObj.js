@@ -13,6 +13,17 @@ export function createItemObj(item, allItemData){
         })
     }
 
+    //Corrupted
+    let itemIsCorrupted = false;
+    try{
+        if(cleanItemInfoArray[cleanItemInfoArray.length-1] === 'Corrupted'){
+            itemIsCorrupted = true;
+            cleanItemInfoArray.pop();
+        }
+    }catch(err){
+        console.log("Corruption parse Problem !", err);
+    }
+
     //Item Rarity
     let itemRarity;
     try{
@@ -30,6 +41,8 @@ export function createItemObj(item, allItemData){
     let itemName;
     let itemBase;
     let itemBaseInfo;
+    let flask = null;
+    let abyss = null;
 
     if(cleanItemInfoArray[0].indexOf('Flask') !== -1){
         itemName = cleanItemInfoArray[0];
@@ -39,8 +52,16 @@ export function createItemObj(item, allItemData){
         cleanItemInfoArray.shift();
         
         //Base Info
-        let optional = true;
-        itemBaseInfo = findItemBaseType(itemName, allItemData, optional);
+        flask = true;
+        itemBaseInfo = findItemBaseType(itemName, allItemData, flask, abyss);
+        itemBase = itemBaseInfo.item_base;
+    }else if(itemRarity !== "UNIQUE" && cleanItemInfoArray[0].indexOf('Eye Jewel') !== -1){
+        itemName = cleanItemInfoArray[0];
+        cleanItemInfoArray.shift();
+        
+        //Base Info
+        let abyss = true;
+        itemBaseInfo = findItemBaseType(itemName, allItemData, flask, abyss);
         itemBase = itemBaseInfo.item_base;
     }else{
         itemName = cleanItemInfoArray[0];
@@ -69,12 +90,8 @@ export function createItemObj(item, allItemData){
     //Item Lv
     let itemIlv = null;
     try{
-        cleanItemInfoArray.map((line) => {
-            if(line.includes("Item Level:")){
-                itemIlv = line.split(": ")[1];
-            }
-        })
-        if(itemIlv !== null){
+        if(cleanItemInfoArray[0].includes("Item Level:")){
+            itemIlv = cleanItemInfoArray[0].split(": ")[1];
             cleanItemInfoArray.shift();
         }
     }catch(err){
@@ -84,12 +101,8 @@ export function createItemObj(item, allItemData){
     //Item Sockets
     let itemSockets = [];
     try{
-        cleanItemInfoArray.map((line) => {
-            if(line.includes("Sockets:")){
-                itemSockets = line.split(": ")[1].split(/-| /);
-            }
-        })
-        if(itemSockets.length > 0){
+        if(cleanItemInfoArray[0].includes("Sockets:")){
+            itemSockets = cleanItemInfoArray[0].split(": ")[1].split(/-| /);
             cleanItemInfoArray.shift();
         }
     }catch(err){
@@ -98,22 +111,20 @@ export function createItemObj(item, allItemData){
 
     //Item Implicit
     let itemImplicitNumber = 0;
-    let itemImplicitIndex;
     let itemImplicitArray = [];
     try{
-        cleanItemInfoArray.map((line, i) => {
-            if(line.includes("Implicits:")){
-                itemImplicitNumber = line.split(": ")[1];
-                itemImplicitIndex = i;
-            }
-        });
+        if(cleanItemInfoArray[0].includes("Implicits:")){
+                itemImplicitNumber = cleanItemInfoArray[0].split(": ")[1];
+                cleanItemInfoArray.shift();
+        }
         if(itemImplicitNumber !== 0){
             for(let i = 1; i <= itemImplicitNumber; i++){
                 let newImplicit = {
-                    text: cleanItemInfoArray[itemImplicitIndex+i],
+                    text: cleanItemInfoArray[i-1],
                     display: false
                 };
                 itemImplicitArray.push(newImplicit);
+                cleanItemInfoArray.shift();
             }
         };
     }catch(err){
@@ -122,19 +133,15 @@ export function createItemObj(item, allItemData){
 
     //Item Modifiers
     let itemExplicitsArray = [];
-    let itemIsCorrupted = false;
     try{
-        for(let i = (itemImplicitIndex+itemImplicitArray.length+1); i < cleanItemInfoArray.length; i++){
-            if(cleanItemInfoArray[i].includes("Corrupted")){
-                itemIsCorrupted = true;
-            }else{
-                let newExplicit = {
-                    text: cleanItemInfoArray[i],
-                    display: false
-                };
-                itemExplicitsArray.push(newExplicit);
+        while(cleanItemInfoArray.length > 0){
+            let newExplicit = {
+                text: cleanItemInfoArray[0],
+                display: false
             };
-        };
+            itemExplicitsArray.push(newExplicit);
+            cleanItemInfoArray.shift();
+        }
     }catch(err){
         console.log(err);
     }

@@ -9464,16 +9464,36 @@
 	  }
 	}
 
-	function findItemBaseType(itemBase, allItemData, flask) {
+	function findItemBaseType(itemBase, allItemData, flask, jewel) {
 	  if (flask === true) {
 	    for (let i = 0, l = allItemData[3].list[0].list.length; i < l; i++) {
 	      if (itemBase.includes(allItemData[3].list[0].list[i])) {
 	        const item_base = allItemData[3].list[0].list[i];
+	        const item_sort = allItemData[3].list[0].sort_priority ? allItemData[3].list[0].sort_priority : null;
 	        const item_category = "flasks";
 	        const base_type = "Flask";
 	        const base_query = "flask";
 	        const base_info = {
 	          item_base: item_base,
+	          item_sort: item_sort,
+	          item_category: item_category,
+	          base_type: base_type,
+	          base_query: base_query
+	        };
+	        return base_info;
+	      }
+	    }
+	  } else if (jewel === true) {
+	    for (let i = 0, l = allItemData[4].list[2].list.length; i < l; i++) {
+	      if (itemBase.includes(allItemData[4].list[2].list[i])) {
+	        const item_base = allItemData[4].list[2].list[i];
+	        const item_sort = allItemData[4].list[2].sort_priority ? allItemData[4].list[2].sort_priority : null;
+	        const item_category = "jewels";
+	        const base_type = "Abyss Jewel";
+	        const base_query = "jewel.abyss";
+	        const base_info = {
+	          item_base: item_base,
+	          item_sort: item_sort,
 	          item_category: item_category,
 	          base_type: base_type,
 	          base_query: base_query
@@ -9517,6 +9537,17 @@
 	    });
 	  }
 
+	  //Corrupted
+	  let itemIsCorrupted = false;
+	  try {
+	    if (cleanItemInfoArray[cleanItemInfoArray.length - 1] === 'Corrupted') {
+	      itemIsCorrupted = true;
+	      cleanItemInfoArray.pop();
+	    }
+	  } catch (err) {
+	    console.log("Corruption parse Problem !", err);
+	  }
+
 	  //Item Rarity
 	  let itemRarity;
 	  try {
@@ -9534,6 +9565,8 @@
 	  let itemName;
 	  let itemBase;
 	  let itemBaseInfo;
+	  let flask = null;
+	  let abyss = null;
 	  if (cleanItemInfoArray[0].indexOf('Flask') !== -1) {
 	    itemName = cleanItemInfoArray[0];
 	    if (cleanItemInfoArray[1].indexOf('Flask' !== -1)) {
@@ -9542,8 +9575,16 @@
 	    cleanItemInfoArray.shift();
 
 	    //Base Info
-	    let optional = true;
-	    itemBaseInfo = findItemBaseType(itemName, allItemData, optional);
+	    flask = true;
+	    itemBaseInfo = findItemBaseType(itemName, allItemData, flask, abyss);
+	    itemBase = itemBaseInfo.item_base;
+	  } else if (itemRarity !== "UNIQUE" && cleanItemInfoArray[0].indexOf('Eye Jewel') !== -1) {
+	    itemName = cleanItemInfoArray[0];
+	    cleanItemInfoArray.shift();
+
+	    //Base Info
+	    let abyss = true;
+	    itemBaseInfo = findItemBaseType(itemName, allItemData, flask, abyss);
 	    itemBase = itemBaseInfo.item_base;
 	  } else {
 	    itemName = cleanItemInfoArray[0];
@@ -9572,12 +9613,8 @@
 	  //Item Lv
 	  let itemIlv = null;
 	  try {
-	    cleanItemInfoArray.map(line => {
-	      if (line.includes("Item Level:")) {
-	        itemIlv = line.split(": ")[1];
-	      }
-	    });
-	    if (itemIlv !== null) {
+	    if (cleanItemInfoArray[0].includes("Item Level:")) {
+	      itemIlv = cleanItemInfoArray[0].split(": ")[1];
 	      cleanItemInfoArray.shift();
 	    }
 	  } catch (err) {
@@ -9587,12 +9624,8 @@
 	  //Item Sockets
 	  let itemSockets = [];
 	  try {
-	    cleanItemInfoArray.map(line => {
-	      if (line.includes("Sockets:")) {
-	        itemSockets = line.split(": ")[1].split(/-| /);
-	      }
-	    });
-	    if (itemSockets.length > 0) {
+	    if (cleanItemInfoArray[0].includes("Sockets:")) {
+	      itemSockets = cleanItemInfoArray[0].split(": ")[1].split(/-| /);
 	      cleanItemInfoArray.shift();
 	    }
 	  } catch (err) {
@@ -9601,22 +9634,20 @@
 
 	  //Item Implicit
 	  let itemImplicitNumber = 0;
-	  let itemImplicitIndex;
 	  let itemImplicitArray = [];
 	  try {
-	    cleanItemInfoArray.map((line, i) => {
-	      if (line.includes("Implicits:")) {
-	        itemImplicitNumber = line.split(": ")[1];
-	        itemImplicitIndex = i;
-	      }
-	    });
+	    if (cleanItemInfoArray[0].includes("Implicits:")) {
+	      itemImplicitNumber = cleanItemInfoArray[0].split(": ")[1];
+	      cleanItemInfoArray.shift();
+	    }
 	    if (itemImplicitNumber !== 0) {
 	      for (let i = 1; i <= itemImplicitNumber; i++) {
 	        let newImplicit = {
-	          text: cleanItemInfoArray[itemImplicitIndex + i],
+	          text: cleanItemInfoArray[i - 1],
 	          display: false
 	        };
 	        itemImplicitArray.push(newImplicit);
+	        cleanItemInfoArray.shift();
 	      }
 	    }
 	    ;
@@ -9626,21 +9657,15 @@
 
 	  //Item Modifiers
 	  let itemExplicitsArray = [];
-	  let itemIsCorrupted = false;
 	  try {
-	    for (let i = itemImplicitIndex + itemImplicitArray.length + 1; i < cleanItemInfoArray.length; i++) {
-	      if (cleanItemInfoArray[i].includes("Corrupted")) {
-	        itemIsCorrupted = true;
-	      } else {
-	        let newExplicit = {
-	          text: cleanItemInfoArray[i],
-	          display: false
-	        };
-	        itemExplicitsArray.push(newExplicit);
-	      }
-	      ;
+	    while (cleanItemInfoArray.length > 0) {
+	      let newExplicit = {
+	        text: cleanItemInfoArray[0],
+	        display: false
+	      };
+	      itemExplicitsArray.push(newExplicit);
+	      cleanItemInfoArray.shift();
 	    }
-	    ;
 	  } catch (err) {
 	    console.log(err);
 	  }
@@ -9807,33 +9832,23 @@
 	  }
 	}
 
-	function dynamicSort(one, two) {
-	  return function (a, b) {
-	    return a[one][two] < b[one][two] ? -1 : a[one][two] > b[one][two] ? 1 : 0;
-	  };
-	}
-
 	function addOrder(buildItemArray) {
+	  let tempBuildItemArray = [];
 	  let tempArrayWeapons = buildItemArray.filter(item => item.baseInfo.item_category === "weapons");
 	  let tempArrayArmour = buildItemArray.filter(item => item.baseInfo.item_category === "armour");
-	  tempArrayArmour.sort(dynamicSort('baseInfo', 'item_sort'));
+	  tempArrayArmour.sort((a, b) => a.baseInfo.item_sort < b.baseInfo.item_sort ? -1 : a.baseInfo.item_sort > b.baseInfo.item_sort ? 1 : 0);
 	  let tempArrayAccessories = buildItemArray.filter(item => item.baseInfo.item_category === "accessories");
-	  tempArrayAccessories.sort(dynamicSort('baseInfo', 'item_sort'));
+	  tempArrayAccessories.sort((a, b) => a.baseInfo.item_sort < b.baseInfo.item_sort ? -1 : a.baseInfo.item_sort > b.baseInfo.item_sort ? 1 : 0);
 	  let tempArrayFlask = buildItemArray.filter(item => item.baseInfo.item_category === "flasks");
 	  let tempArrayJewel = buildItemArray.filter(item => item.baseInfo.item_category === "jewels");
-	  tempArrayJewel.sort(dynamicSort('baseInfo', 'item_sort'));
+	  tempArrayJewel.sort((a, b) => a.baseInfo.item_sort < b.baseInfo.item_sort ? -1 : a.baseInfo.item_sort > b.baseInfo.item_sort ? 1 : 0);
 	  let tempArrayUndefined = buildItemArray.filter(item => item.baseInfo.item_category === undefined);
-	  return [...tempArrayWeapons, ...tempArrayArmour, ...tempArrayAccessories, ...tempArrayFlask, ...tempArrayJewel, ...tempArrayUndefined];
+	  tempBuildItemArray = [...tempArrayWeapons, ...tempArrayArmour, ...tempArrayAccessories, ...tempArrayFlask, ...tempArrayJewel, ...tempArrayUndefined];
+	  return tempBuildItemArray;
 	}
 
 	function generateTradeUrl(tradeIlv, tradeLinks, tradeCorrupted, tradeDefence, tradeImplicits, tradeExplicits, item, league) {
 	  const leagueChoice = league;
-	  //console.log('defence: ', tradeDefence)
-	  //console.log('tradeIlv: ', tradeIlv);
-	  //console.log('tradeLinks: ', tradeLinks);
-	  //console.log('tradeCorrupted: ', tradeCorrupted)
-	  //console.log("implicits: ", tradeImplicits);
-	  //console.log("explicits: ", tradeExplicits);
 
 	  //setup Filters
 
@@ -9844,18 +9859,6 @@
 	  if (item.rarity !== "UNIQUE") {
 	    itemRarity = "nonunique";
 	    itemBaseQuery = `,"type":"${item.base}"`;
-	    if (item.base === "Charm") {
-	      itemBaseQuery = ``;
-	      itemCategory = `,"category": {"option": "azmeri.charm"}`;
-	    }
-	    if (item.base === "Abyss Jewel") {
-	      itemBaseQuery = ``;
-	      itemCategory = `,"category": {"option": "jewel.abyss"}`;
-	    }
-	    if (item.base === "energy blade") {
-	      itemBaseQuery = ``;
-	      itemCategory = `,"category": {"option": "weapon.one"}`;
-	    }
 	  }
 
 	  //armour Filter
@@ -10237,10 +10240,9 @@
 	      let tempItem = createItemObj(i, allItemData);
 	      tempItemArray.push(tempItem);
 	    }
+
 	    //Translate mods for filter
 	    tempItemArray.map(item => {
-	      //handleMagic(item, allItems);
-	      //addOrder(item, allItems);
 	      translateModifiers(allModifiers, item.implicits, 'implicit');
 	      translateModifiers(allModifiers, item.explicits, 'explicit');
 	    });

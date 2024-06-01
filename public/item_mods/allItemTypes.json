@@ -131,7 +131,7 @@
                     "base_query": "armour.chest",
                     "default_query": "armour.chest",
                     "list": [
-                        "Simple Robe", "Silken Vest", "Scholars Robe", "Silken Garb", "Mages Vestment", "Silk Robe", "Cabalist Regalia", "Sages Robe", "Silken Wrap", "Conjurers Vestment", "Spidersilk Robe", "Destroyer Regalia", "Savants Robe", "Necromancer Silks", "Occultists Vestment", "Widowsilk Robe", "Vaal Regalia"
+                        "Simple Robe", "Silken Vest", "Scholars Robe", "Silken Garb", "Mages Vestment", "Silk Robe", "Cabalist Regalia", "Sage's Robe", "Silken Wrap", "Conjurers Vestment", "Spidersilk Robe", "Destroyer Regalia", "Savants Robe", "Necromancer Silks", "Occultists Vestment", "Widowsilk Robe", "Vaal Regalia"
                     ]
                 },
                 {
@@ -452,7 +452,7 @@
                     "base_query": "accessory.ring",
                     "default_query": "accessory.ring",
                     "list": [
-                        "Amethyst Ring", "Coral Ring", "Diamond Ring", "Gold Ring", "Iron Ring", "Moonstone Ring", "Opal Ring", "Paua Ring", "Prismatic Ring", "Ruby Ring", "Sapphire Ring", "Steel Ring", "Topaz Ring", "Two-Stone Ring", "Unset Ring"
+                        "Amethyst Ring", "Coral Ring", "Diamond Ring", "Gold Ring", "Iron Ring", "Moonstone Ring", "Opal Ring", "Paua Ring", "Prismatic Ring", "Ruby Ring", "Sapphire Ring", "Steel Ring", "Topaz Ring", "Two-Stone Ring", "Unset Ring", "Bone Ring"
                     ]
                 },
                 {

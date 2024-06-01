@@ -1,11 +1,5 @@
 export function generateTradeUrl(tradeIlv, tradeLinks, tradeCorrupted, tradeDefence, tradeImplicits, tradeExplicits, item, league){
     const leagueChoice = league;
-    //console.log('defence: ', tradeDefence)
-    //console.log('tradeIlv: ', tradeIlv);
-    //console.log('tradeLinks: ', tradeLinks);
-    //console.log('tradeCorrupted: ', tradeCorrupted)
-    //console.log("implicits: ", tradeImplicits);
-    //console.log("explicits: ", tradeExplicits);
 
     //setup Filters
 
@@ -16,18 +10,6 @@ export function generateTradeUrl(tradeIlv, tradeLinks, tradeCorrupted, tradeDefe
     if(item.rarity !== "UNIQUE"){
       itemRarity = "nonunique";
       itemBaseQuery = `,"type":"${item.base}"`;
-      if(item.base === "Charm"){
-         itemBaseQuery = ``;
-         itemCategory = `,"category": {"option": "azmeri.charm"}`
-      }
-      if(item.base === "Abyss Jewel"){
-        itemBaseQuery = ``;
-        itemCategory = `,"category": {"option": "jewel.abyss"}`
-      }
-      if(item.base === "energy blade"){
-        itemBaseQuery = ``;
-        itemCategory = `,"category": {"option": "weapon.one"}`;
-      }
     }
 
     //armour Filter
@@ -57,7 +39,6 @@ export function generateTradeUrl(tradeIlv, tradeLinks, tradeCorrupted, tradeDefe
     //type Filter
     let rarity = `"rarity":{"option":"${itemRarity}"}`;
     let typeFilter = `,"type_filters":{"filters":{${rarity}${itemCategory}}}`
-
     let socketFilter = `,"socket_filters":{"filters":{"links":{"min":${tradeLinks}}}}`;
     
     //stats Filter

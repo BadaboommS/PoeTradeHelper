@@ -5,7 +5,6 @@ import { isIterable } from './utils/isIterable';
 import { codeDecompress } from './utils/codeDecompress';
 import { createItemObj } from './utils/createItemObj';
 import { fetchData } from './utils/fetchData';
-import { handleMagic } from './utils/handleMagic';
 import { translateModifiers } from './utils/translateModifiers';
 import { addOrder } from './utils/addOrder';
 //components
@@ -62,10 +61,9 @@ export function App() {
          let tempItem = createItemObj(i, allItemData);
          tempItemArray.push(tempItem);
       }
+      
       //Translate mods for filter
       tempItemArray.map((item) => {
-         //handleMagic(item, allItems);
-         //addOrder(item, allItems);
          translateModifiers(allModifiers, item.implicits, 'implicit');
          translateModifiers(allModifiers, item.explicits, 'explicit');
       })

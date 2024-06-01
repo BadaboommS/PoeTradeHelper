@@ -1,13 +1,33 @@
-export function findItemBaseType(itemBase, allItemData, flask){
+export function findItemBaseType(itemBase, allItemData, flask, jewel){
     if(flask === true){
         for(let i = 0, l = allItemData[3].list[0].list.length; i < l; i++){
             if(itemBase.includes(allItemData[3].list[0].list[i])){
                 const item_base = allItemData[3].list[0].list[i];
+                const item_sort = allItemData[3].list[0].sort_priority? allItemData[3].list[0].sort_priority : null;
                 const item_category = "flasks";
                 const base_type = "Flask";
                 const base_query = "flask";
                 const base_info = {
                     item_base: item_base,
+                    item_sort: item_sort,
+                    item_category: item_category,
+                    base_type: base_type,
+                    base_query: base_query
+                }
+                return base_info;
+            }
+        }
+    }else if(jewel === true){
+        for(let i = 0, l = allItemData[4].list[2].list.length; i < l; i++){
+            if(itemBase.includes(allItemData[4].list[2].list[i])){
+                const item_base = allItemData[4].list[2].list[i];
+                const item_sort = allItemData[4].list[2].sort_priority? allItemData[4].list[2].sort_priority : null;
+                const item_category = "jewels";
+                const base_type = "Abyss Jewel";
+                const base_query = "jewel.abyss";
+                const base_info = {
+                    item_base: item_base,
+                    item_sort: item_sort,
                     item_category: item_category,
                     base_type: base_type,
                     base_query: base_query
