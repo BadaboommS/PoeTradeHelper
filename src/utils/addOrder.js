@@ -1,26 +1,15 @@
-export function addOrder(item, allItems){
-    let itemOrder;
-    let itemSearch = item.name;
-    if(item.rarity !== 'UNIQUE'){
-        itemSearch = item.base;
-    }
-    /* if(item.rarity === "MAGIC" && item.sockets.length != 0){
-        item.order = 'weapons';
-    } */
-    if(item.order !== undefined){
-        return null
-    }else if(item.name.includes('Energy Blade')){
-        item.order = 'weapons';
-        item.base = 'energy blade';
-    }else{
-        for(let i = 0, l = allItems.length; i < l; i++){
-            for(let j = 0, m = allItems[i].entries.length; j < m; j++){
-                if(allItems[i].entries[j].text.includes(itemSearch)){
-                    itemOrder = allItems[i].id;
-                    break;
-                }
-            }
-        }
-        item.order = itemOrder;
-    }
+import { dynamicSort } from "./dynamicSort";
+
+export function addOrder(buildItemArray){
+    let tempArrayWeapons = buildItemArray.filter((item) => item.baseInfo.item_category === "weapons");
+    let tempArrayArmour = buildItemArray.filter((item) => item.baseInfo.item_category === "armour");
+    tempArrayArmour.sort(dynamicSort('baseInfo','item_sort'));
+    let tempArrayAccessories = buildItemArray.filter((item) => item.baseInfo.item_category === "accessories");
+    tempArrayAccessories.sort(dynamicSort('baseInfo','item_sort'));
+    let tempArrayFlask = buildItemArray.filter((item) => item.baseInfo.item_category === "flasks");
+    let tempArrayJewel = buildItemArray.filter((item) => item.baseInfo.item_category === "jewels");
+    tempArrayJewel.sort(dynamicSort('baseInfo','item_sort'));
+    let tempArrayUndefined = buildItemArray.filter((item) => item.baseInfo.item_category === undefined);
+
+    return [...tempArrayWeapons, ...tempArrayArmour, ...tempArrayAccessories, ...tempArrayFlask, ...tempArrayJewel, ...tempArrayUndefined];
 }

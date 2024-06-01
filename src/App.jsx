@@ -62,34 +62,19 @@ export function App() {
          let tempItem = createItemObj(i, allItemData);
          tempItemArray.push(tempItem);
       }
-      console.log(tempItemArray);
-      handleObjects(tempItemArray);
-      
-      //sort
-      setTimeout(() => {
-         let tempArrayWeapons = tempItemArray.filter((item) => item.order === "weapons");
-         let tempArrayArmour = tempItemArray.filter((item) => item.order === "armour");
-         let tempArrayAccessories = tempItemArray.filter((item) => item.order === "accessories");
-         let tempArrayFlask = tempItemArray.filter((item) => item.order === "flasks");
-         let tempArrayJewel = tempItemArray.filter((item) => item.order === "jewels");
-         let tempArrayUndefined = tempItemArray.filter((item) => item.order === undefined);
-         buildItemArray = [...tempArrayWeapons, ...tempArrayArmour, ...tempArrayAccessories, ...tempArrayFlask, ...tempArrayJewel, ...tempArrayUndefined];
-      }, 500)
+      //Translate mods for filter
+      tempItemArray.map((item) => {
+         //handleMagic(item, allItems);
+         //addOrder(item, allItems);
+         translateModifiers(allModifiers, item.implicits, 'implicit');
+         translateModifiers(allModifiers, item.explicits, 'explicit');
+      })
+      buildItemArray = addOrder(tempItemArray);
       
       setTimeout(() => {
          setLoader(false);
          setReload(true);
       }, 500);
-   };
-
-   function handleObjects(tempItemArray){
-      //fetch and translate mods for filter
-      tempItemArray.map((item) => {
-         handleMagic(item, allItems);
-         addOrder(item, allItems);
-         translateModifiers(allModifiers, item.implicits, 'implicit');
-         translateModifiers(allModifiers, item.explicits, 'explicit');
-      })
    };
 
    useEffect(()=>{

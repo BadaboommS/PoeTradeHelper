@@ -106,6 +106,7 @@
             "list": [
                 {
                     "base_type": "Body",
+                    "sort_priority": 4,
                     "stat_type": "STR",
                     "base_query": "armour.chest",
                     "default_query": "armour.chest",
@@ -115,6 +116,7 @@
                 },
                 {
                     "base_type": "Body",
+                    "sort_priority": 4,
                     "stat_type": "DEX",
                     "base_query": "armour.chest",
                     "default_query": "armour.chest",
@@ -124,6 +126,7 @@
                 },
                 {
                     "base_type": "Body",
+                    "sort_priority": 4,
                     "stat_type": "INT",
                     "base_query": "armour.chest",
                     "default_query": "armour.chest",
@@ -133,6 +136,7 @@
                 },
                 {
                     "base_type": "Body",
+                    "sort_priority": 4,
                     "stat_type": "DEX/INT",
                     "base_query": "armour.chest",
                     "default_query": "armour.chest",
@@ -142,6 +146,7 @@
                 },
                 {
                     "base_type": "Body",
+                    "sort_priority": 4,
                     "stat_type": "STR/DEX",
                     "base_query": "armour.chest",
                     "default_query": "armour.chest",
@@ -151,6 +156,7 @@
                 },
                 {
                     "base_type": "Body",
+                    "sort_priority": 4,
                     "stat_type": "STR/INT",
                     "base_query": "armour.chest",
                     "default_query": "armour.chest",
@@ -160,15 +166,17 @@
                 },
                 {
                     "base_type": "Body",
+                    "sort_priority": 4,
                     "stat_type": "STR/INT/DEX",
                     "base_query": "armour.chest",
                     "default_query": "armour.chest",
                     "list": [
-                        "Sacrificial Garb"
+                        "Sacrificial Garb", "Grasping Mail"
                     ]
                 },
                 {
                     "base_type": "Boots",
+                    "sort_priority": 6,
                     "stat_type": "STR",
                     "base_query": "armour.boots",
                     "default_query": "armour.boots",
@@ -178,6 +186,7 @@
                 },
                 {
                     "base_type": "Boots",
+                    "sort_priority": 6,
                     "stat_type": "DEX",
                     "base_query": "armour.boots",
                     "default_query": "armour.boots",
@@ -187,6 +196,7 @@
                 },
                 {
                     "base_type": "Boots",
+                    "sort_priority": 6,
                     "stat_type": "INT",
                     "base_query": "armour.boots",
                     "default_query": "armour.boots",
@@ -196,6 +206,7 @@
                 },
                 {
                     "base_type": "Boots",
+                    "sort_priority": 6,
                     "stat_type": "DEX/INT",
                     "base_query": "armour.boots",
                     "default_query": "armour.boots",
@@ -205,6 +216,7 @@
                 },
                 {
                     "base_type": "Boots",
+                    "sort_priority": 6,
                     "stat_type": "STR/DEX",
                     "base_query": "armour.boots",
                     "default_query": "armour.boots",
@@ -214,6 +226,7 @@
                 },
                 {
                     "base_type": "Boots",
+                    "sort_priority": 6,
                     "stat_type": "STR/INT",
                     "base_query": "armour.boots",
                     "default_query": "armour.boots",
@@ -223,6 +236,7 @@
                 },
                 {
                     "base_type": "Gloves",
+                    "sort_priority": 5,
                     "stat_type": "STR",
                     "base_query": "armour.gloves",
                     "default_query": "armour.gloves",
@@ -232,6 +246,7 @@
                 },
                 {
                     "base_type": "Gloves",
+                    "sort_priority": 5,
                     "stat_type": "DEX",
                     "base_query": "armour.gloves",
                     "default_query": "armour.gloves",
@@ -241,6 +256,7 @@
                 },
                 {
                     "base_type": "Gloves",
+                    "sort_priority": 5,
                     "stat_type": "INT",
                     "base_query": "armour.gloves",
                     "default_query": "armour.gloves",
@@ -250,6 +266,7 @@
                 },
                 {
                     "base_type": "Gloves",
+                    "sort_priority": 5,
                     "stat_type": "DEX/INT",
                     "base_query": "armour.gloves",
                     "default_query": "armour.gloves",
@@ -259,6 +276,7 @@
                 },
                 {
                     "base_type": "Gloves",
+                    "sort_priority": 5,
                     "stat_type": "STR/DEX",
                     "base_query": "armour.gloves",
                     "default_query": "armour.gloves",
@@ -268,6 +286,7 @@
                 },
                 {
                     "base_type": "Gloves",
+                    "sort_priority": 5,
                     "stat_type": "STR/INT",
                     "base_query": "armour.gloves",
                     "default_query": "armour.gloves",
@@ -277,6 +296,7 @@
                 },
                 {
                     "base_type": "Helmet",
+                    "sort_priority": 3,
                     "stat_type": "STR",
                     "base_query": "armour.helmet",
                     "default_query": "armour.helmet",
@@ -286,6 +306,7 @@
                 },
                 {
                     "base_type": "Helmet",
+                    "sort_priority": 3,
                     "stat_type": "DEX",
                     "base_query": "armour.helmet",
                     "default_query": "armour.helmet",
@@ -295,6 +316,7 @@
                 },
                 {
                     "base_type": "Helmet",
+                    "sort_priority": 3,
                     "stat_type": "INT",
                     "base_query": "armour.helmet",
                     "default_query": "armour.helmet",
@@ -304,6 +326,7 @@
                 },
                 {
                     "base_type": "Helmet",
+                    "sort_priority": 3,
                     "stat_type": "DEX/INT",
                     "base_query": "armour.helmet",
                     "default_query": "armour.helmet",
@@ -313,6 +336,7 @@
                 },
                 {
                     "base_type": "Helmet",
+                    "sort_priority": 3,
                     "stat_type": "STR/DEX",
                     "base_query": "armour.helmet",
                     "default_query": "armour.helmet",
@@ -322,6 +346,7 @@
                 },
                 {
                     "base_type": "Helmet",
+                    "sort_priority": 3,
                     "stat_type": "STR/INT",
                     "base_query": "armour.helmet",
                     "default_query": "armour.helmet",
@@ -331,6 +356,7 @@
                 },
                 {
                     "base_type": "Shield",
+                    "sort_priority": 1,
                     "stat_type": "STR",
                     "base_query": "armour.shield",
                     "default_query": "armour.shield",
@@ -340,6 +366,7 @@
                 },
                 {
                     "base_type": "Shield",
+                    "sort_priority": 1,
                     "stat_type": "DEX",
                     "base_query": "armour.shield",
                     "default_query": "armour.shield",
@@ -349,6 +376,7 @@
                 },
                 {
                     "base_type": "Shield",
+                    "sort_priority": 1,
                     "stat_type": "INT",
                     "base_query": "armour.shield",
                     "default_query": "armour.shield",
@@ -358,6 +386,7 @@
                 },
                 {
                     "base_type": "Shield",
+                    "sort_priority": 1,
                     "stat_type": "DEX/INT",
                     "base_query": "armour.shield",
                     "default_query": "armour.shield",
@@ -367,6 +396,7 @@
                 },
                 {
                     "base_type": "Shield",
+                    "sort_priority": 1,
                     "stat_type": "STR/DEX",
                     "base_query": "armour.shield",
                     "default_query": "armour.shield",
@@ -376,6 +406,7 @@
                 },
                 {
                     "base_type": "Shield",
+                    "sort_priority": 1,
                     "stat_type": "STR/INT",
                     "base_query": "armour.shield",
                     "default_query": "armour.shield",
@@ -385,6 +416,7 @@
                 },
                 {
                     "base_type": "Quiver",
+                    "sort_priority": 2,
                     "base_query": "armour.quiver",
                     "default_query": "armour.quiver",
                     "list": [
@@ -398,6 +430,7 @@
             "list": [
                 {
                     "base_type": "Amulet",
+                    "sort_priority": 1,
                     "base_query": "accessory.amulet",
                     "default_query": "accessory.amulet",
                     "list": [
@@ -406,6 +439,7 @@
                 },
                 {
                     "base_type": "Belt",
+                    "sort_priority": 3,
                     "base_query": "accessory.belt",
                     "default_query": "accessory.belt",
                     "list": [
@@ -414,6 +448,7 @@
                 },
                 {
                     "base_type": "Ring",
+                    "sort_priority": 2,
                     "base_query": "accessory.ring",
                     "default_query": "accessory.ring",
                     "list": [
@@ -422,6 +457,7 @@
                 },
                 {
                     "base_type": "Talisman",
+                    "sort_priority": 1,
                     "base_query": "accessory.amulet",
                     "default_query": "accessory.amulet",
                     "list": [
@@ -448,14 +484,16 @@
             "list": [
                 {
                     "base_type": "Base Jewel",
+                    "sort_priority": 1,
                     "base_query": "jewel.base",
                     "default_query": "jewel.base",
                     "list": [
-                        "Cobalt Jewel", "Crimson Jewel", "Viridian Jewel", "Timeless Jewel"
+                        "Cobalt Jewel", "Crimson Jewel", "Viridian Jewel", "Timeless Jewel", "Prismatic Jewel"
                     ]
                 },
                 {
                     "base_type": "Cluster Jewel",
+                    "sort_priority": 3,
                     "base_query": "jewel.cluster",
                     "default_query": "jewel.cluster",
                     "list": [
@@ -464,6 +502,7 @@
                 },
                 {
                     "base_type": "Abyss Jewel",
+                    "sort_priority": 2,
                     "base_query": "jewel.abyss",
                     "default_query": "jewel.abyss",
                     "list": [

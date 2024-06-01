@@ -29,20 +29,27 @@ export function createItemObj(item, allItemData){
     //Item Name & Base
     let itemName;
     let itemBase;
+    let itemBaseInfo;
 
     if(cleanItemInfoArray[0].indexOf('Flask') !== -1){
         itemName = cleanItemInfoArray[0];
-        itemBase = 'flask';
+        if(cleanItemInfoArray[1].indexOf('Flask' !== -1)){
+            cleanItemInfoArray.shift();
+        }
         cleanItemInfoArray.shift();
+        
+        //Base Info
+        let optional = true;
+        itemBaseInfo = findItemBaseType(itemName, allItemData, optional);
+        itemBase = itemBaseInfo.item_base;
     }else{
         itemName = cleanItemInfoArray[0];
         itemBase = cleanItemInfoArray[1];
         cleanItemInfoArray.shift();
         cleanItemInfoArray.shift();
+        //Base Info
+        itemBaseInfo = findItemBaseType(itemBase, allItemData);
     }
-
-    //Base Info
-    let base_info = findItemBaseType(itemBase, allItemData);
 
     //Item Defences
     let itemDefences = [];
@@ -88,7 +95,6 @@ export function createItemObj(item, allItemData){
     }catch(err){
         console.log(err)
     }
-    console.log(cleanItemInfoArray);
 
     //Item Implicit
     let itemImplicitNumber = 0;
@@ -137,7 +143,7 @@ export function createItemObj(item, allItemData){
     let newItem = {
         name: itemName,
         base: itemBase,
-        base_info: base_info,
+        baseInfo: itemBaseInfo,
         defence: itemDefences,
         rarity: itemRarity,
         iLv: itemIlv,

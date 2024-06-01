@@ -9464,21 +9464,41 @@
 	  }
 	}
 
-	function findItemBaseType(itemBase, allItemData) {
-	  for (let i = 0, l = allItemData.length; i < l; i++) {
-	    for (let j = 0, k = allItemData[i].list.length; j < k; j++) {
-	      if (allItemData[i].list[j].list.includes(itemBase)) {
-	        const item_category = allItemData[i].id;
-	        const base_type = allItemData[i].list[j].base_type;
-	        const stat_type = allItemData[i].list[j].stat_type ? allItemData[i].list[j].stat_type : null;
-	        const base_query = allItemData[i].list[j].base_query;
+	function findItemBaseType(itemBase, allItemData, flask) {
+	  if (flask === true) {
+	    for (let i = 0, l = allItemData[3].list[0].list.length; i < l; i++) {
+	      if (itemBase.includes(allItemData[3].list[0].list[i])) {
+	        const item_base = allItemData[3].list[0].list[i];
+	        const item_category = "flasks";
+	        const base_type = "Flask";
+	        const base_query = "flask";
 	        const base_info = {
+	          item_base: item_base,
 	          item_category: item_category,
 	          base_type: base_type,
-	          stat_type: stat_type,
 	          base_query: base_query
 	        };
 	        return base_info;
+	      }
+	    }
+	  } else {
+	    for (let i = 0, l = allItemData.length; i < l; i++) {
+	      for (let j = 0, k = allItemData[i].list.length; j < k; j++) {
+	        if (allItemData[i].list[j].list.includes(itemBase)) {
+	          const item_category = allItemData[i].id;
+	          const item_sort = allItemData[i].list[j].sort_priority ? allItemData[i].list[j].sort_priority : null;
+	          const base_type = allItemData[i].list[j].base_type;
+	          const stat_type = allItemData[i].list[j].stat_type ? allItemData[i].list[j].stat_type : null;
+	          const base_query = allItemData[i].list[j].base_query;
+	          const base_info = {
+	            item_category: item_category,
+	            item_sort: item_sort,
+	            base_type: base_type,
+	            stat_type: stat_type,
+	            base_query: base_query
+	          };
+	          return base_info;
+	        }
 	      }
 	    }
 	  }
@@ -9513,19 +9533,26 @@
 	  //Item Name & Base
 	  let itemName;
 	  let itemBase;
+	  let itemBaseInfo;
 	  if (cleanItemInfoArray[0].indexOf('Flask') !== -1) {
 	    itemName = cleanItemInfoArray[0];
-	    itemBase = 'flask';
+	    if (cleanItemInfoArray[1].indexOf('Flask' !== -1)) {
+	      cleanItemInfoArray.shift();
+	    }
 	    cleanItemInfoArray.shift();
+
+	    //Base Info
+	    let optional = true;
+	    itemBaseInfo = findItemBaseType(itemName, allItemData, optional);
+	    itemBase = itemBaseInfo.item_base;
 	  } else {
 	    itemName = cleanItemInfoArray[0];
 	    itemBase = cleanItemInfoArray[1];
 	    cleanItemInfoArray.shift();
 	    cleanItemInfoArray.shift();
+	    //Base Info
+	    itemBaseInfo = findItemBaseType(itemBase, allItemData);
 	  }
-
-	  //Base Info
-	  let base_info = findItemBaseType(itemBase, allItemData);
 
 	  //Item Defences
 	  let itemDefences = [];
@@ -9571,7 +9598,6 @@
 	  } catch (err) {
 	    console.log(err);
 	  }
-	  console.log(cleanItemInfoArray);
 
 	  //Item Implicit
 	  let itemImplicitNumber = 0;
@@ -9623,7 +9649,7 @@
 	  let newItem = {
 	    name: itemName,
 	    base: itemBase,
-	    base_info: base_info,
+	    baseInfo: itemBaseInfo,
 	    defence: itemDefences,
 	    rarity: itemRarity,
 	    iLv: itemIlv,
@@ -9640,26 +9666,6 @@
 	  const dataJson = await data.json();
 	  const dataResult = await dataJson.result;
 	  return await dataResult;
-	}
-
-	function handleMagic(item, allItems) {
-	  let itemOrder;
-	  let itemBase;
-	  if (item.rarity === "MAGIC") {
-	    for (let i = 0, l = allItems.length; i < l; i++) {
-	      for (let j = 0, m = allItems[i].entries.length; j < m; j++) {
-	        if (allItems[i].entries[j].text.includes(item.name) || item.name.includes(allItems[i].entries[j].text)) {
-	          itemOrder = allItems[i].id;
-	          itemBase = allItems[i].entries[j].type;
-	          break;
-	        }
-	      }
-	    }
-	    if (itemOrder !== undefined) {
-	      item.base = itemBase;
-	      item.order = itemOrder;
-	    }
-	  }
 	}
 
 	function translateModifiers(allModifiers, modArray, type) {
@@ -9801,31 +9807,23 @@
 	  }
 	}
 
-	function addOrder(item, allItems) {
-	  let itemOrder;
-	  let itemSearch = item.name;
-	  if (item.rarity !== 'UNIQUE') {
-	    itemSearch = item.base;
-	  }
-	  /* if(item.rarity === "MAGIC" && item.sockets.length != 0){
-	      item.order = 'weapons';
-	  } */
-	  if (item.order !== undefined) {
-	    return null;
-	  } else if (item.name.includes('Energy Blade')) {
-	    item.order = 'weapons';
-	    item.base = 'energy blade';
-	  } else {
-	    for (let i = 0, l = allItems.length; i < l; i++) {
-	      for (let j = 0, m = allItems[i].entries.length; j < m; j++) {
-	        if (allItems[i].entries[j].text.includes(itemSearch)) {
-	          itemOrder = allItems[i].id;
-	          break;
-	        }
-	      }
-	    }
-	    item.order = itemOrder;
-	  }
+	function dynamicSort(one, two) {
+	  return function (a, b) {
+	    return a[one][two] < b[one][two] ? -1 : a[one][two] > b[one][two] ? 1 : 0;
+	  };
+	}
+
+	function addOrder(buildItemArray) {
+	  let tempArrayWeapons = buildItemArray.filter(item => item.baseInfo.item_category === "weapons");
+	  let tempArrayArmour = buildItemArray.filter(item => item.baseInfo.item_category === "armour");
+	  tempArrayArmour.sort(dynamicSort('baseInfo', 'item_sort'));
+	  let tempArrayAccessories = buildItemArray.filter(item => item.baseInfo.item_category === "accessories");
+	  tempArrayAccessories.sort(dynamicSort('baseInfo', 'item_sort'));
+	  let tempArrayFlask = buildItemArray.filter(item => item.baseInfo.item_category === "flasks");
+	  let tempArrayJewel = buildItemArray.filter(item => item.baseInfo.item_category === "jewels");
+	  tempArrayJewel.sort(dynamicSort('baseInfo', 'item_sort'));
+	  let tempArrayUndefined = buildItemArray.filter(item => item.baseInfo.item_category === undefined);
+	  return [...tempArrayWeapons, ...tempArrayArmour, ...tempArrayAccessories, ...tempArrayFlask, ...tempArrayJewel, ...tempArrayUndefined];
 	}
 
 	function generateTradeUrl(tradeIlv, tradeLinks, tradeCorrupted, tradeDefence, tradeImplicits, tradeExplicits, item, league) {
@@ -10206,11 +10204,10 @@
 	  const [reload, setReload] = reactExports.useState(false);
 	  const [loader, setLoader] = reactExports.useState(false);
 	  let allModifiers;
-	  let allItems;
 	  let allItemData;
 	  const handleFetchData = async () => {
 	    allModifiers = await fetchData('./item_mods/allModifiers.json');
-	    allItems = await fetchData('./item_mods/allItems.json');
+	    await fetchData('./item_mods/allItems.json');
 	    allItemData = await fetchData('./item_mods/allItemTypes.json');
 	  };
 	  handleFetchData();
@@ -10240,32 +10237,18 @@
 	      let tempItem = createItemObj(i, allItemData);
 	      tempItemArray.push(tempItem);
 	    }
-	    console.log(tempItemArray);
-	    handleObjects(tempItemArray);
-
-	    //sort
-	    setTimeout(() => {
-	      let tempArrayWeapons = tempItemArray.filter(item => item.order === "weapons");
-	      let tempArrayArmour = tempItemArray.filter(item => item.order === "armour");
-	      let tempArrayAccessories = tempItemArray.filter(item => item.order === "accessories");
-	      let tempArrayFlask = tempItemArray.filter(item => item.order === "flasks");
-	      let tempArrayJewel = tempItemArray.filter(item => item.order === "jewels");
-	      let tempArrayUndefined = tempItemArray.filter(item => item.order === undefined);
-	      buildItemArray = [...tempArrayWeapons, ...tempArrayArmour, ...tempArrayAccessories, ...tempArrayFlask, ...tempArrayJewel, ...tempArrayUndefined];
-	    }, 500);
+	    //Translate mods for filter
+	    tempItemArray.map(item => {
+	      //handleMagic(item, allItems);
+	      //addOrder(item, allItems);
+	      translateModifiers(allModifiers, item.implicits, 'implicit');
+	      translateModifiers(allModifiers, item.explicits, 'explicit');
+	    });
+	    buildItemArray = addOrder(tempItemArray);
 	    setTimeout(() => {
 	      setLoader(false);
 	      setReload(true);
 	    }, 500);
-	  }
-	  function handleObjects(tempItemArray) {
-	    //fetch and translate mods for filter
-	    tempItemArray.map(item => {
-	      handleMagic(item, allItems);
-	      addOrder(item, allItems);
-	      translateModifiers(allModifiers, item.implicits, 'implicit');
-	      translateModifiers(allModifiers, item.explicits, 'explicit');
-	    });
 	  }
 	  reactExports.useEffect(() => {
 	    //console.log('render');
