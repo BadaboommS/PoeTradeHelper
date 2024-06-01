@@ -25,6 +25,17 @@ export function App() {
    const [reload, setReload] = useState(false);
    const [loader, setLoader] = useState(false);
 
+   let allModifiers;
+   let allItems;
+   let allItemData;
+   
+   const handleFetchData = async () => {
+      allModifiers = await fetchData('./item_mods/allModifiers.json');
+      allItems = await fetchData('./item_mods/allItems.json');
+      allItemData = await fetchData('./item_mods/allItemTypes.json');
+   }
+   handleFetchData();
+
    function handleSubmit(event){
       buildItemArray = [];
       setInputError(false);
@@ -44,15 +55,14 @@ export function App() {
          setReload(true);
          return
       }
-      console.log(htmlItems);
-      // console.log(typeof htmlItems);
-
+      
       //Create item obj for each item
       let tempItemArray = [];
       for (let i of htmlItems){
-         let temp = createItemObj(i);
-         tempItemArray.push(temp);
+         let tempItem = createItemObj(i, allItemData);
+         tempItemArray.push(tempItem);
       }
+      console.log(tempItemArray);
       handleObjects(tempItemArray);
       
       //sort
@@ -72,10 +82,8 @@ export function App() {
       }, 500);
    };
 
-   async function handleObjects(tempItemArray){
+   function handleObjects(tempItemArray){
       //fetch and translate mods for filter
-      const allModifiers = await fetchData('./item_mods/allModifiers.json');
-      const allItems = await fetchData('./item_mods/allItems.json');
       tempItemArray.map((item) => {
          handleMagic(item, allItems);
          addOrder(item, allItems);

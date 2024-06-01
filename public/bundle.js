@@ -7854,7 +7854,7 @@
 	  }
 	}
 
-	var css_248z = "/*! tailwindcss v3.4.3 | MIT License | https://tailwindcss.com*/*,:after,:before{border:0 solid #e5e7eb;box-sizing:border-box}:after,:before{--tw-content:\"\"}:host,html{-webkit-text-size-adjust:100%;font-feature-settings:normal;-webkit-tap-highlight-color:transparent;font-family:ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-variation-settings:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4}body{line-height:inherit;margin:0}hr{border-top-width:1px;color:inherit;height:0}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-feature-settings:normal;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-size:1em;font-variation-settings:normal}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{border-collapse:collapse;border-color:inherit;text-indent:0}button,input,optgroup,select,textarea{font-feature-settings:inherit;color:inherit;font-family:inherit;font-size:100%;font-variation-settings:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{color:#9ca3af;opacity:1}input::placeholder,textarea::placeholder{color:#9ca3af;opacity:1}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{height:auto;max-width:100%}[hidden]{display:none}*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }h1{font-size:1.5rem;line-height:2rem}h2{font-size:1.25rem}h2,h3{line-height:1.75rem}h3{font-size:1.125rem}button{background-color:#fff}.m-10{margin:2.5rem}.mx-10{margin-left:2.5rem;margin-right:2.5rem}.block{display:block}.flex{display:flex}.h-10{height:2.5rem}.w-full{width:100%}.min-w-10{min-width:2.5rem}.flex-row{flex-direction:row}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-start{justify-content:flex-start}.justify-center{justify-content:center}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.rounded-md{border-radius:.375rem}.rounded-sm{border-radius:.125rem}.p-1{padding:.25rem}.p-2{padding:.5rem}.p-5{padding:1.25rem}.text-center{text-align:center}.text-start{text-align:start}.text-2xl{font-size:1.5rem;line-height:2rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity))}.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}@media (min-width:768px){.md\\:flex-row{flex-direction:row}}@media (min-width:1024px){.lg\\:w-5\\/12{width:41.666667%}.lg\\:w-6\\/12{width:50%}}";
+	var css_248z = "/*! tailwindcss v3.4.3 | MIT License | https://tailwindcss.com*/*,:after,:before{border:0 solid #e5e7eb;box-sizing:border-box}:after,:before{--tw-content:\"\"}:host,html{-webkit-text-size-adjust:100%;font-feature-settings:normal;-webkit-tap-highlight-color:transparent;font-family:ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-variation-settings:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4}body{line-height:inherit;margin:0}hr{border-top-width:1px;color:inherit;height:0}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-feature-settings:normal;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-size:1em;font-variation-settings:normal}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{border-collapse:collapse;border-color:inherit;text-indent:0}button,input,optgroup,select,textarea{font-feature-settings:inherit;color:inherit;font-family:inherit;font-size:100%;font-variation-settings:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{color:#9ca3af;opacity:1}input::placeholder,textarea::placeholder{color:#9ca3af;opacity:1}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{height:auto;max-width:100%}[hidden]{display:none}*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }h1{font-size:1.5rem;line-height:2rem}h2{font-size:1.25rem}h2,h3{line-height:1.75rem}h3{font-size:1.125rem}button{background-color:#fff}.m-10{margin:2.5rem}.mx-10{margin-left:2.5rem;margin-right:2.5rem}.block{display:block}.flex{display:flex}.h-10{height:2.5rem}.w-full{width:100%}.min-w-10{min-width:2.5rem}.flex-row{flex-direction:row}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.justify-start{justify-content:flex-start}.justify-center{justify-content:center}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.rounded-md{border-radius:.375rem}.rounded-sm{border-radius:.125rem}.p-1{padding:.25rem}.p-2{padding:.5rem}.p-5{padding:1.25rem}.text-center{text-align:center}.text-start{text-align:start}.text-2xl{font-size:1.5rem;line-height:2rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity))}.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}@media (min-width:768px){.md\\:flex-row{flex-direction:row}}@media (min-width:1024px){.lg\\:w-5\\/12{width:41.666667%}.lg\\:w-6\\/12{width:50%}}";
 	styleInject(css_248z,{"insertAt":"top"});
 
 	/******************************************************************************
@@ -9443,242 +9443,6 @@
 	  return typeof obj[Symbol.iterator] === 'function';
 	}
 
-	var xmlToJSON = {exports: {}};
-
-	/* Copyright 2015 William Summers, MetaTribal LLC
-	 * adapted from https://developer.mozilla.org/en-US/docs/JXON
-	 *
-	 * Licensed under the MIT License, Version 2.0 (the "License");
-	 * you may not use this file except in compliance with the License.
-	 * You may obtain a copy of the License at
-	 *
-	 *     https://opensource.org/licenses/MIT
-	 *
-	 * Unless required by applicable law or agreed to in writing, software
-	 * distributed under the License is distributed on an "AS IS" BASIS,
-	 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-	 * See the License for the specific language governing permissions and
-	 * limitations under the License.
-	 */
-	xmlToJSON.exports;
-
-	(function (module) {
-		/**
-		 * @author William Summers
-		 *
-		 */
-
-		var xmlToJSON = function () {
-		  this.version = "1.3.5";
-		  var options = {
-		    // set up the default options
-		    mergeCDATA: true,
-		    // extract cdata and merge with text
-		    grokAttr: true,
-		    // convert truthy attributes to boolean, etc
-		    grokText: true,
-		    // convert truthy text/attr to boolean, etc
-		    normalize: true,
-		    // collapse multiple spaces to single space
-		    xmlns: true,
-		    // include namespaces as attribute in output
-		    namespaceKey: '_ns',
-		    // tag name for namespace objects
-		    textKey: '_text',
-		    // tag name for text nodes
-		    valueKey: '_value',
-		    // tag name for attribute values
-		    attrKey: '_attr',
-		    // tag for attr groups
-		    cdataKey: '_cdata',
-		    // tag for cdata nodes (ignored if mergeCDATA is true)
-		    attrsAsObject: true,
-		    // if false, key is used as prefix to name, set prefix to '' to merge children and attrs.
-		    stripAttrPrefix: true,
-		    // remove namespace prefixes from attributes
-		    stripElemPrefix: true,
-		    // for elements of same name in diff namespaces, you can enable namespaces and access the nskey property
-		    childrenAsArray: true // force children into arrays
-		  };
-		  var prefixMatch = new RegExp(/(?!xmlns)^.*:/);
-		  var trimMatch = new RegExp(/^\s+|\s+$/g);
-		  this.grokType = function (sValue) {
-		    if (/^\s*$/.test(sValue)) {
-		      return null;
-		    }
-		    if (/^(?:true|false)$/i.test(sValue)) {
-		      return sValue.toLowerCase() === "true";
-		    }
-		    if (isFinite(sValue)) {
-		      return parseFloat(sValue);
-		    }
-		    return sValue;
-		  };
-		  this.parseString = function (xmlString, opt) {
-		    return this.parseXML(this.stringToXML(xmlString), opt);
-		  };
-		  this.parseXML = function (oXMLParent, opt) {
-		    // initialize options
-		    for (var key in opt) {
-		      options[key] = opt[key];
-		    }
-		    var vResult = {},
-		      nLength = 0,
-		      sCollectedTxt = "";
-
-		    // parse namespace information
-		    if (options.xmlns && oXMLParent.namespaceURI) {
-		      vResult[options.namespaceKey] = oXMLParent.namespaceURI;
-		    }
-
-		    // parse attributes
-		    // using attributes property instead of hasAttributes method to support older browsers
-		    if (oXMLParent.attributes && oXMLParent.attributes.length > 0) {
-		      var vAttribs = {};
-		      for (nLength; nLength < oXMLParent.attributes.length; nLength++) {
-		        var oAttrib = oXMLParent.attributes.item(nLength);
-		        vContent = {};
-		        var attribName = '';
-		        if (options.stripAttrPrefix) {
-		          attribName = oAttrib.name.replace(prefixMatch, '');
-		        } else {
-		          attribName = oAttrib.name;
-		        }
-		        if (options.grokAttr) {
-		          vContent[options.valueKey] = this.grokType(oAttrib.value.replace(trimMatch, ''));
-		        } else {
-		          vContent[options.valueKey] = oAttrib.value.replace(trimMatch, '');
-		        }
-		        if (options.xmlns && oAttrib.namespaceURI) {
-		          vContent[options.namespaceKey] = oAttrib.namespaceURI;
-		        }
-		        if (options.attrsAsObject) {
-		          // attributes with same local name must enable prefixes
-		          vAttribs[attribName] = vContent;
-		        } else {
-		          vResult[options.attrKey + attribName] = vContent;
-		        }
-		      }
-		      if (options.attrsAsObject) {
-		        vResult[options.attrKey] = vAttribs;
-		      }
-		    }
-
-		    // iterate over the children
-		    if (oXMLParent.hasChildNodes()) {
-		      for (var oNode, sProp, vContent, nItem = 0; nItem < oXMLParent.childNodes.length; nItem++) {
-		        oNode = oXMLParent.childNodes.item(nItem);
-		        if (oNode.nodeType === 4) {
-		          if (options.mergeCDATA) {
-		            sCollectedTxt += oNode.nodeValue;
-		          } else {
-		            if (vResult.hasOwnProperty(options.cdataKey)) {
-		              if (vResult[options.cdataKey].constructor !== Array) {
-		                vResult[options.cdataKey] = [vResult[options.cdataKey]];
-		              }
-		              vResult[options.cdataKey].push(oNode.nodeValue);
-		            } else {
-		              if (options.childrenAsArray) {
-		                vResult[options.cdataKey] = [];
-		                vResult[options.cdataKey].push(oNode.nodeValue);
-		              } else {
-		                vResult[options.cdataKey] = oNode.nodeValue;
-		              }
-		            }
-		          }
-		        } /* nodeType is "CDATASection" (4) */else if (oNode.nodeType === 3) {
-		          sCollectedTxt += oNode.nodeValue;
-		        } /* nodeType is "Text" (3) */else if (oNode.nodeType === 1) {
-		          /* nodeType is "Element" (1) */
-
-		          if (nLength === 0) {
-		            vResult = {};
-		          }
-
-		          // using nodeName to support browser (IE) implementation with no 'localName' property
-		          if (options.stripElemPrefix) {
-		            sProp = oNode.nodeName.replace(prefixMatch, '');
-		          } else {
-		            sProp = oNode.nodeName;
-		          }
-		          vContent = xmlToJSON.parseXML(oNode);
-		          if (vResult.hasOwnProperty(sProp)) {
-		            if (vResult[sProp].constructor !== Array) {
-		              vResult[sProp] = [vResult[sProp]];
-		            }
-		            vResult[sProp].push(vContent);
-		          } else {
-		            if (options.childrenAsArray) {
-		              vResult[sProp] = [];
-		              vResult[sProp].push(vContent);
-		            } else {
-		              vResult[sProp] = vContent;
-		            }
-		            nLength++;
-		          }
-		        }
-		      }
-		    } else if (!sCollectedTxt) {
-		      // no children and no text, return null
-		      if (options.childrenAsArray) {
-		        vResult[options.textKey] = [];
-		        vResult[options.textKey].push(null);
-		      } else {
-		        vResult[options.textKey] = null;
-		      }
-		    }
-		    if (sCollectedTxt) {
-		      if (options.grokText) {
-		        var value = this.grokType(sCollectedTxt.replace(trimMatch, ''));
-		        if (value !== null && value !== undefined) {
-		          vResult[options.textKey] = value;
-		        }
-		      } else if (options.normalize) {
-		        vResult[options.textKey] = sCollectedTxt.replace(trimMatch, '').replace(/\s+/g, " ");
-		      } else {
-		        vResult[options.textKey] = sCollectedTxt.replace(trimMatch, '');
-		      }
-		    }
-		    return vResult;
-		  };
-
-		  // Convert xmlDocument to a string
-		  // Returns null on failure
-		  this.xmlToString = function (xmlDoc) {
-		    try {
-		      var xmlString = xmlDoc.xml ? xmlDoc.xml : new XMLSerializer().serializeToString(xmlDoc);
-		      return xmlString;
-		    } catch (err) {
-		      return null;
-		    }
-		  };
-
-		  // Convert a string to XML Node Structure
-		  // Returns null on failure
-		  this.stringToXML = function (xmlString) {
-		    try {
-		      var xmlDoc = null;
-		      if (window.DOMParser) {
-		        var parser = new DOMParser();
-		        xmlDoc = parser.parseFromString(xmlString, "text/xml");
-		        return xmlDoc;
-		      } else {
-		        xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
-		        xmlDoc.async = false;
-		        xmlDoc.loadXML(xmlString);
-		        return xmlDoc;
-		      }
-		    } catch (e) {
-		      return null;
-		    }
-		  };
-		  return this;
-		}.call({});
-		if (module !== null && module.exports) module.exports = xmlToJSON; 
-	} (xmlToJSON));
-
-	xmlToJSON.exports;
-
 	function codeDecompress(code) {
 	  try {
 	    //Retrieve Code and decode
@@ -9700,66 +9464,95 @@
 	  }
 	}
 
-	function createItemObj(item) {
+	function findItemBaseType(itemBase, allItemData) {
+	  for (let i = 0, l = allItemData.length; i < l; i++) {
+	    for (let j = 0, k = allItemData[i].list.length; j < k; j++) {
+	      if (allItemData[i].list[j].list.includes(itemBase)) {
+	        const item_category = allItemData[i].id;
+	        const base_type = allItemData[i].list[j].base_type;
+	        const stat_type = allItemData[i].list[j].stat_type ? allItemData[i].list[j].stat_type : null;
+	        const base_query = allItemData[i].list[j].base_query;
+	        const base_info = {
+	          item_category: item_category,
+	          base_type: base_type,
+	          stat_type: stat_type,
+	          base_query: base_query
+	        };
+	        return base_info;
+	      }
+	    }
+	  }
+	}
+
+	function createItemObj(item, allItemData) {
 	  let itemContent = item.textContent.replace(/\t/g, '');
 	  let itemInfoArray = itemContent.split('\n');
 	  let cleanItemInfoArray = itemInfoArray.filter(str => str != '');
 
-	  //retrieving item info for itemsArray init
+	  // useless lines filter
+	  let filters = ['BasePercentile:', 'Unique ID:', "LevelReq:", "Quality:", "Requires"];
+	  for (const fil of filters) {
+	    cleanItemInfoArray = cleanItemInfoArray.filter(line => {
+	      return line.indexOf(fil) === -1;
+	    });
+	  }
 
 	  //Item Rarity
 	  let itemRarity;
 	  try {
 	    if (cleanItemInfoArray[0].includes('Rarity:')) {
 	      itemRarity = cleanItemInfoArray[0].split(': ')[1];
-	    } else {
-	      console.log('No rarity!');
-	    }
-	    if (itemRarity === "RELIC") {
+	      cleanItemInfoArray.shift();
+	    } else if (itemRarity === "RELIC") {
 	      itemRarity = 'UNIQUE';
 	    }
 	  } catch (err) {
-	    console.log(err);
+	    console.log("Rarity parse Problem ! ", err);
 	  }
 
 	  //Item Name & Base
-	  let itemName = cleanItemInfoArray[1];
+	  let itemName;
 	  let itemBase;
-	  try {
-	    if (itemName.includes("Charm")) {
-	      itemBase = "Charm";
-	    } else if (itemName.includes("Flask") || itemName.includes("Tincture")) {
-	      let tempBase = itemName.split(' ');
-	      itemBase = tempBase[1] + ' ' + tempBase[2];
-	    } else if (itemName.includes('Eye Jewel')) {
-	      itemBase = "Abyss Jewel";
-	    } else {
-	      itemBase = cleanItemInfoArray[2];
-	    }
-	  } catch (err) {
-	    console.log(err);
+	  if (cleanItemInfoArray[0].indexOf('Flask') !== -1) {
+	    itemName = cleanItemInfoArray[0];
+	    itemBase = 'flask';
+	    cleanItemInfoArray.shift();
+	  } else {
+	    itemName = cleanItemInfoArray[0];
+	    itemBase = cleanItemInfoArray[1];
+	    cleanItemInfoArray.shift();
+	    cleanItemInfoArray.shift();
 	  }
+
+	  //Base Info
+	  let base_info = findItemBaseType(itemBase, allItemData);
 
 	  //Item Defences
 	  let itemDefences = [];
 	  try {
-	    cleanItemInfoArray.map(line => {
+	    cleanItemInfoArray.map((line, i) => {
 	      if (line.includes("Armour: ") || line.includes("Energy Shield: ") || line.includes("Evasion: ") || line.includes("Ward: ")) {
 	        itemDefences.push(line);
 	      }
 	    });
+	    for (let i = 0, l = itemDefences.length; i < l; i++) {
+	      cleanItemInfoArray.shift();
+	    }
 	  } catch (err) {
 	    console.log(err);
 	  }
 
 	  //Item Lv
-	  let itemIlv;
+	  let itemIlv = null;
 	  try {
 	    cleanItemInfoArray.map(line => {
 	      if (line.includes("Item Level:")) {
 	        itemIlv = line.split(": ")[1];
 	      }
 	    });
+	    if (itemIlv !== null) {
+	      cleanItemInfoArray.shift();
+	    }
 	  } catch (err) {
 	    console.log(err);
 	  }
@@ -9772,9 +9565,13 @@
 	        itemSockets = line.split(": ")[1].split(/-| /);
 	      }
 	    });
+	    if (itemSockets.length > 0) {
+	      cleanItemInfoArray.shift();
+	    }
 	  } catch (err) {
 	    console.log(err);
 	  }
+	  console.log(cleanItemInfoArray);
 
 	  //Item Implicit
 	  let itemImplicitNumber = 0;
@@ -9826,6 +9623,7 @@
 	  let newItem = {
 	    name: itemName,
 	    base: itemBase,
+	    base_info: base_info,
 	    defence: itemDefences,
 	    rarity: itemRarity,
 	    iLv: itemIlv,
@@ -10215,9 +10013,9 @@
 	  }, /*#__PURE__*/React.createElement("p", null, "Select desired modifiers for trade:"), /*#__PURE__*/React.createElement(StyledSplit$2, {
 	    className: `item_split-${item.rarity.toLowerCase()}`
 	  }), /*#__PURE__*/React.createElement("div", {
-	    className: "flex flex-col items-start text-start item_stats"
+	    className: "flex flex-col items-center text-start item_stats"
 	  }, /*#__PURE__*/React.createElement("div", {
-	    className: "text-center"
+	    className: "text-center w-full"
 	  }, item.defence[0] ? item.defence.map((def, i) => {
 	    return /*#__PURE__*/React.createElement(StyledFlex, {
 	      key: i
@@ -10253,7 +10051,9 @@
 	  }), /*#__PURE__*/React.createElement("label", {
 	    htmlFor: `${itemNumber}_${itemName}_corrupted`,
 	    className: "item_corrupted"
-	  }, "Corrupted")) : /*#__PURE__*/React.createElement(React.Fragment, null)), item.implicits.length ? /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(StyledSplit$2, {
+	  }, "Corrupted")) : /*#__PURE__*/React.createElement(React.Fragment, null)), item.implicits.length ? /*#__PURE__*/React.createElement("div", {
+	    className: "w-full"
+	  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(StyledSplit$2, {
 	    className: `item_split-${item.rarity.toLowerCase()}`
 	  }), /*#__PURE__*/React.createElement("p", {
 	    className: "text-center"
@@ -10268,7 +10068,9 @@
 	      htmlFor: `${itemNumber}_${itemName}_implicit_${i}`,
 	      className: handleExplicitClass(implicit.text)
 	    }, implicit.text));
-	  }))) : /*#__PURE__*/React.createElement(React.Fragment, null), item.explicits.length ? /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(StyledSplit$2, {
+	  }))) : /*#__PURE__*/React.createElement(React.Fragment, null), item.explicits.length ? /*#__PURE__*/React.createElement("div", {
+	    className: "w-full"
+	  }, /*#__PURE__*/React.createElement(StyledSplit$2, {
 	    className: `item_split-${item.rarity.toLowerCase()}`
 	  }), /*#__PURE__*/React.createElement("p", {
 	    className: "text-center"
@@ -10403,6 +10205,15 @@
 	  const [inputError, setInputError] = reactExports.useState(false);
 	  const [reload, setReload] = reactExports.useState(false);
 	  const [loader, setLoader] = reactExports.useState(false);
+	  let allModifiers;
+	  let allItems;
+	  let allItemData;
+	  const handleFetchData = async () => {
+	    allModifiers = await fetchData('./item_mods/allModifiers.json');
+	    allItems = await fetchData('./item_mods/allItems.json');
+	    allItemData = await fetchData('./item_mods/allItemTypes.json');
+	  };
+	  handleFetchData();
 	  function handleSubmit(event) {
 	    buildItemArray = [];
 	    setInputError(false);
@@ -10422,15 +10233,14 @@
 	      setReload(true);
 	      return;
 	    }
-	    console.log(htmlItems);
-	    // console.log(typeof htmlItems);
 
 	    //Create item obj for each item
 	    let tempItemArray = [];
 	    for (let i of htmlItems) {
-	      let temp = createItemObj(i);
-	      tempItemArray.push(temp);
+	      let tempItem = createItemObj(i, allItemData);
+	      tempItemArray.push(tempItem);
 	    }
+	    console.log(tempItemArray);
 	    handleObjects(tempItemArray);
 
 	    //sort
@@ -10448,10 +10258,8 @@
 	      setReload(true);
 	    }, 500);
 	  }
-	  async function handleObjects(tempItemArray) {
+	  function handleObjects(tempItemArray) {
 	    //fetch and translate mods for filter
-	    const allModifiers = await fetchData('./item_mods/allModifiers.json');
-	    const allItems = await fetchData('./item_mods/allItems.json');
 	    tempItemArray.map(item => {
 	      handleMagic(item, allItems);
 	      addOrder(item, allItems);

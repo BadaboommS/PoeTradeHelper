@@ -1,5 +1,3 @@
-import xmltojson from "xmltojson";
-
 export function codeDecompress(code){
     try{
         //Retrieve Code and decode

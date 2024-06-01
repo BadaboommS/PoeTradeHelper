@@ -1,63 +1,75 @@
-export function createItemObj(item){
+import { findItemBaseType } from "./findItemBaseType";
+
+export function createItemObj(item, allItemData){
     let itemContent = item.textContent.replace(/\t/g, '');
     let itemInfoArray = itemContent.split('\n');
     let cleanItemInfoArray = itemInfoArray.filter((str) => str != '');
-
-    //retrieving item info for itemsArray init
+    
+    // useless lines filter
+    let filters = ['BasePercentile:', 'Unique ID:', "LevelReq:", "Quality:", "Requires"];
+    for(const fil of filters){
+        cleanItemInfoArray = cleanItemInfoArray.filter((line) => {
+            return line.indexOf(fil) === -1;
+        })
+    }
 
     //Item Rarity
     let itemRarity;
     try{
         if(cleanItemInfoArray[0].includes('Rarity:')){
             itemRarity = cleanItemInfoArray[0].split(': ')[1];
-        }else{
-            console.log('No rarity!')
-        }
-        if(itemRarity === "RELIC"){
+            cleanItemInfoArray.shift();
+        }else if(itemRarity === "RELIC"){
             itemRarity = 'UNIQUE';
         }
     }catch(err){
-        console.log(err);
+        console.log("Rarity parse Problem ! ", err);
     }
 
     //Item Name & Base
-    let itemName = cleanItemInfoArray[1];
+    let itemName;
     let itemBase;
-    try{
-        if(itemName.includes("Charm")){
-            itemBase = "Charm";
-        }else if(itemName.includes("Flask") || itemName.includes("Tincture")){
-            let tempBase = itemName.split(' ');
-            itemBase = tempBase[1] + ' ' + tempBase[2];
-        }else if(itemName.includes('Eye Jewel')){
-            itemBase = "Abyss Jewel";
-        }else{
-                itemBase = cleanItemInfoArray[2];
-        }
-    }catch(err){
-        console.log(err);
+
+    if(cleanItemInfoArray[0].indexOf('Flask') !== -1){
+        itemName = cleanItemInfoArray[0];
+        itemBase = 'flask';
+        cleanItemInfoArray.shift();
+    }else{
+        itemName = cleanItemInfoArray[0];
+        itemBase = cleanItemInfoArray[1];
+        cleanItemInfoArray.shift();
+        cleanItemInfoArray.shift();
     }
+
+    //Base Info
+    let base_info = findItemBaseType(itemBase, allItemData);
 
     //Item Defences
     let itemDefences = [];
     try{
-        cleanItemInfoArray.map((line) => {
+        cleanItemInfoArray.map((line, i) => {
             if(line.includes("Armour: ") || line.includes("Energy Shield: ") || line.includes("Evasion: ")|| line.includes("Ward: ")){
                 itemDefences.push(line);
             }
         })
+        for(let i = 0, l = itemDefences.length; i < l; i++){
+            cleanItemInfoArray.shift();
+        }
     }catch(err){
         console.log(err);
     }
 
     //Item Lv
-    let itemIlv;
+    let itemIlv = null;
     try{
         cleanItemInfoArray.map((line) => {
             if(line.includes("Item Level:")){
                 itemIlv = line.split(": ")[1];
             }
         })
+        if(itemIlv !== null){
+            cleanItemInfoArray.shift();
+        }
     }catch(err){
         console.log(err);
     };
@@ -70,9 +82,13 @@ export function createItemObj(item){
                 itemSockets = line.split(": ")[1].split(/-| /);
             }
         })
+        if(itemSockets.length > 0){
+            cleanItemInfoArray.shift();
+        }
     }catch(err){
         console.log(err)
     }
+    console.log(cleanItemInfoArray);
 
     //Item Implicit
     let itemImplicitNumber = 0;
@@ -117,11 +133,11 @@ export function createItemObj(item){
         console.log(err);
     }
     
-
     //return new item object
     let newItem = {
         name: itemName,
         base: itemBase,
+        base_info: base_info,
         defence: itemDefences,
         rarity: itemRarity,
         iLv: itemIlv,
