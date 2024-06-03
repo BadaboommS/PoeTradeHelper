@@ -9,6 +9,8 @@ import { translateModifiers } from './utils/translateModifiers';
 import { addOrder } from './utils/addOrder';
 //components
 import ItemFeed from './components/ItemFeed';
+import InputCode from './components/InputCode';
+import Modal from './components/Modal';
 
 //init
 let buildItemArray = [];
@@ -23,6 +25,7 @@ export function App() {
    const [inputError, setInputError] = useState(false);
    const [reload, setReload] = useState(false);
    const [loader, setLoader] = useState(false);
+   const [isOpen, setIsOpen] = useState(false);
 
    let allModifiers;
    let allItems;
@@ -83,38 +86,28 @@ export function App() {
    return (
       <div>
          <div>
-            <h1 className='text-white text-center'>POE Build Trade Helper</h1>
-            <p className='text-white text-center'>Put build import code and generate POE.trade URL for each Item!</p>
-            <form className='flex flex-col justify-center items-center gap-2' onSubmit={handleSubmit}>
-               <textarea className="rounded-sm p-2 text-sm" placeholder="Put build import code here" type="text" name="importCode" rows='5' cols="50" required></textarea>
-               <div className='flex flex-col md:flex-row justify-center items-center gap-2'>
-                  <select className='w-50 h-10 text-center' defaultValue="Necropolis" id="leagueSelect">
-                     <option value="Necropolis">Necropolis</option>
-                     <option value="Standard">Standard</option>
-                     <option value="Ruthless%20Necropolis">Ruthless Necropolis</option>
-                     <option value="Ruthless">Ruthless</option>
-                     <option value="Hardcore%20Necropolis">Hardcore Necropolis</option>
-                     <option value="Hardcore">Hardcore</option>      
-                     <option value="HC%20Ruthless%20Necropolis">HardCore Ruthless Necropolis</option>
-                     <option value="Hardcore%20Ruthless">Hardcore Ruthless</option>
-                  </select>
-                  <div className='flex flex-row gap-3'>
-                     <button className='text-center min-w-10 p-1 rounded-md'>Go</button>
-                     <button className='text-center min-w-10 p-1 rounded-md' onClick={(event) => {event.preventDefault();location.reload()}}>Restart</button>
-                  </div>
-               </div>
-            </form>
+            <button onClick={() => setIsOpen(true)} className='openModalBtn'><img src="./img/info_icon.jpg" alt="How to use" title="How to use"/></button>
+            <Modal open={isOpen} onClose={() => setIsOpen(false)}>
+               <div>
+                    <h3 className='text-center'>How to Use:</h3>
+                    <p>1 - Import Build Code from: POE Ninja, Path Of Building, Pastebind or any equivalent.</p>
+                    <p>2 - Paste the code into the Import code Input.</p>
+                    <p>3 - Select your league.</p>
+                    <p>4 - Enjoy !</p>
+                </div>
+            </Modal>
          </div>
+         <InputCode handleSubmit={ handleSubmit }/>
          <StyledSplit className={`item_split-normal`}></StyledSplit>
          {loader? <div className="lds-dual-ring"></div> : <></>}
          {inputError? <p className='text-white text-center'>Build code not recognized! Try another Code.</p> : ''}
-         <article className='flex flex-col items-center gap-4 m-10 text-white'>
-            {!loader && !inputError && buildItemArray[0]?
-                  <ItemFeed items={buildItemArray} leagueChoice={leagueChoice} />
-               :
-                  <></>
-            }
-         </article>
+         {!loader && !inputError && buildItemArray[0]?
+               <article className='flex flex-col items-center gap-4 m-10 text-white'>
+                     <ItemFeed items={buildItemArray} leagueChoice={leagueChoice} />
+               </article>
+            :
+               <></>
+         }
       </div>
    )
 };

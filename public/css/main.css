@@ -31,8 +31,7 @@ p{
 textarea::placeholder{
     font-size:20px;
 }
-input[type=checkbox]
-{
+input[type=checkbox]{
   -ms-transform: scale(2); /* IE */
   -moz-transform: scale(2); /* FF */
   -webkit-transform: scale(2); /* Safari and Chrome */
@@ -40,6 +39,42 @@ input[type=checkbox]
   transform: scale(2);
   padding: 10px;
   cursor: pointer;
+}
+.openModalBtn{
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    width: 4rem;
+    height: 4rem;
+}
+@media screen and (max-width: 768px){
+    .openModalBtn{
+        position: relative;
+        display: block;
+        top: 50px;
+        right: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin-bottom: 30px;
+    }
+}
+.modal_bg{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-Color: rgba(0, 0, 0, 0.7);
+    z-Index: 2000;
+}
+.modal_content{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-Color: #FFF;
+    padding: 50px;
+    z-Index: 2000;
 }
 
 /*Item socket*/
