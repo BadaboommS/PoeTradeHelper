@@ -118,9 +118,9 @@ export function createItemObj(item, allItemData){
                 cleanItemInfoArray.shift();
         }
         if(itemImplicitNumber !== 0){
-            for(let i = 1; i <= itemImplicitNumber; i++){
+            for(let i = 0; i < itemImplicitNumber; i++){
                 let newImplicit = {
-                    text: cleanItemInfoArray[i-1],
+                    text: cleanItemInfoArray[0],
                     display: false
                 };
                 itemImplicitArray.push(newImplicit);

@@ -14,7 +14,7 @@ import Modal from './components/Modal';
 
 //init
 let buildItemArray = [];
-let leagueChoice = "Standard";
+let defaultLeagueChoice = "Necropolis";
 
 //styledComponents
 const StyledSplit = styled.p`
@@ -38,6 +38,20 @@ export function App() {
    }
    handleFetchData();
 
+   /* let uniqueWeapons;
+   let uniqueArmour;
+   let uniqueAccessory;
+   let uniqueFlask;
+   let uniqueJewel;
+
+   const handleFetchUniques = async (league) => {
+      uniqueWeapons = await fetchData(`https://poe.ninja/api/data/itemoverview?league=Necropolis&type=UniqueWeapon`);
+      uniqueArmour = await fetchData(`https://poe.ninja/api/data/itemoverview?league=Necropolis&type=UniqueArmour`);
+      uniqueAccessory = await fetchData(`https://poe.ninja/api/data/itemoverview?league=Necropolis&type=UniqueAccessory`);
+      uniqueFlask = await fetchData(`https://poe.ninja/api/data/itemoverview?league=Necropolis&type=UniqueFlask`);
+      uniqueJewel = await fetchData(`https://poe.ninja/api/data/itemoverview?league=Necropolis&type=UniqueJewel`);
+   } */
+
    function handleSubmit(event){
       buildItemArray = [];
       setInputError(false);
@@ -46,7 +60,7 @@ export function App() {
 
       //retrieve league choice
       let e = document.getElementById("leagueSelect");
-      leagueChoice = e.value;
+      defaultLeagueChoice !== e.value;
 
       //Retrieve Code and decode
       const code = event.target.importCode.value;
@@ -103,7 +117,7 @@ export function App() {
          {inputError? <p className='text-white text-center'>Build code not recognized! Try another Code.</p> : ''}
          {!loader && !inputError && buildItemArray[0]?
                <article className='flex flex-col items-center gap-4 m-10 text-white'>
-                     <ItemFeed items={buildItemArray} leagueChoice={leagueChoice} />
+                     <ItemFeed items={buildItemArray} leagueChoice={defaultLeagueChoice} />
                </article>
             :
                <></>
