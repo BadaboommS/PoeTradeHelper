@@ -10099,8 +10099,7 @@
 	}
 
 	function ItemInfo({
-	  item,
-	  itemName
+	  item
 	}) {
 	  return /*#__PURE__*/React.createElement("div", {
 	    className: "w-full lg:w-5/12"
@@ -10108,7 +10107,7 @@
 	    className: `item_border-${item.rarity.toLowerCase()} item_background-${item.rarity.toLowerCase()} p-5`
 	  }, /*#__PURE__*/React.createElement("span", {
 	    className: `item_rarity-${item.rarity.toLowerCase()} text-2xl`
-	  }, /*#__PURE__*/React.createElement("strong", null, itemName))), /*#__PURE__*/React.createElement("section", {
+	  }, /*#__PURE__*/React.createElement("strong", null, item.rarity === 'UNIQUE' ? `${item.name} - ${item.base}` : `${item.base}`))), /*#__PURE__*/React.createElement("section", {
 	    className: `item_border-${item.rarity.toLowerCase()} item_background-${item.rarity.toLowerCase()} p-5 flex flex-col items-center`
 	  }, /*#__PURE__*/React.createElement("div", null, item.defence[0] ? item.defence.map((def, i) => {
 	    return /*#__PURE__*/React.createElement("p", {
@@ -10153,23 +10152,27 @@
 	}
 
 	function Item({
+	  itemNumber,
 	  item,
-	  league,
-	  itemNumber
+	  league
 	}) {
-	  let itemName = item.base;
+	  let query = `https://poe.ninja/api/data/itemoverview?league=${league}`;
 	  if (item.rarity === "UNIQUE") {
-	    itemName = item.name + " - " + item.base;
+	    query += `Name=${item.itemName}`;
+	  } else {
+	    query += `BaseType=${item.itemBase}`;
 	  }
+
+	  //setTimeout(fetchItemData(),500*itemNumber)
+	  //console.log(itemData);
+
 	  return /*#__PURE__*/React.createElement("div", {
 	    className: "flex flex-row flex-wrap mx-10 gap-4 text-center justify-start items-center w-full"
 	  }, /*#__PURE__*/React.createElement(ItemInfo, {
-	    item: item,
-	    itemName: itemName
+	    item: item
 	  }), /*#__PURE__*/React.createElement(ItemTrade, {
 	    item: item,
 	    league: league,
-	    itemName: itemName,
 	    itemNumber: itemNumber,
 	    key: itemNumber
 	  }));

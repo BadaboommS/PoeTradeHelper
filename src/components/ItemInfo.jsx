@@ -1,11 +1,11 @@
 import React from 'react';
 import { handleExplicitClass } from "../utils/handleExplicitClass";
 
-export default function ItemInfo ({ item, itemName }) {
+export default function ItemInfo ({ item }) {
   return (
     <div className="w-full lg:w-5/12">
         <div className={`item_border-${item.rarity.toLowerCase()} item_background-${item.rarity.toLowerCase()} p-5`}>
-            <span className={`item_rarity-${item.rarity.toLowerCase()} text-2xl`}><strong>{itemName}</strong></span>
+            <span className={`item_rarity-${item.rarity.toLowerCase()} text-2xl`}><strong>{item.rarity === 'UNIQUE'? `${item.name} - ${item.base}` : `${item.base}`}</strong></span>
         </div>
         <section className={`item_border-${item.rarity.toLowerCase()} item_background-${item.rarity.toLowerCase()} p-5 flex flex-col items-center`}>
             <div>
