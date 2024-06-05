@@ -20,9 +20,6 @@ const StyledLink = styled.a`
     text-decoration: inherit;
     padding: 5px;
 `
-const StyledSplit = styled.p`
-    margin: 1rem auto;
-`
 
 export default function ItemTrade({item , league, itemName, itemNumber}){
 
@@ -88,7 +85,7 @@ export default function ItemTrade({item , league, itemName, itemNumber}){
     return(
         <section className="flex flex-col p-5 w-full lg:w-6/12">
             <p>Select desired modifiers for trade:</p>
-            <StyledSplit className={`item_split-${item.rarity.toLowerCase()}`}></StyledSplit>
+            <p className={`item_split item_split-${item.rarity.toLowerCase()}`}></p>
             <div className="flex flex-col items-center text-start item_stats">
                 <div className="text-center w-full">
                     {item.defence[0]?
@@ -132,7 +129,7 @@ export default function ItemTrade({item , league, itemName, itemNumber}){
                 {item.implicits.length? 
                     <div className="w-full">
                         <div>
-                            <StyledSplit className={`item_split-${item.rarity.toLowerCase()}`}></StyledSplit>
+                            <p className={`item_split item_split-${item.rarity.toLowerCase()}`}></p>
                             <p className="text-center">Implicits: </p>
                         </div>
                         <div>
@@ -153,7 +150,7 @@ export default function ItemTrade({item , league, itemName, itemNumber}){
                 }
                 {item.explicits.length?
                     <div className="w-full">
-                        <StyledSplit className={`item_split-${item.rarity.toLowerCase()}`}></StyledSplit>
+                        <p className={`item_split item_split-${item.rarity.toLowerCase()}`}></p>
                         <p className="text-center">Explicits: </p>
                         {
                             item.explicits.map((explicit, i) => {
@@ -170,7 +167,7 @@ export default function ItemTrade({item , league, itemName, itemNumber}){
                     <></>
                 }
             </div>
-            <StyledSplit className={`item_split-${item.rarity.toLowerCase()}`}></StyledSplit>
+            <p className={`item_split item_split-${item.rarity.toLowerCase()}`}></p>
             <StyledFlex className="justify-center">
                 <StyledLink href={tradeUrl} target="_blank" rel="noopener noreferrer">Trade</StyledLink>
                 <p>|</p>

@@ -39,7 +39,7 @@ export default function ItemInfo ({ item }) {
             <div className="item_stats">
                 {item.implicits.length? 
                     <div>
-                        <p className={`item_split-${item.rarity.toLowerCase()}`}></p>
+                        <p className={`item_split item_split-${item.rarity.toLowerCase()}`}></p>
                         {
                             item.implicits.map((implicit,i) => {
                                 return (<p key={i}className={handleExplicitClass(implicit.text)}>{implicit.text}</p>)
@@ -51,7 +51,7 @@ export default function ItemInfo ({ item }) {
                 }
                 {item.explicits.length?
                     <>
-                        <p className={`item_split-${item.rarity.toLowerCase()}`}></p>
+                        <p className={`item_split item_split-${item.rarity.toLowerCase()}`}></p>
                         {
                             item.explicits.map((explicit,i) => {
                                 return <p key={i} className={handleExplicitClass(explicit.text)}>{explicit.text}</p>
@@ -63,7 +63,7 @@ export default function ItemInfo ({ item }) {
                 }
                 {item.corrupted?
                     <>
-                        <p className={`item_split-${item.rarity.toLowerCase()}`}></p>
+                        <p className={`item_split item_split-${item.rarity.toLowerCase()}`}></p>
                         <p className="item_corrupted">Corrupted</p>
                     </>
                 :

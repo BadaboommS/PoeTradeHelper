@@ -7855,8 +7855,420 @@
 	  }
 	}
 
-	var css_248z = "/*! tailwindcss v3.4.3 | MIT License | https://tailwindcss.com*/*,:after,:before{border:0 solid #e5e7eb;box-sizing:border-box}:after,:before{--tw-content:\"\"}:host,html{-webkit-text-size-adjust:100%;font-feature-settings:normal;-webkit-tap-highlight-color:transparent;font-family:ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-variation-settings:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4}body{line-height:inherit;margin:0}hr{border-top-width:1px;color:inherit;height:0}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-feature-settings:normal;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-size:1em;font-variation-settings:normal}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{border-collapse:collapse;border-color:inherit;text-indent:0}button,input,optgroup,select,textarea{font-feature-settings:inherit;color:inherit;font-family:inherit;font-size:100%;font-variation-settings:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{color:#9ca3af;opacity:1}input::placeholder,textarea::placeholder{color:#9ca3af;opacity:1}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{height:auto;max-width:100%}[hidden]{display:none}*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }h1{font-size:1.5rem;line-height:2rem}h2{font-size:1.25rem}h2,h3{line-height:1.75rem}h3{font-size:1.125rem}button{background-color:#fff}.m-10{margin:2.5rem}.mx-10{margin-left:2.5rem;margin-right:2.5rem}.block{display:block}.flex{display:flex}.h-10{height:2.5rem}.w-3\\/4{width:75%}.w-full{width:100%}.min-w-10{min-width:2.5rem}.max-w-4xl{max-width:56rem}.flex-row{flex-direction:row}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.justify-start{justify-content:flex-start}.justify-center{justify-content:center}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.rounded-md{border-radius:.375rem}.rounded-sm{border-radius:.125rem}.bg-stone-500{--tw-bg-opacity:1;background-color:rgb(120 113 108/var(--tw-bg-opacity))}.p-1{padding:.25rem}.p-2{padding:.5rem}.p-5{padding:1.25rem}.text-center{text-align:center}.text-start{text-align:start}.text-2xl{font-size:1.5rem;line-height:2rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity))}.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}@media (min-width:768px){.md\\:flex-row{flex-direction:row}.md\\:justify-end{justify-content:flex-end}}@media (min-width:1024px){.lg\\:w-5\\/12{width:41.666667%}.lg\\:w-6\\/12{width:50%}}";
+	var css_248z = "/*! tailwindcss v3.4.3 | MIT License | https://tailwindcss.com*/*,:after,:before{border:0 solid #e5e7eb;box-sizing:border-box}:after,:before{--tw-content:\"\"}:host,html{-webkit-text-size-adjust:100%;font-feature-settings:normal;-webkit-tap-highlight-color:transparent;font-family:ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-variation-settings:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4}body{line-height:inherit;margin:0}hr{border-top-width:1px;color:inherit;height:0}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-feature-settings:normal;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-size:1em;font-variation-settings:normal}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{border-collapse:collapse;border-color:inherit;text-indent:0}button,input,optgroup,select,textarea{font-feature-settings:inherit;color:inherit;font-family:inherit;font-size:100%;font-variation-settings:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{color:#9ca3af;opacity:1}input::placeholder,textarea::placeholder{color:#9ca3af;opacity:1}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{height:auto;max-width:100%}[hidden]{display:none}*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }h1{font-size:1.5rem;line-height:2rem}h2{font-size:1.25rem}h2,h3{line-height:1.75rem}h3{font-size:1.125rem}button{background-color:#fff}.m-10{margin:2.5rem}.mx-10{margin-left:2.5rem;margin-right:2.5rem}.mx-4{margin-left:1rem;margin-right:1rem}.my-4{margin-bottom:1rem;margin-top:1rem}.block{display:block}.flex{display:flex}.h-10{height:2.5rem}.w-3\\/4{width:75%}.w-full{width:100%}.min-w-10{min-width:2.5rem}.max-w-4xl{max-width:56rem}.flex-row{flex-direction:row}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.justify-start{justify-content:flex-start}.justify-center{justify-content:center}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.rounded-md{border-radius:.375rem}.rounded-sm{border-radius:.125rem}.bg-stone-500{--tw-bg-opacity:1;background-color:rgb(120 113 108/var(--tw-bg-opacity))}.p-1{padding:.25rem}.p-2{padding:.5rem}.p-5{padding:1.25rem}.text-center{text-align:center}.text-start{text-align:start}.text-2xl{font-size:1.5rem;line-height:2rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity))}.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}@media (min-width:768px){.md\\:flex-row{flex-direction:row}.md\\:justify-end{justify-content:flex-end}}@media (min-width:1024px){.lg\\:w-5\\/12{width:41.666667%}.lg\\:w-6\\/12{width:50%}}";
 	styleInject(css_248z,{"insertAt":"top"});
+
+	function isIterable(obj) {
+	  // checks for null and undefined
+	  if (obj == null) {
+	    return false;
+	  }
+	  return typeof obj[Symbol.iterator] === 'function';
+	}
+
+	function codeDecompress(code) {
+	  try {
+	    //Retrieve Code and decode
+	    const cleanBase64Code = code.replaceAll('-', '+').replaceAll('_', '/');
+	    const compressedCode = atob(cleanBase64Code, "base64");
+
+	    //Inflate code
+	    const array = Uint8Array.from([...compressedCode].map(v => v.charCodeAt(0)));
+	    var data = pako.inflate(array);
+	    var xmlString = String.fromCharCode.apply(null, new Uint16Array(data));
+
+	    //Parse items into usable array
+	    const parser = new DOMParser();
+	    const xmlDoc = parser.parseFromString(xmlString, "text/xml");
+	    const htmlItems = xmlDoc.getElementsByTagName("Item");
+	    return htmlItems;
+	  } catch (err) {
+	    return err;
+	  }
+	}
+
+	function findItemBaseType(itemBase, allItemData, flask, jewel) {
+	  if (flask === true) {
+	    for (let i = 0, l = allItemData[3].list[0].list.length; i < l; i++) {
+	      if (itemBase.includes(allItemData[3].list[0].list[i])) {
+	        const item_base = allItemData[3].list[0].list[i];
+	        const item_sort = allItemData[3].list[0].sort_priority ? allItemData[3].list[0].sort_priority : null;
+	        const item_category = "flasks";
+	        const base_type = "Flask";
+	        const base_query = "flask";
+	        const base_info = {
+	          item_base: item_base,
+	          item_sort: item_sort,
+	          item_category: item_category,
+	          base_type: base_type,
+	          base_query: base_query
+	        };
+	        return base_info;
+	      }
+	    }
+	  } else if (jewel === true) {
+	    for (let i = 0, l = allItemData[4].list[2].list.length; i < l; i++) {
+	      if (itemBase.includes(allItemData[4].list[2].list[i])) {
+	        const item_base = allItemData[4].list[2].list[i];
+	        const item_sort = allItemData[4].list[2].sort_priority ? allItemData[4].list[2].sort_priority : null;
+	        const item_category = "jewels";
+	        const base_type = "Abyss Jewel";
+	        const base_query = "jewel.abyss";
+	        const base_info = {
+	          item_base: item_base,
+	          item_sort: item_sort,
+	          item_category: item_category,
+	          base_type: base_type,
+	          base_query: base_query
+	        };
+	        return base_info;
+	      }
+	    }
+	  } else {
+	    for (let i = 0, l = allItemData.length; i < l; i++) {
+	      for (let j = 0, k = allItemData[i].list.length; j < k; j++) {
+	        if (allItemData[i].list[j].list.includes(itemBase)) {
+	          const item_category = allItemData[i].id;
+	          const item_sort = allItemData[i].list[j].sort_priority ? allItemData[i].list[j].sort_priority : null;
+	          const base_type = allItemData[i].list[j].base_type;
+	          const stat_type = allItemData[i].list[j].stat_type ? allItemData[i].list[j].stat_type : null;
+	          const base_query = allItemData[i].list[j].base_query;
+	          const base_info = {
+	            item_category: item_category,
+	            item_sort: item_sort,
+	            base_type: base_type,
+	            stat_type: stat_type,
+	            base_query: base_query
+	          };
+	          return base_info;
+	        }
+	      }
+	    }
+	  }
+	}
+
+	function createItemObj(item, allItemData) {
+	  let itemContent = item.textContent.replace(/\t/g, '');
+	  let itemInfoArray = itemContent.split('\n');
+	  let cleanItemInfoArray = itemInfoArray.filter(str => str != '');
+
+	  // useless lines filter
+	  let filters = ['BasePercentile:', 'Unique ID:', "LevelReq:", "Quality:", "Requires"];
+	  for (const fil of filters) {
+	    cleanItemInfoArray = cleanItemInfoArray.filter(line => {
+	      return line.indexOf(fil) === -1;
+	    });
+	  }
+
+	  //Corrupted
+	  let itemIsCorrupted = false;
+	  try {
+	    if (cleanItemInfoArray[cleanItemInfoArray.length - 1] === 'Corrupted') {
+	      itemIsCorrupted = true;
+	      cleanItemInfoArray.pop();
+	    }
+	  } catch (err) {
+	    console.log("Corruption parse Problem !", err);
+	  }
+
+	  //Item Rarity
+	  let itemRarity;
+	  try {
+	    if (cleanItemInfoArray[0].includes('Rarity:')) {
+	      itemRarity = cleanItemInfoArray[0].split(': ')[1];
+	      cleanItemInfoArray.shift();
+	    } else if (itemRarity === "RELIC") {
+	      itemRarity = 'UNIQUE';
+	    }
+	  } catch (err) {
+	    console.log("Rarity parse Problem ! ", err);
+	  }
+
+	  //Item Name & Base
+	  let itemName;
+	  let itemBase;
+	  let itemBaseInfo;
+	  let flask = null;
+	  let abyss = null;
+	  if (cleanItemInfoArray[0].indexOf('Flask') !== -1) {
+	    itemName = cleanItemInfoArray[0];
+	    if (cleanItemInfoArray[1].indexOf('Flask' !== -1)) {
+	      cleanItemInfoArray.shift();
+	    }
+	    cleanItemInfoArray.shift();
+
+	    //Base Info
+	    flask = true;
+	    itemBaseInfo = findItemBaseType(itemName, allItemData, flask, abyss);
+	    itemBase = itemBaseInfo.item_base;
+	  } else if (itemRarity !== "UNIQUE" && cleanItemInfoArray[0].indexOf('Eye Jewel') !== -1) {
+	    itemName = cleanItemInfoArray[0];
+	    cleanItemInfoArray.shift();
+
+	    //Base Info
+	    let abyss = true;
+	    itemBaseInfo = findItemBaseType(itemName, allItemData, flask, abyss);
+	    itemBase = itemBaseInfo.item_base;
+	  } else {
+	    itemName = cleanItemInfoArray[0];
+	    itemBase = cleanItemInfoArray[1];
+	    cleanItemInfoArray.shift();
+	    cleanItemInfoArray.shift();
+	    //Base Info
+	    itemBaseInfo = findItemBaseType(itemBase, allItemData);
+	  }
+
+	  //Item Defences
+	  let itemDefences = [];
+	  try {
+	    cleanItemInfoArray.map((line, i) => {
+	      if (line.includes("Armour: ") || line.includes("Energy Shield: ") || line.includes("Evasion: ") || line.includes("Ward: ")) {
+	        itemDefences.push(line);
+	      }
+	    });
+	    for (let i = 0, l = itemDefences.length; i < l; i++) {
+	      cleanItemInfoArray.shift();
+	    }
+	  } catch (err) {
+	    console.log(err);
+	  }
+
+	  //Item Lv
+	  let itemIlv = null;
+	  try {
+	    if (cleanItemInfoArray[0].includes("Item Level:")) {
+	      itemIlv = cleanItemInfoArray[0].split(": ")[1];
+	      cleanItemInfoArray.shift();
+	    }
+	  } catch (err) {
+	    console.log(err);
+	  }
+
+	  //Item Sockets
+	  let itemSockets = [];
+	  try {
+	    if (cleanItemInfoArray[0].includes("Sockets:")) {
+	      itemSockets = cleanItemInfoArray[0].split(": ")[1].split(/-| /);
+	      cleanItemInfoArray.shift();
+	    }
+	  } catch (err) {
+	    console.log(err);
+	  }
+
+	  //Item Implicit
+	  let itemImplicitNumber = 0;
+	  let itemImplicitArray = [];
+	  try {
+	    if (cleanItemInfoArray[0].includes("Implicits:")) {
+	      itemImplicitNumber = cleanItemInfoArray[0].split(": ")[1];
+	      cleanItemInfoArray.shift();
+	    }
+	    if (itemImplicitNumber !== 0) {
+	      for (let i = 0; i < itemImplicitNumber; i++) {
+	        let newImplicit = {
+	          text: cleanItemInfoArray[0],
+	          display: false
+	        };
+	        itemImplicitArray.push(newImplicit);
+	        cleanItemInfoArray.shift();
+	      }
+	    }
+	    ;
+	  } catch (err) {
+	    console.log(err);
+	  }
+
+	  //Item Modifiers
+	  let itemExplicitsArray = [];
+	  try {
+	    while (cleanItemInfoArray.length > 0) {
+	      let newExplicit = {
+	        text: cleanItemInfoArray[0],
+	        display: false
+	      };
+	      itemExplicitsArray.push(newExplicit);
+	      cleanItemInfoArray.shift();
+	    }
+	  } catch (err) {
+	    console.log(err);
+	  }
+
+	  //return new item object
+	  let newItem = {
+	    name: itemName,
+	    base: itemBase,
+	    baseInfo: itemBaseInfo,
+	    defence: itemDefences,
+	    rarity: itemRarity,
+	    iLv: itemIlv,
+	    sockets: itemSockets,
+	    implicits: itemImplicitArray,
+	    explicits: itemExplicitsArray,
+	    corrupted: itemIsCorrupted
+	  };
+	  return newItem;
+	}
+
+	async function fetchData(url) {
+	  const data = await fetch(url);
+	  const dataJson = await data.json();
+	  const dataResult = await dataJson.result;
+	  return await dataResult;
+	}
+
+	function translateModifiers(allModifiers, modArray, type) {
+	  try {
+	    modArray.map(mod => {
+	      //remove bracket
+	      let modText;
+	      let specialMod;
+	      if (mod.text.includes("}")) {
+	        modText = mod.text.split('}')[1];
+	        specialMod = mod.text.split('}')[0].slice(1);
+	      } else {
+	        modText = mod.text;
+	      }
+	      const r = /(\d+)/g;
+	      let modValue = modText.match(r);
+	      let modId = modText.replaceAll(r, "#");
+	      let modFilter;
+	      let modOption;
+	      if (type === 'implicit') {
+	        //exceptions
+	        if (modId.includes(':')) {
+	          let split = modId.split(':');
+	          modId = split[0];
+	        }
+	        if (modId.includes('Allocates')) {
+	          modFilter = 'enchant.stat_2954116742';
+	          let tempModOption = modId.split('llocates ')[1];
+	          let tempOptionId;
+	          for (let i = 0, l = allModifiers[4].entries[4].option.options.length; i < l; i++) {
+	            if (allModifiers[4].entries[4].option.options[i].text.includes(tempModOption)) {
+	              tempOptionId = allModifiers[4].entries[4].option.options[i].id;
+	              break;
+	            }
+	          }
+	          modOption = tempOptionId;
+	        }
+	        if (modId.includes('#.#')) {
+	          //BUG DOESNT REPLACE
+	          modId.replace('#.#', "#");
+	        }
+	        if (specialMod === 'enchant') {
+	          for (let i = 0, l = allModifiers[4].entries.length; i < l; i++) {
+	            if (allModifiers[4].entries[i].text.includes(modId)) {
+	              modFilter = allModifiers[4].entries[i].id;
+	              break;
+	            }
+	          }
+	        } else if (specialMod === 'crafted') {
+	          for (let i = 0, l = allModifiers[4].entries.length; i < l; i++) {
+	            if (allModifiers[4].entries[i].text.includes(modId)) {
+	              modFilter = allModifiers[4].entries[i].id;
+	              break;
+	            }
+	          }
+	          if (modFilter === 'enchant.stat_3948993189') {
+	            let tempModOption = modText.split("grant: ")[1];
+	            let tempOptionId;
+	            for (let i = 0, l = allModifiers[4].entries[1].option.options.length; i < l; i++) {
+	              if (allModifiers[4].entries[1].option.options[i].text.includes(tempModOption)) {
+	                tempOptionId = allModifiers[4].entries[1].option.options[i].id;
+	                break;
+	              }
+	            }
+	            modValue = '';
+	            modOption = tempOptionId;
+	          }
+	        } else {
+	          for (let i = 0, l = allModifiers[0].entries.length; i < l; i++) {
+	            if (allModifiers[0].entries[i].text === modId) {
+	              modFilter = allModifiers[0].entries[i].id;
+	              break;
+	            }
+	          }
+	          if (modFilter === undefined) {
+	            for (let i = 0, l = allModifiers[0].entries.length; i < l; i++) {
+	              if (allModifiers[0].entries[i].text.includes(modId)) {
+	                modFilter = allModifiers[0].entries[i].id;
+	                break;
+	              }
+	            }
+	          }
+	        }
+	      }
+	      if (type === 'explicit') {
+	        if (specialMod === 'fractured') {
+	          for (let i = 0, l = allModifiers[3].entries.length; i < l; i++) {
+	            if (allModifiers[3].entries[i].text.includes(modId)) {
+	              modFilter = allModifiers[3].entries[i].id;
+	              break;
+	            }
+	          }
+	        } else if (specialMod === 'crafted') {
+	          for (let i = 0, l = allModifiers[6].entries.length; i < l; i++) {
+	            if (allModifiers[6].entries[i].text.includes(modId)) {
+	              modFilter = allModifiers[6].entries[i].id;
+	              break;
+	            }
+	          }
+	        } else {
+	          for (let i = 0, l = allModifiers[0].entries.length; i < l; i++) {
+	            if (allModifiers[0].entries[i].text === modId) {
+	              modFilter = allModifiers[0].entries[i].id;
+	              break;
+	            }
+	          }
+	          if (modFilter === undefined) {
+	            for (let i = 0, l = allModifiers[1].entries.length; i < l; i++) {
+	              if (allModifiers[1].entries[i].text.includes(modId)) {
+	                modFilter = allModifiers[1].entries[i].id;
+	                break;
+	              }
+	            }
+	          }
+	          if (modFilter === undefined) {
+	            for (let i = 0, l = allModifiers[1].entries.length; i < l; i++) {
+	              if (allModifiers[1].entries[i].text === modId) {
+	                modFilter = allModifiers[1].entries[i].id;
+	                break;
+	              }
+	            }
+	          }
+	          if (modFilter === undefined) {
+	            for (let i = 0, l = allModifiers[1].entries.length; i < l; i++) {
+	              if (allModifiers[1].entries[i].text.includes(modId)) {
+	                modFilter = allModifiers[1].entries[i].id;
+	                break;
+	              }
+	            }
+	          }
+	        }
+	      }
+	      mod.filter = modFilter;
+	      mod.value = modValue;
+	      mod.option = modOption;
+	    });
+	  } catch (err) {
+	    console.log(err);
+	  }
+	}
+
+	function addOrder(buildItemArray) {
+	  let tempBuildItemArray = [];
+	  let tempArrayWeapons = buildItemArray.filter(item => item.baseInfo.item_category === "weapons");
+	  let tempArrayArmour = buildItemArray.filter(item => item.baseInfo.item_category === "armour");
+	  tempArrayArmour.sort((a, b) => a.baseInfo.item_sort < b.baseInfo.item_sort ? -1 : a.baseInfo.item_sort > b.baseInfo.item_sort ? 1 : 0);
+	  let tempArrayAccessories = buildItemArray.filter(item => item.baseInfo.item_category === "accessories");
+	  tempArrayAccessories.sort((a, b) => a.baseInfo.item_sort < b.baseInfo.item_sort ? -1 : a.baseInfo.item_sort > b.baseInfo.item_sort ? 1 : 0);
+	  let tempArrayFlask = buildItemArray.filter(item => item.baseInfo.item_category === "flasks");
+	  let tempArrayJewel = buildItemArray.filter(item => item.baseInfo.item_category === "jewels");
+	  tempArrayJewel.sort((a, b) => a.baseInfo.item_sort < b.baseInfo.item_sort ? -1 : a.baseInfo.item_sort > b.baseInfo.item_sort ? 1 : 0);
+	  let tempArrayUndefined = buildItemArray.filter(item => item.baseInfo.item_category === undefined);
+	  tempBuildItemArray = [...tempArrayWeapons, ...tempArrayArmour, ...tempArrayAccessories, ...tempArrayFlask, ...tempArrayJewel, ...tempArrayUndefined];
+	  return tempBuildItemArray;
+	}
 
 	/******************************************************************************
 	Copyright (c) Microsoft Corporation.
@@ -9436,418 +9848,6 @@
 	  ut[e] = lt(e);
 	});
 
-	function isIterable(obj) {
-	  // checks for null and undefined
-	  if (obj == null) {
-	    return false;
-	  }
-	  return typeof obj[Symbol.iterator] === 'function';
-	}
-
-	function codeDecompress(code) {
-	  try {
-	    //Retrieve Code and decode
-	    const cleanBase64Code = code.replaceAll('-', '+').replaceAll('_', '/');
-	    const compressedCode = atob(cleanBase64Code, "base64");
-
-	    //Inflate code
-	    const array = Uint8Array.from([...compressedCode].map(v => v.charCodeAt(0)));
-	    var data = pako.inflate(array);
-	    var xmlString = String.fromCharCode.apply(null, new Uint16Array(data));
-
-	    //Parse items into usable array
-	    const parser = new DOMParser();
-	    const xmlDoc = parser.parseFromString(xmlString, "text/xml");
-	    const htmlItems = xmlDoc.getElementsByTagName("Item");
-	    return htmlItems;
-	  } catch (err) {
-	    return err;
-	  }
-	}
-
-	function findItemBaseType(itemBase, allItemData, flask, jewel) {
-	  if (flask === true) {
-	    for (let i = 0, l = allItemData[3].list[0].list.length; i < l; i++) {
-	      if (itemBase.includes(allItemData[3].list[0].list[i])) {
-	        const item_base = allItemData[3].list[0].list[i];
-	        const item_sort = allItemData[3].list[0].sort_priority ? allItemData[3].list[0].sort_priority : null;
-	        const item_category = "flasks";
-	        const base_type = "Flask";
-	        const base_query = "flask";
-	        const base_info = {
-	          item_base: item_base,
-	          item_sort: item_sort,
-	          item_category: item_category,
-	          base_type: base_type,
-	          base_query: base_query
-	        };
-	        return base_info;
-	      }
-	    }
-	  } else if (jewel === true) {
-	    for (let i = 0, l = allItemData[4].list[2].list.length; i < l; i++) {
-	      if (itemBase.includes(allItemData[4].list[2].list[i])) {
-	        const item_base = allItemData[4].list[2].list[i];
-	        const item_sort = allItemData[4].list[2].sort_priority ? allItemData[4].list[2].sort_priority : null;
-	        const item_category = "jewels";
-	        const base_type = "Abyss Jewel";
-	        const base_query = "jewel.abyss";
-	        const base_info = {
-	          item_base: item_base,
-	          item_sort: item_sort,
-	          item_category: item_category,
-	          base_type: base_type,
-	          base_query: base_query
-	        };
-	        return base_info;
-	      }
-	    }
-	  } else {
-	    for (let i = 0, l = allItemData.length; i < l; i++) {
-	      for (let j = 0, k = allItemData[i].list.length; j < k; j++) {
-	        if (allItemData[i].list[j].list.includes(itemBase)) {
-	          const item_category = allItemData[i].id;
-	          const item_sort = allItemData[i].list[j].sort_priority ? allItemData[i].list[j].sort_priority : null;
-	          const base_type = allItemData[i].list[j].base_type;
-	          const stat_type = allItemData[i].list[j].stat_type ? allItemData[i].list[j].stat_type : null;
-	          const base_query = allItemData[i].list[j].base_query;
-	          const base_info = {
-	            item_category: item_category,
-	            item_sort: item_sort,
-	            base_type: base_type,
-	            stat_type: stat_type,
-	            base_query: base_query
-	          };
-	          return base_info;
-	        }
-	      }
-	    }
-	  }
-	}
-
-	function createItemObj(item, allItemData) {
-	  let itemContent = item.textContent.replace(/\t/g, '');
-	  let itemInfoArray = itemContent.split('\n');
-	  let cleanItemInfoArray = itemInfoArray.filter(str => str != '');
-
-	  // useless lines filter
-	  let filters = ['BasePercentile:', 'Unique ID:', "LevelReq:", "Quality:", "Requires"];
-	  for (const fil of filters) {
-	    cleanItemInfoArray = cleanItemInfoArray.filter(line => {
-	      return line.indexOf(fil) === -1;
-	    });
-	  }
-
-	  //Corrupted
-	  let itemIsCorrupted = false;
-	  try {
-	    if (cleanItemInfoArray[cleanItemInfoArray.length - 1] === 'Corrupted') {
-	      itemIsCorrupted = true;
-	      cleanItemInfoArray.pop();
-	    }
-	  } catch (err) {
-	    console.log("Corruption parse Problem !", err);
-	  }
-
-	  //Item Rarity
-	  let itemRarity;
-	  try {
-	    if (cleanItemInfoArray[0].includes('Rarity:')) {
-	      itemRarity = cleanItemInfoArray[0].split(': ')[1];
-	      cleanItemInfoArray.shift();
-	    } else if (itemRarity === "RELIC") {
-	      itemRarity = 'UNIQUE';
-	    }
-	  } catch (err) {
-	    console.log("Rarity parse Problem ! ", err);
-	  }
-
-	  //Item Name & Base
-	  let itemName;
-	  let itemBase;
-	  let itemBaseInfo;
-	  let flask = null;
-	  let abyss = null;
-	  if (cleanItemInfoArray[0].indexOf('Flask') !== -1) {
-	    itemName = cleanItemInfoArray[0];
-	    if (cleanItemInfoArray[1].indexOf('Flask' !== -1)) {
-	      cleanItemInfoArray.shift();
-	    }
-	    cleanItemInfoArray.shift();
-
-	    //Base Info
-	    flask = true;
-	    itemBaseInfo = findItemBaseType(itemName, allItemData, flask, abyss);
-	    itemBase = itemBaseInfo.item_base;
-	  } else if (itemRarity !== "UNIQUE" && cleanItemInfoArray[0].indexOf('Eye Jewel') !== -1) {
-	    itemName = cleanItemInfoArray[0];
-	    cleanItemInfoArray.shift();
-
-	    //Base Info
-	    let abyss = true;
-	    itemBaseInfo = findItemBaseType(itemName, allItemData, flask, abyss);
-	    itemBase = itemBaseInfo.item_base;
-	  } else {
-	    itemName = cleanItemInfoArray[0];
-	    itemBase = cleanItemInfoArray[1];
-	    cleanItemInfoArray.shift();
-	    cleanItemInfoArray.shift();
-	    //Base Info
-	    itemBaseInfo = findItemBaseType(itemBase, allItemData);
-	  }
-
-	  //Item Defences
-	  let itemDefences = [];
-	  try {
-	    cleanItemInfoArray.map((line, i) => {
-	      if (line.includes("Armour: ") || line.includes("Energy Shield: ") || line.includes("Evasion: ") || line.includes("Ward: ")) {
-	        itemDefences.push(line);
-	      }
-	    });
-	    for (let i = 0, l = itemDefences.length; i < l; i++) {
-	      cleanItemInfoArray.shift();
-	    }
-	  } catch (err) {
-	    console.log(err);
-	  }
-
-	  //Item Lv
-	  let itemIlv = null;
-	  try {
-	    if (cleanItemInfoArray[0].includes("Item Level:")) {
-	      itemIlv = cleanItemInfoArray[0].split(": ")[1];
-	      cleanItemInfoArray.shift();
-	    }
-	  } catch (err) {
-	    console.log(err);
-	  }
-
-	  //Item Sockets
-	  let itemSockets = [];
-	  try {
-	    if (cleanItemInfoArray[0].includes("Sockets:")) {
-	      itemSockets = cleanItemInfoArray[0].split(": ")[1].split(/-| /);
-	      cleanItemInfoArray.shift();
-	    }
-	  } catch (err) {
-	    console.log(err);
-	  }
-
-	  //Item Implicit
-	  let itemImplicitNumber = 0;
-	  let itemImplicitArray = [];
-	  try {
-	    if (cleanItemInfoArray[0].includes("Implicits:")) {
-	      itemImplicitNumber = cleanItemInfoArray[0].split(": ")[1];
-	      cleanItemInfoArray.shift();
-	    }
-	    if (itemImplicitNumber !== 0) {
-	      for (let i = 0; i < itemImplicitNumber; i++) {
-	        let newImplicit = {
-	          text: cleanItemInfoArray[0],
-	          display: false
-	        };
-	        itemImplicitArray.push(newImplicit);
-	        cleanItemInfoArray.shift();
-	      }
-	    }
-	    ;
-	  } catch (err) {
-	    console.log(err);
-	  }
-
-	  //Item Modifiers
-	  let itemExplicitsArray = [];
-	  try {
-	    while (cleanItemInfoArray.length > 0) {
-	      let newExplicit = {
-	        text: cleanItemInfoArray[0],
-	        display: false
-	      };
-	      itemExplicitsArray.push(newExplicit);
-	      cleanItemInfoArray.shift();
-	    }
-	  } catch (err) {
-	    console.log(err);
-	  }
-
-	  //return new item object
-	  let newItem = {
-	    name: itemName,
-	    base: itemBase,
-	    baseInfo: itemBaseInfo,
-	    defence: itemDefences,
-	    rarity: itemRarity,
-	    iLv: itemIlv,
-	    sockets: itemSockets,
-	    implicits: itemImplicitArray,
-	    explicits: itemExplicitsArray,
-	    corrupted: itemIsCorrupted
-	  };
-	  return newItem;
-	}
-
-	async function fetchData(url) {
-	  const data = await fetch(url);
-	  const dataJson = await data.json();
-	  const dataResult = await dataJson.result;
-	  return await dataResult;
-	}
-
-	function translateModifiers(allModifiers, modArray, type) {
-	  try {
-	    modArray.map(mod => {
-	      //remove bracket
-	      let modText;
-	      let specialMod;
-	      if (mod.text.includes("}")) {
-	        modText = mod.text.split('}')[1];
-	        specialMod = mod.text.split('}')[0].slice(1);
-	      } else {
-	        modText = mod.text;
-	      }
-	      const r = /(\d+)/g;
-	      let modValue = modText.match(r);
-	      let modId = modText.replaceAll(r, "#");
-	      let modFilter;
-	      let modOption;
-	      if (type === 'implicit') {
-	        //exceptions
-	        if (modId.includes(':')) {
-	          let split = modId.split(':');
-	          modId = split[0];
-	        }
-	        if (modId.includes('Allocates')) {
-	          modFilter = 'enchant.stat_2954116742';
-	          let tempModOption = modId.split('llocates ')[1];
-	          let tempOptionId;
-	          for (let i = 0, l = allModifiers[4].entries[4].option.options.length; i < l; i++) {
-	            if (allModifiers[4].entries[4].option.options[i].text.includes(tempModOption)) {
-	              tempOptionId = allModifiers[4].entries[4].option.options[i].id;
-	              break;
-	            }
-	          }
-	          modOption = tempOptionId;
-	        }
-	        if (modId.includes('#.#')) {
-	          //BUG DOESNT REPLACE
-	          modId.replace('#.#', "#");
-	        }
-	        if (specialMod === 'enchant') {
-	          for (let i = 0, l = allModifiers[4].entries.length; i < l; i++) {
-	            if (allModifiers[4].entries[i].text.includes(modId)) {
-	              modFilter = allModifiers[4].entries[i].id;
-	              break;
-	            }
-	          }
-	        } else if (specialMod === 'crafted') {
-	          for (let i = 0, l = allModifiers[4].entries.length; i < l; i++) {
-	            if (allModifiers[4].entries[i].text.includes(modId)) {
-	              modFilter = allModifiers[4].entries[i].id;
-	              break;
-	            }
-	          }
-	          if (modFilter === 'enchant.stat_3948993189') {
-	            let tempModOption = modText.split("grant: ")[1];
-	            let tempOptionId;
-	            for (let i = 0, l = allModifiers[4].entries[1].option.options.length; i < l; i++) {
-	              if (allModifiers[4].entries[1].option.options[i].text.includes(tempModOption)) {
-	                tempOptionId = allModifiers[4].entries[1].option.options[i].id;
-	                break;
-	              }
-	            }
-	            modValue = '';
-	            modOption = tempOptionId;
-	          }
-	        } else {
-	          for (let i = 0, l = allModifiers[0].entries.length; i < l; i++) {
-	            if (allModifiers[0].entries[i].text === modId) {
-	              modFilter = allModifiers[0].entries[i].id;
-	              break;
-	            }
-	          }
-	          if (modFilter === undefined) {
-	            for (let i = 0, l = allModifiers[0].entries.length; i < l; i++) {
-	              if (allModifiers[0].entries[i].text.includes(modId)) {
-	                modFilter = allModifiers[0].entries[i].id;
-	                break;
-	              }
-	            }
-	          }
-	        }
-	      }
-	      if (type === 'explicit') {
-	        if (specialMod === 'fractured') {
-	          for (let i = 0, l = allModifiers[3].entries.length; i < l; i++) {
-	            if (allModifiers[3].entries[i].text.includes(modId)) {
-	              modFilter = allModifiers[3].entries[i].id;
-	              break;
-	            }
-	          }
-	        } else if (specialMod === 'crafted') {
-	          for (let i = 0, l = allModifiers[6].entries.length; i < l; i++) {
-	            if (allModifiers[6].entries[i].text.includes(modId)) {
-	              modFilter = allModifiers[6].entries[i].id;
-	              break;
-	            }
-	          }
-	        } else {
-	          for (let i = 0, l = allModifiers[0].entries.length; i < l; i++) {
-	            if (allModifiers[0].entries[i].text === modId) {
-	              modFilter = allModifiers[0].entries[i].id;
-	              break;
-	            }
-	          }
-	          if (modFilter === undefined) {
-	            for (let i = 0, l = allModifiers[1].entries.length; i < l; i++) {
-	              if (allModifiers[1].entries[i].text.includes(modId)) {
-	                modFilter = allModifiers[1].entries[i].id;
-	                break;
-	              }
-	            }
-	          }
-	          if (modFilter === undefined) {
-	            for (let i = 0, l = allModifiers[1].entries.length; i < l; i++) {
-	              if (allModifiers[1].entries[i].text === modId) {
-	                modFilter = allModifiers[1].entries[i].id;
-	                break;
-	              }
-	            }
-	          }
-	          if (modFilter === undefined) {
-	            for (let i = 0, l = allModifiers[1].entries.length; i < l; i++) {
-	              if (allModifiers[1].entries[i].text.includes(modId)) {
-	                modFilter = allModifiers[1].entries[i].id;
-	                break;
-	              }
-	            }
-	          }
-	        }
-	      }
-	      mod.filter = modFilter;
-	      mod.value = modValue;
-	      mod.option = modOption;
-	    });
-	  } catch (err) {
-	    console.log(err);
-	  }
-	}
-
-	function addOrder(buildItemArray) {
-	  let tempBuildItemArray = [];
-	  let tempArrayWeapons = buildItemArray.filter(item => item.baseInfo.item_category === "weapons");
-	  let tempArrayArmour = buildItemArray.filter(item => item.baseInfo.item_category === "armour");
-	  tempArrayArmour.sort((a, b) => a.baseInfo.item_sort < b.baseInfo.item_sort ? -1 : a.baseInfo.item_sort > b.baseInfo.item_sort ? 1 : 0);
-	  let tempArrayAccessories = buildItemArray.filter(item => item.baseInfo.item_category === "accessories");
-	  tempArrayAccessories.sort((a, b) => a.baseInfo.item_sort < b.baseInfo.item_sort ? -1 : a.baseInfo.item_sort > b.baseInfo.item_sort ? 1 : 0);
-	  let tempArrayFlask = buildItemArray.filter(item => item.baseInfo.item_category === "flasks");
-	  let tempArrayJewel = buildItemArray.filter(item => item.baseInfo.item_category === "jewels");
-	  tempArrayJewel.sort((a, b) => a.baseInfo.item_sort < b.baseInfo.item_sort ? -1 : a.baseInfo.item_sort > b.baseInfo.item_sort ? 1 : 0);
-	  let tempArrayUndefined = buildItemArray.filter(item => item.baseInfo.item_category === undefined);
-	  tempBuildItemArray = [...tempArrayWeapons, ...tempArrayArmour, ...tempArrayAccessories, ...tempArrayFlask, ...tempArrayJewel, ...tempArrayUndefined];
-	  return tempBuildItemArray;
-	}
-
 	function generateTradeUrl(tradeIlv, tradeLinks, tradeCorrupted, tradeDefence, tradeImplicits, tradeExplicits, item, league) {
 	  const leagueChoice = league;
 
@@ -9950,9 +9950,6 @@
     text-decoration: inherit;
     padding: 5px;
 `;
-	const StyledSplit$2 = ut.p`
-    margin: 1rem auto;
-`;
 	function ItemTrade({
 	  item,
 	  league,
@@ -10012,8 +10009,8 @@
 	  }, []);
 	  return /*#__PURE__*/React.createElement("section", {
 	    className: "flex flex-col p-5 w-full lg:w-6/12"
-	  }, /*#__PURE__*/React.createElement("p", null, "Select desired modifiers for trade:"), /*#__PURE__*/React.createElement(StyledSplit$2, {
-	    className: `item_split-${item.rarity.toLowerCase()}`
+	  }, /*#__PURE__*/React.createElement("p", null, "Select desired modifiers for trade:"), /*#__PURE__*/React.createElement("p", {
+	    className: `item_split item_split-${item.rarity.toLowerCase()}`
 	  }), /*#__PURE__*/React.createElement("div", {
 	    className: "flex flex-col items-center text-start item_stats"
 	  }, /*#__PURE__*/React.createElement("div", {
@@ -10055,8 +10052,8 @@
 	    className: "item_corrupted"
 	  }, "Corrupted")) : /*#__PURE__*/React.createElement(React.Fragment, null)), item.implicits.length ? /*#__PURE__*/React.createElement("div", {
 	    className: "w-full"
-	  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(StyledSplit$2, {
-	    className: `item_split-${item.rarity.toLowerCase()}`
+	  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("p", {
+	    className: `item_split item_split-${item.rarity.toLowerCase()}`
 	  }), /*#__PURE__*/React.createElement("p", {
 	    className: "text-center"
 	  }, "Implicits: ")), /*#__PURE__*/React.createElement("div", null, item.implicits.map((implicit, i) => {
@@ -10072,8 +10069,8 @@
 	    }, implicit.text));
 	  }))) : /*#__PURE__*/React.createElement(React.Fragment, null), item.explicits.length ? /*#__PURE__*/React.createElement("div", {
 	    className: "w-full"
-	  }, /*#__PURE__*/React.createElement(StyledSplit$2, {
-	    className: `item_split-${item.rarity.toLowerCase()}`
+	  }, /*#__PURE__*/React.createElement("p", {
+	    className: `item_split item_split-${item.rarity.toLowerCase()}`
 	  }), /*#__PURE__*/React.createElement("p", {
 	    className: "text-center"
 	  }, "Explicits: "), item.explicits.map((explicit, i) => {
@@ -10087,8 +10084,8 @@
 	      htmlFor: `${itemNumber}_${itemName}_explicit_${i}`,
 	      className: handleExplicitClass(explicit.text)
 	    }, explicit.text));
-	  })) : /*#__PURE__*/React.createElement(React.Fragment, null)), /*#__PURE__*/React.createElement(StyledSplit$2, {
-	    className: `item_split-${item.rarity.toLowerCase()}`
+	  })) : /*#__PURE__*/React.createElement(React.Fragment, null)), /*#__PURE__*/React.createElement("p", {
+	    className: `item_split item_split-${item.rarity.toLowerCase()}`
 	  }), /*#__PURE__*/React.createElement(StyledFlex, {
 	    className: "justify-center"
 	  }, /*#__PURE__*/React.createElement(StyledLink, {
@@ -10131,21 +10128,21 @@
 	  }, "Links:"), " ", item.sockets.length)) : /*#__PURE__*/React.createElement(React.Fragment, null)), /*#__PURE__*/React.createElement("div", {
 	    className: "item_stats"
 	  }, item.implicits.length ? /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("p", {
-	    className: `item_split-${item.rarity.toLowerCase()}`
+	    className: `item_split item_split-${item.rarity.toLowerCase()}`
 	  }), item.implicits.map((implicit, i) => {
 	    return /*#__PURE__*/React.createElement("p", {
 	      key: i,
 	      className: handleExplicitClass(implicit.text)
 	    }, implicit.text);
 	  })) : /*#__PURE__*/React.createElement(React.Fragment, null), item.explicits.length ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("p", {
-	    className: `item_split-${item.rarity.toLowerCase()}`
+	    className: `item_split item_split-${item.rarity.toLowerCase()}`
 	  }), item.explicits.map((explicit, i) => {
 	    return /*#__PURE__*/React.createElement("p", {
 	      key: i,
 	      className: handleExplicitClass(explicit.text)
 	    }, explicit.text);
 	  })) : /*#__PURE__*/React.createElement(React.Fragment, null), item.corrupted ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("p", {
-	    className: `item_split-${item.rarity.toLowerCase()}`
+	    className: `item_split item_split-${item.rarity.toLowerCase()}`
 	  }), /*#__PURE__*/React.createElement("p", {
 	    className: "item_corrupted"
 	  }, "Corrupted")) : /*#__PURE__*/React.createElement(React.Fragment, null))));
@@ -10156,16 +10153,6 @@
 	  item,
 	  league
 	}) {
-	  let query = `https://poe.ninja/api/data/itemoverview?league=${league}`;
-	  if (item.rarity === "UNIQUE") {
-	    query += `Name=${item.itemName}`;
-	  } else {
-	    query += `BaseType=${item.itemBase}`;
-	  }
-
-	  //setTimeout(fetchItemData(),500*itemNumber)
-	  //console.log(itemData);
-
 	  return /*#__PURE__*/React.createElement("div", {
 	    className: "flex flex-row flex-wrap mx-10 gap-4 text-center justify-start items-center w-full"
 	  }, /*#__PURE__*/React.createElement(ItemInfo, {
@@ -10178,13 +10165,54 @@
 	  }));
 	}
 
-	const StyledSplit$1 = ut.p`
-    margin: 1rem auto;
-`;
 	function ItemFeed({
 	  items,
 	  leagueChoice
 	}) {
+	  let containsUniqueWeapons = false;
+	  let containsUniqueArmour = false;
+	  let containsUniqueAccessory = false;
+	  let containsUniqueFlasks = false;
+	  let containsUniqueJewels = false;
+	  for (let i = 0, l = items.length; i < l; i++) {
+	    if (items[i].rarity === "UNIQUE" && items[i].baseInfo.item_category === "weapons" && containsUniqueWeapons === false) {
+	      containsUniqueWeapons = true;
+	    }
+	    if (items[i].rarity === "UNIQUE" && items[i].baseInfo.item_category === "armour" && containsUniqueArmour === false) {
+	      containsUniqueArmour = true;
+	    }
+	    if (items[i].rarity === "UNIQUE" && items[i].baseInfo.item_category === "accessories" && containsUniqueAccessory === false) {
+	      containsUniqueAccessory = true;
+	    }
+	    if (items[i].rarity === "UNIQUE" && items[i].baseInfo.item_category === "flasks" && containsUniqueFlasks === false) {
+	      containsUniqueFlasks = true;
+	    }
+	    if (items[i].rarity === "UNIQUE" && items[i].baseInfo.item_category === "jewels" && containsUniqueJewels === false) {
+	      containsUniqueJewels = true;
+	    }
+	  }
+	  const handleFetchUniques = async () => {
+	    let proxyUrl = `http://localhost:8080/`;
+	    if (containsUniqueWeapons) {
+	      await fetchData(proxyUrl + `https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=UniqueWeapon`);
+	    }
+	    if (containsUniqueArmour) {
+	      await fetchData(proxyUrl + `https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=UniqueArmour`);
+	    }
+	    if (containsUniqueAccessory) {
+	      await fetchData(proxyUrl + `https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=UniqueAccessory`);
+	    }
+	    if (containsUniqueFlasks) {
+	      await fetchData(proxyUrl + `https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=UniqueFlask`);
+	    }
+	    if (containsUniqueJewels) {
+	      await fetchData(proxyUrl + `https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=UniqueJewel`);
+	    }
+	    await fetchData(proxyUrl + `https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=BaseType`);
+	  };
+	  reactExports.useEffect(() => {
+	    handleFetchUniques();
+	  }, [items, leagueChoice]);
 	  return items.map((item, i) => {
 	    return /*#__PURE__*/React.createElement(reactExports.Fragment, {
 	      key: i
@@ -10192,8 +10220,8 @@
 	      itemNumber: i,
 	      item: item,
 	      league: leagueChoice
-	    }), /*#__PURE__*/React.createElement(StyledSplit$1, {
-	      className: `item_split-normal`
+	    }), /*#__PURE__*/React.createElement("p", {
+	      className: `item_split item_split-normal`
 	    }));
 	  });
 	}
@@ -10272,43 +10300,25 @@
 	//init
 	let buildItemArray = [];
 	let defaultLeagueChoice = "Necropolis";
-
-	//styledComponents
-	const StyledSplit = ut.p`
-    margin: 1rem auto;
-`;
+	let allModifiers = null;
+	let allItemData = null;
 	function App() {
 	  const [inputError, setInputError] = reactExports.useState(false);
 	  const [reload, setReload] = reactExports.useState(false);
 	  const [loader, setLoader] = reactExports.useState(false);
 	  const [isOpen, setIsOpen] = reactExports.useState(false);
-	  let allModifiers;
-	  let allItemData;
-	  const handleFetchData = async () => {
+	  const handleFetchItemData = async () => {
 	    allModifiers = await fetchData('./item_mods/allModifiers.json');
-	    await fetchData('./item_mods/allItems.json');
 	    allItemData = await fetchData('./item_mods/allItemTypes.json');
 	  };
-	  handleFetchData();
-
-	  /* let uniqueWeapons;
-	  let uniqueArmour;
-	  let uniqueAccessory;
-	  let uniqueFlask;
-	  let uniqueJewel;
-	    const handleFetchUniques = async (league) => {
-	     uniqueWeapons = await fetchData(`https://poe.ninja/api/data/itemoverview?league=Necropolis&type=UniqueWeapon`);
-	     uniqueArmour = await fetchData(`https://poe.ninja/api/data/itemoverview?league=Necropolis&type=UniqueArmour`);
-	     uniqueAccessory = await fetchData(`https://poe.ninja/api/data/itemoverview?league=Necropolis&type=UniqueAccessory`);
-	     uniqueFlask = await fetchData(`https://poe.ninja/api/data/itemoverview?league=Necropolis&type=UniqueFlask`);
-	     uniqueJewel = await fetchData(`https://poe.ninja/api/data/itemoverview?league=Necropolis&type=UniqueJewel`);
-	  } */
-
+	  if (allModifiers === null && allItemData === null) {
+	    handleFetchItemData();
+	  }
 	  function handleSubmit(event) {
+	    event.preventDefault();
 	    buildItemArray = [];
 	    setInputError(false);
 	    setLoader(true);
-	    event.preventDefault();
 
 	    //retrieve league choice
 	    let e = document.getElementById("leagueSelect");
@@ -10343,7 +10353,6 @@
 	    }, 500);
 	  }
 	  reactExports.useEffect(() => {
-	    //console.log('render');
 	    setReload(false);
 	  }, [reload]);
 	  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("button", {
@@ -10360,8 +10369,8 @@
 	    className: "text-center"
 	  }, "How to Use:"), /*#__PURE__*/React.createElement("p", null, "1 - Import Build Code from: POE Ninja, Path Of Building, Pastebind or any equivalent."), /*#__PURE__*/React.createElement("p", null, "2 - Paste the code into the Import code Input."), /*#__PURE__*/React.createElement("p", null, "3 - Select your league."), /*#__PURE__*/React.createElement("p", null, "4 - Enjoy !")))), /*#__PURE__*/React.createElement(InputCode, {
 	    handleSubmit: handleSubmit
-	  }), /*#__PURE__*/React.createElement(StyledSplit, {
-	    className: `item_split-normal`
+	  }), /*#__PURE__*/React.createElement("p", {
+	    className: `item_split item_split-normal my-4`
 	  }), loader ? /*#__PURE__*/React.createElement("div", {
 	    className: "lds-dual-ring"
 	  }) : /*#__PURE__*/React.createElement(React.Fragment, null), inputError ? /*#__PURE__*/React.createElement("p", {

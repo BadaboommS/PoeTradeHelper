@@ -146,32 +146,22 @@ input[type=checkbox]{
     background-color: hsla(var(--hsla-color-unique),0.1);
 }
 
-.item_split-normal{
+.item_split{
     display: block;
     height: 2px;
     width: 70%;
-    margin: 0.5rem auto;
+    margin: 1rem auto;
+}
+.item_split-normal{
     background-image: linear-gradient(to right, transparent, hsla(var(--hsla-color-normal),0.5), transparent);
 }
 .item_split-magic{
-    display: block;
-    height: 2px;
-    width: 50%;
-    margin: 0.5rem auto;
     background-image: linear-gradient(to right, transparent, hsla(var(--hsla-color-magic),0.5), transparent);
 }
 .item_split-rare{
-    display: block;
-    height: 2px;
-    width: 50%;
-    margin: 0.5rem auto;
     background-image: linear-gradient(to right, transparent, hsla(var(--hsla-color-rare),0.5), transparent);
 }
 .item_split-unique{
-    display: block;
-    height: 2px;
-    width: 50%;
-    margin: 0.5rem auto;
     background-image: linear-gradient(to right, transparent, hsla(var(--hsla-color-unique),0.5), transparent);
 }
 

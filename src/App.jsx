@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
 //utils
 import { isIterable } from './utils/isIterable';
 import { codeDecompress } from './utils/codeDecompress';
@@ -15,48 +14,28 @@ import Modal from './components/Modal';
 //init
 let buildItemArray = [];
 let defaultLeagueChoice = "Necropolis";
-
-//styledComponents
-const StyledSplit = styled.p`
-    margin: 1rem auto;
-`
+let allModifiers = null;
+let allItemData = null;
 
 export function App() {
    const [inputError, setInputError] = useState(false);
    const [reload, setReload] = useState(false);
    const [loader, setLoader] = useState(false);
    const [isOpen, setIsOpen] = useState(false);
-
-   let allModifiers;
-   let allItems;
-   let allItemData;
    
-   const handleFetchData = async () => {
+   const handleFetchItemData = async () => {
       allModifiers = await fetchData('./item_mods/allModifiers.json');
-      allItems = await fetchData('./item_mods/allItems.json');
       allItemData = await fetchData('./item_mods/allItemTypes.json');
    }
-   handleFetchData();
 
-   /* let uniqueWeapons;
-   let uniqueArmour;
-   let uniqueAccessory;
-   let uniqueFlask;
-   let uniqueJewel;
-
-   const handleFetchUniques = async (league) => {
-      uniqueWeapons = await fetchData(`https://poe.ninja/api/data/itemoverview?league=Necropolis&type=UniqueWeapon`);
-      uniqueArmour = await fetchData(`https://poe.ninja/api/data/itemoverview?league=Necropolis&type=UniqueArmour`);
-      uniqueAccessory = await fetchData(`https://poe.ninja/api/data/itemoverview?league=Necropolis&type=UniqueAccessory`);
-      uniqueFlask = await fetchData(`https://poe.ninja/api/data/itemoverview?league=Necropolis&type=UniqueFlask`);
-      uniqueJewel = await fetchData(`https://poe.ninja/api/data/itemoverview?league=Necropolis&type=UniqueJewel`);
-   } */
+   if(allModifiers === null && allItemData === null){handleFetchItemData()};
 
    function handleSubmit(event){
+      event.preventDefault();
+
       buildItemArray = [];
       setInputError(false);
       setLoader(true);
-      event.preventDefault();
 
       //retrieve league choice
       let e = document.getElementById("leagueSelect");
@@ -71,7 +50,7 @@ export function App() {
          setReload(true);
          return
       }
-      
+
       //Create item obj for each item
       let tempItemArray = [];
       for (let i of htmlItems){
@@ -93,7 +72,6 @@ export function App() {
    };
 
    useEffect(()=>{
-      //console.log('render');
       setReload(false);
    }, [reload]);
 
@@ -112,7 +90,7 @@ export function App() {
             </Modal>
          </div>
          <InputCode handleSubmit={ handleSubmit }/>
-         <StyledSplit className={`item_split-normal`}></StyledSplit>
+         <p className={`item_split item_split-normal my-4`}></p>
          {loader? <div className="lds-dual-ring"></div> : <></>}
          {inputError? <p className='text-white text-center'>Build code not recognized! Try another Code.</p> : ''}
          {!loader && !inputError && buildItemArray[0]?

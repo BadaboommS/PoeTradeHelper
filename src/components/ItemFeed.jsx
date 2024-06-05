@@ -1,24 +1,65 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import Item from './Item';
-import styled from 'styled-components';
+import { fetchData } from '../utils/fetchData';
 
-const StyledSplit = styled.p`
-    margin: 1rem auto;
-`
+let uniqueWeaponsData = null;
+let uniqueArmourData = null;
+let uniqueAccessoryData = null;
+let uniqueFlaskData = null;
+let uniqueJewelData = null;
+let itemBaseData = null;
 
 export default function ItemFeed ({ items, leagueChoice }){
-  return (
-    items.map((item, i) => {
-      return (
-         <Fragment key={i}>
-               <Item 
-                  itemNumber = {i}
-                  item = {item}
-                  league = {leagueChoice}
-               />
-            <StyledSplit className={`item_split-normal`}></StyledSplit>
-         </Fragment>
-      );
-   })
-  )
+   let containsUniqueWeapons = false;
+   let containsUniqueArmour = false;
+   let containsUniqueAccessory = false;
+   let containsUniqueFlasks = false;
+   let containsUniqueJewels = false;
+
+   for(let i = 0, l = items.length; i < l; i++){
+      if(items[i].rarity === "UNIQUE" && items[i].baseInfo.item_category === "weapons" && containsUniqueWeapons === false){
+         containsUniqueWeapons = true;
+      }
+      if(items[i].rarity === "UNIQUE" && items[i].baseInfo.item_category === "armour" && containsUniqueArmour === false){
+         containsUniqueArmour = true;
+      }
+      if(items[i].rarity === "UNIQUE" && items[i].baseInfo.item_category === "accessories" && containsUniqueAccessory === false){
+         containsUniqueAccessory = true;
+      }
+      if(items[i].rarity === "UNIQUE" && items[i].baseInfo.item_category === "flasks" && containsUniqueFlasks === false){
+         containsUniqueFlasks = true;
+      }
+      if(items[i].rarity === "UNIQUE" && items[i].baseInfo.item_category === "jewels" && containsUniqueJewels === false){
+         containsUniqueJewels = true;
+      }
+   }
+   
+   const handleFetchUniques = async () => {
+      let proxyUrl = `http://localhost:8080/`;
+      if(containsUniqueWeapons){uniqueWeaponsData = await fetchData(proxyUrl+`https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=UniqueWeapon`)}
+      if(containsUniqueArmour){uniqueArmourData = await fetchData(proxyUrl+`https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=UniqueArmour`)}
+      if(containsUniqueAccessory){uniqueAccessoryData = await fetchData(proxyUrl+`https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=UniqueAccessory`)}
+      if(containsUniqueFlasks){uniqueFlaskData = await fetchData(proxyUrl+`https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=UniqueFlask`)}
+      if(containsUniqueJewels){uniqueJewelData = await fetchData(proxyUrl+`https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=UniqueJewel`)}
+      itemBaseData = await fetchData(proxyUrl+`https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=BaseType`);
+   }
+
+   useEffect(() => {
+      handleFetchUniques();
+   },[items, leagueChoice])
+   
+   return (
+      items.map((item, i) => {
+         return (
+            <Fragment key={i}>
+                  <Item 
+                     itemNumber = {i}
+                     item = {item}
+                     league = {leagueChoice}
+                  />
+               <p className={`item_split item_split-normal`}></p>
+            </Fragment>
+         );
+      })
+   )
 }
