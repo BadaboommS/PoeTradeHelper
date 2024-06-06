@@ -1,6 +1,5 @@
 export async function fetchData(url){
-    const data = await fetch(url);
-    const dataJson = await data.json();
-    const dataResult = await dataJson.result;
-    return await dataResult;
+    const response = await fetch(url);
+    const data = response.json();
+    return data;
  }

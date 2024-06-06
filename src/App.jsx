@@ -54,14 +54,14 @@ export function App() {
       //Create item obj for each item
       let tempItemArray = [];
       for (let i of htmlItems){
-         let tempItem = createItemObj(i, allItemData);
+         let tempItem = createItemObj(i, allItemData.result);
          tempItemArray.push(tempItem);
       }
       
       //Translate mods for filter
       tempItemArray.map((item) => {
-         translateModifiers(allModifiers, item.implicits, 'implicit');
-         translateModifiers(allModifiers, item.explicits, 'explicit');
+         translateModifiers(allModifiers.result, item.implicits, 'implicit');
+         translateModifiers(allModifiers.result, item.explicits, 'explicit');
       })
       buildItemArray = addOrder(tempItemArray);
       

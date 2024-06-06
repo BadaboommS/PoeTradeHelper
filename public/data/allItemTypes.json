@@ -1,0 +1,513 @@
+[
+    {
+        "id": "weapons",
+        "list": [
+            {
+                "base_type": "One Hand Axe",
+                "base_query": "weapon.oneaxe",
+                "default_query": "weapon.onemelee",
+                "list": [
+                    "Rusted Hatchet", "Jade Hatchet", "Boarding Axe", "Cleaver", "Broad Axe", "Arming Axe", "Decorative Axe", "Spectral Axe", "Etched Hatchet", "Jasper Axe", "Tomahawk", "Wrist Chopper", "War Axe", "Chest Splitter", "Ceremonial Axe", "Wraith Axe", "Engraved Hatchet", "Karui Axe", "Siege Axe", "Reaver Axe", "Butcher Axe", "Vaal Hatchet", "Royal Axe", "Infernal Axe", "Runic Hatchet"
+                ]
+            },
+            {
+                "base_type": "Two Hand Axe",
+                "base_query": "weapon.twoaxe",
+                "default_query": "weapon.twomelee",
+                "list": [
+                    "Stone Axe", "Jade Chopper", "Woodsplitter", "Poleaxe", "DoubleAxe", "Gilded Axe", "Shadow Axe", "Dagger Axe", "Jasper Chopper", "Timber Axe", "Headsman Axe", "Labrys", "Noble Axe", "Abyssal Axe", "Karui Chopper", "Talon Axe", "Sundering Axe", "Ezomyte Aex", "Vaal Axe", "Despot Axe", "Void Axe", "Fleshripper"
+                ]
+            },
+            {
+                "base_type": "Bow",
+                "base_query": "weapon.bow",
+                "default_query": "weapon.bow",
+                "list": [
+                    "Crude Bow", "Short Bow", "Long Bow", "Composite Bow", "Recurve Bow", "Bone Bow", "Royal Bow", "Death Bow", "Grove Bow", "Reflex Bow", "Decurve Bow", "Compound Bow", "Sniper Bow", "Ivory Bow", "Highborn Bow", "Decimation Bow", "Thicket Bow", "Steelwood Bow", "Citadel Bow", "Ranger Bow", "Assassin Bow", "Spine Bow", "Imperial Bow", "Harbinger Bow", "Maraketh Bow"
+                ]
+            },
+            {
+                "base_type": "Claw",
+                "base_query": "weapon.claw",
+                "default_query": "weapon.onemelee",
+                "list": [
+                    "Nailed Fist", "Sharktooth Claw", "Awl", "Cats Paw", "Blinder", "Timeworn Claw", "Sparkling Claw", "Fright Claw", "Double Claw", "Thresher Claw", "Gouger", "Tigers Paw", "Gut Ripper", "Prehistoric Claw", "Noble Claw", "Eagle Claw", "Twin Claw", "Great White Claw", "Throat Stabber", "Hellions Paw", "Eye Gouger", "Vaal Claw", "Imperial Claw", "Terror Claw", "Gemini Claw"
+                ]
+            },
+            {
+                "base_type": "Dagger",
+                "base_query": "weapon.dagger",
+                "default_query": "weapon.onemelee",
+                "list": [
+                    "Glass Shank", "Skinning Knife", "Carving Knife", "Stiletto", "Boot Knife", "Copper Kris", "Skean", "Imp Dagger", "Flaying Knife", "Prong Dagger", "Butcher Knife", "Poignard", "Boot Blade", "Golden Kris", "Royal Skean", "Fiend Dagger", "Trisula", "Gutting Knife", "Slaughter Knife", "Ambusher", "Ezomyte Dagger", "Platinum Kris", "Imperial Skean", "Demon Dagger", "Sai"
+                ]
+            },
+            {
+                "base_type": "One Hand Mace",
+                "base_query": "weapon.onemace",
+                "default_query": "weapon.onemelee",
+                "list": [
+                    "Driftwood Club", "Tribal Club", "Spiked Club", "Stone Hammer", "War Hammer", "Bladed Mace", "Ceremonial Mace", "Dream Mace", "Wyrm Mace", "Petrified Club", "Barbed Club", "Rock Breaker", "Battle Hammer", "Flanged Mace", "Ornate Mace", "Phantom Mace", "Dragon Mace", "Ancestral Club", "Tenderizer", "Gavel", "Legion Hammer", "Pernarch", "Auric Mace", "Nightmare Mace", "Behemoth Mace"
+                ]
+            },
+            {
+                "base_type": "Two Hand Mace",
+                "base_query": "weapon.twomace",
+                "default_query": "weapon.twomelee",
+                "list": [
+                    "Driftwood Maul", "Tribal Maul", "Mallet", "Sledgehammer", "Jagged Maul", "Brass Maul", "Fright Maul", "Morning Star", "Totemic Maul", "Great Mallet", "Steelhead", "Spiny Maul", "Plated Maul", "Dread Maul", "Solar Maul", "Karui Maul", "Colossus Mallet", "Piledriver", "Meatgrinder", "Imperial Maul", "Terror Maul", "Coronal Maul"
+                ]
+            },
+            {
+                "base_type": "Scepter",
+                "base_query": "weapon.sceptre",
+                "default_query": "weapon.onemelee",
+                "list": [
+                    "Driftwood Sceptre", "Darkwood Sceptre", "Bronze Sceptre", "Quartz Sceptre", "Iron Sceptre", "Ochre Sceptre", "Ritual Sceptre", "Shadow Sceptre", "Grinning Fetish", "Horned Sceptre", "Sekhem", "Crystal Sceptre", "Lead Sceptre", "Blood Sceptre", "Royal Sceptre", "Abyssal Sceptre", "Stag Sceptre", "Karui Sceptre", "Tyrant's Sekhem", "Opal Sceptre", "Platinum Sceptre", "Vaal Sceptre", "Carnal Sceptre", "Void Sceptre", "Sambar Sceptre"
+                ]
+            },
+            {
+                "base_type": "Staff",
+                "base_query": "weapon.staff",
+                "default_query": "weapon.twomelee",
+                "list": [
+                    "Gnarled Branch", "Primitive Staff", "Long Staff", "Iron Staff", "Coiled Staff", "Royal Staff", "Vile Staff", "Crescent Staff", "Woodful Staff", "Quarterstaff", "Military Staff", "Serpentine Staff", "Highborn Staff", "Foul Staff", "Moon Staff", "Primordial Staff", "Lathi", "Ezomyte Staff", "Maelstrom Staff", "Imperial Staff", "Judgement Staff", "Eclipse Staff"
+                ]
+            },
+            {
+                "base_type": "One Hand Sword",
+                "base_query": "weapon.onesword",
+                "default_query": "weapon.onemelee",
+                "list": [
+                    "Rusted Sword", "Copper Sword", "Sabre", "Broad Sword", "War Sword", "Ancient Sword", "Elegant Sword", "Dusk Blade", "Hook Sword", "Variscite Blade", "Cutlass", "Baselard", "Battle Sword", "Elder Sword", "Graceful Sword", "Twilight Blade", "Grappler", "Gemstone Sword", "Corsair Sword", "Gladius", "Legion Sword", "Vaal Blade", "Eternal Sword", "Midnight Blade", "Tiger Hook", "Energy Blade", "Rusted Spike", "Whalebone Rapier", "Battered Foil", "Basket Rapier", "Jagged Foil", "Antique Rapier", "Elegant Foil", "Thorn Rapier", "Smallsword", "Wyrmbone Rapier", "Burnished Foil", "Estoc", "Serrated Foil", "Primeval Rapier", "Fancy Foil", "Apex Rapier", "Courtesan Sword", "Dragonbone Rapier", "Tempered Foil", "Pecoraro", "Spiraled Foil", "Vaal Rapier", "Jewelled Foil", "Harpy Rapier", "Dragoon Sword"
+                ]
+            },
+            {
+                "base_type": "Two Hand Sword",
+                "base_query": "weapon.twosword",
+                "default_query": "weapon.twomelee",
+                "list": [
+                    "Corroded Blade", "Longsword", "Bastard Sword", "Two-Handed Sword", "Etched Greatsword", "Ornate Sword", "Spectral Sword", "Curved Blade", "Butcher Sword", "Footman Sword", "Highland Blade", "Engraved Greatsword", "Tiger Sword", "Wraith Sword", "Lithe Blade", "Headmans Sword", "Reaver Sword", "Ezomyte Blade", "Vaal Greatsword", "Lion Sword", "Infernal Sword", "Exquisite Blade"
+                ]
+            },
+            {
+                "base_type": "Wand",
+                "base_query": "weapon.wand",
+                "default_query": "weapon.one",
+                "list": [
+                    "Driftwood Wand", "Goats Horn", "Carved Wand", "Quartz Wand", "Spiraled Wand", "Sage Wand", "Pagan Wand", "Fauns Horn", "Engraved Wand", "Crystal Wand", "Serpent Wand", "Omen Wand", "Heathen Wand", "Demons Horn", "Imbued Wand", "Opal Wand", "Tornado Wand", "Prophecy Wand", "Profane Wand"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "armour",
+        "list": [
+            {
+                "base_type": "Body",
+                "sort_priority": 4,
+                "stat_type": "STR",
+                "base_query": "armour.chest",
+                "default_query": "armour.chest",
+                "list": [
+                    "Plate Vest", "Chestplate", "Copper Plate", "War Plate", "Full Plate", "Arena Plate", "Lordly Plate", "Bronze Plate", "Battle Plate", "Sun Plate", "Colosseum Plate", "Majestic Plate", "Golden Plate", "Crusader Plate", "Astral Plate", "Gladiator Plate", "Glorious Plate"
+                ]
+            },
+            {
+                "base_type": "Body",
+                "sort_priority": 4,
+                "stat_type": "DEX",
+                "base_query": "armour.chest",
+                "default_query": "armour.chest",
+                "list": [
+                    "Shabby Jerkin", "Strapped Leather", "Buckskin Tunic", "Wild Leather", "Full Leather", "Sun Leather", "Thiefs Garb", "Eelskin Tunic", "Frontier Leather", "Glorious Leather", "Coronal Leather", "Cutthroats Garb", "Sharkskin Tunic", "Destiny Leather", "Exquisite Leather", "Zodiac Leather", "Assassins Garb"
+                ]
+            },
+            {
+                "base_type": "Body",
+                "sort_priority": 4,
+                "stat_type": "INT",
+                "base_query": "armour.chest",
+                "default_query": "armour.chest",
+                "list": [
+                    "Simple Robe", "Silken Vest", "Scholars Robe", "Silken Garb", "Mages Vestment", "Silk Robe", "Cabalist Regalia", "Sage's Robe", "Silken Wrap", "Conjurers Vestment", "Spidersilk Robe", "Destroyer Regalia", "Savants Robe", "Necromancer Silks", "Occultists Vestment", "Widowsilk Robe", "Vaal Regalia"
+                ]
+            },
+            {
+                "base_type": "Body",
+                "sort_priority": 4,
+                "stat_type": "DEX/INT",
+                "base_query": "armour.chest",
+                "default_query": "armour.chest",
+                "list": [
+                    "Padded Vest", "Oiled Vest", "Padded Jacket", "Oiled Coat", "Scarlet Raiment", "Waxed Garb", "Bone Armour", "Quilted Jacket", "Sleek Coat", "Crimson Raiment", "Lacquered Garb", "Crypt Armour", "Sentinel Jacket", "Varnished Coat", "Blood Raiment", "Sadist Garb", "Carnal Armour"
+                ]
+            },
+            {
+                "base_type": "Body",
+                "sort_priority": 4,
+                "stat_type": "STR/DEX",
+                "base_query": "armour.chest",
+                "default_query": "armour.chest",
+                "list": [
+                    "Scale Vest", "Light Brigandine", "Scale Doublet", "Infantry Brigandine", "Full Scale Armour", "Soldiers Brigandine", "Field Lamellar", "Wyrmscale Doublet", "Hussar Brigandine", "Full Wyrmscale", "Commanders Brigandine", "Battle Lamellar", "Dragonscale Doublet", "Desert Brigandine", "Full Dragonscale", "Generals Brigandine", "Triumphant Lamellar"
+                ]
+            },
+            {
+                "base_type": "Body",
+                "sort_priority": 4,
+                "stat_type": "STR/INT",
+                "base_query": "armour.chest",
+                "default_query": "armour.chest",
+                "list": [
+                    "Chainmail Vest", "Chainmail Tunic", "Ringmail Coat", "Chainmail Doublet", "Full Ringmail", "Full Chainmail", "Holy Chainmail", "Latticed Ringmail", "Crusader Chainmail", "Ornate Ringmail", "Chain Hauberk", "Devout Chainmail", "Loricated Ringmail", "Conquest Chainmail", "Elegant Ringmail", "Saints Hauberk", "Saintly Chainmail"
+                ]
+            },
+            {
+                "base_type": "Body",
+                "sort_priority": 4,
+                "stat_type": "STR/INT/DEX",
+                "base_query": "armour.chest",
+                "default_query": "armour.chest",
+                "list": [
+                    "Sacrificial Garb", "Grasping Mail"
+                ]
+            },
+            {
+                "base_type": "Boots",
+                "sort_priority": 6,
+                "stat_type": "STR",
+                "base_query": "armour.boots",
+                "default_query": "armour.boots",
+                "list": [
+                    "Iron Greaves", "Steel Greaves", "Plated Greaves", "Reinforced Greaves", "Antique Greaves", "Ancient Greaves", "Goliath Greaves", "Vaal Greaves", "Titan Greaves"
+                ]
+            },
+            {
+                "base_type": "Boots",
+                "sort_priority": 6,
+                "stat_type": "DEX",
+                "base_query": "armour.boots",
+                "default_query": "armour.boots",
+                "list": [
+                    "Rawhide Boots", "Goathide Boots", "Deerskin Boots", "Nubuck Boots", "Eelskin Boots", "Sharkskin Boots", "Shagreen Boots", "Stealth Boots", "Slink Boots"
+                ]
+            },
+            {
+                "base_type": "Boots",
+                "sort_priority": 6,
+                "stat_type": "INT",
+                "base_query": "armour.boots",
+                "default_query": "armour.boots",
+                "list": [
+                    "Wool Shoes", "Velvet Slippers", "Silk Slippers", "Scholar Boots", "Satin Slippers", "Samite Slippers", "Conjurer Boots", "Arcanist Slippers", "Sorcerer Boots"
+                ]
+            },
+            {
+                "base_type": "Boots",
+                "sort_priority": 6,
+                "stat_type": "DEX/INT",
+                "base_query": "armour.boots",
+                "default_query": "armour.boots",
+                "list": [
+                    "Wrapped Boots", "Strapped Boots", "Clasped Boots", "Shackled Boots", "Trapper Boots", "Ambush Boots", "Carnal Boots", "Assassins Boots", "Murder Boots", "Two-Toned Boots"
+                ]
+            },
+            {
+                "base_type": "Boots",
+                "sort_priority": 6,
+                "stat_type": "STR/DEX",
+                "base_query": "armour.boots",
+                "default_query": "armour.boots",
+                "list": [
+                    "Leatherscale Boots", "Ironscale Boots", "Bronzescale Boots", "Steelscale Boots", "Serpentscale Boots", "Wyrmscale Boots", "Hydrascale Boots", "Dragonscale Boots", "Two-Toned Boots"
+                ]
+            },
+            {
+                "base_type": "Boots",
+                "sort_priority": 6,
+                "stat_type": "STR/INT",
+                "base_query": "armour.boots",
+                "default_query": "armour.boots",
+                "list": [
+                    "Chain Boots", "Ringmail Boots", "Mesh Boots", "Riveted Boots", "Zealot Boots", "Soldier Boots", "Legion Boots", "Crusader Boots", "Two-Toned Boots"
+                ]
+            },
+            {
+                "base_type": "Gloves",
+                "sort_priority": 5,
+                "stat_type": "STR",
+                "base_query": "armour.gloves",
+                "default_query": "armour.gloves",
+                "list": [
+                    "Iron Gauntlets", "Plated Gauntlets", "Bronze Gauntlets", "Steel Gauntlets", "Antique Gauntlets", "Ancient Gauntlets", "Goliath Gauntlets", "Vaal Gauntlets", "Titan Gauntlets", "Spiked Gloves"
+                ]
+            },
+            {
+                "base_type": "Gloves",
+                "sort_priority": 5,
+                "stat_type": "DEX",
+                "base_query": "armour.gloves",
+                "default_query": "armour.gloves",
+                "list": [
+                    "Rawhide Gloves", "Goathide Gloves", "Deerskin Gloves", "Nubuck Gloves", "Eelskin Gloves", "Sharkskin Gloves", "Shagreen Gloves", "Stealth Gloves", "Gripped Gloves", "Slink Gloves"
+                ]
+            },
+            {
+                "base_type": "Gloves",
+                "sort_priority": 5,
+                "stat_type": "INT",
+                "base_query": "armour.gloves",
+                "default_query": "armour.gloves",
+                "list": [
+                    "Wool Gloves", "Velvet Gloves", "Silk Gloves", "Embroidered Gloves", "Satin Gloves", "Samite Gloves", "Conjurer Gloves", "Arcanist Gloves", "Sorcerer Gloves", "Fingerless Silk Gloves"
+                ]
+            },
+            {
+                "base_type": "Gloves",
+                "sort_priority": 5,
+                "stat_type": "DEX/INT",
+                "base_query": "armour.gloves",
+                "default_query": "armour.gloves",
+                "list": [
+                    "Wrapped Mitts", "Strapped Mitts", "Clasped Mitts", "Trapper Mitts", "Ambush Mitts", "Carnal Mitts", "Assassins Mitts", "Murder Mitts"
+                ]
+            },
+            {
+                "base_type": "Gloves",
+                "sort_priority": 5,
+                "stat_type": "STR/DEX",
+                "base_query": "armour.gloves",
+                "default_query": "armour.gloves",
+                "list": [
+                    "Fishscale Gauntlets", "Ironscale Gauntlets", "Bronzescale Gauntlets", "Steelscale Gauntlets", "Serpentscale Gauntlets", "Wyrmscale Gauntlets", "Hydrascale Gauntlets", "Dragonscale Gauntlets"
+                ]
+            },
+            {
+                "base_type": "Gloves",
+                "sort_priority": 5,
+                "stat_type": "STR/INT",
+                "base_query": "armour.gloves",
+                "default_query": "armour.gloves",
+                "list": [
+                    "Chain Gloves", "Ringmail Gloves", "Mesh Gloves", "Riveted Gloves", "Zealot Gloves", "Soldier Gloves", "Legion Gloves", "Crusader Gloves"
+                ] 
+            },
+            {
+                "base_type": "Helmet",
+                "sort_priority": 3,
+                "stat_type": "STR",
+                "base_query": "armour.helmet",
+                "default_query": "armour.helmet",
+                "list": [
+                    "Iron Hat", "Cone Helmet", "Barbute Helmet", "Close Helmet", "Gladiator Helmet", "Reaver Helmet", "Siege Helmet", "Samite Helmet", "Ezomyte Burgonet", "Royal Burgonet", "Eternal Burgonet"
+                ]
+            },
+            {
+                "base_type": "Helmet",
+                "sort_priority": 3,
+                "stat_type": "DEX",
+                "base_query": "armour.helmet",
+                "default_query": "armour.helmet",
+                "list": [
+                    "Leather Cap", "Tricorne", "Leather Hood", "Wolf Pelt", "Hunter Hood", "Noble Tricorne", "Ursine Pelt", "Silken Hood", "Sinner Tricorne", "Lion Pelt"
+                ]
+            },
+            {
+                "base_type": "Helmet",
+                "sort_priority": 3,
+                "stat_type": "INT",
+                "base_query": "armour.helmet",
+                "default_query": "armour.helmet",
+                "list": [
+                    "Vine Circlet", "Iron Circlet", "Torture Cage", "Tribal Circlet", "Bone Circlet", "Lunaris Circlet", "Steel Circlet", "Necromancer Circlet", "Solaris Circlet", "Mind Cage", "Hubris Circlet"
+                ]
+            },
+            {
+                "base_type": "Helmet",
+                "sort_priority": 3,
+                "stat_type": "DEX/INT",
+                "base_query": "armour.helmet",
+                "default_query": "armour.helmet",
+                "list": [
+                    "Scare Mask", "Plague Mask", "Iron Mask", "Festival Mask", "Golden Mask", "Raven Mask", "Callous Mask", "Regicide Mask", "Harlequin Mask", "Vaal Mask", "Deicide Mask"
+                ]
+            },
+            {
+                "base_type": "Helmet",
+                "sort_priority": 3,
+                "stat_type": "STR/DEX",
+                "base_query": "armour.helmet",
+                "default_query": "armour.helmet",
+                "list": [
+                    "Battered Helm", "Sallet", "Visored Sallet", "Gilded Sallet", "Secutor Helm", "Fencer Helm", "Lacquered Helmet", "Fluted Bascinet", "Pig-Faced Bascinet", "Nightmare Bascinet"
+                ]
+            },
+            {
+                "base_type": "Helmet",
+                "sort_priority": 3,
+                "stat_type": "STR/INT",
+                "base_query": "armour.helmet",
+                "default_query": "armour.helmet",
+                "list": [
+                    "Rusted Coif", "Soldier Helmet", "Great Helmet", "Crusader Helmet", "Aventail Helmet", "Zealot Helmet", "Great Crown", "Magistrate Crown", "Prophet Crown", "Praetor Crown", "Bone Helmet"
+                ]
+            },
+            {
+                "base_type": "Shield",
+                "sort_priority": 1,
+                "stat_type": "STR",
+                "base_query": "armour.shield",
+                "default_query": "armour.shield",
+                "list": [
+                    "Splintered Tower Shield", "Corroded Tower Shield", "Rawhide Tower Shield", "Cedar Tower Shield", "Copper Tower Shield", "Reinforced Tower Shield", "Painted Tower Shield", "Buckskin Tower Shield", "Mahogany Tower Shield", "Bronze Tower Shield", "Girded Tower Shield", "Crested Tower Shield", "Shagreen Tower Shield", "Ebony Tower Shield", "Ezomyte Tower Shield", "Colossal Tower Shield", "Pinnacle Tower Shield"
+                ]
+            },
+            {
+                "base_type": "Shield",
+                "sort_priority": 1,
+                "stat_type": "DEX",
+                "base_query": "armour.shield",
+                "default_query": "armour.shield",
+                "list": [
+                    "Goathide Buckler", "Pine Buckler", "Painted Buckler", "Hammered Buckler", "War Buckler", "Gilded Buckler", "Oak Buckler", "Enameled Buckler", "Corrugated Buckler", "Battle Buckler", "Golden Buckler", "Ironwood Buckler", "Lacquered Buckler", "Vaal Buckler", "Crusader Buckler", "Imperial Buckler"
+                ]
+            },
+            {
+                "base_type": "Shield",
+                "sort_priority": 1,
+                "stat_type": "INT",
+                "base_query": "armour.shield",
+                "default_query": "armour.shield",
+                "list": [
+                    "Twig Spirit Shield", "Yew Spirit Shield", "Bone Spirit Shield", "Tarnished Spirit Shield", "Jingling Spirit Shield", "Brass Spirit Shield", "Walnut Spirit Shield", "Ivory Spirit Shield", "Ancient Spirit Shield", "Chiming Spirit Shield", "Thorium Spirit Shield", "Lacewood Spirit Shield", "Fossilised Spirit Shield", "Vaal Spirit Shield", "Harmonic Spirit Shield", "Titanium Spirit Shield"
+                ]
+            },
+            {
+                "base_type": "Shield",
+                "sort_priority": 1,
+                "stat_type": "DEX/INT",
+                "base_query": "armour.shield",
+                "default_query": "armour.shield",
+                "list": [
+                    "Spiked Bundle", "Driftwood Spiked Shield", "Alloyed Spiked Shield", "Burnished Spiked Shield", "Ornate Spiked Shield", "Redwood Spiked Shield", "Compound Spiked Shield", "Polished Spiked Shield", "Sovereign Spiked Shield", "Alder Spiked Shield", "Ezomyte Spiked Shield", "Mirrored Spiked Shield", "Supreme Spiked Shield"
+                ]
+            },
+            {
+                "base_type": "Shield",
+                "sort_priority": 1,
+                "stat_type": "STR/DEX",
+                "base_query": "armour.shield",
+                "default_query": "armour.shield",
+                "list": [
+                    "Rotted Round Shield", "Fir Round Shield", "Studded Round Shield", "Scarlet Round Shield", "Splendid Round Shield", "Maple Round Shield", "Spiked Round Shield", "Crimson Round Shield", "Baroque Round Shield", "Teak Round Shield", "Spiny Round Shield", "Cardinal Round Shield", "Elegant Round Shield"
+                ]
+            },
+            {
+                "base_type": "Shield",
+                "sort_priority": 1,
+                "stat_type": "STR/INT",
+                "base_query": "armour.shield",
+                "default_query": "armour.shield",
+                "list": [
+                    "Plank Kite Shield", "Linden Kite Shield", "Reinforced Kite Shield", "Layered Kite Shield", "Ceremonial Kite Shield", "Etched Kite Shield", "Steel Kite Shield", "Laminated Kite Shield", "Angelic Kite Shield", "Branded Kite Shield", "Champion Kite Shield", "Mosaic Kite Shield", "Archon Kite Shield"
+                ]
+            },
+            {
+                "base_type": "Quiver",
+                "sort_priority": 2,
+                "base_query": "armour.quiver",
+                "default_query": "armour.quiver",
+                "list": [
+                    "Blunt Arrow Quiver", "Broadhead Arrow Quiver", "Fire Arrow Quiver", "Penetrating Arrow Quiver", "Serrated Arrow Quiver", "Sharktooth Arrow Quiver", "Spike-Point Arrow Quiver", "Two-Point Arrow Quiver"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "accessories",
+        "list": [
+            {
+                "base_type": "Amulet",
+                "sort_priority": 1,
+                "base_query": "accessory.amulet",
+                "default_query": "accessory.amulet",
+                "list": [
+                    "Agate Amulet", "Amber Amulet", "Blue Pearl Amulet", "Citrine Amulet", "Coral Amulet", "Gold Amulet", "Jade Amulet", "Lapis Amulet", "Marble Amulet", "Onyx Amulet", "Paua Amulet", "Turquoise Amulet"
+                ]
+            },
+            {
+                "base_type": "Belt",
+                "sort_priority": 3,
+                "base_query": "accessory.belt",
+                "default_query": "accessory.belt",
+                "list": [
+                    "Chain Belt", "Cloth Belt", "Crystal Belt", "Heavy Belt", "Leather Belt", "Rustic Sash", "Studded Belt", "Stygian Vise", "Vanguard Belt"
+                ]
+            },
+            {
+                "base_type": "Ring",
+                "sort_priority": 2,
+                "base_query": "accessory.ring",
+                "default_query": "accessory.ring",
+                "list": [
+                    "Amethyst Ring", "Coral Ring", "Diamond Ring", "Gold Ring", "Iron Ring", "Moonstone Ring", "Opal Ring", "Paua Ring", "Prismatic Ring", "Ruby Ring", "Sapphire Ring", "Steel Ring", "Topaz Ring", "Two-Stone Ring", "Unset Ring", "Bone Ring"
+                ]
+            },
+            {
+                "base_type": "Talisman",
+                "sort_priority": 1,
+                "base_query": "accessory.amulet",
+                "default_query": "accessory.amulet",
+                "list": [
+                    "Ashcale Talisman", "Avian Twins Talisman", "Black Maw Talisman", "Bonespire Talisman", "Breakrib Talisman", "Chrystalis Talisman", "Clutching Talisman", "Deadhand Talisman", "Deep One Talisman", "Fangjaw Talisman", "Greatwolf Talisman", "Hexclaw Talisman", "Horned Talisman", "Lone Antler Talisman", "Longtooth Talisman", "Mandible Talisman", "Monkey Paw Talisman", "Monkey Twins Talisman", "Primal Skull Talisman", "Rot Head Talisman", "Rotfeather Talisman", "Spinefuse Talisman", "Splitnewt Talisman", "Three Hands Talisman", "Three Rat Talisman", "Undying Flesh Talisman", "Wereclaw Talisman", "Writhing Talisman"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "flasks",
+        "list": [
+            {
+                "base_type": "Flask",
+                "base_query": "flask",
+                "default_query": "flask",
+                "list": [
+                    "Colossal Hybrid Flask", "Colossal Life Flask", "Colossal Mana Flask", "Divine Life Flask", "Divine Mana Flask", "Eternal Life Flask", "Eternal Mana Flask", "Giant Life Flask", "Giant Mana Flask", "Grand Life Flask", "Grand Mana Flask", "Greater Life Flask", "Greater Mana Flask", "Hallowed Hybrid Flask", "Hallowed Life Flask", "Hallowed Mana Flask", "Large Hybrid Flask", "Large Life Flask", "Large Mana Flask", "Medium Hybrid Flask", "Medium Life Flask", "Medium Mana Flask", "Sacred Hybrid Flask", "Sacred Life Flask", "Sacred Mana Flask", "Sanctified Life Flask", "Sanctified Mana Flask", "Small Hybrid Flask", "Small Life Flask", "Small Mana Flask", "Amethyst Flask", "Aquamarine Flask", "Basalt Flask", "Bismuth Flask", "Diamond Flask", "Granite Flask", "Jade Flask", "Quartz Flask", "Quicksilver Flask", "Ruby Flask", "Sapphire Flask", "Silver Flask", "Stibnite Flask", "Sulphur Flask", "Topaz Flask"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "jewels",
+        "list": [
+            {
+                "base_type": "Base Jewel",
+                "sort_priority": 1,
+                "base_query": "jewel.base",
+                "default_query": "jewel.base",
+                "list": [
+                    "Cobalt Jewel", "Crimson Jewel", "Viridian Jewel", "Timeless Jewel", "Prismatic Jewel"
+                ]
+            },
+            {
+                "base_type": "Cluster Jewel",
+                "sort_priority": 3,
+                "base_query": "jewel.cluster",
+                "default_query": "jewel.cluster",
+                "list": [
+                    "Small Cluster Jewel", "Medium Cluster Jewel", "Large Cluster Jewel"
+                ]
+            },
+            {
+                "base_type": "Abyss Jewel",
+                "sort_priority": 2,
+                "base_query": "jewel.abyss",
+                "default_query": "jewel.abyss",
+                "list": [
+                    "Ghastly Eye Jewel", "Hypnotic Eye Jewel", "Murderous Eye Jewel", "Searching Eye Jewel"
+                ]
+            }
+        ]
+    }
+]
