@@ -9953,7 +9953,8 @@
 	  item,
 	  league,
 	  itemName,
-	  itemNumber
+	  itemNumber,
+	  allFetchItemData
 	}) {
 	  const [tradeDefence, setTradeDefence] = reactExports.useState([]);
 	  const [tradeIlv, setTradeIlv] = reactExports.useState(0);
@@ -9961,6 +9962,35 @@
 	  const [tradeCorrupted, setTradeCorrupted] = reactExports.useState(false);
 	  const [tradeImplicits, setTradeImplicits] = reactExports.useState(item.implicits);
 	  const [tradeExplicits, setTradeExplicits] = reactExports.useState(item.explicits);
+	  const [itemEstimatedPrice, setItemEstimatedPrice] = reactExports.useState([]);
+	  const [loader, setLoader] = reactExports.useState(true);
+	  const didMount = reactExports.useRef(false);
+	  reactExports.useEffect(() => {
+	    if (didMount.current) {
+	      if (item.rarity === "UNIQUE") {
+	        let index = allFetchItemData[item.baseInfo.item_category].lines.map(e => e.name).indexOf(item.name);
+	        if (index !== -1) {
+	          const chaos = allFetchItemData[item.baseInfo.item_category].lines[index].chaosValue;
+	          const divine = allFetchItemData[item.baseInfo.item_category].lines[index].divineValue;
+	          setItemEstimatedPrice([chaos, divine]);
+	        }
+	      }
+	      /* else{
+	          let test = allFetchItemData.baseType.lines.map((e) => e.name);
+	          let index = test.indexOf(item.base);
+	          if(index !== -1){
+	              setItemEstimatedPrice(allFetchItemData.baseType.lines[index].icon);
+	          }
+	      } */
+	    } else {
+	      didMount.current = true;
+	    }
+	  }, [allFetchItemData]);
+	  reactExports.useEffect(() => {
+	    setTimeout(() => {
+	      setLoader(false);
+	    }, 200);
+	  }, [loader]);
 	  function handleChangeIlv(e) {
 	    if (tradeIlv === 0) {
 	      setTradeIlv(e);
@@ -10091,12 +10121,55 @@
 	    href: tradeUrl,
 	    target: "_blank",
 	    rel: "noopener noreferrer"
-	  }, "Trade"), /*#__PURE__*/React.createElement("p", null, "|"), /*#__PURE__*/React.createElement("p", null, /*#__PURE__*/React.createElement("strong", null, "Estimed Value:"), " (Not implemented yet)")));
+	  }, "Trade"), /*#__PURE__*/React.createElement("p", null, "|"), loader ? /*#__PURE__*/React.createElement("div", {
+	    className: "lds-dual-ring"
+	  }) : /*#__PURE__*/React.createElement(React.Fragment, null), !loader && itemEstimatedPrice.length !== 0 ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("p", null, /*#__PURE__*/React.createElement("strong", null, "Estimated Price:")), /*#__PURE__*/React.createElement("div", {
+	    className: "flex flex-col"
+	  }, /*#__PURE__*/React.createElement("p", {
+	    className: "flex flex-row justify-start w-full"
+	  }, /*#__PURE__*/React.createElement("img", {
+	    src: "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/e1a54ff97d/CurrencyModValues.png",
+	    alt: "Divine Orb",
+	    title: "Divine Orb"
+	  }), ": ", itemEstimatedPrice[1]), /*#__PURE__*/React.createElement("p", {
+	    className: "flex flex-row justify-start w-full"
+	  }, /*#__PURE__*/React.createElement("img", {
+	    src: "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/d119a0d734/CurrencyRerollRare.png",
+	    alt: "Chaos",
+	    title: "Chaos Orb"
+	  }), ": ", itemEstimatedPrice[0]))) : /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("p", null, /*#__PURE__*/React.createElement("strong", null, "Estimated Price:")), /*#__PURE__*/React.createElement("p", null, "Not fetched"))));
 	}
 
 	function ItemInfo({
-	  item
+	  item,
+	  allFetchItemData
 	}) {
+	  const didMount = reactExports.useRef(false);
+	  const [itemImg, setItemImg] = reactExports.useState(null);
+	  const [loader, setLoader] = reactExports.useState(true);
+	  reactExports.useEffect(() => {
+	    if (didMount.current) {
+	      if (item.rarity === "UNIQUE") {
+	        let index = allFetchItemData[item.baseInfo.item_category].lines.map(e => e.name).indexOf(item.name);
+	        if (index !== -1) {
+	          setItemImg(allFetchItemData[item.baseInfo.item_category].lines[index].icon);
+	        }
+	      } else {
+	        let test = allFetchItemData.baseType.lines.map(e => e.name);
+	        let index = test.indexOf(item.base);
+	        if (index !== -1) {
+	          setItemImg(allFetchItemData.baseType.lines[index].icon);
+	        }
+	      }
+	    } else {
+	      didMount.current = true;
+	    }
+	  }, [allFetchItemData]);
+	  reactExports.useEffect(() => {
+	    setTimeout(() => {
+	      setLoader(false);
+	    }, 200);
+	  }, [loader]);
 	  return /*#__PURE__*/React.createElement("div", {
 	    className: "w-full lg:w-5/12"
 	  }, /*#__PURE__*/React.createElement("div", {
@@ -10105,7 +10178,14 @@
 	    className: `item_rarity-${item.rarity.toLowerCase()} text-2xl`
 	  }, /*#__PURE__*/React.createElement("strong", null, item.rarity === 'UNIQUE' ? `${item.name} - ${item.base}` : `${item.base}`))), /*#__PURE__*/React.createElement("section", {
 	    className: `item_border-${item.rarity.toLowerCase()} item_background-${item.rarity.toLowerCase()} p-5 flex flex-col items-center`
-	  }, /*#__PURE__*/React.createElement("div", null, item.defence[0] ? item.defence.map((def, i) => {
+	  }, /*#__PURE__*/React.createElement("div", {
+	    className: "flex flex-row gap-4 items-center"
+	  }, loader ? /*#__PURE__*/React.createElement("div", {
+	    className: "lds-dual-ring"
+	  }) : /*#__PURE__*/React.createElement(React.Fragment, null), !loader && itemImg !== null ? /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("img", {
+	    src: itemImg,
+	    alt: "Loading..."
+	  })) : /*#__PURE__*/React.createElement(React.Fragment, null), /*#__PURE__*/React.createElement("div", null, item.defence[0] ? item.defence.map((def, i) => {
 	    return /*#__PURE__*/React.createElement("p", {
 	      key: i
 	    }, /*#__PURE__*/React.createElement("strong", {
@@ -10124,7 +10204,7 @@
 	    className: `socket-${socket}`
 	  }, socket))), /*#__PURE__*/React.createElement("p", null, /*#__PURE__*/React.createElement("strong", {
 	    className: "item_rarity-normal"
-	  }, "Links:"), " ", item.sockets.length)) : /*#__PURE__*/React.createElement(React.Fragment, null)), /*#__PURE__*/React.createElement("div", {
+	  }, "Links:"), " ", item.sockets.length)) : /*#__PURE__*/React.createElement(React.Fragment, null))), /*#__PURE__*/React.createElement("div", {
 	    className: "item_stats"
 	  }, item.implicits.length ? /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("p", {
 	    className: `item_split item_split-${item.rarity.toLowerCase()}`
@@ -10150,17 +10230,20 @@
 	function Item({
 	  itemNumber,
 	  item,
-	  league
+	  league,
+	  allFetchItemData
 	}) {
 	  return /*#__PURE__*/React.createElement("div", {
 	    className: "flex flex-row flex-wrap mx-10 gap-4 text-center justify-start items-center w-full"
 	  }, /*#__PURE__*/React.createElement(ItemInfo, {
-	    item: item
+	    item: item,
+	    allFetchItemData: allFetchItemData
 	  }), /*#__PURE__*/React.createElement(ItemTrade, {
 	    item: item,
 	    league: league,
 	    itemNumber: itemNumber,
-	    key: itemNumber
+	    key: itemNumber,
+	    allFetchItemData: allFetchItemData
 	  }));
 	}
 
@@ -10168,6 +10251,7 @@
 	  items,
 	  leagueChoice
 	}) {
+	  const [allFetchItemData, setAllFetchItemData] = reactExports.useState({});
 	  let containsUniqueWeapons = false;
 	  let containsUniqueArmour = false;
 	  let containsUniqueAccessory = false;
@@ -10191,23 +10275,39 @@
 	    }
 	  }
 	  const handleFetchUniques = async () => {
+	    let uniqueWeaponsData = null;
+	    let uniqueArmourData = null;
+	    let uniqueAccessoryData = null;
+	    let uniqueFlaskData = null;
+	    let uniqueJewelData = null;
+	    let itemBaseData = null;
+	    let allItemData = null;
 	    let proxyUrl = `http://localhost:8080/`;
 	    if (containsUniqueWeapons) {
-	      await fetchData(proxyUrl + `https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=UniqueWeapon`);
+	      uniqueWeaponsData = await fetchData(proxyUrl + `https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=UniqueWeapon`);
 	    }
 	    if (containsUniqueArmour) {
-	      await fetchData(proxyUrl + `https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=UniqueArmour`);
+	      uniqueArmourData = await fetchData(proxyUrl + `https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=UniqueArmour`);
 	    }
 	    if (containsUniqueAccessory) {
-	      await fetchData(proxyUrl + `https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=UniqueAccessory`);
+	      uniqueAccessoryData = await fetchData(proxyUrl + `https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=UniqueAccessory`);
 	    }
 	    if (containsUniqueFlasks) {
-	      await fetchData(proxyUrl + `https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=UniqueFlask`);
+	      uniqueFlaskData = await fetchData(proxyUrl + `https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=UniqueFlask`);
 	    }
 	    if (containsUniqueJewels) {
-	      await fetchData(proxyUrl + `https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=UniqueJewel`);
+	      uniqueJewelData = await fetchData(proxyUrl + `https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=UniqueJewel`);
 	    }
-	    await fetchData(proxyUrl + `https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=BaseType`);
+	    itemBaseData = await fetchData(proxyUrl + `https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=BaseType`);
+	    allItemData = await {
+	      weapons: uniqueWeaponsData,
+	      armour: uniqueArmourData,
+	      accessories: uniqueAccessoryData,
+	      flasks: uniqueFlaskData,
+	      jewels: uniqueJewelData,
+	      baseType: itemBaseData
+	    };
+	    setAllFetchItemData(allItemData);
 	  };
 	  reactExports.useEffect(() => {
 	    handleFetchUniques();
@@ -10218,7 +10318,8 @@
 	    }, /*#__PURE__*/React.createElement(Item, {
 	      itemNumber: i,
 	      item: item,
-	      league: leagueChoice
+	      league: leagueChoice,
+	      allFetchItemData: allFetchItemData
 	    }), /*#__PURE__*/React.createElement("p", {
 	      className: `item_split item_split-normal`
 	    }));
@@ -10303,7 +10404,6 @@
 	let allItemData = null;
 	function App() {
 	  const [inputError, setInputError] = reactExports.useState(false);
-	  const [reload, setReload] = reactExports.useState(false);
 	  const [loader, setLoader] = reactExports.useState(false);
 	  const [isOpen, setIsOpen] = reactExports.useState(false);
 	  const handleFetchItemData = async () => {
@@ -10329,7 +10429,7 @@
 	    if (!isIterable(htmlItems) || htmlItems[0].textContent === undefined) {
 	      setInputError(true);
 	      setLoader(false);
-	      setReload(true);
+	      //setReload(true);
 	      return;
 	    }
 
@@ -10348,12 +10448,8 @@
 	    buildItemArray = addOrder(tempItemArray);
 	    setTimeout(() => {
 	      setLoader(false);
-	      setReload(true);
 	    }, 500);
 	  }
-	  reactExports.useEffect(() => {
-	    setReload(false);
-	  }, [reload]);
 	  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("button", {
 	    onClick: () => setIsOpen(true),
 	    className: "openModalBtn"

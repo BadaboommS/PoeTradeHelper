@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import styled from "styled-components";
 //utils
 import { generateTradeUrl } from "../utils/generateTradeUrl";
@@ -21,14 +21,45 @@ const StyledLink = styled.a`
     padding: 5px;
 `
 
-export default function ItemTrade({item , league, itemName, itemNumber}){
-
+export default function ItemTrade({ item , league, itemName, itemNumber, allFetchItemData }){
     const [tradeDefence, setTradeDefence] = useState([]);
     const [tradeIlv, setTradeIlv] = useState(0);
     const [tradeLinks, setTradeLinks] = useState(0);
     const [tradeCorrupted, setTradeCorrupted] = useState(false);
     const [tradeImplicits, setTradeImplicits] = useState(item.implicits);
     const [tradeExplicits, setTradeExplicits] = useState(item.explicits);
+
+    const [itemEstimatedPrice, setItemEstimatedPrice] = useState([]);
+    const [loader, setLoader] = useState(true);
+    const didMount = useRef(false);
+
+    useEffect(() => {
+        if(didMount.current){
+            if(item.rarity === "UNIQUE"){
+                let index = allFetchItemData[item.baseInfo.item_category].lines.map((e) => e.name).indexOf(item.name);
+                if(index !== -1){
+                    const chaos = allFetchItemData[item.baseInfo.item_category].lines[index].chaosValue;
+                    const divine = allFetchItemData[item.baseInfo.item_category].lines[index].divineValue;
+                    setItemEstimatedPrice([chaos,divine]);
+                }
+            }
+            /* else{
+                let test = allFetchItemData.baseType.lines.map((e) => e.name);
+                let index = test.indexOf(item.base);
+                if(index !== -1){
+                    setItemEstimatedPrice(allFetchItemData.baseType.lines[index].icon);
+                }
+            } */
+        }else{
+            didMount.current = true;
+        }
+    },[allFetchItemData])
+
+    useEffect(() => {
+        setTimeout(() => {
+            setLoader(false);
+        }, 200);
+    },[loader])
 
     function handleChangeIlv(e){
         if(tradeIlv === 0){
@@ -171,7 +202,28 @@ export default function ItemTrade({item , league, itemName, itemNumber}){
             <StyledFlex className="justify-center">
                 <StyledLink href={tradeUrl} target="_blank" rel="noopener noreferrer">Trade</StyledLink>
                 <p>|</p>
-                <p><strong>Estimed Value:</strong> (Not implemented yet)</p>
+                {loader? <div className="lds-dual-ring"></div> : <></>}
+                {
+                    (!loader && itemEstimatedPrice.length !== 0)?
+                        <>
+                            <p><strong>Estimated Price:</strong></p>
+                            <div className="flex flex-col">
+                                <p className="flex flex-row justify-start w-full">
+                                    <img src='https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/e1a54ff97d/CurrencyModValues.png' alt="Divine Orb" title="Divine Orb"/>
+                                    : {itemEstimatedPrice[1]} 
+                                </p>
+                                <p className="flex flex-row justify-start w-full">
+                                    <img src='https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/d119a0d734/CurrencyRerollRare.png' alt="Chaos" title="Chaos Orb"/>
+                                    : {itemEstimatedPrice[0]}
+                                </p>
+                            </div>
+                        </>
+                    :
+                        <>
+                            <p><strong>Estimated Price:</strong></p>
+                            <p>Not fetched</p>
+                        </>  
+                }
             </StyledFlex>
         </section>
     )

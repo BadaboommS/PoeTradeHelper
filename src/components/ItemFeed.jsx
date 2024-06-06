@@ -1,15 +1,9 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import Item from './Item';
 import { fetchData } from '../utils/fetchData';
 
-let uniqueWeaponsData = null;
-let uniqueArmourData = null;
-let uniqueAccessoryData = null;
-let uniqueFlaskData = null;
-let uniqueJewelData = null;
-let itemBaseData = null;
-
 export default function ItemFeed ({ items, leagueChoice }){
+   const [allFetchItemData, setAllFetchItemData] = useState({});
    let containsUniqueWeapons = false;
    let containsUniqueArmour = false;
    let containsUniqueAccessory = false;
@@ -35,6 +29,14 @@ export default function ItemFeed ({ items, leagueChoice }){
    }
    
    const handleFetchUniques = async () => {
+      let uniqueWeaponsData = null;
+      let uniqueArmourData = null;
+      let uniqueAccessoryData = null;
+      let uniqueFlaskData = null;
+      let uniqueJewelData = null;
+      let itemBaseData = null;
+      let allItemData = null;
+
       let proxyUrl = `http://localhost:8080/`;
       if(containsUniqueWeapons){uniqueWeaponsData = await fetchData(proxyUrl+`https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=UniqueWeapon`)}
       if(containsUniqueArmour){uniqueArmourData = await fetchData(proxyUrl+`https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=UniqueArmour`)}
@@ -42,6 +44,16 @@ export default function ItemFeed ({ items, leagueChoice }){
       if(containsUniqueFlasks){uniqueFlaskData = await fetchData(proxyUrl+`https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=UniqueFlask`)}
       if(containsUniqueJewels){uniqueJewelData = await fetchData(proxyUrl+`https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=UniqueJewel`)}
       itemBaseData = await fetchData(proxyUrl+`https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=BaseType`);
+
+      allItemData = await {
+         weapons: uniqueWeaponsData,
+         armour: uniqueArmourData,
+         accessories: uniqueAccessoryData,
+         flasks: uniqueFlaskData,
+         jewels: uniqueJewelData,
+         baseType: itemBaseData
+      }
+      setAllFetchItemData(allItemData)
    }
 
    useEffect(() => {
@@ -52,11 +64,12 @@ export default function ItemFeed ({ items, leagueChoice }){
       items.map((item, i) => {
          return (
             <Fragment key={i}>
-                  <Item 
-                     itemNumber = {i}
-                     item = {item}
-                     league = {leagueChoice}
-                  />
+               <Item 
+                  itemNumber = {i}
+                  item = {item}
+                  league = {leagueChoice}
+                  allFetchItemData = {allFetchItemData}
+               />
                <p className={`item_split item_split-normal`}></p>
             </Fragment>
          );

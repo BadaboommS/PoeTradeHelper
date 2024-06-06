@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 //utils
 import { isIterable } from './utils/isIterable';
 import { codeDecompress } from './utils/codeDecompress';
@@ -19,7 +19,6 @@ let allItemData = null;
 
 export function App() {
    const [inputError, setInputError] = useState(false);
-   const [reload, setReload] = useState(false);
    const [loader, setLoader] = useState(false);
    const [isOpen, setIsOpen] = useState(false);
    
@@ -47,10 +46,10 @@ export function App() {
       if((!isIterable(htmlItems)) || (htmlItems[0].textContent === undefined)){
          setInputError(true);
          setLoader(false);
-         setReload(true);
+         //setReload(true);
          return
       }
-
+      
       //Create item obj for each item
       let tempItemArray = [];
       for (let i of htmlItems){
@@ -67,13 +66,8 @@ export function App() {
       
       setTimeout(() => {
          setLoader(false);
-         setReload(true);
       }, 500);
    };
-
-   useEffect(()=>{
-      setReload(false);
-   }, [reload]);
 
    return (
       <div>
