@@ -37,13 +37,13 @@ export default function ItemFeed ({ items, leagueChoice }){
       let itemBaseData = null;
       let allItemData = null;
 
-      let proxyUrl = `http://localhost:8080/`;
-      if(containsUniqueWeapons){uniqueWeaponsData = await fetchData(proxyUrl+`https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=UniqueWeapon`)}
-      if(containsUniqueArmour){uniqueArmourData = await fetchData(proxyUrl+`https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=UniqueArmour`)}
-      if(containsUniqueAccessory){uniqueAccessoryData = await fetchData(proxyUrl+`https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=UniqueAccessory`)}
-      if(containsUniqueFlasks){uniqueFlaskData = await fetchData(proxyUrl+`https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=UniqueFlask`)}
-      if(containsUniqueJewels){uniqueJewelData = await fetchData(proxyUrl+`https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=UniqueJewel`)}
-      itemBaseData = await fetchData(proxyUrl+`https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=BaseType`);
+      //let proxyUrl = `http://localhost:8080/`;
+      if(containsUniqueWeapons){uniqueWeaponsData = await fetchData(`https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=UniqueWeapon`)}
+      if(containsUniqueArmour){uniqueArmourData = await fetchData(`https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=UniqueArmour`)}
+      if(containsUniqueAccessory){uniqueAccessoryData = await fetchData(`https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=UniqueAccessory`)}
+      if(containsUniqueFlasks){uniqueFlaskData = await fetchData(`https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=UniqueFlask`)}
+      if(containsUniqueJewels){uniqueJewelData = await fetchData(`https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=UniqueJewel`)}
+      itemBaseData = await fetchData(`https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=BaseType`);
 
       allItemData = await {
          weapons: uniqueWeaponsData,
