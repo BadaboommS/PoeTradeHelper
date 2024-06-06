@@ -3,7 +3,7 @@ import React from 'react'
 const InputCode = ({ handleSubmit }) => {
   return (
     <div>
-        <h1 className='text-white text-center'>POE Build Trade Helper</h1>
+        <h1 className='text-white text-center text-2xl'>POE Build Trade Helper</h1>
         <p className='text-white text-center'>Put build import code and generate POE.trade URL for each Item!</p>
         <form className='flex flex-col justify-center items-center gap-2' onSubmit={handleSubmit}>
             <textarea className="w-3/4 max-w-4xl rounded-sm p-2 text-sm" placeholder="Put build import code here" type="text" name="importCode" rows='5' cols="50" required></textarea>

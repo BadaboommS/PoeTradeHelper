@@ -2,8 +2,8 @@ export function translateModifiers(allModifiers, modArray, type){
     try{
         modArray.map((mod)=>{
             //remove bracket
-            let modText;
-            let specialMod;
+            let modText = null;
+            let specialMod = null;
             if(mod.text.includes("}")){
                 modText = mod.text.split('}')[1];
                 specialMod = (mod.text.split('}')[0]).slice(1);
@@ -13,8 +13,8 @@ export function translateModifiers(allModifiers, modArray, type){
             const r = /(\d+)/g;
             let modValue = modText.match(r);
             let modId = modText.replaceAll(r,"#");
-            let modFilter;
-            let modOption;
+            let modFilter = null;
+            let modOption = null;
             
             if(type === 'implicit'){
                 //exceptions

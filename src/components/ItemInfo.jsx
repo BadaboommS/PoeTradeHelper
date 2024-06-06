@@ -33,17 +33,17 @@ export default function ItemInfo ({ item, allFetchItemData }) {
     },[loader])
 
   return (
-    <div className="w-full lg:w-5/12">
+    <section className="w-full lg:w-5/12">
         <div className={`item_border-${item.rarity.toLowerCase()} item_background-${item.rarity.toLowerCase()} p-5`}>
             <span className={`item_rarity-${item.rarity.toLowerCase()} text-2xl`}><strong>{item.rarity === 'UNIQUE'? `${item.name} - ${item.base}` : `${item.base}`}</strong></span>
         </div>
-        <section className={`item_border-${item.rarity.toLowerCase()} item_background-${item.rarity.toLowerCase()} p-5 flex flex-col items-center`}>
+        <div className={`item_border-${item.rarity.toLowerCase()} item_background-${item.rarity.toLowerCase()} p-5 flex flex-col items-center`}>
             <div className='flex flex-row gap-4 items-center'>
                 {loader? <div className="lds-dual-ring"></div> : <></>}
                 {
                     (!loader && itemImg !== null)?
                         <div>
-                            <img src={itemImg} alt="Loading..."></img>
+                            <img src={itemImg} className="scale-100 lg:scale-110 xl:scale-125 my-0 lg:my-2 xl:my-4" alt="Loading..." title={item.rarity === "UNIQUE"? item.name : item.base}></img>
                         </div>
                     :
                       <></>  
@@ -112,7 +112,7 @@ export default function ItemInfo ({ item, allFetchItemData }) {
                     <></>
                 }
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
   )
 }

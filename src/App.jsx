@@ -76,10 +76,16 @@ export function App() {
             <Modal open={isOpen} onClose={() => setIsOpen(false)}>
                <div>
                     <h3 className='text-center'>How to Use:</h3>
-                    <p>1 - Import Build Code from: POE Ninja, Path Of Building, Pastebind or any equivalent.</p>
-                    <p>2 - Paste the code into the Import code Input.</p>
-                    <p>3 - Select your league.</p>
-                    <p>4 - Enjoy !</p>
+                    <p>1 - Import Build Code from: POE Ninja, Path Of Building, Pastebind or any equivalent</p>
+                    <p>2 - Paste the code into the Import code Input</p>
+                    <p>3 - Select your league</p>
+                    <p>4 - Select the desirated stats on your item</p>
+                    <p>5 - Use the Link to check POE Trade offers</p>
+                    <div className='text-center mt-2'>
+                     <p>⚠️ WARNING ⚠️ Estimated Price is about the cheapest item best you can find. Real items with stats often cost way more !</p>
+                     <p>Image and Prices Data are fetched with the Poe.ninja API.</p>
+                     <p>Project Repo: https://github.com/BadaboommS/PoeTradeHelper</p>
+                    </div>
                 </div>
             </Modal>
          </div>
@@ -88,7 +94,7 @@ export function App() {
          {loader? <div className="lds-dual-ring"></div> : <></>}
          {inputError? <p className='text-white text-center'>Build code not recognized! Try another Code.</p> : ''}
          {!loader && !inputError && buildItemArray[0]?
-               <article className='flex flex-col items-center gap-4 m-10 text-white'>
+               <article className='flex flex-col items-center m-auto text-white'>
                      <ItemFeed items={buildItemArray} leagueChoice={defaultLeagueChoice} />
                </article>
             :
