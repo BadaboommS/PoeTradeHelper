@@ -8254,6 +8254,39 @@
 	  }
 	}
 
+	function testTranslateModifiers(allModifiers, modArray, type) {
+	  try {
+	    modArray.map(mod => {
+	      //remove bracket
+	      let label = null;
+	      if (type = "Implicit") {
+	        switch (true) {
+	          case /{crafted}/i.test(mod.text):
+	            label = "Enchant";
+	            break;
+	          default:
+	            label = "Implicit";
+	        }
+	      } else {
+	        switch (true) {
+	          case /{crafted}/i.test(mod.text):
+	            label = "crafted";
+	            break;
+	          case /{fractured}/i.test(mod.text):
+	            label = "Fractured";
+	            break;
+	          default:
+	            label = "Explicit";
+	        }
+	      }
+	      console.log(mod);
+	      console.log(label);
+	    });
+	  } catch (err) {
+	    console.log(err);
+	  }
+	}
+
 	function addOrder(buildItemArray) {
 	  let tempBuildItemArray = [];
 	  let tempArrayWeapons = buildItemArray.filter(item => item.baseInfo.item_category === "weapons");
@@ -8324,13 +8357,13 @@
 	  let tempItemModifiersArray = [];
 	  if (tradeImplicits.length != 0) ;
 	  tradeImplicits.map(implicit => {
-	    if (implicit.filter !== undefined) {
+	    if (implicit.filter !== undefined && implicit.filter !== null) {
 	      let tempModFilter = `{"id":"${implicit.filter}"${implicit.option ? `,"value":{"option":${implicit.option}}` : ''}${implicit.value ? `,"value":{"min":${implicit.value[0]}}` : ''}, "disabled": ${!implicit.display}}`;
 	      tempItemModifiersArray.push(tempModFilter);
 	    }
 	  });
 	  tradeExplicits.map(explicit => {
-	    if (explicit.filter !== undefined) {
+	    if (explicit.filter !== undefined && explicit.filter !== null) {
 	      let tempModFilter = `{"id":"${explicit.filter}"${explicit.option ? `,"value":{"option":${explicit.option}}` : ''}${explicit.value ? `,"value":{"min":${explicit.value[0]}}` : ''}, "disabled": ${!explicit.display}}`;
 	      tempItemModifiersArray.push(tempModFilter);
 	    }
@@ -8458,7 +8491,6 @@
 	    }
 	  }
 	  let tradeUrl = generateTradeUrl(tradeIlv, tradeLinks, tradeCorrupted, tradeDefence, tradeImplicits, tradeExplicits, item, league);
-	  console.log(item);
 	  reactExports.useEffect(() => {
 	    tradeUrl = generateTradeUrl(tradeIlv, tradeLinks, tradeCorrupted, tradeDefence, tradeImplicits, tradeExplicits, item, league);
 	  }, []);
@@ -8564,9 +8596,13 @@
 	    className: "lds-dual-ring"
 	  }) : /*#__PURE__*/React.createElement(React.Fragment, null), !loader && itemEstimatedPrice.length !== 0 ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
 	    className: "flex flex-row md:flex-col"
-	  }, /*#__PURE__*/React.createElement("p", null, /*#__PURE__*/React.createElement("strong", null, "Estimated Price: ")), displayEstimatedPrice(itemEstimatedPrice[0], itemEstimatedPrice[1]))) : /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+	  }, /*#__PURE__*/React.createElement("p", {
+	    className: "flex items-center"
+	  }, /*#__PURE__*/React.createElement("strong", null, "Estimated Price: ")), displayEstimatedPrice(itemEstimatedPrice[0], itemEstimatedPrice[1]))) : /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
 	    className: "flex flex-row md:flex-col"
-	  }, /*#__PURE__*/React.createElement("p", null, /*#__PURE__*/React.createElement("strong", null, "Estimated Price:")), /*#__PURE__*/React.createElement("p", null, "Not fetched"))), /*#__PURE__*/React.createElement("a", {
+	  }, /*#__PURE__*/React.createElement("p", {
+	    className: "flex items-center"
+	  }, /*#__PURE__*/React.createElement("strong", null, "Estimated Price:")), /*#__PURE__*/React.createElement("p", null, "Not fetched"))), /*#__PURE__*/React.createElement("a", {
 	    href: tradeUrl,
 	    className: "text-black bg-slate-200 rounded-md p-4 decoration-inherit",
 	    target: "_blank",
@@ -8693,6 +8729,7 @@
 	  let containsUniqueAccessory = false;
 	  let containsUniqueFlasks = false;
 	  let containsUniqueJewels = false;
+	  let containsClusterJewels = false;
 	  for (let i = 0, l = items.length; i < l; i++) {
 	    if (items[i].rarity === "UNIQUE" && items[i].baseInfo.item_category === "weapons" && containsUniqueWeapons === false) {
 	      containsUniqueWeapons = true;
@@ -8708,6 +8745,9 @@
 	    }
 	    if (items[i].rarity === "UNIQUE" && items[i].baseInfo.item_category === "jewels" && containsUniqueJewels === false) {
 	      containsUniqueJewels = true;
+	    }
+	    if (items[i].rarity !== "UNIQUE" && items[i].base.includes('Cluster') && containsClusterJewels === false) {
+	      containsClusterJewels = true;
 	    }
 	  }
 	  const handleFetchUniques = async () => {
@@ -8733,6 +8773,9 @@
 	    }
 	    if (containsUniqueJewels) {
 	      uniqueJewelData = await fetchData(proxyUrl + `https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=UniqueJewel`);
+	    }
+	    if (containsClusterJewels) {
+	      uniqueJewelData = await fetchData(proxyUrl + `https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=ClusterJewel`);
 	    }
 	    itemBaseData = await fetchData(proxyUrl + `https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=BaseType`);
 	    allItemData = await {
@@ -8878,7 +8921,9 @@
 
 	    //Translate mods for filter
 	    tempItemArray.map(item => {
+	      testTranslateModifiers(allModifiers.result, item.implicits, 'Implicit');
 	      translateModifiers(allModifiers.result, item.implicits, 'implicit');
+	      //testTranslateModifiers(allModifiers.result, item.implicits, 'Explicit');
 	      translateModifiers(allModifiers.result, item.explicits, 'explicit');
 	    });
 	    buildItemArray = addOrder(tempItemArray);

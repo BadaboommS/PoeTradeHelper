@@ -5,6 +5,7 @@ import { codeDecompress } from './utils/codeDecompress';
 import { createItemObj } from './utils/createItemObj';
 import { fetchData } from './utils/fetchData';
 import { translateModifiers } from './utils/translateModifiers';
+import { testTranslateModifiers } from './utils/testTranslateModifiers';
 import { addOrder } from './utils/addOrder';
 //components
 import ItemFeed from './components/ItemFeed';
@@ -59,7 +60,9 @@ export function App() {
       
       //Translate mods for filter
       tempItemArray.map((item) => {
+         testTranslateModifiers(allModifiers.result, item.implicits, 'Implicit');
          translateModifiers(allModifiers.result, item.implicits, 'implicit');
+         //testTranslateModifiers(allModifiers.result, item.implicits, 'Explicit');
          translateModifiers(allModifiers.result, item.explicits, 'explicit');
       })
       buildItemArray = addOrder(tempItemArray);

@@ -9,6 +9,7 @@ export default function ItemFeed ({ items, leagueChoice }){
    let containsUniqueAccessory = false;
    let containsUniqueFlasks = false;
    let containsUniqueJewels = false;
+   let containsClusterJewels = false;
 
    for(let i = 0, l = items.length; i < l; i++){
       if(items[i].rarity === "UNIQUE" && items[i].baseInfo.item_category === "weapons" && containsUniqueWeapons === false){
@@ -25,6 +26,9 @@ export default function ItemFeed ({ items, leagueChoice }){
       }
       if(items[i].rarity === "UNIQUE" && items[i].baseInfo.item_category === "jewels" && containsUniqueJewels === false){
          containsUniqueJewels = true;
+      }
+      if(items[i].rarity !== "UNIQUE" && items[i].base.includes('Cluster') && containsClusterJewels === false){
+         containsClusterJewels = true;
       }
    }
    
@@ -43,6 +47,7 @@ export default function ItemFeed ({ items, leagueChoice }){
       if(containsUniqueAccessory){uniqueAccessoryData = await fetchData(proxyUrl + `https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=UniqueAccessory`)}
       if(containsUniqueFlasks){uniqueFlaskData = await fetchData(proxyUrl + `https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=UniqueFlask`)}
       if(containsUniqueJewels){uniqueJewelData = await fetchData(proxyUrl + `https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=UniqueJewel`)}
+      if(containsClusterJewels){uniqueJewelData = await fetchData(proxyUrl + `https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=ClusterJewel`)}
       itemBaseData = await fetchData(proxyUrl + `https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=BaseType`);
 
       allItemData = await {

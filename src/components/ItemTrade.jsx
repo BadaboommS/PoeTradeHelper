@@ -108,7 +108,6 @@ export default function ItemTrade({ item , league, itemName, itemNumber, allFetc
     }
 
     let tradeUrl = generateTradeUrl(tradeIlv, tradeLinks, tradeCorrupted, tradeDefence, tradeImplicits, tradeExplicits, item, league);
-    console.log(item);
 
     useEffect(()=>{
         tradeUrl = generateTradeUrl(tradeIlv, tradeLinks, tradeCorrupted, tradeDefence, tradeImplicits, tradeExplicits, item, league);
@@ -215,14 +214,14 @@ export default function ItemTrade({ item , league, itemName, itemNumber, allFetc
                         (!loader && itemEstimatedPrice.length !== 0)?
                             <>
                                 <div className="flex flex-row md:flex-col">
-                                    <p><strong>Estimated Price: </strong></p>
+                                    <p className="flex items-center"><strong>Estimated Price: </strong></p>
                                     {displayEstimatedPrice(itemEstimatedPrice[0],itemEstimatedPrice[1])}
                                 </div>
                             </>
                         :
                             <>
                                 <div className="flex flex-row md:flex-col">
-                                    <p><strong>Estimated Price:</strong></p>
+                                    <p className="flex items-center"><strong>Estimated Price:</strong></p>
                                     <p>Not fetched</p>
                                 </div>
                             </>  

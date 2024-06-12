@@ -45,13 +45,13 @@ export function generateTradeUrl(tradeIlv, tradeLinks, tradeCorrupted, tradeDefe
     let tempItemModifiersArray = [];
     if(tradeImplicits.length != 0){}
     tradeImplicits.map((implicit)=> {
-      if(implicit.filter !== undefined){
+      if((implicit.filter !== undefined) && (implicit.filter !== null)){
         let tempModFilter = `{"id":"${implicit.filter}"${implicit.option? `,"value":{"option":${implicit.option}}` : ''}${implicit.value? `,"value":{"min":${implicit.value[0]}}` : ''}, "disabled": ${!implicit.display}}`;
         tempItemModifiersArray.push(tempModFilter);
       }
     });
     tradeExplicits.map((explicit) => {
-      if(explicit.filter !== undefined){
+      if((explicit.filter !== undefined) && (explicit.filter !== null)){
         let tempModFilter = `{"id":"${explicit.filter}"${explicit.option? `,"value":{"option":${explicit.option}}` : ''}${explicit.value? `,"value":{"min":${explicit.value[0]}}` : ''}, "disabled": ${!explicit.display}}`;
         tempItemModifiersArray.push(tempModFilter);
       }
@@ -60,7 +60,7 @@ export function generateTradeUrl(tradeIlv, tradeLinks, tradeCorrupted, tradeDefe
     
     const urlPOETrade = `https://www.pathofexile.com/trade/search/${leagueChoice}`;
     const query = `?q={"query":{"filters":{${miscFilter}${socketFilter}${armourFilter}${typeFilter}}${itemBaseQuery}${statsFilter},"status":{"option":"online"}},"sort":{"price":"asc"}}`;
-    const tempRequest = urlPOETrade+query;
+    const tempRequest = urlPOETrade + query;
 
    return encodeURI(tempRequest);
  }
