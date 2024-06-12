@@ -8062,6 +8062,10 @@
 	    if (cleanItemInfoArray[0].includes("Implicits:")) {
 	      itemImplicitNumber = cleanItemInfoArray[0].split(": ")[1];
 	      cleanItemInfoArray.shift();
+	    } else {
+	      cleanItemInfoArray.shift();
+	      itemImplicitNumber = cleanItemInfoArray[0].split(": ")[1];
+	      cleanItemInfoArray.shift();
 	    }
 	    if (itemImplicitNumber !== 0) {
 	      for (let i = 0; i < itemImplicitNumber; i++) {
@@ -8119,149 +8123,25 @@
 	  try {
 	    modArray.map(mod => {
 	      //remove bracket
-	      let modText = null;
-	      let specialMod = null;
-	      if (mod.text.includes("}")) {
-	        modText = mod.text.split('}')[1];
-	        specialMod = mod.text.split('}')[0].slice(1);
-	      } else {
-	        modText = mod.text;
-	      }
-	      const r = /(\d+)/g;
-	      let modValue = modText.match(r);
-	      let modId = modText.replaceAll(r, "#");
+	      let label = null;
+	      let modPreText = null;
 	      let modFilter = null;
 	      let modOption = null;
-	      if (type === 'implicit') {
-	        //exceptions
-	        if (modId.includes(':')) {
-	          let split = modId.split(':');
-	          modId = split[0];
-	        }
-	        if (modId.includes('Allocates')) {
-	          modFilter = 'enchant.stat_2954116742';
-	          let tempModOption = modId.split('llocates ')[1];
-	          let tempOptionId;
-	          for (let i = 0, l = allModifiers[4].entries[4].option.options.length; i < l; i++) {
-	            if (allModifiers[4].entries[4].option.options[i].text.includes(tempModOption)) {
-	              tempOptionId = allModifiers[4].entries[4].option.options[i].id;
-	              break;
-	            }
-	          }
-	          modOption = tempOptionId;
-	        }
-	        if (modId.includes('#.#')) {
-	          //BUG DOESNT REPLACE
-	          modId.replace('#.#', "#");
-	        }
-	        if (specialMod === 'enchant') {
-	          for (let i = 0, l = allModifiers[4].entries.length; i < l; i++) {
-	            if (allModifiers[4].entries[i].text.includes(modId)) {
-	              modFilter = allModifiers[4].entries[i].id;
-	              break;
-	            }
-	          }
-	        } else if (specialMod === 'crafted') {
-	          for (let i = 0, l = allModifiers[4].entries.length; i < l; i++) {
-	            if (allModifiers[4].entries[i].text.includes(modId)) {
-	              modFilter = allModifiers[4].entries[i].id;
-	              break;
-	            }
-	          }
-	          if (modFilter === 'enchant.stat_3948993189') {
-	            let tempModOption = modText.split("grant: ")[1];
-	            let tempOptionId;
-	            for (let i = 0, l = allModifiers[4].entries[1].option.options.length; i < l; i++) {
-	              if (allModifiers[4].entries[1].option.options[i].text.includes(tempModOption)) {
-	                tempOptionId = allModifiers[4].entries[1].option.options[i].id;
-	                break;
-	              }
-	            }
-	            modValue = '';
-	            modOption = tempOptionId;
-	          }
-	        } else {
-	          for (let i = 0, l = allModifiers[0].entries.length; i < l; i++) {
-	            if (allModifiers[0].entries[i].text === modId) {
-	              modFilter = allModifiers[0].entries[i].id;
-	              break;
-	            }
-	          }
-	          if (modFilter === undefined) {
-	            for (let i = 0, l = allModifiers[0].entries.length; i < l; i++) {
-	              if (allModifiers[0].entries[i].text.includes(modId)) {
-	                modFilter = allModifiers[0].entries[i].id;
-	                break;
-	              }
-	            }
-	          }
-	        }
-	      }
-	      if (type === 'explicit') {
-	        if (specialMod === 'fractured') {
-	          for (let i = 0, l = allModifiers[3].entries.length; i < l; i++) {
-	            if (allModifiers[3].entries[i].text.includes(modId)) {
-	              modFilter = allModifiers[3].entries[i].id;
-	              break;
-	            }
-	          }
-	        } else if (specialMod === 'crafted') {
-	          for (let i = 0, l = allModifiers[6].entries.length; i < l; i++) {
-	            if (allModifiers[6].entries[i].text.includes(modId)) {
-	              modFilter = allModifiers[6].entries[i].id;
-	              break;
-	            }
-	          }
-	        } else {
-	          for (let i = 0, l = allModifiers[0].entries.length; i < l; i++) {
-	            if (allModifiers[0].entries[i].text === modId) {
-	              modFilter = allModifiers[0].entries[i].id;
-	              break;
-	            }
-	          }
-	          if (modFilter === undefined) {
-	            for (let i = 0, l = allModifiers[1].entries.length; i < l; i++) {
-	              if (allModifiers[1].entries[i].text.includes(modId)) {
-	                modFilter = allModifiers[1].entries[i].id;
-	                break;
-	              }
-	            }
-	          }
-	          if (modFilter === undefined) {
-	            for (let i = 0, l = allModifiers[1].entries.length; i < l; i++) {
-	              if (allModifiers[1].entries[i].text === modId) {
-	                modFilter = allModifiers[1].entries[i].id;
-	                break;
-	              }
-	            }
-	          }
-	          if (modFilter === undefined) {
-	            for (let i = 0, l = allModifiers[1].entries.length; i < l; i++) {
-	              if (allModifiers[1].entries[i].text.includes(modId)) {
-	                modFilter = allModifiers[1].entries[i].id;
-	                break;
-	              }
-	            }
-	          }
-	        }
-	      }
-	      mod.filter = modFilter;
-	      mod.value = modValue;
-	      mod.option = modOption;
-	    });
-	  } catch (err) {
-	    console.log(err);
-	  }
-	}
-
-	function testTranslateModifiers(allModifiers, modArray, type) {
-	  try {
-	    modArray.map(mod => {
-	      //remove bracket
-	      let label = null;
-	      if (type = "Implicit") {
+	      if (type === "Implicit") {
 	        switch (true) {
-	          case /{crafted}/i.test(mod.text):
+	          case new RegExp("Allocates").test(mod.text):
+	            {
+	              modFilter = "enchant.stat_2954116742";
+	              modOption = allModifiers[4].entries[4].option.options[allModifiers[4].entries[4].option.options.findIndex(i => i.text = mod.text.split('Allocates ')[1])].id;
+	              return null;
+	            }
+	          case new RegExp("Small Passive Skills").test(mod.text):
+	            {
+	              modFilter = "enchant.stat_3948993189";
+	              modOption = allModifiers[4].entries[1].option.options[allModifiers[4].entries[4].option.options.findIndex(i => i.text = mod.text.split(': ')[1])].id;
+	              return null;
+	            }
+	          case new RegExp("crafted").test(mod.text):
 	            label = "Enchant";
 	            break;
 	          default:
@@ -8269,18 +8149,48 @@
 	        }
 	      } else {
 	        switch (true) {
-	          case /{crafted}/i.test(mod.text):
-	            label = "crafted";
+	          case new RegExp("crafted").test(mod.text):
+	            label = "Crafted";
 	            break;
-	          case /{fractured}/i.test(mod.text):
+	          case new RegExp("fractured").test(mod.text):
 	            label = "Fractured";
 	            break;
 	          default:
 	            label = "Explicit";
 	        }
 	      }
-	      console.log(mod);
-	      console.log(label);
+	      //split special if needed
+	      mod.text.includes("}") ? modPreText = mod.text.split('}')[1] : modPreText = mod.text;
+
+	      //retrieve mod value and explicit text
+	      const r = /(\d+)/g;
+	      let modValue = modPreText.match(r);
+	      let modText = modPreText.replace(r, "#").replace("-#", '#');
+	      const filteredAllModifiers = allModifiers.filter(lab => lab.label === label);
+	      let index = filteredAllModifiers[0].entries.findIndex(i => i.text.replace(r, "#") === modText);
+	      if (index === -1) {
+	        modText += ' (Local)';
+	        index = filteredAllModifiers[0].entries.findIndex(i => i.text.replace(r, "#") === modText);
+	      }
+	      if (index !== -1) {
+	        modFilter = filteredAllModifiers[0].entries[index].id;
+	      }
+
+	      //debug
+	      if (modFilter === null) {
+	        console.log(mod);
+	        console.log("Mod label: ", label);
+	        console.log("Mod text before traitment: ", modPreText);
+	        console.log("Mod text: ", modText);
+	        console.log('Mod value: ', modValue);
+	        console.log("Searching in: ", filteredAllModifiers[0].id);
+	        console.log("Found in index: ", index);
+	        console.log("Mod Filter: ", modFilter);
+	        console.log("Mod Options: ", modOption);
+	      }
+	      mod.filter = modFilter;
+	      mod.value = modValue;
+	      mod.option = modOption;
 	    });
 	  } catch (err) {
 	    console.log(err);
@@ -8921,10 +8831,9 @@
 
 	    //Translate mods for filter
 	    tempItemArray.map(item => {
-	      testTranslateModifiers(allModifiers.result, item.implicits, 'Implicit');
-	      translateModifiers(allModifiers.result, item.implicits, 'implicit');
-	      //testTranslateModifiers(allModifiers.result, item.implicits, 'Explicit');
-	      translateModifiers(allModifiers.result, item.explicits, 'explicit');
+	      console.log(item);
+	      translateModifiers(allModifiers.result, item.implicits, 'Implicit');
+	      translateModifiers(allModifiers.result, item.explicits, 'Explicit');
 	    });
 	    buildItemArray = addOrder(tempItemArray);
 	    setTimeout(() => {

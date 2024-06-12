@@ -116,6 +116,10 @@ export function createItemObj(item, allItemData){
         if(cleanItemInfoArray[0].includes("Implicits:")){
                 itemImplicitNumber = cleanItemInfoArray[0].split(": ")[1];
                 cleanItemInfoArray.shift();
+        }else{
+            cleanItemInfoArray.shift();
+            itemImplicitNumber = cleanItemInfoArray[0].split(": ")[1];
+            cleanItemInfoArray.shift();
         }
         if(itemImplicitNumber !== 0){
             for(let i = 0; i < itemImplicitNumber; i++){
