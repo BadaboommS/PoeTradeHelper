@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { handleExplicitClass } from "../utils/handleExplicitClass";
+import { handleExplicitClass } from "../utils/generalUtils";
 
 export default function ItemInfo ({ item, allFetchItemData }) {
     const didMount = useRef(false);
@@ -13,10 +13,12 @@ export default function ItemInfo ({ item, allFetchItemData }) {
                 if(index !== -1){
                     setItemImg(allFetchItemData[item.baseInfo.item_category].lines[index].icon);
                 }
-            }
-            else{
-                let test = allFetchItemData.baseType.lines.map((e) => e.name);
-                let index = test.indexOf(item.base);
+            }else if(item.baseInfo.base_type === "Cluster Jewel"){
+                if(item.base === "Small Cluster Jewel"){ setItemImg("https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL05ld0dlbUJhc2UxIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/0eb1a9d981/NewGemBase1.png") }
+                if(item.base === "Medium Cluster Jewel"){ setItemImg("https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL05ld0dlbUJhc2UyIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/78f6bf8356/NewGemBase2.png") }
+                if(item.base === "Large Cluster Jewel"){ setItemImg("https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL05ld0dlbUJhc2UzIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/db35e60885/NewGemBase3.png") }
+            }else{
+                let index = allFetchItemData.baseType.lines.map((e) => e.name).indexOf(item.base);
                 if(index !== -1){
                     setItemImg(allFetchItemData.baseType.lines[index].icon);
                 }

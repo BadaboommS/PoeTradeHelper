@@ -1,11 +1,7 @@
 import React, { useState } from 'react';
 //utils
-import { isIterable } from './utils/isIterable';
-import { codeDecompress } from './utils/codeDecompress';
-import { createItemObj } from './utils/createItemObj';
-import { fetchData } from './utils/fetchData';
-import { translateModifiers } from './utils/translateModifiers';
-import { addOrder } from './utils/addOrder';
+import { fetchData, codeDecompress, isIterable } from './utils/generalUtils';
+import { createItemObj, addOrder, translateModifiers } from './utils/itemCreateUtils';
 //components
 import ItemFeed from './components/ItemFeed';
 import InputCode from './components/InputCode';
@@ -53,15 +49,14 @@ export function App() {
       //Create item obj for each item
       let tempItemArray = [];
       for (let i of htmlItems){
-         let tempItem = createItemObj(i, allItemData.result);
+         let tempItem = createItemObj(i, allItemData);
          tempItemArray.push(tempItem);
       }
       
       //Translate mods for filter
       tempItemArray.map((item) => {
-         console.log(item);
-         translateModifiers(allModifiers.result, item.implicits, 'Implicit');
-         translateModifiers(allModifiers.result, item.explicits, 'Explicit');
+         translateModifiers(allModifiers, item.implicits, 'Implicit');
+         translateModifiers(allModifiers, item.explicits, 'Explicit');
       })
       buildItemArray = addOrder(tempItemArray);
       

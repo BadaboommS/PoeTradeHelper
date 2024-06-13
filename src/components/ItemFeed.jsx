@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import Item from './Item';
-import { fetchData } from '../utils/fetchData';
+import { fetchData } from '../utils/generalUtils';
 
 export default function ItemFeed ({ items, leagueChoice }){
    const [allFetchItemData, setAllFetchItemData] = useState({});
@@ -38,6 +38,7 @@ export default function ItemFeed ({ items, leagueChoice }){
       let uniqueAccessoryData = null;
       let uniqueFlaskData = null;
       let uniqueJewelData = null;
+      let clusterJewelData = null;
       let itemBaseData = null;
       let allItemData = null;
 
@@ -47,7 +48,7 @@ export default function ItemFeed ({ items, leagueChoice }){
       if(containsUniqueAccessory){uniqueAccessoryData = await fetchData(proxyUrl + `https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=UniqueAccessory`)}
       if(containsUniqueFlasks){uniqueFlaskData = await fetchData(proxyUrl + `https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=UniqueFlask`)}
       if(containsUniqueJewels){uniqueJewelData = await fetchData(proxyUrl + `https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=UniqueJewel`)}
-      if(containsClusterJewels){uniqueJewelData = await fetchData(proxyUrl + `https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=ClusterJewel`)}
+      if(containsClusterJewels){clusterJewelData = await fetchData(proxyUrl + `https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=ClusterJewel`)}
       itemBaseData = await fetchData(proxyUrl + `https://poe.ninja/api/data/itemoverview?league=${leagueChoice}&type=BaseType`);
 
       allItemData = await {
@@ -56,6 +57,7 @@ export default function ItemFeed ({ items, leagueChoice }){
          accessories: uniqueAccessoryData,
          flasks: uniqueFlaskData,
          jewels: uniqueJewelData,
+         cluster: clusterJewelData,
          baseType: itemBaseData
       }
       setAllFetchItemData(allItemData)

@@ -1,7 +1,8 @@
 import React, { useEffect, useState, useRef } from "react";
 //utils
 import { generateTradeUrl } from "../utils/generateTradeUrl";
-import { handleExplicitClass } from "../utils/handleExplicitClass";
+import { handleExplicitClass } from "../utils/generalUtils";
+import { handleClusterPrice, handleUniquePrice } from "../utils/handleItemPrices";
 
 export default function ItemTrade({ item , league, itemName, itemNumber, allFetchItemData }){
     const [tradeDefence, setTradeDefence] = useState([]);
@@ -17,13 +18,13 @@ export default function ItemTrade({ item , league, itemName, itemNumber, allFetc
 
     useEffect(() => {
         if(didMount.current){
+            console.log(item)
             if(item.rarity === "UNIQUE"){
-                let index = allFetchItemData[item.baseInfo.item_category].lines.map((e) => e.name).indexOf(item.name);
-                if(index !== -1){
-                    const chaos = allFetchItemData[item.baseInfo.item_category].lines[index].chaosValue;
-                    const divine = allFetchItemData[item.baseInfo.item_category].lines[index].divineValue;
-                    setItemEstimatedPrice([chaos,divine]);
-                }
+                const {chaos, divine} = handleUniquePrice(item, allFetchItemData);
+                setItemEstimatedPrice([chaos,divine]);
+            }else if ((item.rarity === "RARE") && (item.baseInfo.base_type === "Cluster Jewel")){
+                const {chaos, divine} = handleClusterPrice(item, allFetchItemData.cluster.lines);
+                setItemEstimatedPrice([chaos,divine]);       
             }
             /* else{
                 let test = allFetchItemData.baseType.lines.map((e) => e.name);

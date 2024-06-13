@@ -1,3 +1,9 @@
+export async function fetchData(url){
+    const response = await fetch(url);
+    const data = response.json();
+    return data;
+ }
+
 export function codeDecompress(code){
     try{
         //Retrieve Code and decode
@@ -17,5 +23,22 @@ export function codeDecompress(code){
         return htmlItems;
     }catch(err){
         return err
+    }
+}
+
+export function isIterable(obj) {
+    // checks for null and undefined
+    if (obj == null) {
+      return false;
+    }
+    return typeof obj[Symbol.iterator] === 'function';
+  }
+
+export function handleExplicitClass(item){
+    switch(true){
+        case (/{crafted}/i.test(item)): return 'item_crafted';
+        case (/{enchanted}/i.test(item)): return 'item_enchanted';
+        case (/{fractured}/i.test(item)): return 'item_fractured';
+        default: return '';
     }
 }
