@@ -33,8 +33,9 @@ export function generateTradeUrl(tradeIlv, tradeLinks, tradeCorrupted, tradeDefe
 
     //misc Filter
     let iLvFilter = `"ilvl":{"min":${tradeIlv},"max":100}`;
-    let corruptedFilter = `"corrupted":{"option":${tradeCorrupted}}`;
-    let miscFilter = `"misc_filters":{"filters":{${iLvFilter},${corruptedFilter}}}`;
+    let corruptedFilter = '';
+    if(tradeCorrupted !== "any"){ corruptedFilter = `,"corrupted":{"option":"${tradeCorrupted}"}` }
+    let miscFilter = `"misc_filters":{"filters":{${iLvFilter}${corruptedFilter}}}`;
 
     //type Filter
     let rarity = `"rarity":{"option":"${itemRarity}"}`;
@@ -43,16 +44,15 @@ export function generateTradeUrl(tradeIlv, tradeLinks, tradeCorrupted, tradeDefe
     
     //stats Filter
     let tempItemModifiersArray = [];
-    if(tradeImplicits.length != 0){}
     tradeImplicits.map((implicit)=> {
       if((implicit.filter !== undefined) && (implicit.filter !== null)){
-        let tempModFilter = `{"id":"${implicit.filter}"${implicit.option? `,"value":{"option":${implicit.option}}` : ''}${implicit.value? `,"value":{"min":${implicit.value[0]}}` : ''}, "disabled": ${!implicit.display}}`;
+        let tempModFilter = `{"id":"${implicit.filter}"${implicit.option? `,"value":{"option":${implicit.option}}` : ''}${implicit.value? `,"value":{"min":${implicit.value[0]}${(implicit.value && implicit.precision)? `,"max":${implicit.value[0]}` : ''}}` : ''}, "disabled": ${!implicit.display}}`;
         tempItemModifiersArray.push(tempModFilter);
       }
     });
     tradeExplicits.map((explicit) => {
       if((explicit.filter !== undefined) && (explicit.filter !== null)){
-        let tempModFilter = `{"id":"${explicit.filter}"${explicit.option? `,"value":{"option":${explicit.option}}` : ''}${explicit.value? `,"value":{"min":${explicit.value[0]}}` : ''}, "disabled": ${!explicit.display}}`;
+        let tempModFilter = `{"id":"${explicit.filter}"${explicit.option? `,"value":{"option":${explicit.option}}` : ''}${explicit.value? `,"value":{"min":${explicit.value[0]}${(explicit.value && explicit.precision)? `,"max":${explicit.value[0]}` : ''}}` : ''}, "disabled": ${!explicit.display}}`;
         tempItemModifiersArray.push(tempModFilter);
       }
     });

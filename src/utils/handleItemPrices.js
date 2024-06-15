@@ -8,7 +8,9 @@ export function handleUniquePrice(item, fetchItemData){
 }
 
 export function handleBaseType(item, fetchItemData){
-
+    console.log("Rare Item --------");
+    let itemPriceResults = fetchItemData.baseType.lines.filter(c => (c.baseType === item.base) && (c.levelRequired >= parseInt(item.iLv)));
+    console.log(itemPriceResults);
 }
 
 export function handleClusterPrice(item, clusterData){

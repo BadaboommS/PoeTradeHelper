@@ -7833,7 +7833,7 @@
 	function styleInject(css, ref) {
 	  if (ref === void 0) ref = {};
 	  var insertAt = ref.insertAt;
-	  if (typeof document === 'undefined') {
+	  if (!css || typeof document === 'undefined') {
 	    return;
 	  }
 	  var head = document.head || document.getElementsByTagName('head')[0];
@@ -7855,7 +7855,10 @@
 	  }
 	}
 
-	var css_248z = "/*! tailwindcss v3.4.3 | MIT License | https://tailwindcss.com*/*,:after,:before{border:0 solid #e5e7eb;box-sizing:border-box}:after,:before{--tw-content:\"\"}:host,html{-webkit-text-size-adjust:100%;font-feature-settings:normal;-webkit-tap-highlight-color:transparent;font-family:ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-variation-settings:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4}body{line-height:inherit;margin:0}hr{border-top-width:1px;color:inherit;height:0}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-feature-settings:normal;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-size:1em;font-variation-settings:normal}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{border-collapse:collapse;border-color:inherit;text-indent:0}button,input,optgroup,select,textarea{font-feature-settings:inherit;color:inherit;font-family:inherit;font-size:100%;font-variation-settings:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{color:#9ca3af;opacity:1}input::placeholder,textarea::placeholder{color:#9ca3af;opacity:1}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{height:auto;max-width:100%}[hidden]{display:none}*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }h1{font-size:1.5rem;line-height:2rem}h2{font-size:1.25rem}h2,h3{line-height:1.75rem}h3{font-size:1.125rem}button{background-color:#fff}.m-auto{margin:auto}.my-0{margin-bottom:0;margin-top:0}.my-4{margin-bottom:1rem;margin-top:1rem}.ml-5{margin-left:1.25rem}.mt-2{margin-top:.5rem}.block{display:block}.flex{display:flex}.h-10{height:2.5rem}.w-1\\/2{width:50%}.w-3\\/4{width:75%}.w-full{width:100%}.min-w-10{min-width:2.5rem}.max-w-4xl{max-width:56rem}.scale-100{--tw-scale-x:1;--tw-scale-y:1;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.flex-row{flex-direction:row}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-center{justify-content:center}.justify-evenly{justify-content:space-evenly}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.rounded-md{border-radius:.375rem}.rounded-sm{border-radius:.125rem}.bg-slate-200{--tw-bg-opacity:1;background-color:rgb(226 232 240/var(--tw-bg-opacity))}.bg-stone-500{--tw-bg-opacity:1;background-color:rgb(120 113 108/var(--tw-bg-opacity))}.p-1{padding:.25rem}.p-2{padding:.5rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.px-8{padding-left:2rem;padding-right:2rem}.text-center{text-align:center}.text-start{text-align:start}.text-2xl{font-size:1.5rem;line-height:2rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-black{--tw-text-opacity:1;color:rgb(0 0 0/var(--tw-text-opacity))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity))}.decoration-inherit{text-decoration-color:inherit}.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}@media (min-width:768px){.md\\:w-3\\/4{width:75%}.md\\:flex-row{flex-direction:row}.md\\:flex-col{flex-direction:column}.md\\:justify-end{justify-content:flex-end}.md\\:justify-evenly{justify-content:space-evenly}.md\\:px-0{padding-left:0;padding-right:0}}@media (min-width:1024px){.lg\\:my-2{margin-bottom:.5rem;margin-top:.5rem}.lg\\:w-5\\/12{width:41.666667%}.lg\\:w-6\\/12{width:50%}.lg\\:w-full{width:100%}.lg\\:scale-110{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.lg\\:flex-row{flex-direction:row}}@media (min-width:1280px){.xl\\:my-4{margin-bottom:1rem;margin-top:1rem}.xl\\:scale-125{--tw-scale-x:1.25;--tw-scale-y:1.25;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}}";
+	var css_248z$1 = "/*! tailwindcss v3.4.3 | MIT License | https://tailwindcss.com*/*,:after,:before{border:0 solid #e5e7eb;box-sizing:border-box}:after,:before{--tw-content:\"\"}:host,html{-webkit-text-size-adjust:100%;font-feature-settings:normal;-webkit-tap-highlight-color:transparent;font-family:ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-variation-settings:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4}body{line-height:inherit;margin:0}hr{border-top-width:1px;color:inherit;height:0}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-feature-settings:normal;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-size:1em;font-variation-settings:normal}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{border-collapse:collapse;border-color:inherit;text-indent:0}button,input,optgroup,select,textarea{font-feature-settings:inherit;color:inherit;font-family:inherit;font-size:100%;font-variation-settings:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{color:#9ca3af;opacity:1}input::placeholder,textarea::placeholder{color:#9ca3af;opacity:1}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{height:auto;max-width:100%}[hidden]{display:none}*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }h1{font-size:1.5rem;line-height:2rem}h2{font-size:1.25rem}h2,h3{line-height:1.75rem}h3{font-size:1.125rem}button{background-color:#fff}.m-auto{margin:auto}.my-0{margin-bottom:0;margin-top:0}.my-4{margin-bottom:1rem;margin-top:1rem}.ml-2{margin-left:.5rem}.ml-5{margin-left:1.25rem}.mt-2{margin-top:.5rem}.ml-0{margin-left:0}.block{display:block}.flex{display:flex}.h-10{height:2.5rem}.w-1\\/2{width:50%}.w-3\\/4{width:75%}.w-full{width:100%}.min-w-10{min-width:2.5rem}.max-w-4xl{max-width:56rem}.scale-100{--tw-scale-x:1;--tw-scale-y:1;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.flex-row{flex-direction:row}.flex-col{flex-direction:column}.items-end{align-items:flex-end}.items-center{align-items:center}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.justify-evenly{justify-content:space-evenly}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.gap-1{gap:.25rem}.rounded-md{border-radius:.375rem}.rounded-sm{border-radius:.125rem}.bg-slate-200{--tw-bg-opacity:1;background-color:rgb(226 232 240/var(--tw-bg-opacity))}.bg-stone-500{--tw-bg-opacity:1;background-color:rgb(120 113 108/var(--tw-bg-opacity))}.p-1{padding:.25rem}.p-2{padding:.5rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.px-8{padding-left:2rem;padding-right:2rem}.text-center{text-align:center}.text-start{text-align:start}.text-2xl{font-size:1.5rem;line-height:2rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-black{--tw-text-opacity:1;color:rgb(0 0 0/var(--tw-text-opacity))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity))}.decoration-inherit{text-decoration-color:inherit}.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}@media (min-width:768px){.md\\:ml-5{margin-left:1.25rem}.md\\:w-3\\/4{width:75%}.md\\:w-full{width:100%}.md\\:flex-row{flex-direction:row}.md\\:flex-col{flex-direction:column}.md\\:justify-end{justify-content:flex-end}.md\\:justify-evenly{justify-content:space-evenly}.md\\:px-0{padding-left:0;padding-right:0}}@media (min-width:1024px){.lg\\:my-2{margin-bottom:.5rem;margin-top:.5rem}.lg\\:w-5\\/12{width:41.666667%}.lg\\:w-6\\/12{width:50%}.lg\\:w-full{width:100%}.lg\\:scale-110{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.lg\\:flex-row{flex-direction:row}}@media (min-width:1280px){.xl\\:my-4{margin-bottom:1rem;margin-top:1rem}.xl\\:scale-125{--tw-scale-x:1.25;--tw-scale-y:1.25;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}}";
+	styleInject(css_248z$1,{"insertAt":"top"});
+
+	var css_248z = "[data-tooltip]{cursor:help;display:inline-block;padding:4px;position:relative}[data-tooltip]:before{background:#000;border-radius:4px;color:#fff;content:attr(data-tooltip);display:none;font-size:14px;line-height:1.4;min-width:100px;padding:4px 8px;position:absolute;text-align:center}[data-tooltip-position=bottom]:before,[data-tooltip-position=top]:before{left:50%;transform:translateX(-50%)}[data-tooltip-position=left]:before,[data-tooltip-position=right]:before{top:50%;transform:translateY(-50%)}[data-tooltip-position=top]:before{bottom:100%;margin-bottom:6px}[data-tooltip-position=right]:before{left:100%;margin-left:6px}[data-tooltip-position=bottom]:before{margin-top:6px;top:100%}[data-tooltip-position=left]:before{margin-right:6px;right:100%}[data-tooltip]:after{border-color:transparent;border-style:solid;content:\"\";display:none;height:0;position:absolute;width:0}[data-tooltip-position=bottom]:after,[data-tooltip-position=top]:after{left:50%;margin-left:-6px}[data-tooltip-position=left]:after,[data-tooltip-position=right]:after{margin-top:-6px;top:50%}[data-tooltip-position=top]:after{border-top-color:#000;border-width:6px 6px 0;bottom:100%}[data-tooltip-position=right]:after{border-right-color:#000;border-width:6px 6px 6px 0;left:100%}[data-tooltip-position=bottom]:after{border-bottom-color:#000;border-width:0 6px 6px;top:100%}[data-tooltip-position=left]:after{border-left-color:#000;border-width:6px 0 6px 6px;right:100%}[data-tooltip]:hover:after,[data-tooltip]:hover:before{display:block;z-index:50}";
 	styleInject(css_248z,{"insertAt":"top"});
 
 	async function fetchData(url) {
@@ -8100,7 +8103,8 @@
 	      for (let i = 0; i < itemImplicitNumber; i++) {
 	        let newImplicit = {
 	          text: cleanItemInfoArray[0],
-	          display: false
+	          display: false,
+	          precision: false
 	        };
 	        itemImplicitArray.push(newImplicit);
 	        cleanItemInfoArray.shift();
@@ -8117,7 +8121,8 @@
 	    while (cleanItemInfoArray.length > 0) {
 	      let newExplicit = {
 	        text: cleanItemInfoArray[0],
-	        display: false
+	        display: false,
+	        precision: false
 	      };
 	      itemExplicitsArray.push(newExplicit);
 	      cleanItemInfoArray.shift();
@@ -8302,8 +8307,11 @@
 
 	  //misc Filter
 	  let iLvFilter = `"ilvl":{"min":${tradeIlv},"max":100}`;
-	  let corruptedFilter = `"corrupted":{"option":${tradeCorrupted}}`;
-	  let miscFilter = `"misc_filters":{"filters":{${iLvFilter},${corruptedFilter}}}`;
+	  let corruptedFilter = '';
+	  if (tradeCorrupted !== "any") {
+	    corruptedFilter = `,"corrupted":{"option":"${tradeCorrupted}"}`;
+	  }
+	  let miscFilter = `"misc_filters":{"filters":{${iLvFilter}${corruptedFilter}}}`;
 
 	  //type Filter
 	  let rarity = `"rarity":{"option":"${itemRarity}"}`;
@@ -8312,16 +8320,15 @@
 
 	  //stats Filter
 	  let tempItemModifiersArray = [];
-	  if (tradeImplicits.length != 0) ;
 	  tradeImplicits.map(implicit => {
 	    if (implicit.filter !== undefined && implicit.filter !== null) {
-	      let tempModFilter = `{"id":"${implicit.filter}"${implicit.option ? `,"value":{"option":${implicit.option}}` : ''}${implicit.value ? `,"value":{"min":${implicit.value[0]}}` : ''}, "disabled": ${!implicit.display}}`;
+	      let tempModFilter = `{"id":"${implicit.filter}"${implicit.option ? `,"value":{"option":${implicit.option}}` : ''}${implicit.value ? `,"value":{"min":${implicit.value[0]}${implicit.value && implicit.precision ? `,"max":${implicit.value[0]}` : ''}}` : ''}, "disabled": ${!implicit.display}}`;
 	      tempItemModifiersArray.push(tempModFilter);
 	    }
 	  });
 	  tradeExplicits.map(explicit => {
 	    if (explicit.filter !== undefined && explicit.filter !== null) {
-	      let tempModFilter = `{"id":"${explicit.filter}"${explicit.option ? `,"value":{"option":${explicit.option}}` : ''}${explicit.value ? `,"value":{"min":${explicit.value[0]}}` : ''}, "disabled": ${!explicit.display}}`;
+	      let tempModFilter = `{"id":"${explicit.filter}"${explicit.option ? `,"value":{"option":${explicit.option}}` : ''}${explicit.value ? `,"value":{"min":${explicit.value[0]}${explicit.value && explicit.precision ? `,"max":${explicit.value[0]}` : ''}}` : ''}, "disabled": ${!explicit.display}}`;
 	      tempItemModifiersArray.push(tempModFilter);
 	    }
 	  });
@@ -8342,6 +8349,11 @@
 	      divine
 	    };
 	  }
+	}
+	function handleBaseType(item, fetchItemData) {
+	  console.log("Rare Item --------");
+	  let itemPriceResults = fetchItemData.baseType.lines.filter(c => c.baseType === item.base && c.levelRequired >= parseInt(item.iLv));
+	  console.log(itemPriceResults);
 	}
 	function handleClusterPrice(item, clusterData) {
 	  const clusterFilterPassiveFilter = item.implicits.filter(i => i.text.includes("Small Passive Skills"))[0].text.split(': ')[1];
@@ -8381,15 +8393,15 @@
 	  const [tradeDefence, setTradeDefence] = reactExports.useState([]);
 	  const [tradeIlv, setTradeIlv] = reactExports.useState(0);
 	  const [tradeLinks, setTradeLinks] = reactExports.useState(0);
-	  const [tradeCorrupted, setTradeCorrupted] = reactExports.useState(false);
+	  const [tradeCorrupted, setTradeCorrupted] = reactExports.useState("any");
 	  const [tradeImplicits, setTradeImplicits] = reactExports.useState(item.implicits);
 	  const [tradeExplicits, setTradeExplicits] = reactExports.useState(item.explicits);
+	  const [customPrecision, setCustomPrecision] = reactExports.useState(false);
 	  const [itemEstimatedPrice, setItemEstimatedPrice] = reactExports.useState([]);
 	  const [loader, setLoader] = reactExports.useState(true);
 	  const didMount = reactExports.useRef(false);
 	  reactExports.useEffect(() => {
 	    if (didMount.current) {
-	      console.log(item);
 	      if (item.rarity === "UNIQUE") {
 	        const {
 	          chaos,
@@ -8402,14 +8414,9 @@
 	          divine
 	        } = handleClusterPrice(item, allFetchItemData.cluster.lines);
 	        setItemEstimatedPrice([chaos, divine]);
+	      } else {
+	        handleBaseType(item, allFetchItemData);
 	      }
-	      /* else{
-	          let test = allFetchItemData.baseType.lines.map((e) => e.name);
-	          let index = test.indexOf(item.base);
-	          if(index !== -1){
-	              setItemEstimatedPrice(allFetchItemData.baseType.lines[index].icon);
-	          }
-	      } */
 	    } else {
 	      didMount.current = true;
 	    }
@@ -8418,20 +8425,12 @@
 	    setTimeout(() => {
 	      setLoader(false);
 	    }, 200);
-	  }, [loader]);
+	  }, [allFetchItemData]);
 	  function handleChangeIlv(e) {
-	    if (tradeIlv === 0) {
-	      setTradeIlv(e);
-	    } else {
-	      setTradeIlv(0);
-	    }
+	    tradeIlv === 0 ? setTradeIlv(e) : setTradeIlv(0);
 	  }
 	  function handleChangeLinks(e) {
-	    if (tradeLinks === 0) {
-	      setTradeLinks(e);
-	    } else {
-	      setTradeLinks(0);
-	    }
+	    tradeLinks === 0 ? setTradeLinks(e) : setTradeLinks(0);
 	  }
 	  function handleTradeDefence(e) {
 	    if (tradeDefence.indexOf(e) === -1) {
@@ -8460,22 +8459,66 @@
 	    });
 	    setTradeExplicits(tempArray);
 	  }
+	  function changeAllPrecision(bool) {
+	    let tempImplicitsArray = [...tradeImplicits];
+	    let tempExplicitsArray = [...tradeExplicits];
+	    tempImplicitsArray.forEach(implicit => {
+	      implicit.precision = bool;
+	    });
+	    tempExplicitsArray.forEach(explicit => {
+	      explicit.precision = bool;
+	    });
+	    setTradeImplicits(tempImplicitsArray);
+	    setTradeExplicits(tempExplicitsArray);
+	  }
+	  function handleChangePrecision(e) {
+	    if (e === "min") {
+	      setCustomPrecision(false);
+	      changeAllPrecision(false);
+	    }
+	    if (e === "exact") {
+	      setCustomPrecision(false);
+	      changeAllPrecision(true);
+	    }
+	    if (e === "custom") {
+	      setCustomPrecision(true);
+	      changeAllPrecision(false);
+	    }
+	  }
+	  function handleCustomPrecisionChange(e, type) {
+	    console.log(e);
+	    if (type === "implicit") {
+	      let tempArray = [...tradeImplicits];
+	      let newImplicit = e;
+	      newImplicit.precision = !newImplicit.precision;
+	      tempArray.splice(tempArray.indexOf(e), 1, newImplicit);
+	      setTradeImplicits([...tempArray]);
+	    } else {
+	      let tempArray = [...tradeExplicits];
+	      let newExplicit = e;
+	      newExplicit.precision = !newExplicit.precision;
+	      tempArray.splice(tempArray.indexOf(e), 1, newExplicit);
+	      setTradeExplicits([...tempArray]);
+	    }
+	  }
 	  function displayEstimatedPrice(chaos, divine) {
 	    if (divine > 2) {
 	      return /*#__PURE__*/React.createElement("p", {
-	        className: "flex flex-row justify-center items-center text-2xl gap-2"
+	        className: "flex flex-row justify-center items-center text-2xl gap-2",
+	        "data-tooltip": `chaos: ${chaos} | divine: ${divine}`,
+	        "data-tooltip-position": "top"
 	      }, divine.toLocaleString(), /*#__PURE__*/React.createElement("img", {
 	        src: "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/e1a54ff97d/CurrencyModValues.png",
-	        alt: "Divine Orb",
-	        title: "Divine Orb"
+	        alt: "Divine Orb"
 	      }));
 	    } else {
 	      return /*#__PURE__*/React.createElement("p", {
-	        className: "flex flex-row justify-center items-center text-2xl gap-2"
+	        className: "flex flex-row justify-center items-center text-2xl gap-2",
+	        "data-tooltip": `chaos: ${chaos} | divine: ${divine}`,
+	        "data-tooltip-position": "top"
 	      }, chaos.toLocaleString(), /*#__PURE__*/React.createElement("img", {
 	        src: "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/d119a0d734/CurrencyRerollRare.png",
-	        alt: "Chaos",
-	        title: "Chaos Orb"
+	        alt: "Chaos"
 	      }));
 	    }
 	  }
@@ -8491,9 +8534,7 @@
 	    className: "flex flex-col items-center text-start item_stats"
 	  }, /*#__PURE__*/React.createElement("div", {
 	    className: "w-full"
-	  }, /*#__PURE__*/React.createElement("div", {
-	    className: "ml-5"
-	  }, item.defence[0] ? item.defence.map((def, i) => {
+	  }, /*#__PURE__*/React.createElement("div", null, item.defence[0] ? item.defence.map((def, i) => {
 	    return /*#__PURE__*/React.createElement("div", {
 	      className: "flex flex-row mt-2 gap-4 items-center w-full",
 	      key: i
@@ -8528,11 +8569,19 @@
 	    className: "item_rarity-normal"
 	  }, "Socket Links:"), " ", item.sockets.length)) : /*#__PURE__*/React.createElement(React.Fragment, null), item.corrupted ? /*#__PURE__*/React.createElement("div", {
 	    className: "flex flex-row mt-2 gap-4 items-center w-full"
-	  }, /*#__PURE__*/React.createElement("input", {
-	    type: "checkbox",
+	  }, /*#__PURE__*/React.createElement("select", {
+	    name: "corruptingSorting",
 	    id: `${itemNumber}_${itemName}_corrupted`,
-	    onChange: () => setTradeCorrupted(!tradeCorrupted)
-	  }), /*#__PURE__*/React.createElement("label", {
+	    className: "text-black p-1",
+	    defaultValue: "any",
+	    onChange: e => setTradeCorrupted(e.target.value)
+	  }, /*#__PURE__*/React.createElement("option", {
+	    value: "any"
+	  }, "any"), /*#__PURE__*/React.createElement("option", {
+	    value: "yes"
+	  }, "yes"), /*#__PURE__*/React.createElement("option", {
+	    value: "no"
+	  }, "no")), /*#__PURE__*/React.createElement("label", {
 	    htmlFor: `${itemNumber}_${itemName}_corrupted`,
 	    className: "item_corrupted"
 	  }, "Corrupted")) : /*#__PURE__*/React.createElement(React.Fragment, null))), item.implicits.length ? /*#__PURE__*/React.createElement("div", {
@@ -8541,12 +8590,12 @@
 	    className: `item_split item_split-${item.rarity.toLowerCase()}`
 	  }), /*#__PURE__*/React.createElement("p", {
 	    className: "text-center"
-	  }, "Implicits: ")), /*#__PURE__*/React.createElement("div", {
-	    className: "ml-5"
-	  }, item.implicits.map((implicit, i) => {
+	  }, "Implicits: ")), /*#__PURE__*/React.createElement("div", null, item.implicits.map((implicit, i) => {
 	    return /*#__PURE__*/React.createElement("div", {
-	      className: "flex flex-row mt-2 gap-4 items-center w-full",
+	      className: "flex flex-row mt-2 gap-4 justify-between w-full",
 	      key: i
+	    }, /*#__PURE__*/React.createElement("div", {
+	      className: "flex flex-row gap-4 max-w-3/4"
 	    }, /*#__PURE__*/React.createElement("input", {
 	      type: "checkbox",
 	      id: `${itemNumber}_${itemName}_implicit_${i}`,
@@ -8554,19 +8603,28 @@
 	    }), /*#__PURE__*/React.createElement("label", {
 	      htmlFor: `${itemNumber}_${itemName}_implicit_${i}`,
 	      className: handleExplicitClass(implicit.text)
-	    }, implicit.text));
+	    }, implicit.text)), customPrecision ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+	      className: "flex flex-row gap-4"
+	    }, /*#__PURE__*/React.createElement("label", {
+	      htmlFor: `${itemNumber}_${itemName}_implicit_precision_${i}`,
+	      className: handleExplicitClass(implicit.text)
+	    }, "Exact:"), /*#__PURE__*/React.createElement("input", {
+	      type: "checkbox",
+	      id: `${itemNumber}_${itemName}_implicit_precision_${i}`,
+	      onChange: () => handleCustomPrecisionChange(implicit, "implicit")
+	    }))) : /*#__PURE__*/React.createElement(React.Fragment, null));
 	  }))) : /*#__PURE__*/React.createElement(React.Fragment, null), item.explicits.length ? /*#__PURE__*/React.createElement("div", {
 	    className: "w-full"
 	  }, /*#__PURE__*/React.createElement("p", {
 	    className: `item_split item_split-${item.rarity.toLowerCase()}`
 	  }), /*#__PURE__*/React.createElement("p", {
 	    className: "text-center"
-	  }, "Explicits: "), /*#__PURE__*/React.createElement("div", {
-	    className: "ml-5"
-	  }, item.explicits.map((explicit, i) => {
+	  }, "Explicits: "), /*#__PURE__*/React.createElement("div", null, item.explicits.map((explicit, i) => {
 	    return /*#__PURE__*/React.createElement("div", {
-	      className: "flex flex-row mt-2 gap-4 items-center w-full",
+	      className: "flex flex-row mt-2 gap-4 justify-between w-full",
 	      key: i
+	    }, /*#__PURE__*/React.createElement("div", {
+	      className: "flex flex-row gap-4 max-w-3/4"
 	    }, /*#__PURE__*/React.createElement("input", {
 	      type: "checkbox",
 	      id: `${itemNumber}_${itemName}_explicit_${i}`,
@@ -8574,14 +8632,39 @@
 	    }), /*#__PURE__*/React.createElement("label", {
 	      htmlFor: `${itemNumber}_${itemName}_explicit_${i}`,
 	      className: handleExplicitClass(explicit.text)
-	    }, explicit.text));
+	    }, explicit.text)), customPrecision ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+	      className: "flex flex-row gap-4"
+	    }, /*#__PURE__*/React.createElement("label", {
+	      htmlFor: `${itemNumber}_${itemName}_explicit_precision_${i}`,
+	      className: handleExplicitClass(explicit.text)
+	    }, "Exact: "), /*#__PURE__*/React.createElement("input", {
+	      type: "checkbox",
+	      id: `${itemNumber}_${itemName}_explicit_precision_${i}`,
+	      onChange: () => handleCustomPrecisionChange(explicit, "explicit")
+	    }))) : /*#__PURE__*/React.createElement(React.Fragment, null));
 	  }))) : /*#__PURE__*/React.createElement(React.Fragment, null)), /*#__PURE__*/React.createElement("p", {
 	    className: `item_split item_split-${item.rarity.toLowerCase()}`
 	  }), /*#__PURE__*/React.createElement("div", {
 	    className: "flex justify-center w-full"
 	  }, /*#__PURE__*/React.createElement("div", {
-	    className: "flex flex-col md:flex-row items-center justify-evenly w-1/2"
-	  }, loader ? /*#__PURE__*/React.createElement("div", {
+	    className: "flex flex-col md:flex-row items-center justify-evenly w-full md:w-3/4"
+	  }, /*#__PURE__*/React.createElement("div", {
+	    className: "flex flex-col gap-2"
+	  }, /*#__PURE__*/React.createElement("label", {
+	    htmlFor: `${itemNumber}_${itemName}_sorting`
+	  }, "Trading Precision"), /*#__PURE__*/React.createElement("select", {
+	    name: "sorting",
+	    id: `${itemNumber}_${itemName}_sorting`,
+	    className: "text-black p-1",
+	    defaultValue: "min",
+	    onChange: e => handleChangePrecision(e.target.value)
+	  }, /*#__PURE__*/React.createElement("option", {
+	    value: "min"
+	  }, "min"), /*#__PURE__*/React.createElement("option", {
+	    value: "exact"
+	  }, "exact"), /*#__PURE__*/React.createElement("option", {
+	    value: "custom"
+	  }, "custom"))), loader ? /*#__PURE__*/React.createElement("div", {
 	    className: "lds-dual-ring"
 	  }) : /*#__PURE__*/React.createElement(React.Fragment, null), !loader && itemEstimatedPrice.length !== 0 ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
 	    className: "flex flex-row md:flex-col"

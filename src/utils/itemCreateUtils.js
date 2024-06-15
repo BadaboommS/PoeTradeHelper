@@ -205,7 +205,8 @@ export function createItemObj(item, allItemData){
             for(let i = 0; i < itemImplicitNumber; i++){
                 let newImplicit = {
                     text: cleanItemInfoArray[0],
-                    display: false
+                    display: false,
+                    precision: false
                 };
                 itemImplicitArray.push(newImplicit);
                 cleanItemInfoArray.shift();
@@ -221,7 +222,8 @@ export function createItemObj(item, allItemData){
         while(cleanItemInfoArray.length > 0){
             let newExplicit = {
                 text: cleanItemInfoArray[0],
-                display: false
+                display: false,
+                precision: false
             };
             itemExplicitsArray.push(newExplicit);
             cleanItemInfoArray.shift();
@@ -245,7 +247,6 @@ export function createItemObj(item, allItemData){
     }
     return newItem
 }
-
 
 export function translateModifiers(allModifiers, modArray, type){
     try{

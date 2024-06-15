@@ -2,23 +2,22 @@ import React, { useEffect, useState, useRef } from "react";
 //utils
 import { generateTradeUrl } from "../utils/generateTradeUrl";
 import { handleExplicitClass } from "../utils/generalUtils";
-import { handleClusterPrice, handleUniquePrice } from "../utils/handleItemPrices";
+import { handleClusterPrice, handleUniquePrice, handleBaseType } from "../utils/handleItemPrices";
 
 export default function ItemTrade({ item , league, itemName, itemNumber, allFetchItemData }){
     const [tradeDefence, setTradeDefence] = useState([]);
     const [tradeIlv, setTradeIlv] = useState(0);
     const [tradeLinks, setTradeLinks] = useState(0);
-    const [tradeCorrupted, setTradeCorrupted] = useState(false);
+    const [tradeCorrupted, setTradeCorrupted] = useState("any");
     const [tradeImplicits, setTradeImplicits] = useState(item.implicits);
     const [tradeExplicits, setTradeExplicits] = useState(item.explicits);
-
+    const [customPrecision, setCustomPrecision] = useState(false);
     const [itemEstimatedPrice, setItemEstimatedPrice] = useState([]);
     const [loader, setLoader] = useState(true);
     const didMount = useRef(false);
 
     useEffect(() => {
         if(didMount.current){
-            console.log(item)
             if(item.rarity === "UNIQUE"){
                 const {chaos, divine} = handleUniquePrice(item, allFetchItemData);
                 setItemEstimatedPrice([chaos,divine]);
@@ -26,13 +25,9 @@ export default function ItemTrade({ item , league, itemName, itemNumber, allFetc
                 const {chaos, divine} = handleClusterPrice(item, allFetchItemData.cluster.lines);
                 setItemEstimatedPrice([chaos,divine]);       
             }
-            /* else{
-                let test = allFetchItemData.baseType.lines.map((e) => e.name);
-                let index = test.indexOf(item.base);
-                if(index !== -1){
-                    setItemEstimatedPrice(allFetchItemData.baseType.lines[index].icon);
-                }
-            } */
+            else{
+                handleBaseType(item, allFetchItemData);
+            }
         }else{
             didMount.current = true;
         }
@@ -42,23 +37,11 @@ export default function ItemTrade({ item , league, itemName, itemNumber, allFetc
         setTimeout(() => {
             setLoader(false);
         }, 200);
-    },[loader])
+    },[allFetchItemData])
 
-    function handleChangeIlv(e){
-        if(tradeIlv === 0){
-            setTradeIlv(e);
-        }else{
-            setTradeIlv(0);
-        }
-    }
+    function handleChangeIlv(e){ (tradeIlv === 0)? setTradeIlv(e) : setTradeIlv(0) }
 
-    function handleChangeLinks(e){
-        if(tradeLinks === 0){
-            setTradeLinks(e);
-        }else{
-            setTradeLinks(0);
-        }
-    }
+    function handleChangeLinks(e){ (tradeLinks === 0)? setTradeLinks(e) : setTradeLinks(0) }
 
     function handleTradeDefence(e){
         if(tradeDefence.indexOf(e) === -1){
@@ -90,19 +73,59 @@ export default function ItemTrade({ item , league, itemName, itemNumber, allFetc
         setTradeExplicits(tempArray);
     }
 
+    function changeAllPrecision(bool){
+        let tempImplicitsArray = [...tradeImplicits];
+        let tempExplicitsArray = [...tradeExplicits];
+        tempImplicitsArray.forEach((implicit)=>{ implicit.precision = bool });
+        tempExplicitsArray.forEach((explicit)=>{ explicit.precision = bool });
+        setTradeImplicits(tempImplicitsArray);
+        setTradeExplicits(tempExplicitsArray);
+    }
+
+    function handleChangePrecision(e){
+        if(e === "min"){
+            setCustomPrecision(false);
+            changeAllPrecision(false);
+        }
+        if(e === "exact"){
+            setCustomPrecision(false);
+            changeAllPrecision(true);
+        }
+        if(e === "custom"){
+            setCustomPrecision(true);
+            changeAllPrecision(false);
+        }
+    }
+    function handleCustomPrecisionChange(e, type){
+        console.log(e);
+        if(type === "implicit"){
+            let tempArray = [...tradeImplicits];
+            let newImplicit = e;
+            newImplicit.precision = !newImplicit.precision;
+            tempArray.splice(tempArray.indexOf(e), 1, newImplicit);
+            setTradeImplicits([...tempArray]);
+        }else{
+            let tempArray = [...tradeExplicits];
+            let newExplicit = e;
+            newExplicit.precision = !newExplicit.precision;
+            tempArray.splice(tempArray.indexOf(e), 1, newExplicit);
+            setTradeExplicits([...tempArray]);
+        }
+    }
+
     function displayEstimatedPrice(chaos, divine){
         if(divine > 2){
             return (
-                <p className="flex flex-row justify-center items-center text-2xl gap-2">
+                <p className="flex flex-row justify-center items-center text-2xl gap-2" data-tooltip={`chaos: ${chaos} | divine: ${divine}`} data-tooltip-position="top">
                     {divine.toLocaleString()}
-                    <img src='https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/e1a54ff97d/CurrencyModValues.png' alt="Divine Orb" title="Divine Orb"/>
+                    <img src='https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/e1a54ff97d/CurrencyModValues.png' alt="Divine Orb"/>
                 </p>
             )
         }else{
             return(
-                <p className="flex flex-row justify-center items-center text-2xl gap-2">
+                <p className="flex flex-row justify-center items-center text-2xl gap-2" data-tooltip={`chaos: ${chaos} | divine: ${divine}`} data-tooltip-position="top">
                     {chaos.toLocaleString()}
-                    <img src='https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/d119a0d734/CurrencyRerollRare.png' alt="Chaos" title="Chaos Orb"/>
+                    <img src='https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/d119a0d734/CurrencyRerollRare.png' alt="Chaos"/>
                 </p>
             ) 
         }
@@ -124,7 +147,7 @@ export default function ItemTrade({ item , league, itemName, itemNumber, allFetc
             }
             <div className="flex flex-col items-center text-start item_stats">
                 <div className="w-full">
-                    <div className="ml-5">
+                    <div>
                         {item.defence[0]?
                             item.defence.map((def,i) => {
                                 return (
@@ -156,7 +179,11 @@ export default function ItemTrade({ item , league, itemName, itemNumber, allFetc
                         }
                         {item.corrupted?
                             <div className="flex flex-row mt-2 gap-4 items-center w-full">
-                                <input type="checkbox" id={`${itemNumber}_${itemName}_corrupted`} onChange={() => setTradeCorrupted(!tradeCorrupted)}/>
+                                <select name="corruptingSorting" id={`${itemNumber}_${itemName}_corrupted`} className='text-black p-1' defaultValue={"any"} onChange={(e) => setTradeCorrupted(e.target.value)}>
+                                    <option value="any">any</option>
+                                    <option value="yes">yes</option>
+                                    <option value="no">no</option>
+                                </select>
                                 <label htmlFor={`${itemNumber}_${itemName}_corrupted`} className="item_corrupted">Corrupted</label>
                             </div>
                         :
@@ -170,13 +197,26 @@ export default function ItemTrade({ item , league, itemName, itemNumber, allFetc
                             <p className={`item_split item_split-${item.rarity.toLowerCase()}`}></p>
                             <p className="text-center">Implicits: </p>
                         </div>
-                        <div className="ml-5">
+                        <div>
                             {
                                 item.implicits.map((implicit,i) => {
                                     return(
-                                        <div className="flex flex-row mt-2 gap-4 items-center w-full" key={i}>
-                                            <input type="checkbox" id={`${itemNumber}_${itemName}_implicit_${i}`} onChange={() => handleChangeImplicits(implicit.text)}/>
-                                            <label htmlFor={`${itemNumber}_${itemName}_implicit_${i}`} className={handleExplicitClass(implicit.text)}>{implicit.text}</label>
+                                        <div className="flex flex-row mt-2 gap-4 justify-between w-full" key={i}>
+                                            <div className="flex flex-row gap-4 max-w-3/4">
+                                                <input type="checkbox" id={`${itemNumber}_${itemName}_implicit_${i}`} onChange={() => handleChangeImplicits(implicit.text)}/>
+                                                <label htmlFor={`${itemNumber}_${itemName}_implicit_${i}`} className={handleExplicitClass(implicit.text)}>{implicit.text}</label>
+                                            </div>
+                                            {
+                                                customPrecision?
+                                                        <>
+                                                        <div className="flex flex-row gap-4">
+                                                            <label htmlFor={`${itemNumber}_${itemName}_implicit_precision_${i}`} className={handleExplicitClass(implicit.text)}>Exact:</label>
+                                                            <input type="checkbox" id={`${itemNumber}_${itemName}_implicit_precision_${i}`} onChange={() => handleCustomPrecisionChange(implicit, "implicit")}></input>
+                                                        </div>
+                                                        </>
+                                                    :
+                                                        <></>
+                                            }
                                         </div>
                                     )
                                 })
@@ -190,15 +230,28 @@ export default function ItemTrade({ item , league, itemName, itemNumber, allFetc
                     <div className="w-full">
                         <p className={`item_split item_split-${item.rarity.toLowerCase()}`}></p>
                         <p className="text-center">Explicits: </p>
-                        <div className="ml-5">
+                        <div>
                             {
                                 item.explicits.map((explicit, i) => {
-                                        return (
-                                            <div className="flex flex-row mt-2 gap-4 items-center w-full" key={i}>
+                                    return (
+                                        <div className="flex flex-row mt-2 gap-4 justify-between w-full" key={i}>
+                                            <div className="flex flex-row gap-4 max-w-3/4">
                                                 <input type="checkbox" id={`${itemNumber}_${itemName}_explicit_${i}`} onChange={() => handleChangeExplicits(explicit.text)}/>
                                                 <label htmlFor={`${itemNumber}_${itemName}_explicit_${i}`} className={handleExplicitClass(explicit.text)}>{explicit.text}</label>
                                             </div>
-                                        )
+                                            {
+                                                customPrecision?
+                                                        <>
+                                                            <div className="flex flex-row gap-4">
+                                                                <label htmlFor={`${itemNumber}_${itemName}_explicit_precision_${i}`} className={handleExplicitClass(explicit.text)}>Exact: </label>
+                                                                <input type="checkbox" id={`${itemNumber}_${itemName}_explicit_precision_${i}`} onChange={() => handleCustomPrecisionChange(explicit, "explicit")}></input>
+                                                            </div>
+                                                        </>
+                                                    :
+                                                        <></>
+                                            }
+                                        </div>
+                                    )
                                 })
                             }
                         </div>
@@ -209,7 +262,15 @@ export default function ItemTrade({ item , league, itemName, itemNumber, allFetc
             </div>
             <p className={`item_split item_split-${item.rarity.toLowerCase()}`}></p>
             <div className="flex justify-center w-full">
-                <div className="flex flex-col md:flex-row items-center justify-evenly w-1/2">
+                <div className="flex flex-col md:flex-row items-center justify-evenly w-full md:w-3/4">
+                    <div className="flex flex-col gap-2">
+                        <label htmlFor={`${itemNumber}_${itemName}_sorting`}>Trading Precision</label>
+                        <select name="sorting" id={`${itemNumber}_${itemName}_sorting`} className='text-black p-1' defaultValue={"min"} onChange={(e) => handleChangePrecision(e.target.value)}>
+                            <option value="min">min</option>
+                            <option value="exact">exact</option>
+                            <option value="custom">custom</option>
+                        </select>
+                    </div>
                     {loader? <div className="lds-dual-ring"></div> : <></>}
                     {
                         (!loader && itemEstimatedPrice.length !== 0)?
@@ -232,4 +293,3 @@ export default function ItemTrade({ item , league, itemName, itemNumber, allFetc
             </div>
         </section>
     )
-}
