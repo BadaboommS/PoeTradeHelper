@@ -293,3 +293,4 @@ export default function ItemTrade({ item , league, itemName, itemNumber, allFetc
             </div>
         </section>
     )
+}
