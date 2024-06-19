@@ -160,7 +160,7 @@
                 "base_query": "armour.chest",
                 "default_query": "armour.chest",
                 "list": [
-                    "Chainmail Vest", "Chainmail Tunic", "Ringmail Coat", "Chainmail Doublet", "Full Ringmail", "Full Chainmail", "Holy Chainmail", "Latticed Ringmail", "Crusader Chainmail", "Ornate Ringmail", "Chain Hauberk", "Devout Chainmail", "Loricated Ringmail", "Conquest Chainmail", "Elegant Ringmail", "Saints Hauberk", "Saintly Chainmail"
+                    "Chainmail Vest", "Chainmail Tunic", "Ringmail Coat", "Chainmail Doublet", "Full Ringmail", "Full Chainmail", "Holy Chainmail", "Latticed Ringmail", "Crusader Chainmail", "Ornate Ringmail", "Chain Hauberk", "Devout Chainmail", "Loricated Ringmail", "Conquest Chainmail", "Elegant Ringmail", "Saint's Hauberk", "Saintly Chainmail"
                 ]
             },
             {
