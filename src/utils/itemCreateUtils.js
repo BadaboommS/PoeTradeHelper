@@ -284,7 +284,8 @@ export function translateModifiers(allModifiers, modArray, type){
                         mod.option = allModifiers[1].entries[981].option.options[allModifiers[1].entries[1549].option.options.findIndex(i => i.text === mod.text.split('Allocates ')[1].split(" if")[0])].id;
                         return null;
                     }
-                    case (/can be Allocated/.test(mod.text)): {
+                    case (/Passives in Radius of/.test(mod.text)): {
+                        console.log(mod.text);
                         mod.filter = "explicit.stat_2422708892";
                         mod.option = allModifiers[1].entries[1894].option.options[allModifiers[1].entries[1894].option.options.findIndex(i => i.text === mod.text.split('of ')[1].split(" can")[0])].id;
                        return null;
