@@ -7913,6 +7913,90 @@
 	  }
 	}
 
+	function formatItemInfoArray(item) {
+	  let itemContent = item.textContent.replace(/\t/g, '');
+	  let itemArray = itemContent.split('\n');
+	  let itemInfoArray = itemArray.filter(str => str != '');
+
+	  // useless lines filter
+	  let filters = ['BasePercentile:', 'Unique ID:', "LevelReq:", "Quality:", "Requires", "Variant", "Prefix:", "Suffix:", "Limited to:", "Cluster Jewel Skill:", "Cluster Jewel Node Count:", "League:", "Crafted:", " Item", "Catalyst:"];
+	  for (const fil of filters) {
+	    itemInfoArray = itemInfoArray.filter(line => {
+	      return line.indexOf(fil) === -1;
+	    });
+	  }
+
+	  // item variant handle and line cleaning
+	  let itemVariant = [];
+	  if (item.getAttribute("variant")) {
+	    itemVariant.push(item.getAttribute("variant"));
+	  }
+	  if (item.getAttribute("variantAlt")) {
+	    itemVariant.push(item.getAttribute("variantAlt"));
+	  }
+	  if (item.getAttribute("variantAlt2")) {
+	    itemVariant.push(item.getAttribute("variantAlt2"));
+	  }
+
+	  // filter only selected variant
+	  if (itemVariant.length !== 0) {
+	    itemInfoArray = itemInfoArray.filter(line => {
+	      if (line.includes("{variant:")) {
+	        let tempVariant = line.split('variant:')[1].split('}')[0];
+	        if (tempVariant.includes(',')) {
+	          let tempCheck = false;
+	          tempVariant.split(",").forEach(v => {
+	            if (itemVariant.indexOf(v) !== -1) {
+	              tempCheck = true;
+	            }
+	          });
+	          return tempCheck;
+	        }
+	        return itemVariant.indexOf(tempVariant) !== -1;
+	      }
+	      return true;
+	    });
+	  }
+
+	  // remove {}
+	  itemInfoArray = itemInfoArray.map(line => {
+	    if (line.includes("tags:")) {
+	      let replaceString = line.match(/{tags:.*?}/g);
+	      line = line.replace(replaceString[0], '');
+	    }
+	    if (line.includes("variant:")) {
+	      let replaceString = line.match(/{variant:.*?}/g);
+	      line = line.replace(replaceString[0], '');
+	    }
+	    if (line.includes("custom")) {
+	      let replaceString = line.match(/{custom}/g);
+	      line = line.replace(replaceString[0], '');
+	    }
+	    return line;
+	  });
+	  return itemInfoArray;
+	}
+	function convertExplicitRangeText(explicit) {
+	  if (explicit.indexOf('range:') !== -1) {
+	    let rangeString = explicit.match(/{range:.*?}/g);
+	    explicit = explicit.replace(rangeString[0], '');
+	    let rangeValue = rangeString[0].slice(rangeString[0].indexOf(':') + 1, rangeString[0].length - 1);
+	    const matches = explicit.match(/(?<=\().+?(?=\))/g);
+	    for (let i = 0; i < matches.length; i++) {
+	      let splits = matches[i].match(/-/g);
+	      let minValue = matches[i].split('-')[0];
+	      let maxValue = matches[i].split('-')[1];
+	      if (splits.length > 1) {
+	        let tempValue = matches[i].split('-', 2).join('-').length;
+	        minValue = matches[i].substr(0, tempValue);
+	        maxValue = matches[i].substr(tempValue + 1);
+	      }
+	      let value = parseInt(minValue) + parseInt(Math.floor(maxValue - minValue) * rangeValue);
+	      explicit = explicit.replace(`(${matches[i]})`, value.toString());
+	    }
+	  }
+	  return explicit;
+	}
 	function addOrder(buildItemArray) {
 	  let tempBuildItemArray = [];
 	  let tempArrayWeapons = buildItemArray.filter(item => item.baseInfo.item_category === "weapons");
@@ -7987,60 +8071,7 @@
 	  }
 	}
 	function createItemObj(item, allItemData) {
-	  let itemContent = item.textContent.replace(/\t/g, '');
-	  let itemInfoArray = itemContent.split('\n');
-	  let cleanItemInfoArray = itemInfoArray.filter(str => str != '');
-
-	  // useless lines filter
-	  let filters = ['BasePercentile:', 'Unique ID:', "LevelReq:", "Quality:", "Requires", "Variant", "Prefix:", "Suffix:", "Limited to:", "Cluster Jewel Node Count:", "League:", "Crafted:"];
-	  for (const fil of filters) {
-	    cleanItemInfoArray = cleanItemInfoArray.filter(line => {
-	      return line.indexOf(fil) === -1;
-	    });
-	  }
-
-	  // item variant handle and line cleaning
-	  let itemVariant = [];
-	  if (item.getAttribute("variant")) {
-	    itemVariant.push(item.getAttribute("variant"));
-	  }
-	  if (item.getAttribute("variantAlt")) {
-	    itemVariant.push(item.getAttribute("variantAlt"));
-	  }
-	  if (item.getAttribute("variantAlt2")) {
-	    itemVariant.push(item.getAttribute("variantAlt2"));
-	  }
-	  if (itemVariant.length !== 0) {
-	    cleanItemInfoArray = cleanItemInfoArray.filter(line => {
-	      if (line.includes("{variant:")) {
-	        let tempVariant = line.split('variant:')[1].split('}')[0];
-	        if (tempVariant.includes(',')) {
-	          let tempCheck = false;
-	          tempVariant.split(",").forEach(v => {
-	            if (itemVariant.indexOf(v) !== -1) {
-	              tempCheck = true;
-	            }
-	          });
-	          return tempCheck;
-	        }
-	        return itemVariant.indexOf(tempVariant) !== -1;
-	      }
-	      return true;
-	    });
-	  }
-	  cleanItemInfoArray = cleanItemInfoArray.map(line => {
-	    if (line.includes("tags:")) {
-	      let tempLine = line.split("}");
-	      tempLine.shift();
-	      tempLine.length > 1 ? line = tempLine.join("}") : line = tempLine[0];
-	    }
-	    if (line.includes("variant:")) {
-	      let tempLine = line.split("}");
-	      tempLine.shift();
-	      tempLine.length > 1 ? line = tempLine.join("}") : line = tempLine[0];
-	    }
-	    return line;
-	  });
+	  let cleanItemInfoArray = formatItemInfoArray(item);
 
 	  //Corrupted
 	  let itemIsCorrupted = false;
@@ -8074,10 +8105,10 @@
 	  let abyss = null;
 	  if (cleanItemInfoArray[0].indexOf('Flask') !== -1) {
 	    itemName = cleanItemInfoArray[0];
-	    if (cleanItemInfoArray[1].indexOf('Flask' !== -1)) {
+	    cleanItemInfoArray.shift();
+	    if (cleanItemInfoArray[0].indexOf('Flask') !== -1) {
 	      cleanItemInfoArray.shift();
 	    }
-	    cleanItemInfoArray.shift();
 
 	    //Base Info
 	    flask = true;
@@ -8092,9 +8123,14 @@
 	    itemBaseInfo = findItemBaseType(itemName, allItemData, flask, abyss);
 	    itemBase = itemBaseInfo.item_base;
 	  } else {
-	    itemName = cleanItemInfoArray[0];
-	    itemBase = cleanItemInfoArray[1];
-	    cleanItemInfoArray.shift();
+	    if (cleanItemInfoArray[1].includes("Implicits:") || cleanItemInfoArray[1].includes("Sockets:") || cleanItemInfoArray[1].includes("Armour:") || cleanItemInfoArray[1].includes("Evasion:") || cleanItemInfoArray[1].includes("Energy Shield:")) {
+	      itemName = null;
+	      itemBase = cleanItemInfoArray[0];
+	    } else {
+	      itemName = cleanItemInfoArray[0];
+	      itemBase = cleanItemInfoArray[1];
+	      cleanItemInfoArray.shift();
+	    }
 	    cleanItemInfoArray.shift();
 	    //Base Info
 	    itemBaseInfo = findItemBaseType(itemBase, allItemData);
@@ -8152,7 +8188,7 @@
 	    if (itemImplicitNumber !== 0) {
 	      for (let i = 0; i < itemImplicitNumber; i++) {
 	        let newImplicit = {
-	          text: cleanItemInfoArray[0],
+	          text: convertExplicitRangeText(cleanItemInfoArray[0]),
 	          display: false,
 	          precision: false
 	        };
@@ -8170,7 +8206,7 @@
 	  try {
 	    while (cleanItemInfoArray.length > 0) {
 	      let newExplicit = {
-	        text: cleanItemInfoArray[0],
+	        text: convertExplicitRangeText(cleanItemInfoArray[0]),
 	        display: false,
 	        precision: false
 	      };
@@ -8194,7 +8230,6 @@
 	    explicits: itemExplicitsArray,
 	    corrupted: itemIsCorrupted
 	  };
-	  console.log(newItem);
 	  return newItem;
 	}
 	function translateModifiers(allModifiers, modArray, type) {
@@ -8271,7 +8306,6 @@
 	      let modText = modPreText.replace(r, "#").replace("-#", '#');
 
 	      //exceptions
-
 	      const filteredAllModifiers = allModifiers.filter(lab => lab.label === label);
 	      let index = filteredAllModifiers[0].entries.findIndex(i => i.text.replace(r, "#") === modText);
 	      if (index === -1) {
@@ -8285,6 +8319,11 @@
 	        } else if (/Devotion/.test(modText)) {
 	          modText = modText.replace("# Devotion", "10 Devotion");
 	          modValue.pop();
+	        } else if (/Charges/.test(modText)) {
+	          modText = modText.replace("Charges", "Charge");
+	        } else if (/to all Elemental Resistances/.test(modText)) {
+	          modText = modText.replace("#", "+#");
+	          modValue = modValue.map(v => '-' + v);
 	        } else {
 	          modText += ' (Local)';
 	        }
