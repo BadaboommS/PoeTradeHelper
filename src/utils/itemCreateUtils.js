@@ -175,26 +175,18 @@ export function createItemObj(item, allItemData){
 
     //Corrupted
     let itemIsCorrupted = false;
-    try{
-        if(cleanItemInfoArray[cleanItemInfoArray.length-1] === 'Corrupted'){
-            itemIsCorrupted = true;
-            cleanItemInfoArray.pop();
-        }
-    }catch(err){
-        console.log("Corruption parse Problem !", err);
+    if(cleanItemInfoArray[cleanItemInfoArray.length-1] === 'Corrupted'){
+        itemIsCorrupted = true;
+        cleanItemInfoArray.pop();
     }
 
     //Item Rarity
     let itemRarity;
-    try{
-        if(cleanItemInfoArray[0].includes('Rarity:')){
-            itemRarity = cleanItemInfoArray[0].split(': ')[1];
-            cleanItemInfoArray.shift();
-        }else if(itemRarity === "RELIC"){
-            itemRarity = 'UNIQUE';
-        }
-    }catch(err){
-        console.log("Rarity parse Problem ! ", err);
+    if((cleanItemInfoArray[0].indexOf('Rarity:')) !== -1){
+        itemRarity = cleanItemInfoArray[0].split(': ')[1];
+        cleanItemInfoArray.shift();
+    }else if(itemRarity === "RELIC"){
+        itemRarity = 'UNIQUE';
     }
 
     //Item Name & Base
@@ -239,28 +231,20 @@ export function createItemObj(item, allItemData){
 
     //Item Defences
     let itemDefences = [];
-    try{
-        cleanItemInfoArray.map((line, i) => {
-            if(line.includes("Armour: ") || line.includes("Energy Shield: ") || line.includes("Evasion: ")|| line.includes("Ward: ")){
-                itemDefences.push(line);
-            }
-        })
-        for(let i = 0, l = itemDefences.length; i < l; i++){
-            cleanItemInfoArray.shift();
+    cleanItemInfoArray.map((line, i) => {
+        if(line.includes("Armour: ") || line.includes("Energy Shield: ") || line.includes("Evasion: ")|| line.includes("Ward: ")){
+            itemDefences.push(line);
         }
-    }catch(err){
-        console.log(err);
+    })
+    for(let i = 0, l = itemDefences.length; i < l; i++){
+        cleanItemInfoArray.shift();
     }
 
     //Influences
     let itemInfluences = [];
-    try{
-        while(cleanItemInfoArray[0].includes(' Item')){
-            itemInfluences.push(cleanItemInfoArray[0].split(" Item")[0]);
-            cleanItemInfoArray.shift();
-        }
-    }catch(err){
-        console.log(err);
+    while((cleanItemInfoArray[0].indexOf(' Item')) !== -1){
+        itemInfluences.push(cleanItemInfoArray[0].split(" Item")[0]);
+        cleanItemInfoArray.shift();
     }
     if(itemInfluences.length >0){
         console.log(itemInfluences);
@@ -268,68 +252,51 @@ export function createItemObj(item, allItemData){
 
     //Item Lv
     let itemIlv = null;
-    try{
-        if(cleanItemInfoArray[0].includes("Item Level:")){
-            itemIlv = cleanItemInfoArray[0].split(": ")[1];
-            cleanItemInfoArray.shift();
-        }
-    }catch(err){
-        console.log(err);
-    };
+    if((cleanItemInfoArray[0].indexOf("Item Level:")) !== -1){
+        itemIlv = cleanItemInfoArray[0].split(": ")[1];
+        cleanItemInfoArray.shift();
+    }
 
     //Item Sockets
     let itemSockets = [];
-    try{
-        if(cleanItemInfoArray[0].includes("Sockets:")){
-            itemSockets = cleanItemInfoArray[0].split(": ")[1].split(/-| /);
-            cleanItemInfoArray.shift();
-        }
-    }catch(err){
-        console.log(err)
+    if((cleanItemInfoArray[0].indexOf("Sockets:")) !== -1){
+        itemSockets = cleanItemInfoArray[0].split(": ")[1].split(/-| /);
+        cleanItemInfoArray.shift();
     }
 
     //Item Implicit
     let itemImplicitNumber = 0;
     let itemImplicitArray = [];
-    try{
-        if(cleanItemInfoArray[0].includes("Implicits:")){
-                itemImplicitNumber = cleanItemInfoArray[0].split(": ")[1];
-                cleanItemInfoArray.shift();
-        }else{
-            cleanItemInfoArray.shift();
+    if((cleanItemInfoArray[0].indexOf("Implicits:")) !== -1){
             itemImplicitNumber = cleanItemInfoArray[0].split(": ")[1];
             cleanItemInfoArray.shift();
-        }
-        if(itemImplicitNumber !== 0){
-            for(let i = 0; i < itemImplicitNumber; i++){
-                let newImplicit = {
-                    text: convertExplicitRangeText(cleanItemInfoArray[0]),
-                    display: false,
-                    precision: false
-                };
-                itemImplicitArray.push(newImplicit);
-                cleanItemInfoArray.shift();
-            }
-        };
-    }catch(err){
-        console.log(err);
+    }else{
+        cleanItemInfoArray.shift();
+        itemImplicitNumber = cleanItemInfoArray[0].split(": ")[1];
+        cleanItemInfoArray.shift();
     }
-
-    
-    //Item Modifiers
-    let itemExplicitsArray = [];
-    try{
-        while(cleanItemInfoArray.length > 0){
-            let newExplicit = {
+    if(itemImplicitNumber !== 0){
+        for(let i = 0; i < itemImplicitNumber; i++){
+            let newImplicit = {
                 text: convertExplicitRangeText(cleanItemInfoArray[0]),
                 display: false,
                 precision: false
             };
-            itemExplicitsArray.push(newExplicit);
+            itemImplicitArray.push(newImplicit);
             cleanItemInfoArray.shift();
         }
-    }catch(err){
-        console.log(err);
+    };
+    
+    //Item Modifiers
+    let itemExplicitsArray = [];
+    while(cleanItemInfoArray.length > 0){
+        let newExplicit = {
+            text: convertExplicitRangeText(cleanItemInfoArray[0]),
+            display: false,
+            precision: false
+        };
+        itemExplicitsArray.push(newExplicit);
+        cleanItemInfoArray.shift();
     }
     
     //return new item object
