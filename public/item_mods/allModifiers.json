@@ -3859,7 +3859,7 @@
             },
             {
                 "id": "explicit.stat_3527617737",
-                "text": "Has # Abyssal Sockets",
+                "text": "Has # Abyssal Socket",
                 "type": "explicit"
             },
             {
@@ -7049,7 +7049,7 @@
             },
             {
                 "id": "explicit.stat_3195300715",
-                "text": "Minions have +#% chance to Suppress Spell Damage",
+                "text": "Minions have #% chance to Suppress Spell Damage",
                 "type": "explicit"
             },
             {
@@ -31827,7 +31827,7 @@
             },
             {
                 "id": "implicit.stat_3527617737",
-                "text": "Has # Abyssal Sockets",
+                "text": "Has # Abyssal Socket",
                 "type": "implicit"
             },
             {
@@ -41433,7 +41433,7 @@
             },
             {
                 "id": "fractured.stat_3527617737",
-                "text": "Has # Abyssal Sockets",
+                "text": "Has # Abyssal Socket",
                 "type": "fractured"
             },
             {

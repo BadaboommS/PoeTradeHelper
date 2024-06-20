@@ -13,19 +13,21 @@ export function codeDecompress(code){
         //Inflate code
         const inputArray = Uint8Array.from([...compressedCode].map(v => v.charCodeAt(0)));
         var data = pako.inflate(inputArray, { to: 'string'});
+        console.log(data);
     
         //Parse items into usable array
         const parser = new DOMParser();
         const xmlDoc = parser.parseFromString(data, "text/xml");        
         const htmlItems = xmlDoc.getElementsByTagName("Items");
-        let ItemsArray = [];
+        let itemsArray = [];
         for(let i = 0; i < htmlItems[0].children.length; i++){
             if(htmlItems[0].children[i].nodeName === "Item"){
-                ItemsArray.push(htmlItems[0].children[i]);
+                itemsArray.push(htmlItems[0].children[i]);
             }
         }
+        console.log(itemsArray);
 
-        return ItemsArray;
+        return itemsArray;
     }catch(err){
         return err
     }

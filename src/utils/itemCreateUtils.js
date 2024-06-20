@@ -4,7 +4,7 @@ function formatItemInfoArray(item){
     let itemInfoArray = itemArray.filter((str) => str != '');
 
     // useless lines filter
-    let filters = ['BasePercentile:', 'Unique ID:', "LevelReq:", "Quality:", "Requires", "Variant", "Prefix:", "Suffix:", "Limited to:","Cluster Jewel Skill:", "Cluster Jewel Node Count:", "League:", "Crafted:", " Item", "Catalyst:"];
+    let filters = ['BasePercentile:', 'Unique ID:', "LevelReq:", "Quality:", "Requires", "Variant", "Prefix:", "Suffix:", "Limited to:","Cluster Jewel Skill:", "Cluster Jewel Node Count:", "League:", "Crafted:", "Catalyst:", "Radius:"];
     for(const fil of filters){
         itemInfoArray = itemInfoArray.filter((line) => {
             return line.indexOf(fil) === -1;
@@ -252,6 +252,20 @@ export function createItemObj(item, allItemData){
         console.log(err);
     }
 
+    //Influences
+    let itemInfluences = [];
+    try{
+        while(cleanItemInfoArray[0].includes(' Item')){
+            itemInfluences.push(cleanItemInfoArray[0].split(" Item")[0]);
+            cleanItemInfoArray.shift();
+        }
+    }catch(err){
+        console.log(err);
+    }
+    if(itemInfluences.length >0){
+        console.log(itemInfluences);
+    }
+
     //Item Lv
     let itemIlv = null;
     try{
@@ -370,8 +384,7 @@ export function translateModifiers(allModifiers, modArray, type){
                         mod.option = allModifiers[1].entries[981].option.options[allModifiers[1].entries[1549].option.options.findIndex(i => i.text === mod.text.split('Allocates ')[1].split(" if")[0])].id;
                         return null;
                     }
-                    case (/Passives in Radius of/.test(mod.text)): {
-                        console.log(mod.text);
+                    case (/Passives in radius of/.test(mod.text)): {
                         mod.filter = "explicit.stat_2422708892";
                         mod.option = allModifiers[1].entries[1894].option.options[allModifiers[1].entries[1894].option.options.findIndex(i => i.text === mod.text.split('of ')[1].split(" can")[0])].id;
                        return null;
@@ -390,7 +403,7 @@ export function translateModifiers(allModifiers, modArray, type){
             /}/.test(mod.text)? modPreText = mod.text.split('}')[1] : modPreText = mod.text;
 
             //retrieve mod value and explicit text
-            const r = /(\d+)/g;
+            const r = /-?(\d+)/g;
             let modValue = modPreText.match(r);
             let modText = modPreText.replace(r,"#").replace("-#",'#');
 
@@ -427,7 +440,6 @@ export function translateModifiers(allModifiers, modArray, type){
                 console.log(mod);
                 console.log("Mod label: ",label);
                 console.log("Mod text before traitment: ", modPreText)
-                console.log("Mod text: ",modText);
                 console.log('Mod value: ', modValue);
                 console.log("Searching in: ",filteredAllModifiers[0].id);
                 console.log("Found in index: ",index);
