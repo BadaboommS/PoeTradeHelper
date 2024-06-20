@@ -7881,8 +7881,14 @@
 	    //Parse items into usable array
 	    const parser = new DOMParser();
 	    const xmlDoc = parser.parseFromString(data, "text/xml");
-	    const htmlItems = xmlDoc.getElementsByTagName("Item");
-	    return htmlItems;
+	    const htmlItems = xmlDoc.getElementsByTagName("Items");
+	    let ItemsArray = [];
+	    for (let i = 0; i < htmlItems[0].children.length; i++) {
+	      if (htmlItems[0].children[i].nodeName === "Item") {
+	        ItemsArray.push(htmlItems[0].children[i]);
+	      }
+	    }
+	    return ItemsArray;
 	  } catch (err) {
 	    return err;
 	  }
@@ -7986,12 +7992,55 @@
 	  let cleanItemInfoArray = itemInfoArray.filter(str => str != '');
 
 	  // useless lines filter
-	  let filters = ['BasePercentile:', 'Unique ID:', "LevelReq:", "Quality:", "Requires"];
+	  let filters = ['BasePercentile:', 'Unique ID:', "LevelReq:", "Quality:", "Requires", "Variant", "Prefix:", "Suffix:", "Limited to:", "Cluster Jewel Node Count:", "League:", "Crafted:"];
 	  for (const fil of filters) {
 	    cleanItemInfoArray = cleanItemInfoArray.filter(line => {
 	      return line.indexOf(fil) === -1;
 	    });
 	  }
+
+	  // item variant handle and line cleaning
+	  let itemVariant = [];
+	  if (item.getAttribute("variant")) {
+	    itemVariant.push(item.getAttribute("variant"));
+	  }
+	  if (item.getAttribute("variantAlt")) {
+	    itemVariant.push(item.getAttribute("variantAlt"));
+	  }
+	  if (item.getAttribute("variantAlt2")) {
+	    itemVariant.push(item.getAttribute("variantAlt2"));
+	  }
+	  if (itemVariant.length !== 0) {
+	    cleanItemInfoArray = cleanItemInfoArray.filter(line => {
+	      if (line.includes("{variant:")) {
+	        let tempVariant = line.split('variant:')[1].split('}')[0];
+	        if (tempVariant.includes(',')) {
+	          let tempCheck = false;
+	          tempVariant.split(",").forEach(v => {
+	            if (itemVariant.indexOf(v) !== -1) {
+	              tempCheck = true;
+	            }
+	          });
+	          return tempCheck;
+	        }
+	        return itemVariant.indexOf(tempVariant) !== -1;
+	      }
+	      return true;
+	    });
+	  }
+	  cleanItemInfoArray = cleanItemInfoArray.map(line => {
+	    if (line.includes("tags:")) {
+	      let tempLine = line.split("}");
+	      tempLine.shift();
+	      tempLine.length > 1 ? line = tempLine.join("}") : line = tempLine[0];
+	    }
+	    if (line.includes("variant:")) {
+	      let tempLine = line.split("}");
+	      tempLine.shift();
+	      tempLine.length > 1 ? line = tempLine.join("}") : line = tempLine[0];
+	    }
+	    return line;
+	  });
 
 	  //Corrupted
 	  let itemIsCorrupted = false;
@@ -8145,6 +8194,7 @@
 	    explicits: itemExplicitsArray,
 	    corrupted: itemIsCorrupted
 	  };
+	  console.log(newItem);
 	  return newItem;
 	}
 	function translateModifiers(allModifiers, modArray, type) {

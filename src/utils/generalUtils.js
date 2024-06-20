@@ -16,10 +16,16 @@ export function codeDecompress(code){
     
         //Parse items into usable array
         const parser = new DOMParser();
-        const xmlDoc = parser.parseFromString(data, "text/xml");
-        const htmlItems = xmlDoc.getElementsByTagName("Item");
+        const xmlDoc = parser.parseFromString(data, "text/xml");        
+        const htmlItems = xmlDoc.getElementsByTagName("Items");
+        let ItemsArray = [];
+        for(let i = 0; i < htmlItems[0].children.length; i++){
+            if(htmlItems[0].children[i].nodeName === "Item"){
+                ItemsArray.push(htmlItems[0].children[i]);
+            }
+        }
 
-        return htmlItems;
+        return ItemsArray;
     }catch(err){
         return err
     }
