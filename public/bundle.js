@@ -8117,9 +8117,12 @@
 	    itemBaseInfo = findItemBaseType(itemName, allItemData, flask, abyss);
 	    itemBase = itemBaseInfo.item_base;
 	  } else {
-	    if (cleanItemInfoArray[1].includes("Implicits:") || cleanItemInfoArray[1].includes("Sockets:") || cleanItemInfoArray[1].includes("Armour:") || cleanItemInfoArray[1].includes("Evasion:") || cleanItemInfoArray[1].includes("Energy Shield:")) {
+	    if (cleanItemInfoArray[1].includes("Implicits:") || cleanItemInfoArray[1].includes("Sockets:") || cleanItemInfoArray[1].includes("Armour:") || cleanItemInfoArray[1].includes("Evasion:") || cleanItemInfoArray[1].includes("Energy Shield:") || cleanItemInfoArray[1].includes("Item Level:")) {
 	      itemName = null;
 	      itemBase = cleanItemInfoArray[0];
+	      if (itemBase.includes("Jewel")) {
+	        itemBase = itemBase.split(' ')[1] + " " + itemBase.split(' ')[2];
+	      }
 	    } else {
 	      itemName = cleanItemInfoArray[0];
 	      itemBase = cleanItemInfoArray[1];
@@ -8141,14 +8144,11 @@
 	    cleanItemInfoArray.shift();
 	  }
 
-	  //Influences
+	  //Item Influences
 	  let itemInfluences = [];
 	  while (cleanItemInfoArray[0].indexOf(' Item') !== -1) {
 	    itemInfluences.push(cleanItemInfoArray[0].split(" Item")[0]);
 	    cleanItemInfoArray.shift();
-	  }
-	  if (itemInfluences.length > 0) {
-	    console.log(itemInfluences);
 	  }
 
 	  //Item Lv
@@ -8205,6 +8205,7 @@
 	    name: itemName,
 	    base: itemBase,
 	    baseInfo: itemBaseInfo,
+	    influence: itemInfluences,
 	    defence: itemDefences,
 	    rarity: itemRarity,
 	    iLv: itemIlv,
@@ -8213,9 +8214,10 @@
 	    explicits: itemExplicitsArray,
 	    corrupted: itemIsCorrupted
 	  };
+	  console.log(newItem);
 	  return newItem;
 	}
-	function translateModifiers(allModifiers, modArray, type) {
+	function translateModifiers(item, allModifiers, modArray, type) {
 	  try {
 	    modArray.map(mod => {
 	      //remove bracket
@@ -8313,6 +8315,12 @@
 	      }
 	      if (index !== -1) {
 	        modFilter = filteredAllModifiers[0].entries[index].id;
+	        if (item.rarity !== "UNIQUE" && "influence" in filteredAllModifiers[0].entries[index]) {
+	          if (filteredAllModifiers[0].entries[index].influence.length < 3) {
+	            console.log(filteredAllModifiers[0].entries[index].influence);
+	            filteredAllModifiers[0].entries[index].influence.forEach(inf => item.influence.push(inf));
+	          }
+	        }
 	      }
 
 	      //debug
@@ -8810,7 +8818,13 @@
 	    className: "scale-100 lg:scale-110 xl:scale-125 my-0 lg:my-2 xl:my-4",
 	    alt: "Loading...",
 	    title: item.rarity === "UNIQUE" ? item.name : item.base
-	  })) : /*#__PURE__*/React.createElement(React.Fragment, null), /*#__PURE__*/React.createElement("div", null, item.defence[0] ? item.defence.map((def, i) => {
+	  })) : /*#__PURE__*/React.createElement(React.Fragment, null), /*#__PURE__*/React.createElement("div", null, item.influence[0] ? item.influence.map((inf, i) => {
+	    return /*#__PURE__*/React.createElement("p", {
+	      key: i
+	    }, /*#__PURE__*/React.createElement("strong", {
+	      className: "item_rarity-normal"
+	    }, inf), " Item");
+	  }) : /*#__PURE__*/React.createElement(React.Fragment, null), item.defence[0] ? item.defence.map((def, i) => {
 	    return /*#__PURE__*/React.createElement("p", {
 	      key: i
 	    }, /*#__PURE__*/React.createElement("strong", {
@@ -9076,8 +9090,8 @@
 
 	    //Translate mods for filter
 	    tempItemArray.map(item => {
-	      translateModifiers(allModifiers, item.implicits, 'Implicit');
-	      translateModifiers(allModifiers, item.explicits, 'Explicit');
+	      translateModifiers(item, allModifiers, item.implicits, 'Implicit');
+	      translateModifiers(item, allModifiers, item.explicits, 'Explicit');
 	    });
 	    buildItemArray = addOrder(tempItemArray);
 	    setTimeout(() => {

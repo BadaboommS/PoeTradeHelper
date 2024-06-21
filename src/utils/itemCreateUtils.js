@@ -216,9 +216,12 @@ export function createItemObj(item, allItemData){
         itemBaseInfo = findItemBaseType(itemName, allItemData, flask, abyss);
         itemBase = itemBaseInfo.item_base;
     }else{
-        if(cleanItemInfoArray[1].includes("Implicits:") || cleanItemInfoArray[1].includes("Sockets:") || cleanItemInfoArray[1].includes("Armour:") || cleanItemInfoArray[1].includes("Evasion:") || cleanItemInfoArray[1].includes("Energy Shield:")){
+        if(cleanItemInfoArray[1].includes("Implicits:") || cleanItemInfoArray[1].includes("Sockets:") || cleanItemInfoArray[1].includes("Armour:") || cleanItemInfoArray[1].includes("Evasion:") || cleanItemInfoArray[1].includes("Energy Shield:")|| cleanItemInfoArray[1].includes("Item Level:")){
             itemName = null;
             itemBase = cleanItemInfoArray[0];
+            if(itemBase.includes("Jewel")){
+                itemBase = itemBase.split(' ')[1] + " " + itemBase.split(' ')[2];
+            }
         }else{
             itemName = cleanItemInfoArray[0];
             itemBase = cleanItemInfoArray[1];
@@ -240,14 +243,11 @@ export function createItemObj(item, allItemData){
         cleanItemInfoArray.shift();
     }
 
-    //Influences
+    //Item Influences
     let itemInfluences = [];
     while((cleanItemInfoArray[0].indexOf(' Item')) !== -1){
         itemInfluences.push(cleanItemInfoArray[0].split(" Item")[0]);
         cleanItemInfoArray.shift();
-    }
-    if(itemInfluences.length >0){
-        console.log(itemInfluences);
     }
 
     //Item Lv
@@ -304,6 +304,7 @@ export function createItemObj(item, allItemData){
         name: itemName,
         base: itemBase,
         baseInfo: itemBaseInfo,
+        influence: itemInfluences,
         defence: itemDefences,
         rarity: itemRarity,
         iLv: itemIlv,
@@ -312,10 +313,11 @@ export function createItemObj(item, allItemData){
         explicits: itemExplicitsArray,
         corrupted: itemIsCorrupted
     }
+    console.log(newItem);
     return newItem
 }
 
-export function translateModifiers(allModifiers, modArray, type){
+export function translateModifiers(item, allModifiers, modArray, type){
     try{
         modArray.map((mod)=>{
             //remove bracket
@@ -400,6 +402,12 @@ export function translateModifiers(allModifiers, modArray, type){
             }
             if(index !== -1){
                 modFilter = filteredAllModifiers[0].entries[index].id;
+                if((item.rarity !== "UNIQUE") && ("influence" in filteredAllModifiers[0].entries[index])){
+                    if(filteredAllModifiers[0].entries[index].influence.length < 3){
+                        console.log(filteredAllModifiers[0].entries[index].influence);
+                        filteredAllModifiers[0].entries[index].influence.forEach((inf) => item.influence.push(inf))
+                    }
+                }
             }
 
             //debug

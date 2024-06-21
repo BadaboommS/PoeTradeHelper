@@ -51,6 +51,13 @@ export default function ItemInfo ({ item, allFetchItemData }) {
                       <></>  
                 }
                 <div>
+                    {item.influence[0]?
+                        item.influence.map((inf,i) => {
+                            return <p key={i}><strong className="item_rarity-normal">{inf}</strong> Item</p>
+                        })
+                    :
+                        <></>
+                    }
                     {item.defence[0]?
                         item.defence.map((def,i) => {
                             return <p key={i}><strong className="item_rarity-normal">{def.split(': ')[0]}:</strong> {def.split(': ')[1]}</p>

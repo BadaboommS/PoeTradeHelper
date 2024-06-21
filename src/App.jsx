@@ -55,8 +55,8 @@ export function App() {
       
       //Translate mods for filter
       tempItemArray.map((item) => {
-         translateModifiers(allModifiers, item.implicits, 'Implicit');
-         translateModifiers(allModifiers, item.explicits, 'Explicit');
+         translateModifiers(item, allModifiers, item.implicits, 'Implicit');
+         translateModifiers(item, allModifiers, item.explicits, 'Explicit');
       })
       buildItemArray = addOrder(tempItemArray);
       
