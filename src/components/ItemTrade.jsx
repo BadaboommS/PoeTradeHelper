@@ -2,9 +2,10 @@ import React, { useEffect, useState, useRef } from "react";
 //utils
 import { generateTradeUrl } from "../utils/generateTradeUrl";
 import { handleExplicitClass } from "../utils/generalUtils";
-import { handleClusterPrice, handleUniquePrice, handleBaseType } from "../utils/handleItemPrices";
+import { handleClusterPrice, handleUniquePrice, handleBaseTypePrice, displayEstimatedPrice } from "../utils/handleItemPrices";
+import Modal from "./Modal";
 
-export default function ItemTrade({ item , league, itemName, itemNumber, allFetchItemData }){
+export default function ItemTrade({ itemNumber, item, league, allFetchItemData }){
     const [tradeDefence, setTradeDefence] = useState([]);
     const [tradeIlv, setTradeIlv] = useState(0);
     const [tradeLinks, setTradeLinks] = useState(0);
@@ -12,21 +13,26 @@ export default function ItemTrade({ item , league, itemName, itemNumber, allFetc
     const [tradeImplicits, setTradeImplicits] = useState(item.implicits);
     const [tradeExplicits, setTradeExplicits] = useState(item.explicits);
     const [customPrecision, setCustomPrecision] = useState(false);
-    const [itemEstimatedPrice, setItemEstimatedPrice] = useState([]);
+    const [itemEstimatedPriceArr, setItemEstimatedPriceArr] = useState([]);
     const [loader, setLoader] = useState(true);
+    const [isOpen, setIsOpen] = useState(false);
     const didMount = useRef(false);
+
+    const itemName = item.rarity === 'UNIQUE'? `${item.name} - ${item.base}` : `${item.base}`;
 
     useEffect(() => {
         if(didMount.current){
+            let itemPriceInfo = [];
             if(item.rarity === "UNIQUE"){
-                const {chaos, divine} = handleUniquePrice(item, allFetchItemData);
-                setItemEstimatedPrice([chaos,divine]);
+                itemPriceInfo = handleUniquePrice(item, allFetchItemData);
+                setItemEstimatedPriceArr(itemPriceInfo);
             }else if ((item.rarity === "RARE") && (item.baseInfo.base_type === "Cluster Jewel")){
-                const {chaos, divine} = handleClusterPrice(item, allFetchItemData.cluster.lines);
-                setItemEstimatedPrice([chaos,divine]);       
+                itemPriceInfo = handleClusterPrice(item, allFetchItemData.cluster.lines);
+                setItemEstimatedPriceArr(itemPriceInfo);       
             }
             else{
-                handleBaseType(item, allFetchItemData);
+                itemPriceInfo = handleBaseTypePrice(item, allFetchItemData);
+                setItemEstimatedPriceArr(itemPriceInfo);
             }
         }else{
             didMount.current = true;
@@ -110,24 +116,6 @@ export default function ItemTrade({ item , league, itemName, itemNumber, allFetc
             newExplicit.precision = !newExplicit.precision;
             tempArray.splice(tempArray.indexOf(e), 1, newExplicit);
             setTradeExplicits([...tempArray]);
-        }
-    }
-
-    function displayEstimatedPrice(chaos, divine){
-        if(divine > 2){
-            return (
-                <p className="flex flex-row justify-center items-center text-2xl gap-2" data-tooltip={`chaos: ${chaos} | divine: ${divine}`} data-tooltip-position="top">
-                    {divine.toLocaleString()}
-                    <img src='https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/e1a54ff97d/CurrencyModValues.png' alt="Divine Orb"/>
-                </p>
-            )
-        }else{
-            return(
-                <p className="flex flex-row justify-center items-center text-2xl gap-2" data-tooltip={`chaos: ${chaos} | divine: ${divine}`} data-tooltip-position="top">
-                    {chaos.toLocaleString()}
-                    <img src='https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/d119a0d734/CurrencyRerollRare.png' alt="Chaos"/>
-                </p>
-            ) 
         }
     }
 
@@ -273,12 +261,42 @@ export default function ItemTrade({ item , league, itemName, itemNumber, allFetc
                     </div>
                     {loader? <div className="lds-dual-ring"></div> : <></>}
                     {
-                        (!loader && itemEstimatedPrice.length !== 0)?
+                        (!loader && itemEstimatedPriceArr !== undefined && itemEstimatedPriceArr.length !== 0 )?
                             <>
-                                <div className="flex flex-row md:flex-col">
-                                    <p className="flex items-center"><strong>Estimated Price: </strong></p>
-                                    {displayEstimatedPrice(itemEstimatedPrice[0],itemEstimatedPrice[1])}
-                                </div>
+                                {(itemEstimatedPriceArr.length !== 1)?
+                                    <>
+                                        <button onClick={() => setIsOpen(true)} className="text-black bg-slate-200 rounded-md p-2 decoration-inherit">Check Prices</button>
+                                        <Modal open={isOpen}>
+                                            <div>
+                                                <h3 className='text-center'>Estimated Prices for:</h3>
+                                                <p className="text-lg">{`${itemName}`}</p>
+                                                <ul className="flex flex-col items-center justify-center">
+                                                    {itemEstimatedPriceArr.map((price,i) => {
+                                                        return  (
+                                                            <>
+                                                                <li key={i} className="flex flex-row items-center justify-center text-lg gap-2">
+                                                                    <p className="m-0 p-0">{`Item level: ${price.levelRequired} ${price.variant? `- Influence: ${price.variant}` : ''}`}</p>
+                                                                    <p className="m-0 p-0">{displayEstimatedPrice(price)}</p>
+                                                                </li>
+                                                                <p className={`item_split item_split-${item.rarity.toLowerCase()}`}></p>
+                                                            </>
+                                                        )
+                                                    })}
+                                                </ul>
+                                                <div className="flex justify-center md:justify-end">
+                                                    <button onClick={ () => setIsOpen(false)} className="bg-stone-500 text-white text-center p-2 rounded-sm">Close</button>
+                                                </div>
+                                            </div>
+                                        </Modal>
+                                    </>
+                                :
+                                    <>
+                                        <div className="flex flex-row md:flex-col">
+                                            <p className="flex items-center"><strong>Estimated Price: </strong></p>
+                                            {displayEstimatedPrice(itemEstimatedPriceArr[0])}
+                                        </div>
+                                    </>
+                                }
                             </>
                         :
                             <>

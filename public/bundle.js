@@ -7855,7 +7855,7 @@
 	  }
 	}
 
-	var css_248z$1 = "/*! tailwindcss v3.4.3 | MIT License | https://tailwindcss.com*/*,:after,:before{border:0 solid #e5e7eb;box-sizing:border-box}:after,:before{--tw-content:\"\"}:host,html{-webkit-text-size-adjust:100%;font-feature-settings:normal;-webkit-tap-highlight-color:transparent;font-family:ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-variation-settings:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4}body{line-height:inherit;margin:0}hr{border-top-width:1px;color:inherit;height:0}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-feature-settings:normal;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-size:1em;font-variation-settings:normal}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{border-collapse:collapse;border-color:inherit;text-indent:0}button,input,optgroup,select,textarea{font-feature-settings:inherit;color:inherit;font-family:inherit;font-size:100%;font-variation-settings:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{color:#9ca3af;opacity:1}input::placeholder,textarea::placeholder{color:#9ca3af;opacity:1}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{height:auto;max-width:100%}[hidden]{display:none}*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }h1{font-size:1.5rem;line-height:2rem}h2{font-size:1.25rem}h2,h3{line-height:1.75rem}h3{font-size:1.125rem}button{background-color:#fff}.m-auto{margin:auto}.my-0{margin-bottom:0;margin-top:0}.my-4{margin-bottom:1rem;margin-top:1rem}.mt-2{margin-top:.5rem}.block{display:block}.flex{display:flex}.h-10{height:2.5rem}.w-3\\/4{width:75%}.w-full{width:100%}.min-w-10{min-width:2.5rem}.max-w-4xl{max-width:56rem}.scale-100{--tw-scale-x:1;--tw-scale-y:1;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.flex-row{flex-direction:row}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.justify-evenly{justify-content:space-evenly}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.rounded-md{border-radius:.375rem}.rounded-sm{border-radius:.125rem}.bg-slate-200{--tw-bg-opacity:1;background-color:rgb(226 232 240/var(--tw-bg-opacity))}.bg-stone-500{--tw-bg-opacity:1;background-color:rgb(120 113 108/var(--tw-bg-opacity))}.p-1{padding:.25rem}.p-2{padding:.5rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.px-8{padding-left:2rem;padding-right:2rem}.text-center{text-align:center}.text-start{text-align:start}.text-2xl{font-size:1.5rem;line-height:2rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-black{--tw-text-opacity:1;color:rgb(0 0 0/var(--tw-text-opacity))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity))}.decoration-inherit{text-decoration-color:inherit}.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}@media (min-width:768px){.md\\:w-3\\/4{width:75%}.md\\:flex-row{flex-direction:row}.md\\:flex-col{flex-direction:column}.md\\:justify-end{justify-content:flex-end}.md\\:justify-evenly{justify-content:space-evenly}.md\\:px-0{padding-left:0;padding-right:0}}@media (min-width:1024px){.lg\\:my-2{margin-bottom:.5rem;margin-top:.5rem}.lg\\:w-5\\/12{width:41.666667%}.lg\\:w-6\\/12{width:50%}.lg\\:w-full{width:100%}.lg\\:scale-110{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.lg\\:flex-row{flex-direction:row}}@media (min-width:1280px){.xl\\:my-4{margin-bottom:1rem;margin-top:1rem}.xl\\:scale-125{--tw-scale-x:1.25;--tw-scale-y:1.25;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}}";
+	var css_248z$1 = "/*! tailwindcss v3.4.3 | MIT License | https://tailwindcss.com*/*,:after,:before{border:0 solid #e5e7eb;box-sizing:border-box}:after,:before{--tw-content:\"\"}:host,html{-webkit-text-size-adjust:100%;font-feature-settings:normal;-webkit-tap-highlight-color:transparent;font-family:ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-variation-settings:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4}body{line-height:inherit;margin:0}hr{border-top-width:1px;color:inherit;height:0}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-feature-settings:normal;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-size:1em;font-variation-settings:normal}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{border-collapse:collapse;border-color:inherit;text-indent:0}button,input,optgroup,select,textarea{font-feature-settings:inherit;color:inherit;font-family:inherit;font-size:100%;font-variation-settings:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{color:#9ca3af;opacity:1}input::placeholder,textarea::placeholder{color:#9ca3af;opacity:1}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{height:auto;max-width:100%}[hidden]{display:none}*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }h1{font-size:1.5rem;line-height:2rem}h2{font-size:1.25rem}h2,h3{line-height:1.75rem}h3{font-size:1.125rem}button{background-color:#fff}.m-auto{margin:auto}.m-0{margin:0}.my-0{margin-bottom:0;margin-top:0}.my-4{margin-bottom:1rem;margin-top:1rem}.mt-2{margin-top:.5rem}.block{display:block}.flex{display:flex}.h-10{height:2.5rem}.w-3\\/4{width:75%}.w-full{width:100%}.min-w-10{min-width:2.5rem}.max-w-4xl{max-width:56rem}.scale-100{--tw-scale-x:1;--tw-scale-y:1;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.flex-row{flex-direction:row}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-start{justify-content:flex-start}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.justify-evenly{justify-content:space-evenly}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.rounded-md{border-radius:.375rem}.rounded-sm{border-radius:.125rem}.bg-slate-200{--tw-bg-opacity:1;background-color:rgb(226 232 240/var(--tw-bg-opacity))}.bg-stone-500{--tw-bg-opacity:1;background-color:rgb(120 113 108/var(--tw-bg-opacity))}.p-1{padding:.25rem}.p-2{padding:.5rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-0{padding:0}.px-8{padding-left:2rem;padding-right:2rem}.text-center{text-align:center}.text-start{text-align:start}.text-2xl{font-size:1.5rem;line-height:2rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-black{--tw-text-opacity:1;color:rgb(0 0 0/var(--tw-text-opacity))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity))}.decoration-inherit{text-decoration-color:inherit}.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}@media (min-width:768px){.md\\:w-3\\/4{width:75%}.md\\:flex-row{flex-direction:row}.md\\:flex-col{flex-direction:column}.md\\:justify-end{justify-content:flex-end}.md\\:justify-evenly{justify-content:space-evenly}.md\\:px-0{padding-left:0;padding-right:0}}@media (min-width:1024px){.lg\\:my-2{margin-bottom:.5rem;margin-top:.5rem}.lg\\:w-5\\/12{width:41.666667%}.lg\\:w-6\\/12{width:50%}.lg\\:w-full{width:100%}.lg\\:scale-110{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.lg\\:flex-row{flex-direction:row}}@media (min-width:1280px){.xl\\:my-4{margin-bottom:1rem;margin-top:1rem}.xl\\:scale-125{--tw-scale-x:1.25;--tw-scale-y:1.25;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}}";
 	styleInject(css_248z$1,{"insertAt":"top"});
 
 	var css_248z = "[data-tooltip]{cursor:help;display:inline-block;padding:4px;position:relative}[data-tooltip]:before{background:#000;border-radius:4px;color:#fff;content:attr(data-tooltip);display:none;font-size:14px;line-height:1.4;min-width:100px;padding:4px 8px;position:absolute;text-align:center}[data-tooltip-position=bottom]:before,[data-tooltip-position=top]:before{left:50%;transform:translateX(-50%)}[data-tooltip-position=left]:before,[data-tooltip-position=right]:before{top:50%;transform:translateY(-50%)}[data-tooltip-position=top]:before{bottom:100%;margin-bottom:6px}[data-tooltip-position=right]:before{left:100%;margin-left:6px}[data-tooltip-position=bottom]:before{margin-top:6px;top:100%}[data-tooltip-position=left]:before{margin-right:6px;right:100%}[data-tooltip]:after{border-color:transparent;border-style:solid;content:\"\";display:none;height:0;position:absolute;width:0}[data-tooltip-position=bottom]:after,[data-tooltip-position=top]:after{left:50%;margin-left:-6px}[data-tooltip-position=left]:after,[data-tooltip-position=right]:after{margin-top:-6px;top:50%}[data-tooltip-position=top]:after{border-top-color:#000;border-width:6px 6px 0;bottom:100%}[data-tooltip-position=right]:after{border-right-color:#000;border-width:6px 6px 6px 0;left:100%}[data-tooltip-position=bottom]:after{border-bottom-color:#000;border-width:0 6px 6px;top:100%}[data-tooltip-position=left]:after{border-left-color:#000;border-width:6px 0 6px 6px;right:100%}[data-tooltip]:hover:after,[data-tooltip]:hover:before{display:block;z-index:50}";
@@ -8422,18 +8422,14 @@
 	function handleUniquePrice(item, fetchItemData) {
 	  let index = fetchItemData[item.baseInfo.item_category].lines.map(e => e.name).indexOf(item.name);
 	  if (index !== -1) {
-	    const chaos = fetchItemData[item.baseInfo.item_category].lines[index].chaosValue;
-	    const divine = fetchItemData[item.baseInfo.item_category].lines[index].divineValue;
-	    return {
-	      chaos,
-	      divine
-	    };
+	    return [fetchItemData[item.baseInfo.item_category].lines[index]];
 	  }
 	}
-	function handleBaseType(item, fetchItemData) {
-	  console.log("Rare Item --------");
+	function handleBaseTypePrice(item, fetchItemData) {
 	  let itemPriceResults = fetchItemData.baseType.lines.filter(c => c.baseType === item.base && c.levelRequired >= parseInt(item.iLv));
-	  console.log(itemPriceResults);
+	  if (itemPriceResults.length !== 0) {
+	    return itemPriceResults;
+	  }
 	}
 	function handleClusterPrice(item, clusterData) {
 	  const clusterFilterPassiveFilter = item.implicits.filter(i => i.text.includes("Small Passive Skills"))[0].text.split(': ')[1];
@@ -8451,23 +8447,52 @@
 	    clusterFilterIlv = tempIlv;
 	  }
 	  clusterPriceResults = clusterPriceResults.filter(c => c.levelRequired === clusterFilterIlv);
-	  if (clusterPriceResults.length === 1) {
-	    let chaos = clusterPriceResults[0].chaosValue;
-	    let divine = clusterPriceResults[0].divineValue;
-	    return {
-	      chaos,
-	      divine
-	    };
+	  if (clusterPriceResults.length >= 1) {
+	    return clusterPriceResults;
 	  } else {
 	    return null;
 	  }
 	}
+	function displayEstimatedPrice(item) {
+	  if (item !== undefined) {
+	    if (item.divineValue > 2) {
+	      return /*#__PURE__*/React.createElement("p", {
+	        className: "flex flex-row justify-center items-center text-2xl gap-2",
+	        "data-tooltip": `chaos: ${item.chaosValue} | divine: ${item.divineValue}`,
+	        "data-tooltip-position": "top"
+	      }, item.divineValue, /*#__PURE__*/React.createElement("img", {
+	        src: "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/e1a54ff97d/CurrencyModValues.png",
+	        alt: "Divine Orb"
+	      }));
+	    } else {
+	      return /*#__PURE__*/React.createElement("p", {
+	        className: "flex flex-row justify-center items-center text-2xl gap-2",
+	        "data-tooltip": `chaos: ${item.chaosValue} | divine: ${item.divineValue}`,
+	        "data-tooltip-position": "top"
+	      }, item.chaosValue, /*#__PURE__*/React.createElement("img", {
+	        src: "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/d119a0d734/CurrencyRerollRare.png",
+	        alt: "Chaos"
+	      }));
+	    }
+	  }
+	}
+
+	const Modal = ({
+	  open,
+	  children
+	}) => {
+	  if (!open) return null;
+	  return /*#__PURE__*/ReactDom.createPortal( /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+	    className: "modal_bg"
+	  }), /*#__PURE__*/React.createElement("div", {
+	    className: "modal_content rounded-sm"
+	  }, children)), document.getElementById('modal_portal'));
+	};
 
 	function ItemTrade({
+	  itemNumber,
 	  item,
 	  league,
-	  itemName,
-	  itemNumber,
 	  allFetchItemData
 	}) {
 	  const [tradeDefence, setTradeDefence] = reactExports.useState([]);
@@ -8477,25 +8502,23 @@
 	  const [tradeImplicits, setTradeImplicits] = reactExports.useState(item.implicits);
 	  const [tradeExplicits, setTradeExplicits] = reactExports.useState(item.explicits);
 	  const [customPrecision, setCustomPrecision] = reactExports.useState(false);
-	  const [itemEstimatedPrice, setItemEstimatedPrice] = reactExports.useState([]);
+	  const [itemEstimatedPriceArr, setItemEstimatedPriceArr] = reactExports.useState([]);
 	  const [loader, setLoader] = reactExports.useState(true);
+	  const [isOpen, setIsOpen] = reactExports.useState(false);
 	  const didMount = reactExports.useRef(false);
+	  const itemName = item.rarity === 'UNIQUE' ? `${item.name} - ${item.base}` : `${item.base}`;
 	  reactExports.useEffect(() => {
 	    if (didMount.current) {
+	      let itemPriceInfo = [];
 	      if (item.rarity === "UNIQUE") {
-	        const {
-	          chaos,
-	          divine
-	        } = handleUniquePrice(item, allFetchItemData);
-	        setItemEstimatedPrice([chaos, divine]);
+	        itemPriceInfo = handleUniquePrice(item, allFetchItemData);
+	        setItemEstimatedPriceArr(itemPriceInfo);
 	      } else if (item.rarity === "RARE" && item.baseInfo.base_type === "Cluster Jewel") {
-	        const {
-	          chaos,
-	          divine
-	        } = handleClusterPrice(item, allFetchItemData.cluster.lines);
-	        setItemEstimatedPrice([chaos, divine]);
+	        itemPriceInfo = handleClusterPrice(item, allFetchItemData.cluster.lines);
+	        setItemEstimatedPriceArr(itemPriceInfo);
 	      } else {
-	        handleBaseType(item, allFetchItemData);
+	        itemPriceInfo = handleBaseTypePrice(item, allFetchItemData);
+	        setItemEstimatedPriceArr(itemPriceInfo);
 	      }
 	    } else {
 	      didMount.current = true;
@@ -8579,27 +8602,6 @@
 	      newExplicit.precision = !newExplicit.precision;
 	      tempArray.splice(tempArray.indexOf(e), 1, newExplicit);
 	      setTradeExplicits([...tempArray]);
-	    }
-	  }
-	  function displayEstimatedPrice(chaos, divine) {
-	    if (divine > 2) {
-	      return /*#__PURE__*/React.createElement("p", {
-	        className: "flex flex-row justify-center items-center text-2xl gap-2",
-	        "data-tooltip": `chaos: ${chaos} | divine: ${divine}`,
-	        "data-tooltip-position": "top"
-	      }, divine.toLocaleString(), /*#__PURE__*/React.createElement("img", {
-	        src: "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/e1a54ff97d/CurrencyModValues.png",
-	        alt: "Divine Orb"
-	      }));
-	    } else {
-	      return /*#__PURE__*/React.createElement("p", {
-	        className: "flex flex-row justify-center items-center text-2xl gap-2",
-	        "data-tooltip": `chaos: ${chaos} | divine: ${divine}`,
-	        "data-tooltip-position": "top"
-	      }, chaos.toLocaleString(), /*#__PURE__*/React.createElement("img", {
-	        src: "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/d119a0d734/CurrencyRerollRare.png",
-	        alt: "Chaos"
-	      }));
 	    }
 	  }
 	  let tradeUrl = generateTradeUrl(tradeIlv, tradeLinks, tradeCorrupted, tradeDefence, tradeImplicits, tradeExplicits, item, league);
@@ -8746,11 +8748,38 @@
 	    value: "custom"
 	  }, "custom"))), loader ? /*#__PURE__*/React.createElement("div", {
 	    className: "lds-dual-ring"
-	  }) : /*#__PURE__*/React.createElement(React.Fragment, null), !loader && itemEstimatedPrice.length !== 0 ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+	  }) : /*#__PURE__*/React.createElement(React.Fragment, null), !loader && itemEstimatedPriceArr !== undefined && itemEstimatedPriceArr.length !== 0 ? /*#__PURE__*/React.createElement(React.Fragment, null, itemEstimatedPriceArr.length !== 1 ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("button", {
+	    onClick: () => setIsOpen(true),
+	    className: "text-black bg-slate-200 rounded-md p-2 decoration-inherit"
+	  }, "Check Prices"), /*#__PURE__*/React.createElement(Modal, {
+	    open: isOpen
+	  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h3", {
+	    className: "text-center"
+	  }, "Estimated Prices for:"), /*#__PURE__*/React.createElement("p", {
+	    className: "text-lg"
+	  }, `${itemName}`), /*#__PURE__*/React.createElement("ul", {
+	    className: "flex flex-col items-center justify-center"
+	  }, itemEstimatedPriceArr.map((price, i) => {
+	    return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("li", {
+	      key: i,
+	      className: "flex flex-row items-center justify-center text-lg gap-2"
+	    }, /*#__PURE__*/React.createElement("p", {
+	      className: "m-0 p-0"
+	    }, `Item level: ${price.levelRequired} ${price.variant ? `- Influence: ${price.variant}` : ''}`), /*#__PURE__*/React.createElement("p", {
+	      className: "m-0 p-0"
+	    }, displayEstimatedPrice(price))), /*#__PURE__*/React.createElement("p", {
+	      className: `item_split item_split-${item.rarity.toLowerCase()}`
+	    }));
+	  })), /*#__PURE__*/React.createElement("div", {
+	    className: "flex justify-center md:justify-end"
+	  }, /*#__PURE__*/React.createElement("button", {
+	    onClick: () => setIsOpen(false),
+	    className: "bg-stone-500 text-white text-center p-2 rounded-sm"
+	  }, "Close"))))) : /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
 	    className: "flex flex-row md:flex-col"
 	  }, /*#__PURE__*/React.createElement("p", {
 	    className: "flex items-center"
-	  }, /*#__PURE__*/React.createElement("strong", null, "Estimated Price: ")), displayEstimatedPrice(itemEstimatedPrice[0], itemEstimatedPrice[1]))) : /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+	  }, /*#__PURE__*/React.createElement("strong", null, "Estimated Price: ")), displayEstimatedPrice(itemEstimatedPriceArr[0])))) : /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
 	    className: "flex flex-row md:flex-col"
 	  }, /*#__PURE__*/React.createElement("p", {
 	    className: "flex items-center"
@@ -9027,24 +9056,6 @@
 	  }, "Restart")))));
 	};
 
-	const Modal = ({
-	  open,
-	  children,
-	  onClose
-	}) => {
-	  if (!open) return null;
-	  return /*#__PURE__*/ReactDom.createPortal( /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
-	    className: "modal_bg"
-	  }), /*#__PURE__*/React.createElement("div", {
-	    className: "modal_content rounded-sm"
-	  }, children, /*#__PURE__*/React.createElement("div", {
-	    className: "flex justify-center md:justify-end"
-	  }, /*#__PURE__*/React.createElement("button", {
-	    onClick: onClose,
-	    className: "bg-stone-500 text-white text-center p-2 rounded-sm"
-	  }, "Got It !")))), document.getElementById('modal_portal'));
-	};
-
 	//init
 	let buildItemArray = [];
 	let defaultLeagueChoice = "Necropolis";
@@ -9106,13 +9117,17 @@
 	    alt: "How to use",
 	    title: "How to use"
 	  })), /*#__PURE__*/React.createElement(Modal, {
-	    open: isOpen,
-	    onClose: () => setIsOpen(false)
+	    open: isOpen
 	  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h3", {
 	    className: "text-center"
 	  }, "How to Use:"), /*#__PURE__*/React.createElement("p", null, "1 - Import Build Code from: POE Ninja, Path Of Building, Pastebind or any equivalent"), /*#__PURE__*/React.createElement("p", null, "2 - Paste the code into the Import code Input"), /*#__PURE__*/React.createElement("p", null, "3 - Select your league"), /*#__PURE__*/React.createElement("p", null, "4 - Select the desirated stats on your item"), /*#__PURE__*/React.createElement("p", null, "5 - Use the Link to check POE Trade offers"), /*#__PURE__*/React.createElement("div", {
 	    className: "text-center mt-2"
-	  }, /*#__PURE__*/React.createElement("p", null, "\u26A0\uFE0F WARNING \u26A0\uFE0F Estimated Price is about the cheapest item best you can find. Real items with stats often cost way more !"), /*#__PURE__*/React.createElement("p", null, "Image and Prices Data are fetched with the Poe.ninja API."), /*#__PURE__*/React.createElement("p", null, "Project Repo: https://github.com/BadaboommS/PoeTradeHelper"))))), /*#__PURE__*/React.createElement(InputCode, {
+	  }, /*#__PURE__*/React.createElement("p", null, "\u26A0\uFE0F WARNING \u26A0\uFE0F Estimated Price is about the cheapest item best you can find. Real items with stats often cost way more !"), /*#__PURE__*/React.createElement("p", null, "Image and Prices Data are fetched with the Poe.ninja API."), /*#__PURE__*/React.createElement("p", null, "Project Repo: https://github.com/BadaboommS/PoeTradeHelper")), /*#__PURE__*/React.createElement("div", {
+	    className: "flex justify-center md:justify-end"
+	  }, /*#__PURE__*/React.createElement("button", {
+	    onClick: () => setIsOpen(false),
+	    className: "bg-stone-500 text-white text-center p-2 rounded-sm"
+	  }, "Got It !"))))), /*#__PURE__*/React.createElement(InputCode, {
 	    handleSubmit: handleSubmit
 	  }), /*#__PURE__*/React.createElement("p", {
 	    className: `item_split item_split-normal my-4`
