@@ -374,7 +374,7 @@ export function translateModifiers(item, allModifiers, modArray, type){
             //retrieve mod value and explicit text
             const r = /-?(\d+)/g;
             let modValue = modPreText.match(r);
-            let modText = modPreText.replace(r,"#").replace("-#",'#');
+            let modText = modPreText.replace(r,"#").replaceAll('#.#', '#').replaceAll("##", "#").replaceAll('#-#', '#').replaceAll("(#)", '#').replaceAll('+#', "#").replaceAll('-#', '#').trimStart();
 
             //exceptions
             const filteredAllModifiers = allModifiers.filter(lab => lab.label === label);
