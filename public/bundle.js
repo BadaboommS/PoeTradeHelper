@@ -7855,7 +7855,7 @@
 	  }
 	}
 
-	var css_248z$1 = "/*! tailwindcss v3.4.3 | MIT License | https://tailwindcss.com*/*,:after,:before{border:0 solid #e5e7eb;box-sizing:border-box}:after,:before{--tw-content:\"\"}:host,html{-webkit-text-size-adjust:100%;font-feature-settings:normal;-webkit-tap-highlight-color:transparent;font-family:ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-variation-settings:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4}body{line-height:inherit;margin:0}hr{border-top-width:1px;color:inherit;height:0}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-feature-settings:normal;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-size:1em;font-variation-settings:normal}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{border-collapse:collapse;border-color:inherit;text-indent:0}button,input,optgroup,select,textarea{font-feature-settings:inherit;color:inherit;font-family:inherit;font-size:100%;font-variation-settings:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{color:#9ca3af;opacity:1}input::placeholder,textarea::placeholder{color:#9ca3af;opacity:1}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{height:auto;max-width:100%}[hidden]{display:none}*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }h1{font-size:1.5rem;line-height:2rem}h2{font-size:1.25rem}h2,h3{line-height:1.75rem}h3{font-size:1.125rem}button{background-color:#fff}.m-auto{margin:auto}.m-0{margin:0}.my-0{margin-bottom:0;margin-top:0}.my-4{margin-bottom:1rem;margin-top:1rem}.mt-2{margin-top:.5rem}.block{display:block}.flex{display:flex}.h-10{height:2.5rem}.w-3\\/4{width:75%}.w-full{width:100%}.min-w-10{min-width:2.5rem}.max-w-4xl{max-width:56rem}.scale-100{--tw-scale-x:1;--tw-scale-y:1;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.flex-row{flex-direction:row}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-start{justify-content:flex-start}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.justify-evenly{justify-content:space-evenly}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.rounded-md{border-radius:.375rem}.rounded-sm{border-radius:.125rem}.bg-slate-200{--tw-bg-opacity:1;background-color:rgb(226 232 240/var(--tw-bg-opacity))}.bg-stone-500{--tw-bg-opacity:1;background-color:rgb(120 113 108/var(--tw-bg-opacity))}.p-1{padding:.25rem}.p-2{padding:.5rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-0{padding:0}.px-8{padding-left:2rem;padding-right:2rem}.text-center{text-align:center}.text-start{text-align:start}.text-2xl{font-size:1.5rem;line-height:2rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-black{--tw-text-opacity:1;color:rgb(0 0 0/var(--tw-text-opacity))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity))}.decoration-inherit{text-decoration-color:inherit}.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}@media (min-width:768px){.md\\:w-3\\/4{width:75%}.md\\:flex-row{flex-direction:row}.md\\:flex-col{flex-direction:column}.md\\:justify-end{justify-content:flex-end}.md\\:justify-evenly{justify-content:space-evenly}.md\\:px-0{padding-left:0;padding-right:0}}@media (min-width:1024px){.lg\\:my-2{margin-bottom:.5rem;margin-top:.5rem}.lg\\:w-5\\/12{width:41.666667%}.lg\\:w-6\\/12{width:50%}.lg\\:w-full{width:100%}.lg\\:scale-110{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.lg\\:flex-row{flex-direction:row}}@media (min-width:1280px){.xl\\:my-4{margin-bottom:1rem;margin-top:1rem}.xl\\:scale-125{--tw-scale-x:1.25;--tw-scale-y:1.25;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}}";
+	var css_248z$1 = "/*! tailwindcss v3.4.3 | MIT License | https://tailwindcss.com*/*,:after,:before{border:0 solid #e5e7eb;box-sizing:border-box}:after,:before{--tw-content:\"\"}:host,html{-webkit-text-size-adjust:100%;font-feature-settings:normal;-webkit-tap-highlight-color:transparent;font-family:ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-variation-settings:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4}body{line-height:inherit;margin:0}hr{border-top-width:1px;color:inherit;height:0}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-feature-settings:normal;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-size:1em;font-variation-settings:normal}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{border-collapse:collapse;border-color:inherit;text-indent:0}button,input,optgroup,select,textarea{font-feature-settings:inherit;color:inherit;font-family:inherit;font-size:100%;font-variation-settings:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{color:#9ca3af;opacity:1}input::placeholder,textarea::placeholder{color:#9ca3af;opacity:1}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{height:auto;max-width:100%}[hidden]{display:none}*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }h1{font-size:1.5rem;line-height:2rem}h2{font-size:1.25rem}h2,h3{line-height:1.75rem}h3{font-size:1.125rem}button{background-color:#fff}.m-0{margin:0}.m-auto{margin:auto}.my-0{margin-bottom:0;margin-top:0}.my-4{margin-bottom:1rem;margin-top:1rem}.mt-2{margin-top:.5rem}.block{display:block}.flex{display:flex}.h-10{height:2.5rem}.w-3\\/4{width:75%}.w-full{width:100%}.min-w-10{min-width:2.5rem}.max-w-4xl{max-width:56rem}.scale-100{--tw-scale-x:1;--tw-scale-y:1;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.flex-row{flex-direction:row}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.justify-evenly{justify-content:space-evenly}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.rounded-md{border-radius:.375rem}.rounded-sm{border-radius:.125rem}.bg-slate-200{--tw-bg-opacity:1;background-color:rgb(226 232 240/var(--tw-bg-opacity))}.bg-stone-500{--tw-bg-opacity:1;background-color:rgb(120 113 108/var(--tw-bg-opacity))}.p-0{padding:0}.p-1{padding:.25rem}.p-2{padding:.5rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.px-8{padding-left:2rem;padding-right:2rem}.text-center{text-align:center}.text-start{text-align:start}.text-2xl{font-size:1.5rem;line-height:2rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-black{--tw-text-opacity:1;color:rgb(0 0 0/var(--tw-text-opacity))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity))}.decoration-inherit{text-decoration-color:inherit}.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}@media (min-width:768px){.md\\:w-3\\/4{width:75%}.md\\:flex-row{flex-direction:row}.md\\:flex-col{flex-direction:column}.md\\:justify-end{justify-content:flex-end}.md\\:justify-evenly{justify-content:space-evenly}.md\\:px-0{padding-left:0;padding-right:0}}@media (min-width:1024px){.lg\\:my-2{margin-bottom:.5rem;margin-top:.5rem}.lg\\:w-5\\/12{width:41.666667%}.lg\\:w-6\\/12{width:50%}.lg\\:w-full{width:100%}.lg\\:scale-110{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.lg\\:flex-row{flex-direction:row}}@media (min-width:1280px){.xl\\:my-4{margin-bottom:1rem;margin-top:1rem}.xl\\:scale-125{--tw-scale-x:1.25;--tw-scale-y:1.25;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}}";
 	styleInject(css_248z$1,{"insertAt":"top"});
 
 	var css_248z = "[data-tooltip]{cursor:help;display:inline-block;padding:4px;position:relative}[data-tooltip]:before{background:#000;border-radius:4px;color:#fff;content:attr(data-tooltip);display:none;font-size:14px;line-height:1.4;min-width:100px;padding:4px 8px;position:absolute;text-align:center}[data-tooltip-position=bottom]:before,[data-tooltip-position=top]:before{left:50%;transform:translateX(-50%)}[data-tooltip-position=left]:before,[data-tooltip-position=right]:before{top:50%;transform:translateY(-50%)}[data-tooltip-position=top]:before{bottom:100%;margin-bottom:6px}[data-tooltip-position=right]:before{left:100%;margin-left:6px}[data-tooltip-position=bottom]:before{margin-top:6px;top:100%}[data-tooltip-position=left]:before{margin-right:6px;right:100%}[data-tooltip]:after{border-color:transparent;border-style:solid;content:\"\";display:none;height:0;position:absolute;width:0}[data-tooltip-position=bottom]:after,[data-tooltip-position=top]:after{left:50%;margin-left:-6px}[data-tooltip-position=left]:after,[data-tooltip-position=right]:after{margin-top:-6px;top:50%}[data-tooltip-position=top]:after{border-top-color:#000;border-width:6px 6px 0;bottom:100%}[data-tooltip-position=right]:after{border-right-color:#000;border-width:6px 6px 6px 0;left:100%}[data-tooltip-position=bottom]:after{border-bottom-color:#000;border-width:0 6px 6px;top:100%}[data-tooltip-position=left]:after{border-left-color:#000;border-width:6px 0 6px 6px;right:100%}[data-tooltip]:hover:after,[data-tooltip]:hover:before{display:block;z-index:50}";
@@ -7877,7 +7877,6 @@
 	    var data = pako.inflate(inputArray, {
 	      to: 'string'
 	    });
-	    console.log(data);
 
 	    //Parse items into usable array
 	    const parser = new DOMParser();
@@ -7889,7 +7888,6 @@
 	        itemsArray.push(htmlItems[0].children[i]);
 	      }
 	    }
-	    console.log(itemsArray);
 	    return itemsArray;
 	  } catch (err) {
 	    return err;
@@ -8217,131 +8215,191 @@
 	  console.log(newItem);
 	  return newItem;
 	}
-	function translateModifiers(item, allModifiers, modArray, type) {
-	  try {
-	    modArray.map(mod => {
-	      //remove bracket
-	      let label = null;
-	      let modPreText = null;
-	      let modFilter = null;
-	      let modOption = null;
-	      if (type === "Implicit") {
-	        switch (true) {
-	          case /Allocates/.test(mod.text):
-	            {
-	              mod.filter = "enchant.stat_2954116742";
-	              mod.option = allModifiers[4].entries[4].option.options[allModifiers[4].entries[4].option.options.findIndex(i => i.text === mod.text.split('Allocates ')[1])].id;
-	              return null;
-	            }
-	          case /Small Passive Skills/.test(mod.text):
-	            {
-	              mod.filter = "enchant.stat_3948993189";
-	              mod.option = allModifiers[4].entries[1].option.options[allModifiers[4].entries[1].option.options.findIndex(i => i.text === mod.text.split(': ')[1])].id;
-	              return null;
-	            }
-	          case /crafted/.test(mod.text):
-	            label = "Enchant";
-	            break;
-	          default:
-	            label = "Implicit";
-	        }
-	      } else {
-	        switch (true) {
-	          case /Forbidden Flesh/.test(mod.text):
-	            {
-	              mod.filter = "explicit.stat_1190333629";
-	              mod.option = allModifiers[1].entries[1549].option.options[allModifiers[1].entries[1549].option.options.findIndex(i => i.text === mod.text.split('Allocates ')[1].split(" if")[0])].id;
-	              return null;
-	            }
-	          case /Forbidden Flame/.test(mod.text):
-	            {
-	              mod.filter = "explicit.stat_2460506030";
-	              mod.option = allModifiers[1].entries[981].option.options[allModifiers[1].entries[1549].option.options.findIndex(i => i.text === mod.text.split('Allocates ')[1].split(" if")[0])].id;
-	              return null;
-	            }
-	          case /Passives in radius of/.test(mod.text):
-	            {
-	              mod.filter = "explicit.stat_2422708892";
-	              mod.option = allModifiers[1].entries[1894].option.options[allModifiers[1].entries[1894].option.options.findIndex(i => i.text === mod.text.split('of ')[1].split(" can")[0])].id;
-	              return null;
-	            }
-	          case /Only affects Passives in/.test(mod.text):
-	            {
-	              mod.filter = "explicit.stat_3642528642";
-	              mod.option = allModifiers[1].entries[906].option.options[allModifiers[1].entries[906].option.options.findIndex(i => i.text === mod.text.split('in ')[1].split(" Ring")[0])].id;
-	              return null;
-	            }
-	          case /crafted/.test(mod.text):
-	            label = "Crafted";
-	            break;
-	          case /fractured/.test(mod.text):
-	            label = "Fractured";
-	            break;
-	          default:
-	            label = "Explicit";
-	        }
-	      }
-	      //split special if needed
-	      /}/.test(mod.text) ? modPreText = mod.text.split('}')[1] : modPreText = mod.text;
+	function translateModifiersRare(item, allItemTypes) {
+	  let modArray = item.explicits;
+	  const itemCategoryIndex = allItemTypes.findIndex(x => x.id === item.baseInfo.item_category);
+	  const itemBaseTypeIndex = allItemTypes[itemCategoryIndex].list.findIndex(x => x.base_type === item.baseInfo.base_type && (item.baseInfo.stat_type !== null ? x.stat_type === item.baseInfo.stat_type : true));
+	  modArray.map(mod => {
+	    let modPreText = null;
+	    let modFilter = null;
+	    let modInfluence = null;
 
-	      //retrieve mod value and explicit text
-	      const r = /-?(\d+)/g;
-	      let modValue = modPreText.match(r);
-	      let modText = modPreText.replace(r, "#").replace("-#", '#');
+	    //split special if needed
+	    switch (true) {
+	      case mod.text.includes('{crafted}'):
+	        modPreText = mod.text.split('}')[1];
+	        break;
+	      case mod.text.includes('{fractured}'):
+	        modPreText = mod.text.split('}')[1];
+	        break;
+	      default:
+	        modPreText = mod.text;
+	    }
 
-	      //exceptions
-	      const filteredAllModifiers = allModifiers.filter(lab => lab.label === label);
-	      let index = filteredAllModifiers[0].entries.findIndex(i => i.text.replace(r, "#") === modText);
-	      if (index === -1) {
-	        if (/Total Mana Cost/.test(modText)) {
-	          modText = modText.replace("# to", "+# to");
-	        } else if (/Small Passive Skill which grants nothing/.test(modText)) {
-	          modText = modText.replace("Skill which grants", "Skills which grant");
-	        } else if (/reduced/.test(modText)) {
-	          modText = modText.replace("reduced", "increased");
-	          modValue = modValue.map(v => '-' + v);
-	        } else if (/Devotion/.test(modText)) {
-	          modText = modText.replace("# Devotion", "10 Devotion");
-	          modValue.pop();
-	        } else if (/Charges/.test(modText)) {
-	          modText = modText.replace("Charges", "Charge");
-	        } else if (/to all Elemental Resistances/.test(modText)) {
-	          modText = modText.replace("#", "+#");
-	          modValue = modValue.map(v => '-' + v);
-	        } else {
-	          modText += ' (Local)';
-	        }
-	        index = filteredAllModifiers[0].entries.findIndex(i => i.text.replace(r, "#") === modText);
-	      }
+	    //retrieve mod value and explicit text
+	    const r = /-?(\d+)/g;
+	    let modValue = modPreText.match(r);
+	    let modText = modPreText.replace(r, "#").replaceAll('#.#', '#').replaceAll("##", "#").replaceAll('#-#', '#').replaceAll("(#)", '#').replaceAll('+#', "#").replaceAll('-#', '#').trimStart();
+	    const targetedExplicitArr = allItemTypes[itemCategoryIndex].list[itemBaseTypeIndex].explicits;
+	    let index = null;
+	    let typeLabel = null;
+	    for (let i = 0; i < targetedExplicitArr.length; i++) {
+	      index = targetedExplicitArr[i].affixes.findIndex(i => i.text === modText);
 	      if (index !== -1) {
-	        modFilter = filteredAllModifiers[0].entries[index].id;
-	        if (item.rarity !== "UNIQUE" && "influence" in filteredAllModifiers[0].entries[index]) {
-	          if (filteredAllModifiers[0].entries[index].influence.length < 3) {
-	            console.log(filteredAllModifiers[0].entries[index].influence);
-	            filteredAllModifiers[0].entries[index].influence.forEach(inf => item.influence.push(inf));
-	          }
+	        typeLabel = i;
+	        break;
+	      }
+	    }
+	    if (index === -1) {
+	      if (modText.includes('reduced')) {
+	        modText = modText.replace('reduced', 'increased');
+	      } else if (modText.includes('less')) {
+	        modText = modText.replace('less', 'more');
+	      } else {
+	        modText += ' (Local)';
+	      }
+	      for (let i = 0; i < targetedExplicitArr.length; i++) {
+	        index = targetedExplicitArr[i].affixes.findIndex(i => i.text === modText);
+	        if (index !== -1) {
+	          typeLabel = i;
+	          break;
 	        }
 	      }
+	    }
+	    if (index !== -1) {
+	      modFilter = targetedExplicitArr[typeLabel].affixes[index].trade;
+	      modInfluence = targetedExplicitArr[typeLabel].types;
+	      console.log('Trade found !: ', modFilter);
+	    } else {
+	      console.log("Not found: ", modText);
+	    }
+	    mod.influence = modInfluence;
+	    mod.filter = modFilter;
+	    mod.value = modValue;
+	  });
+	}
+	function translateModifiers(item, allModifiers, type) {
+	  let modArray = item[`${type}s`];
+	  modArray.map(mod => {
+	    //remove bracket
+	    let label = null;
+	    let modPreText = null;
+	    let modFilter = null;
+	    let modOption = null;
+	    if (type === "Implicit") {
+	      switch (true) {
+	        case /Allocates/.test(mod.text):
+	          {
+	            mod.filter = "enchant.stat_2954116742";
+	            mod.option = allModifiers[4].entries[4].option.options[allModifiers[4].entries[4].option.options.findIndex(i => i.text === mod.text.split('Allocates ')[1])].id;
+	            return null;
+	          }
+	        case /Small Passive Skills/.test(mod.text):
+	          {
+	            mod.filter = "enchant.stat_3948993189";
+	            mod.option = allModifiers[4].entries[1].option.options[allModifiers[4].entries[1].option.options.findIndex(i => i.text === mod.text.split(': ')[1])].id;
+	            return null;
+	          }
+	        case /crafted/.test(mod.text):
+	          label = "Enchant";
+	          break;
+	        default:
+	          label = "Implicit";
+	      }
+	    } else {
+	      switch (true) {
+	        case /Forbidden Flesh/.test(mod.text):
+	          {
+	            mod.filter = "explicit.stat_1190333629";
+	            mod.option = allModifiers[1].entries[1549].option.options[allModifiers[1].entries[1549].option.options.findIndex(i => i.text === mod.text.split('Allocates ')[1].split(" if")[0])].id;
+	            return null;
+	          }
+	        case /Forbidden Flame/.test(mod.text):
+	          {
+	            mod.filter = "explicit.stat_2460506030";
+	            mod.option = allModifiers[1].entries[981].option.options[allModifiers[1].entries[1549].option.options.findIndex(i => i.text === mod.text.split('Allocates ')[1].split(" if")[0])].id;
+	            return null;
+	          }
+	        case /Passives in radius of/.test(mod.text):
+	          {
+	            mod.filter = "explicit.stat_2422708892";
+	            mod.option = allModifiers[1].entries[1894].option.options[allModifiers[1].entries[1894].option.options.findIndex(i => i.text === mod.text.split('of ')[1].split(" can")[0])].id;
+	            return null;
+	          }
+	        case /Only affects Passives in/.test(mod.text):
+	          {
+	            mod.filter = "explicit.stat_3642528642";
+	            mod.option = allModifiers[1].entries[906].option.options[allModifiers[1].entries[906].option.options.findIndex(i => i.text === mod.text.split('in ')[1].split(" Ring")[0])].id;
+	            return null;
+	          }
+	        case /crafted/.test(mod.text):
+	          label = "Crafted";
+	          break;
+	        case /fractured/.test(mod.text):
+	          label = "Fractured";
+	          break;
+	        default:
+	          label = "Explicit";
+	      }
+	    }
+	    //split special if needed
+	    /}/.test(mod.text) ? modPreText = mod.text.split('}')[1] : modPreText = mod.text;
 
-	      //debug
-	      /* if(modFilter === null){
-	          console.log(mod);
-	          console.log("Mod label: ",label);
-	          console.log("Mod text before traitment: ", modPreText)
-	          console.log('Mod value: ', modValue);
-	          console.log("Searching in: ",filteredAllModifiers[0].id);
-	          console.log("Found in index: ",index);
-	          console.log("Mod Filter: ", modFilter);
-	          console.log("Mod Options: ", modOption);
-	      } */
+	    //retrieve mod value and explicit text
+	    const r = /-?(\d+)/g;
+	    let modValue = modPreText.match(r);
+	    let modText = modPreText.replace(r, "#").replaceAll('#.#', '#').replaceAll("##", "#").replaceAll('#-#', '#').replaceAll("(#)", '#').replaceAll('+#', "#").replaceAll('-#', '#').trimStart();
 
-	      mod.filter = modFilter;
-	      mod.value = modValue;
-	      mod.option = modOption;
-	    });
-	  } catch (err) {
-	    console.log(err);
-	  }
+	    //exceptions
+	    const filteredAllModifiers = allModifiers.filter(lab => lab.label === label);
+	    let index = filteredAllModifiers[0].entries.findIndex(i => i.text.replace(r, "#") === modText);
+	    if (index === -1) {
+	      if (/Total Mana Cost/.test(modText)) {
+	        modText = modText.replace("# to", "+# to");
+	      } else if (/Small Passive Skill which grants nothing/.test(modText)) {
+	        modText = modText.replace("Skill which grants", "Skills which grant");
+	      } else if (/reduced/.test(modText)) {
+	        modText = modText.replace("reduced", "increased");
+	        modValue = modValue.map(v => '-' + v);
+	      } else if (/Devotion/.test(modText)) {
+	        modText = modText.replace("# Devotion", "10 Devotion");
+	        modValue.pop();
+	      } else if (/Charges/.test(modText)) {
+	        modText = modText.replace("Charges", "Charge");
+	      } else if (/to all Elemental Resistances/.test(modText)) {
+	        modText = modText.replace("#", "+#");
+	        modValue = modValue.map(v => '-' + v);
+	      } else {
+	        modText += ' (Local)';
+	      }
+	      index = filteredAllModifiers[0].entries.findIndex(i => i.text.replace(r, "#") === modText);
+	    }
+	    if (index !== -1) {
+	      modFilter = filteredAllModifiers[0].entries[index].id;
+	      if (item.rarity !== "UNIQUE" && "influence" in filteredAllModifiers[0].entries[index]) {
+	        if (filteredAllModifiers[0].entries[index].influence.length < 3) {
+	          console.log(filteredAllModifiers[0].entries[index].influence);
+	          filteredAllModifiers[0].entries[index].influence.forEach(inf => item.influence.push(inf));
+	        }
+	      }
+	    }
+
+	    //debug
+	    /* if(modFilter === null){
+	        console.log(mod);
+	        console.log("Mod label: ",label);
+	        console.log("Mod text before traitment: ", modPreText)
+	        console.log('Mod value: ', modValue);
+	        console.log("Searching in: ",filteredAllModifiers[0].id);
+	        console.log("Found in index: ",index);
+	        console.log("Mod Filter: ", modFilter);
+	        console.log("Mod Options: ", modOption);
+	    } */
+
+	    mod.filter = modFilter;
+	    mod.value = modValue;
+	    mod.option = modOption;
+	  });
 	}
 
 	function generateTradeUrl(tradeIlv, tradeLinks, tradeCorrupted, tradeDefence, tradeImplicits, tradeExplicits, item, league) {
@@ -9101,8 +9159,8 @@
 
 	    //Translate mods for filter
 	    tempItemArray.map(item => {
-	      translateModifiers(item, allModifiers, item.implicits, 'Implicit');
-	      translateModifiers(item, allModifiers, item.explicits, 'Explicit');
+	      translateModifiers(item, allModifiers, 'implicit');
+	      item.rarity === "UNIQUE" ? translateModifiers(item, allModifiers, 'explicit') : translateModifiersRare(item, allItemData);
 	    });
 	    buildItemArray = addOrder(tempItemArray);
 	    setTimeout(() => {

@@ -13,7 +13,6 @@ export function codeDecompress(code){
         //Inflate code
         const inputArray = Uint8Array.from([...compressedCode].map(v => v.charCodeAt(0)));
         var data = pako.inflate(inputArray, { to: 'string'});
-        console.log(data);
     
         //Parse items into usable array
         const parser = new DOMParser();
@@ -25,7 +24,6 @@ export function codeDecompress(code){
                 itemsArray.push(htmlItems[0].children[i]);
             }
         }
-        console.log(itemsArray);
 
         return itemsArray;
     }catch(err){

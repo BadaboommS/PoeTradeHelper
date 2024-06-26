@@ -317,116 +317,177 @@ export function createItemObj(item, allItemData){
     return newItem
 }
 
-export function translateModifiers(item, allModifiers, modArray, type){
-    try{
-        modArray.map((mod)=>{
-            //remove bracket
-            let label = null;
-            let modPreText = null;
-            let modFilter = null;
-            let modOption = null;
+export function translateModifiersRare(item, allItemTypes){
+    let modArray = item.explicits;
+    const itemCategoryIndex = allItemTypes.findIndex(x => x.id === item.baseInfo.item_category);
+    const itemBaseTypeIndex = allItemTypes[itemCategoryIndex].list.findIndex(x => (x.base_type === item.baseInfo.base_type) && (item.baseInfo.stat_type !== null? x.stat_type === item.baseInfo.stat_type : true));
 
-            if(type === "Implicit"){
-                switch(true){
-                    case (/Allocates/.test(mod.text)): {
-                        mod.filter = "enchant.stat_2954116742";
-                        mod.option = allModifiers[4].entries[4].option.options[allModifiers[4].entries[4].option.options.findIndex(i => i.text === mod.text.split('Allocates ')[1])].id;
-                        return null;
-                    }
-                    case (/Small Passive Skills/.test(mod.text)): {
-                        mod.filter = "enchant.stat_3948993189";
-                        mod.option = allModifiers[4].entries[1].option.options[allModifiers[4].entries[1].option.options.findIndex(i => i.text === mod.text.split(': ')[1])].id;
-                        return null;
-                    }
-                    case (/crafted/.test(mod.text)): label = "Enchant"; break;
-                    default: label = "Implicit";
-                }
-            }else{
-                switch(true){
-                    case (/Forbidden Flesh/.test(mod.text)): {
-                        mod.filter = "explicit.stat_1190333629";
-                        mod.option = allModifiers[1].entries[1549].option.options[allModifiers[1].entries[1549].option.options.findIndex(i => i.text === mod.text.split('Allocates ')[1].split(" if")[0])].id;
-                        return null;
-                    }
-                    case (/Forbidden Flame/.test(mod.text)): {
-                        mod.filter = "explicit.stat_2460506030";
-                        mod.option = allModifiers[1].entries[981].option.options[allModifiers[1].entries[1549].option.options.findIndex(i => i.text === mod.text.split('Allocates ')[1].split(" if")[0])].id;
-                        return null;
-                    }
-                    case (/Passives in radius of/.test(mod.text)): {
-                        mod.filter = "explicit.stat_2422708892";
-                        mod.option = allModifiers[1].entries[1894].option.options[allModifiers[1].entries[1894].option.options.findIndex(i => i.text === mod.text.split('of ')[1].split(" can")[0])].id;
-                       return null;
-                    }
-                    case (/Only affects Passives in/.test(mod.text)): {
-                        mod.filter = "explicit.stat_3642528642";
-                        mod.option = allModifiers[1].entries[906].option.options[allModifiers[1].entries[906].option.options.findIndex(i => i.text === mod.text.split('in ')[1].split(" Ring")[0])].id;
-                        return null;
-                    }
-                    case (/crafted/.test(mod.text)): label = "Crafted"; break;
-                    case (/fractured/.test(mod.text)): label = "Fractured"; break;
-                    default: label = "Explicit";
-                }
-            }
-            //split special if needed
-            /}/.test(mod.text)? modPreText = mod.text.split('}')[1] : modPreText = mod.text;
+    modArray.map((mod) => {
+        let specialMod = null;
+        let modPreText = null;
+        let modFilter = null;
+        let modInfluence = null;
+        let modOption = null;
 
-            //retrieve mod value and explicit text
-            const r = /-?(\d+)/g;
-            let modValue = modPreText.match(r);
-            let modText = modPreText.replace(r,"#").replaceAll('#.#', '#').replaceAll("##", "#").replaceAll('#-#', '#').replaceAll("(#)", '#').replaceAll('+#', "#").replaceAll('-#', '#').trimStart();
+        //split special if needed
+        switch(true){
+            case(mod.text.includes('{crafted}')): specialMod = 'crafted'; modPreText = mod.text.split('}')[1]; break;
+            case(mod.text.includes('{fractured}')): specialMod = 'fractured'; modPreText = mod.text.split('}')[1]; break;
+            default: modPreText = mod.text;
+        }
 
-            //exceptions
-            const filteredAllModifiers = allModifiers.filter(lab => lab.label === label);
-            let index = filteredAllModifiers[0].entries.findIndex(i => i.text.replace(r,"#") === modText);
-            if(index === -1){
-                if(/Total Mana Cost/.test(modText)){
-                    modText = modText.replace("# to", "+# to");
-                }else if(/Small Passive Skill which grants nothing/.test(modText)){
-                    modText = modText.replace("Skill which grants", "Skills which grant");
-                }else if(/reduced/.test(modText)){
-                    modText = modText.replace("reduced", "increased");
-                    modValue = modValue.map(v => '-' + v);
-                }else if(/Devotion/.test(modText)){
-                    modText = modText.replace("# Devotion", "10 Devotion");
-                    modValue.pop();
-                }else if(/Charges/.test(modText)){
-                    modText = modText.replace("Charges", "Charge");
-                }else if(/to all Elemental Resistances/.test(modText)){
-                    modText = modText.replace("#", "+#");
-                    modValue = modValue.map(v => '-' + v);
-                }else{
-                    modText += ' (Local)';
-                }
-                index = filteredAllModifiers[0].entries.findIndex(i => i.text.replace(r,"#") === modText); 
-            }
+        //retrieve mod value and explicit text
+        const r = /-?(\d+)/g;
+        let modValue = modPreText.match(r);
+        let modText = modPreText.replace(r,"#").replaceAll('#.#', '#').replaceAll("##", "#").replaceAll('#-#', '#').replaceAll("(#)", '#').replaceAll('+#', "#").replaceAll('-#', '#').trimStart();
+
+        const targetedExplicitArr = allItemTypes[itemCategoryIndex].list[itemBaseTypeIndex].explicits;
+
+        let index = null;
+        let typeLabel = null;
+        for(let i = 0; i < targetedExplicitArr.length; i++){
+            index = targetedExplicitArr[i].affixes.findIndex(i => i.text === modText);
             if(index !== -1){
-                modFilter = filteredAllModifiers[0].entries[index].id;
-                if((item.rarity !== "UNIQUE") && ("influence" in filteredAllModifiers[0].entries[index])){
-                    if(filteredAllModifiers[0].entries[index].influence.length < 3){
-                        console.log(filteredAllModifiers[0].entries[index].influence);
-                        filteredAllModifiers[0].entries[index].influence.forEach((inf) => item.influence.push(inf))
-                    }
+                typeLabel = i;
+                break;
+            }
+        }
+        if(index === -1){
+            if(modText.includes('reduced')){
+                modText = modText.replace('reduced', 'increased');
+            }else if(modText.includes('less')){
+                modText = modText.replace('less', 'more');
+            }else{
+                modText += ' (Local)';
+            }
+            for(let i = 0; i < targetedExplicitArr.length; i++){
+                index = targetedExplicitArr[i].affixes.findIndex(i => i.text === modText);
+                if(index !== -1){
+                    typeLabel = i;
+                    break;
                 }
             }
+        }
+        if(index !== -1){
+            modFilter = targetedExplicitArr[typeLabel].affixes[index].trade;
+            modInfluence = targetedExplicitArr[typeLabel].types;
+            console.log('Trade found !: ', modFilter);
+        }else{
+            console.log("Not found: ", modText)
+        }
+        mod.influence = modInfluence;
+        mod.filter = modFilter;
+        mod.value = modValue;
+    })
+}
 
-            //debug
-            /* if(modFilter === null){
-                console.log(mod);
-                console.log("Mod label: ",label);
-                console.log("Mod text before traitment: ", modPreText)
-                console.log('Mod value: ', modValue);
-                console.log("Searching in: ",filteredAllModifiers[0].id);
-                console.log("Found in index: ",index);
-                console.log("Mod Filter: ", modFilter);
-                console.log("Mod Options: ", modOption);
-            } */
+export function translateModifiers(item, allModifiers, type){
+    let modArray = item[`${type}s`];
+    modArray.map((mod) =>{
+        //remove bracket
+        let label = null;
+        let modPreText = null;
+        let modFilter = null;
+        let modOption = null;
 
-            mod.filter = modFilter;
-            mod.value = modValue;
-            mod.option = modOption;
-        })
-    }catch(err){
-        console.log(err);
-    }
+        if(type === "Implicit"){
+            switch(true){
+                case (/Allocates/.test(mod.text)): {
+                    mod.filter = "enchant.stat_2954116742";
+                    mod.option = allModifiers[4].entries[4].option.options[allModifiers[4].entries[4].option.options.findIndex(i => i.text === mod.text.split('Allocates ')[1])].id;
+                    return null;
+                }
+                case (/Small Passive Skills/.test(mod.text)): {
+                    mod.filter = "enchant.stat_3948993189";
+                    mod.option = allModifiers[4].entries[1].option.options[allModifiers[4].entries[1].option.options.findIndex(i => i.text === mod.text.split(': ')[1])].id;
+                    return null;
+                }
+                case (/crafted/.test(mod.text)): label = "Enchant"; break;
+                default: label = "Implicit";
+            }
+        }else{
+            switch(true){
+                case (/Forbidden Flesh/.test(mod.text)): {
+                    mod.filter = "explicit.stat_1190333629";
+                    mod.option = allModifiers[1].entries[1549].option.options[allModifiers[1].entries[1549].option.options.findIndex(i => i.text === mod.text.split('Allocates ')[1].split(" if")[0])].id;
+                    return null;
+                }
+                case (/Forbidden Flame/.test(mod.text)): {
+                    mod.filter = "explicit.stat_2460506030";
+                    mod.option = allModifiers[1].entries[981].option.options[allModifiers[1].entries[1549].option.options.findIndex(i => i.text === mod.text.split('Allocates ')[1].split(" if")[0])].id;
+                    return null;
+                }
+                case (/Passives in radius of/.test(mod.text)): {
+                    mod.filter = "explicit.stat_2422708892";
+                    mod.option = allModifiers[1].entries[1894].option.options[allModifiers[1].entries[1894].option.options.findIndex(i => i.text === mod.text.split('of ')[1].split(" can")[0])].id;
+                    return null;
+                }
+                case (/Only affects Passives in/.test(mod.text)): {
+                    mod.filter = "explicit.stat_3642528642";
+                    mod.option = allModifiers[1].entries[906].option.options[allModifiers[1].entries[906].option.options.findIndex(i => i.text === mod.text.split('in ')[1].split(" Ring")[0])].id;
+                    return null;
+                }
+                case (/crafted/.test(mod.text)): label = "Crafted"; break;
+                case (/fractured/.test(mod.text)): label = "Fractured"; break;
+                default: label = "Explicit";
+            }
+        }
+        //split special if needed
+        /}/.test(mod.text)? modPreText = mod.text.split('}')[1] : modPreText = mod.text;
+
+        //retrieve mod value and explicit text
+        const r = /-?(\d+)/g;
+        let modValue = modPreText.match(r);
+        let modText = modPreText.replace(r,"#").replaceAll('#.#', '#').replaceAll("##", "#").replaceAll('#-#', '#').replaceAll("(#)", '#').replaceAll('+#', "#").replaceAll('-#', '#').trimStart();
+
+        //exceptions
+        const filteredAllModifiers = allModifiers.filter(lab => lab.label === label);
+        let index = filteredAllModifiers[0].entries.findIndex(i => i.text.replace(r,"#") === modText);
+        if(index === -1){
+            if(/Total Mana Cost/.test(modText)){
+                modText = modText.replace("# to", "+# to");
+            }else if(/Small Passive Skill which grants nothing/.test(modText)){
+                modText = modText.replace("Skill which grants", "Skills which grant");
+            }else if(/reduced/.test(modText)){
+                modText = modText.replace("reduced", "increased");
+                modValue = modValue.map(v => '-' + v);
+            }else if(/Devotion/.test(modText)){
+                modText = modText.replace("# Devotion", "10 Devotion");
+                modValue.pop();
+            }else if(/Charges/.test(modText)){
+                modText = modText.replace("Charges", "Charge");
+            }else if(/to all Elemental Resistances/.test(modText)){
+                modText = modText.replace("#", "+#");
+                modValue = modValue.map(v => '-' + v);
+            }else{
+                modText += ' (Local)';
+            }
+            index = filteredAllModifiers[0].entries.findIndex(i => i.text.replace(r,"#") === modText); 
+        }
+        if(index !== -1){
+            modFilter = filteredAllModifiers[0].entries[index].id;
+            if((item.rarity !== "UNIQUE") && ("influence" in filteredAllModifiers[0].entries[index])){
+                if(filteredAllModifiers[0].entries[index].influence.length < 3){
+                    console.log(filteredAllModifiers[0].entries[index].influence);
+                    filteredAllModifiers[0].entries[index].influence.forEach((inf) => item.influence.push(inf))
+                }
+            }
+        }
+
+        //debug
+        /* if(modFilter === null){
+            console.log(mod);
+            console.log("Mod label: ",label);
+            console.log("Mod text before traitment: ", modPreText)
+            console.log('Mod value: ', modValue);
+            console.log("Searching in: ",filteredAllModifiers[0].id);
+            console.log("Found in index: ",index);
+            console.log("Mod Filter: ", modFilter);
+            console.log("Mod Options: ", modOption);
+        } */
+
+        mod.filter = modFilter;
+        mod.value = modValue;
+        mod.option = modOption;
+    })
 }

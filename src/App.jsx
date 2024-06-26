@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 //utils
 import { fetchData, codeDecompress, isIterable } from './utils/generalUtils';
-import { createItemObj, addOrder, translateModifiers } from './utils/itemCreateUtils';
+import { createItemObj, addOrder, translateModifiers, translateModifiersRare } from './utils/itemCreateUtils';
 //components
 import ItemFeed from './components/ItemFeed';
 import InputCode from './components/InputCode';
@@ -55,8 +55,8 @@ export function App() {
       
       //Translate mods for filter
       tempItemArray.map((item) => {
-         translateModifiers(item, allModifiers, item.implicits, 'Implicit');
-         translateModifiers(item, allModifiers, item.explicits, 'Explicit');
+         translateModifiers(item, allModifiers, 'implicit');
+         item.rarity === "UNIQUE"? translateModifiers(item, allModifiers, 'explicit') : translateModifiersRare(item, allItemData);
       })
       buildItemArray = addOrder(tempItemArray);
       
