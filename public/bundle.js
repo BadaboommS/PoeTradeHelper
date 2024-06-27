@@ -7855,7 +7855,7 @@
 	  }
 	}
 
-	var css_248z$1 = "/*! tailwindcss v3.4.3 | MIT License | https://tailwindcss.com*/*,:after,:before{border:0 solid #e5e7eb;box-sizing:border-box}:after,:before{--tw-content:\"\"}:host,html{-webkit-text-size-adjust:100%;font-feature-settings:normal;-webkit-tap-highlight-color:transparent;font-family:ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-variation-settings:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4}body{line-height:inherit;margin:0}hr{border-top-width:1px;color:inherit;height:0}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-feature-settings:normal;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-size:1em;font-variation-settings:normal}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{border-collapse:collapse;border-color:inherit;text-indent:0}button,input,optgroup,select,textarea{font-feature-settings:inherit;color:inherit;font-family:inherit;font-size:100%;font-variation-settings:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{color:#9ca3af;opacity:1}input::placeholder,textarea::placeholder{color:#9ca3af;opacity:1}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{height:auto;max-width:100%}[hidden]{display:none}*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }h1{font-size:1.5rem;line-height:2rem}h2{font-size:1.25rem}h2,h3{line-height:1.75rem}h3{font-size:1.125rem}button{background-color:#fff}.m-0{margin:0}.m-auto{margin:auto}.my-0{margin-bottom:0;margin-top:0}.my-4{margin-bottom:1rem;margin-top:1rem}.mt-2{margin-top:.5rem}.block{display:block}.flex{display:flex}.h-10{height:2.5rem}.w-3\\/4{width:75%}.w-full{width:100%}.min-w-10{min-width:2.5rem}.max-w-4xl{max-width:56rem}.scale-100{--tw-scale-x:1;--tw-scale-y:1;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.flex-row{flex-direction:row}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.justify-evenly{justify-content:space-evenly}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.rounded-md{border-radius:.375rem}.rounded-sm{border-radius:.125rem}.bg-slate-200{--tw-bg-opacity:1;background-color:rgb(226 232 240/var(--tw-bg-opacity))}.bg-stone-500{--tw-bg-opacity:1;background-color:rgb(120 113 108/var(--tw-bg-opacity))}.p-0{padding:0}.p-1{padding:.25rem}.p-2{padding:.5rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.px-8{padding-left:2rem;padding-right:2rem}.text-center{text-align:center}.text-start{text-align:start}.text-2xl{font-size:1.5rem;line-height:2rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-black{--tw-text-opacity:1;color:rgb(0 0 0/var(--tw-text-opacity))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity))}.decoration-inherit{text-decoration-color:inherit}.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}@media (min-width:768px){.md\\:w-3\\/4{width:75%}.md\\:flex-row{flex-direction:row}.md\\:flex-col{flex-direction:column}.md\\:justify-end{justify-content:flex-end}.md\\:justify-evenly{justify-content:space-evenly}.md\\:px-0{padding-left:0;padding-right:0}}@media (min-width:1024px){.lg\\:my-2{margin-bottom:.5rem;margin-top:.5rem}.lg\\:w-5\\/12{width:41.666667%}.lg\\:w-6\\/12{width:50%}.lg\\:w-full{width:100%}.lg\\:scale-110{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.lg\\:flex-row{flex-direction:row}}@media (min-width:1280px){.xl\\:my-4{margin-bottom:1rem;margin-top:1rem}.xl\\:scale-125{--tw-scale-x:1.25;--tw-scale-y:1.25;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}}";
+	var css_248z$1 = "/*! tailwindcss v3.4.3 | MIT License | https://tailwindcss.com*/*,:after,:before{border:0 solid #e5e7eb;box-sizing:border-box}:after,:before{--tw-content:\"\"}:host,html{-webkit-text-size-adjust:100%;font-feature-settings:normal;-webkit-tap-highlight-color:transparent;font-family:ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-variation-settings:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4}body{line-height:inherit;margin:0}hr{border-top-width:1px;color:inherit;height:0}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-feature-settings:normal;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-size:1em;font-variation-settings:normal}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{border-collapse:collapse;border-color:inherit;text-indent:0}button,input,optgroup,select,textarea{font-feature-settings:inherit;color:inherit;font-family:inherit;font-size:100%;font-variation-settings:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{color:#9ca3af;opacity:1}input::placeholder,textarea::placeholder{color:#9ca3af;opacity:1}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{height:auto;max-width:100%}[hidden]{display:none}*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }h1{font-size:1.5rem;line-height:2rem}h2{font-size:1.25rem}h2,h3{line-height:1.75rem}h3{font-size:1.125rem}button{background-color:#fff}.m-0{margin:0}.m-auto{margin:auto}.my-0{margin-bottom:0;margin-top:0}.my-4{margin-bottom:1rem;margin-top:1rem}.my-2{margin-bottom:.5rem}.mt-2,.my-2{margin-top:.5rem}.block{display:block}.flex{display:flex}.h-10{height:2.5rem}.h-fit{height:-moz-fit-content;height:fit-content}.w-3\\/4{width:75%}.w-full{width:100%}.min-w-10{min-width:2.5rem}.max-w-4xl{max-width:56rem}.scale-100{--tw-scale-x:1;--tw-scale-y:1;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.flex-row{flex-direction:row}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.justify-evenly{justify-content:space-evenly}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.rounded-md{border-radius:.375rem}.rounded-sm{border-radius:.125rem}.bg-slate-200{--tw-bg-opacity:1;background-color:rgb(226 232 240/var(--tw-bg-opacity))}.bg-stone-500{--tw-bg-opacity:1;background-color:rgb(120 113 108/var(--tw-bg-opacity))}.p-0{padding:0}.p-1{padding:.25rem}.p-2{padding:.5rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.px-8{padding-left:2rem;padding-right:2rem}.text-center{text-align:center}.text-start{text-align:start}.text-2xl{font-size:1.5rem;line-height:2rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-black{--tw-text-opacity:1;color:rgb(0 0 0/var(--tw-text-opacity))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity))}.decoration-inherit{text-decoration-color:inherit}.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}@media (min-width:768px){.md\\:w-3\\/4{width:75%}.md\\:flex-row{flex-direction:row}.md\\:flex-col{flex-direction:column}.md\\:justify-end{justify-content:flex-end}.md\\:justify-evenly{justify-content:space-evenly}.md\\:px-0{padding-left:0;padding-right:0}}@media (min-width:1024px){.lg\\:my-2{margin-bottom:.5rem;margin-top:.5rem}.lg\\:w-5\\/12{width:41.666667%}.lg\\:w-6\\/12{width:50%}.lg\\:w-full{width:100%}.lg\\:scale-110{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.lg\\:flex-row{flex-direction:row}}@media (min-width:1280px){.xl\\:my-4{margin-bottom:1rem;margin-top:1rem}.xl\\:scale-125{--tw-scale-x:1.25;--tw-scale-y:1.25;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}}";
 	styleInject(css_248z$1,{"insertAt":"top"});
 
 	var css_248z = "[data-tooltip]{cursor:help;display:inline-block;padding:4px;position:relative}[data-tooltip]:before{background:#000;border-radius:4px;color:#fff;content:attr(data-tooltip);display:none;font-size:14px;line-height:1.4;min-width:100px;padding:4px 8px;position:absolute;text-align:center}[data-tooltip-position=bottom]:before,[data-tooltip-position=top]:before{left:50%;transform:translateX(-50%)}[data-tooltip-position=left]:before,[data-tooltip-position=right]:before{top:50%;transform:translateY(-50%)}[data-tooltip-position=top]:before{bottom:100%;margin-bottom:6px}[data-tooltip-position=right]:before{left:100%;margin-left:6px}[data-tooltip-position=bottom]:before{margin-top:6px;top:100%}[data-tooltip-position=left]:before{margin-right:6px;right:100%}[data-tooltip]:after{border-color:transparent;border-style:solid;content:\"\";display:none;height:0;position:absolute;width:0}[data-tooltip-position=bottom]:after,[data-tooltip-position=top]:after{left:50%;margin-left:-6px}[data-tooltip-position=left]:after,[data-tooltip-position=right]:after{margin-top:-6px;top:50%}[data-tooltip-position=top]:after{border-top-color:#000;border-width:6px 6px 0;bottom:100%}[data-tooltip-position=right]:after{border-right-color:#000;border-width:6px 6px 6px 0;left:100%}[data-tooltip-position=bottom]:after{border-bottom-color:#000;border-width:0 6px 6px;top:100%}[data-tooltip-position=left]:after{border-left-color:#000;border-width:6px 0 6px 6px;right:100%}[data-tooltip]:hover:after,[data-tooltip]:hover:before{display:block;z-index:50}";
@@ -7996,6 +7996,15 @@
 	    }
 	  }
 	  return explicit;
+	}
+	function formatExplicit(explicit) {
+	  const r = /-?(\d+)/g;
+	  const modValue = explicit.match(r);
+	  const modText = explicit.replace(r, "#").replaceAll('#.#', '#').replaceAll("##", "#").replaceAll('#-#', '#').replaceAll("(#)", '#').replaceAll('+#', "#").replaceAll('-#', '#').trimStart();
+	  return {
+	    modValue,
+	    modText
+	  };
 	}
 	function addOrder(buildItemArray) {
 	  let tempBuildItemArray = [];
@@ -8220,16 +8229,20 @@
 	  const itemCategoryIndex = allItemTypes.findIndex(x => x.id === item.baseInfo.item_category);
 	  const itemBaseTypeIndex = allItemTypes[itemCategoryIndex].list.findIndex(x => x.base_type === item.baseInfo.base_type && (item.baseInfo.stat_type !== null ? x.stat_type === item.baseInfo.stat_type : true));
 	  modArray.map(mod => {
+	    let specialMod = null;
 	    let modPreText = null;
 	    let modFilter = null;
 	    let modInfluence = null;
+	    let modOption = null;
 
 	    //split special if needed
 	    switch (true) {
 	      case mod.text.includes('{crafted}'):
+	        specialMod = 'crafted';
 	        modPreText = mod.text.split('}')[1];
 	        break;
 	      case mod.text.includes('{fractured}'):
+	        specialMod = 'fractured';
 	        modPreText = mod.text.split('}')[1];
 	        break;
 	      default:
@@ -8237,56 +8250,114 @@
 	    }
 
 	    //retrieve mod value and explicit text
-	    const r = /-?(\d+)/g;
-	    let modValue = modPreText.match(r);
-	    let modText = modPreText.replace(r, "#").replaceAll('#.#', '#').replaceAll("##", "#").replaceAll('#-#', '#').replaceAll("(#)", '#').replaceAll('+#', "#").replaceAll('-#', '#').trimStart();
-	    const targetedExplicitArr = allItemTypes[itemCategoryIndex].list[itemBaseTypeIndex].explicits;
+	    let {
+	      modValue,
+	      modText
+	    } = formatExplicit(modPreText);
 	    let index = null;
-	    let typeLabel = null;
-	    for (let i = 0; i < targetedExplicitArr.length; i++) {
-	      index = targetedExplicitArr[i].affixes.findIndex(i => i.text === modText);
+	    const targetedExplicitArr = allItemTypes[itemCategoryIndex].list[itemBaseTypeIndex].explicits;
+	    if (specialMod === "fractured") {
+	      modInfluence = "fractured";
+	      index = allItemTypes[5].affixes.findIndex(x => x.text === modText);
+	      if (index === -1) {
+	        modFilter += ' (Local)';
+	        index = allItemTypes[5].affixes.findIndex(x => x.text === modText);
+	      }
 	      if (index !== -1) {
-	        typeLabel = i;
-	        break;
-	      }
-	    }
-	    if (index === -1) {
-	      if (modText.includes('reduced')) {
-	        modText = modText.replace('reduced', 'increased');
-	      } else if (modText.includes('less')) {
-	        modText = modText.replace('less', 'more');
+	        modFilter = allItemTypes[5].affixes[index].trade;
 	      } else {
-	        modText += ' (Local)';
+	        modFilter = null;
 	      }
+	    } else if (specialMod === "crafted") {
+	      modInfluence = "crafted";
+	      index = targetedExplicitArr[9].affixes.findIndex(x => x.text === modText);
+	      if (index === -1) {
+	        modText += ' (Local)';
+	        index = targetedExplicitArr[9].affixes.findIndex(x => x.text === modText);
+	      }
+	      if (index !== -1) {
+	        modFilter = targetedExplicitArr[9].affixes[index].trade;
+	      } else {
+	        modFilter = null;
+	      }
+	    } else {
 	      for (let i = 0; i < targetedExplicitArr.length; i++) {
-	        index = targetedExplicitArr[i].affixes.findIndex(i => i.text === modText);
+	        index = targetedExplicitArr[i].affixes.findIndex(x => x.text === modText);
 	        if (index !== -1) {
-	          typeLabel = i;
+	          modFilter = targetedExplicitArr[i].affixes[index].trade;
+	          modInfluence = targetedExplicitArr[i].types;
 	          break;
 	        }
 	      }
+	      if (index === -1) {
+	        if (modText.includes('reduced')) {
+	          modText = modText.replace('reduced', 'increased');
+	          for (let i = 0; i < targetedExplicitArr.length; i++) {
+	            index = targetedExplicitArr[i].affixes.findIndex(x => x.text === modText);
+	            if (index !== -1) {
+	              modFilter = targetedExplicitArr[i].affixes[index].trade;
+	              modInfluence = targetedExplicitArr[i].types;
+	              break;
+	            }
+	          }
+	        } else if (modText.includes('less')) {
+	          modText = modText.replace('less', 'more');
+	          for (let i = 0; i < targetedExplicitArr.length; i++) {
+	            index = targetedExplicitArr[i].affixes.findIndex(x => x.text === modText);
+	            if (index !== -1) {
+	              modFilter = targetedExplicitArr[i].affixes[index].trade;
+	              modInfluence = targetedExplicitArr[i].types;
+	              break;
+	            }
+	          }
+	        } else {
+	          modText += ' (Local)';
+	          for (let i = 0; i < targetedExplicitArr.length; i++) {
+	            index = targetedExplicitArr[i].affixes.findIndex(x => x.text === modText);
+	            if (index !== -1) {
+	              modFilter = targetedExplicitArr[i].affixes[index].trade;
+	              modInfluence = targetedExplicitArr[i].types;
+	              break;
+	            }
+	          }
+	        }
+	      }
 	    }
-	    if (index !== -1) {
-	      modFilter = targetedExplicitArr[typeLabel].affixes[index].trade;
-	      modInfluence = targetedExplicitArr[typeLabel].types;
-	      console.log('Trade found !: ', modFilter);
-	    } else {
-	      console.log("Not found: ", modText);
+	    if (index === -1) {
+	      console.log(mod);
+	      console.log('Special mod: ', specialMod);
+	      console.log("Mod text before traitment: ", modPreText);
+	      console.log("Mod after traitment: ", modText);
+	      console.log('Mod value: ', modValue);
+	      console.log("Mod Filter: ", modFilter);
+	      console.log("Mod Options: ", modOption);
 	    }
-	    mod.influence = modInfluence;
-	    mod.filter = modFilter;
-	    mod.value = modValue;
+	    if (!Object.hasOwn(mod, 'influence')) {
+	      mod.influence = modInfluence;
+	    }
+	    if (!Object.hasOwn(mod, 'filter')) {
+	      mod.filter = modFilter;
+	    }
+	    if (!Object.hasOwn(mod, 'value')) {
+	      mod.value = modValue;
+	    }
+	    if (!Object.hasOwn(mod, 'option')) {
+	      mod.option = modOption;
+	    }
 	  });
 	}
 	function translateModifiers(item, allModifiers, type) {
 	  let modArray = item[`${type}s`];
+	  if (item.base === "Small Cluster Jewel") {
+	    console.log(item);
+	  }
 	  modArray.map(mod => {
 	    //remove bracket
 	    let label = null;
 	    let modPreText = null;
 	    let modFilter = null;
 	    let modOption = null;
-	    if (type === "Implicit") {
+	    if (type === "implicit") {
 	      switch (true) {
 	        case /Allocates/.test(mod.text):
 	          {
@@ -8376,12 +8447,6 @@
 	    }
 	    if (index !== -1) {
 	      modFilter = filteredAllModifiers[0].entries[index].id;
-	      if (item.rarity !== "UNIQUE" && "influence" in filteredAllModifiers[0].entries[index]) {
-	        if (filteredAllModifiers[0].entries[index].influence.length < 3) {
-	          console.log(filteredAllModifiers[0].entries[index].influence);
-	          filteredAllModifiers[0].entries[index].influence.forEach(inf => item.influence.push(inf));
-	        }
-	      }
 	    }
 
 	    //debug
@@ -8674,13 +8739,14 @@
 	    className: "flex flex-col items-center text-start item_stats"
 	  }, /*#__PURE__*/React.createElement("div", {
 	    className: "w-full"
-	  }, /*#__PURE__*/React.createElement("div", null, item.defence[0] ? item.defence.map((def, i) => {
+	  }, item.defence[0] ? item.defence.map((def, i) => {
 	    return /*#__PURE__*/React.createElement("div", {
-	      className: "flex flex-row mt-2 gap-4 items-center w-full",
+	      className: "flex flex-row my-2 gap-4 items-center w-full",
 	      key: i
 	    }, /*#__PURE__*/React.createElement("input", {
 	      type: "checkbox",
 	      id: `${itemNumber}_${itemName}_defence_${i}`,
+	      className: "h-fit",
 	      onChange: () => handleTradeDefence(def)
 	    }), /*#__PURE__*/React.createElement("label", {
 	      htmlFor: `${itemNumber}_${itemName}_defence_${i}`
@@ -8688,31 +8754,33 @@
 	      className: "item_rarity-normal"
 	    }, def.split(': ')[0], ":"), " ", def.split(': ')[1]));
 	  }) : /*#__PURE__*/React.createElement(React.Fragment, null), item.iLv ? /*#__PURE__*/React.createElement("div", {
-	    className: "flex flex-row mt-2 gap-4 items-center w-full"
+	    className: "flex flex-row my-2 gap-4 items-center w-full"
 	  }, /*#__PURE__*/React.createElement("input", {
 	    type: "checkbox",
 	    id: `${itemNumber}_${itemName}_ilv`,
+	    className: "h-fit",
 	    onChange: () => handleChangeIlv(item.iLv)
 	  }), /*#__PURE__*/React.createElement("label", {
 	    htmlFor: `${itemNumber}_${itemName}_ilv`
 	  }, /*#__PURE__*/React.createElement("strong", {
 	    className: "item_rarity-normal"
 	  }, "Item level:"), " ", item.iLv)) : /*#__PURE__*/React.createElement(React.Fragment, null), item.sockets[0] ? /*#__PURE__*/React.createElement("div", {
-	    className: "flex flex-row mt-2 gap-4 items-center w-full"
+	    className: "flex flex-row my-2 gap-4 items-center w-full"
 	  }, /*#__PURE__*/React.createElement("input", {
 	    type: "checkbox",
 	    id: `${itemNumber}_${itemName}_link`,
+	    className: "h-fit",
 	    onChange: () => handleChangeLinks(item.sockets.length)
 	  }), /*#__PURE__*/React.createElement("label", {
 	    htmlFor: `${itemNumber}_${itemName}_link`
 	  }, /*#__PURE__*/React.createElement("strong", {
 	    className: "item_rarity-normal"
 	  }, "Socket Links:"), " ", item.sockets.length)) : /*#__PURE__*/React.createElement(React.Fragment, null), item.corrupted ? /*#__PURE__*/React.createElement("div", {
-	    className: "flex flex-row mt-2 gap-4 items-center w-full"
+	    className: "flex flex-row my-2 gap-4 items-center w-full"
 	  }, /*#__PURE__*/React.createElement("select", {
 	    name: "corruptingSorting",
 	    id: `${itemNumber}_${itemName}_corrupted`,
-	    className: "text-black p-1",
+	    className: "text-black p-1 h-fit",
 	    defaultValue: "any",
 	    onChange: e => setTradeCorrupted(e.target.value)
 	  }, /*#__PURE__*/React.createElement("option", {
@@ -8724,7 +8792,7 @@
 	  }, "no")), /*#__PURE__*/React.createElement("label", {
 	    htmlFor: `${itemNumber}_${itemName}_corrupted`,
 	    className: "item_corrupted"
-	  }, "Corrupted")) : /*#__PURE__*/React.createElement(React.Fragment, null))), item.implicits.length ? /*#__PURE__*/React.createElement("div", {
+	  }, "Corrupted")) : /*#__PURE__*/React.createElement(React.Fragment, null)), item.implicits.length ? /*#__PURE__*/React.createElement("div", {
 	    className: "w-full"
 	  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("p", {
 	    className: `item_split item_split-${item.rarity.toLowerCase()}`
@@ -8732,25 +8800,27 @@
 	    className: "text-center"
 	  }, "Implicits: ")), /*#__PURE__*/React.createElement("div", null, item.implicits.map((implicit, i) => {
 	    return /*#__PURE__*/React.createElement("div", {
-	      className: "flex flex-row mt-2 gap-4 justify-between w-full",
+	      className: "flex flex-row my-2 gap-4 justify-between w-full",
 	      key: i
 	    }, /*#__PURE__*/React.createElement("div", {
-	      className: "flex flex-row gap-4 max-w-3/4"
+	      className: "flex flex-row gap-4 max-w-3/4 items-center"
 	    }, /*#__PURE__*/React.createElement("input", {
 	      type: "checkbox",
 	      id: `${itemNumber}_${itemName}_implicit_${i}`,
+	      className: "h-fit",
 	      onChange: () => handleChangeImplicits(implicit.text)
 	    }), /*#__PURE__*/React.createElement("label", {
 	      htmlFor: `${itemNumber}_${itemName}_implicit_${i}`,
 	      className: handleExplicitClass(implicit.text)
 	    }, implicit.text)), customPrecision ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
-	      className: "flex flex-row gap-4"
+	      className: "flex flex-row gap-4 items-center"
 	    }, /*#__PURE__*/React.createElement("label", {
 	      htmlFor: `${itemNumber}_${itemName}_implicit_precision_${i}`,
 	      className: handleExplicitClass(implicit.text)
 	    }, "Exact:"), /*#__PURE__*/React.createElement("input", {
 	      type: "checkbox",
 	      id: `${itemNumber}_${itemName}_implicit_precision_${i}`,
+	      className: "h-fit",
 	      onChange: () => handleCustomPrecisionChange(implicit, "implicit")
 	    }))) : /*#__PURE__*/React.createElement(React.Fragment, null));
 	  }))) : /*#__PURE__*/React.createElement(React.Fragment, null), item.explicits.length ? /*#__PURE__*/React.createElement("div", {
@@ -8761,25 +8831,27 @@
 	    className: "text-center"
 	  }, "Explicits: "), /*#__PURE__*/React.createElement("div", null, item.explicits.map((explicit, i) => {
 	    return /*#__PURE__*/React.createElement("div", {
-	      className: "flex flex-row mt-2 gap-4 justify-between w-full",
+	      className: "flex flex-row my-2 gap-4 justify-between w-full",
 	      key: i
 	    }, /*#__PURE__*/React.createElement("div", {
-	      className: "flex flex-row gap-4 max-w-3/4"
+	      className: "flex flex-row gap-4 max-w-3/4 items-center"
 	    }, /*#__PURE__*/React.createElement("input", {
 	      type: "checkbox",
 	      id: `${itemNumber}_${itemName}_explicit_${i}`,
+	      className: "h-fit",
 	      onChange: () => handleChangeExplicits(explicit.text)
 	    }), /*#__PURE__*/React.createElement("label", {
 	      htmlFor: `${itemNumber}_${itemName}_explicit_${i}`,
 	      className: handleExplicitClass(explicit.text)
 	    }, explicit.text)), customPrecision ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
-	      className: "flex flex-row gap-4"
+	      className: "flex flex-row gap-4 items-center"
 	    }, /*#__PURE__*/React.createElement("label", {
 	      htmlFor: `${itemNumber}_${itemName}_explicit_precision_${i}`,
 	      className: handleExplicitClass(explicit.text)
 	    }, "Exact: "), /*#__PURE__*/React.createElement("input", {
 	      type: "checkbox",
 	      id: `${itemNumber}_${itemName}_explicit_precision_${i}`,
+	      className: "h-fit",
 	      onChange: () => handleCustomPrecisionChange(explicit, "explicit")
 	    }))) : /*#__PURE__*/React.createElement(React.Fragment, null));
 	  }))) : /*#__PURE__*/React.createElement(React.Fragment, null)), /*#__PURE__*/React.createElement("p", {

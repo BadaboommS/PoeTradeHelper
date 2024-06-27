@@ -135,49 +135,47 @@ export default function ItemTrade({ itemNumber, item, league, allFetchItemData }
             }
             <div className="flex flex-col items-center text-start item_stats">
                 <div className="w-full">
-                    <div>
-                        {item.defence[0]?
-                            item.defence.map((def,i) => {
-                                return (
-                                    <div className="flex flex-row mt-2 gap-4 items-center w-full" key={i}>
-                                        <input type="checkbox" id={`${itemNumber}_${itemName}_defence_${i}`} onChange={()=> handleTradeDefence(def)}/>
-                                        <label htmlFor={`${itemNumber}_${itemName}_defence_${i}`}><strong className="item_rarity-normal">{def.split(': ')[0]}:</strong> {def.split(': ')[1]}</label>
-                                    </div>
-                                )
-                            })
-                        :
-                            <></>
-                        }
-                        {item.iLv?
-                            <div className="flex flex-row mt-2 gap-4 items-center w-full">
-                                <input type="checkbox" id={`${itemNumber}_${itemName}_ilv`} onChange={() => handleChangeIlv(item.iLv)}/>
-                                <label htmlFor={`${itemNumber}_${itemName}_ilv`}><strong className="item_rarity-normal">Item level:</strong> {item.iLv}</label>
-                            </div>
-                        :
-                            <></>
-                        }
-                        
-                        {item.sockets[0]?
-                            <div className="flex flex-row mt-2 gap-4 items-center w-full">
-                                <input type="checkbox" id={`${itemNumber}_${itemName}_link`} onChange={()=> handleChangeLinks(item.sockets.length)}/>
-                                <label htmlFor={`${itemNumber}_${itemName}_link`}><strong className="item_rarity-normal">Socket Links:</strong> {item.sockets.length}</label>
-                            </div>
-                        :
-                            <></>
-                        }
-                        {item.corrupted?
-                            <div className="flex flex-row mt-2 gap-4 items-center w-full">
-                                <select name="corruptingSorting" id={`${itemNumber}_${itemName}_corrupted`} className='text-black p-1' defaultValue={"any"} onChange={(e) => setTradeCorrupted(e.target.value)}>
-                                    <option value="any">any</option>
-                                    <option value="yes">yes</option>
-                                    <option value="no">no</option>
-                                </select>
-                                <label htmlFor={`${itemNumber}_${itemName}_corrupted`} className="item_corrupted">Corrupted</label>
-                            </div>
-                        :
-                            <></>
-                        }
-                    </div>
+                    {item.defence[0]?
+                        item.defence.map((def,i) => {
+                            return (
+                                <div className="flex flex-row my-2 gap-4 items-center w-full" key={i}>
+                                    <input type="checkbox" id={`${itemNumber}_${itemName}_defence_${i}`} className="h-fit" onChange={()=> handleTradeDefence(def)}/>
+                                    <label htmlFor={`${itemNumber}_${itemName}_defence_${i}`}><strong className="item_rarity-normal">{def.split(': ')[0]}:</strong> {def.split(': ')[1]}</label>
+                                </div>
+                            )
+                        })
+                    :
+                        <></>
+                    }
+                    {item.iLv?
+                        <div className="flex flex-row my-2 gap-4 items-center w-full">
+                            <input type="checkbox" id={`${itemNumber}_${itemName}_ilv`} className="h-fit" onChange={() => handleChangeIlv(item.iLv)}/>
+                            <label htmlFor={`${itemNumber}_${itemName}_ilv`}><strong className="item_rarity-normal">Item level:</strong> {item.iLv}</label>
+                        </div>
+                    :
+                        <></>
+                    }
+                    
+                    {item.sockets[0]?
+                        <div className="flex flex-row my-2 gap-4 items-center w-full">
+                            <input type="checkbox" id={`${itemNumber}_${itemName}_link`} className="h-fit" onChange={()=> handleChangeLinks(item.sockets.length)}/>
+                            <label htmlFor={`${itemNumber}_${itemName}_link`}><strong className="item_rarity-normal">Socket Links:</strong> {item.sockets.length}</label>
+                        </div>
+                    :
+                        <></>
+                    }
+                    {item.corrupted?
+                        <div className="flex flex-row my-2 gap-4 items-center w-full">
+                            <select name="corruptingSorting" id={`${itemNumber}_${itemName}_corrupted`} className='text-black p-1 h-fit' defaultValue={"any"} onChange={(e) => setTradeCorrupted(e.target.value)}>
+                                <option value="any">any</option>
+                                <option value="yes">yes</option>
+                                <option value="no">no</option>
+                            </select>
+                            <label htmlFor={`${itemNumber}_${itemName}_corrupted`} className="item_corrupted">Corrupted</label>
+                        </div>
+                    :
+                        <></>
+                    }
                 </div>
                 {item.implicits.length? 
                     <div className="w-full">
@@ -189,17 +187,17 @@ export default function ItemTrade({ itemNumber, item, league, allFetchItemData }
                             {
                                 item.implicits.map((implicit,i) => {
                                     return(
-                                        <div className="flex flex-row mt-2 gap-4 justify-between w-full" key={i}>
-                                            <div className="flex flex-row gap-4 max-w-3/4">
-                                                <input type="checkbox" id={`${itemNumber}_${itemName}_implicit_${i}`} onChange={() => handleChangeImplicits(implicit.text)}/>
+                                        <div className="flex flex-row my-2 gap-4 justify-between w-full" key={i}>
+                                            <div className="flex flex-row gap-4 max-w-3/4 items-center">
+                                                <input type="checkbox" id={`${itemNumber}_${itemName}_implicit_${i}`} className="h-fit" onChange={() => handleChangeImplicits(implicit.text)}/>
                                                 <label htmlFor={`${itemNumber}_${itemName}_implicit_${i}`} className={handleExplicitClass(implicit.text)}>{implicit.text}</label>
                                             </div>
                                             {
                                                 customPrecision?
                                                         <>
-                                                        <div className="flex flex-row gap-4">
+                                                        <div className="flex flex-row gap-4 items-center">
                                                             <label htmlFor={`${itemNumber}_${itemName}_implicit_precision_${i}`} className={handleExplicitClass(implicit.text)}>Exact:</label>
-                                                            <input type="checkbox" id={`${itemNumber}_${itemName}_implicit_precision_${i}`} onChange={() => handleCustomPrecisionChange(implicit, "implicit")}></input>
+                                                            <input type="checkbox" id={`${itemNumber}_${itemName}_implicit_precision_${i}`} className="h-fit" onChange={() => handleCustomPrecisionChange(implicit, "implicit")}></input>
                                                         </div>
                                                         </>
                                                     :
@@ -222,17 +220,17 @@ export default function ItemTrade({ itemNumber, item, league, allFetchItemData }
                             {
                                 item.explicits.map((explicit, i) => {
                                     return (
-                                        <div className="flex flex-row mt-2 gap-4 justify-between w-full" key={i}>
-                                            <div className="flex flex-row gap-4 max-w-3/4">
-                                                <input type="checkbox" id={`${itemNumber}_${itemName}_explicit_${i}`} onChange={() => handleChangeExplicits(explicit.text)}/>
+                                        <div className="flex flex-row my-2 gap-4 justify-between w-full" key={i}>
+                                            <div className="flex flex-row gap-4 max-w-3/4 items-center">
+                                                <input type="checkbox" id={`${itemNumber}_${itemName}_explicit_${i}`} className="h-fit" onChange={() => handleChangeExplicits(explicit.text)}/>
                                                 <label htmlFor={`${itemNumber}_${itemName}_explicit_${i}`} className={handleExplicitClass(explicit.text)}>{explicit.text}</label>
                                             </div>
                                             {
                                                 customPrecision?
                                                         <>
-                                                            <div className="flex flex-row gap-4">
+                                                            <div className="flex flex-row gap-4 items-center">
                                                                 <label htmlFor={`${itemNumber}_${itemName}_explicit_precision_${i}`} className={handleExplicitClass(explicit.text)}>Exact: </label>
-                                                                <input type="checkbox" id={`${itemNumber}_${itemName}_explicit_precision_${i}`} onChange={() => handleCustomPrecisionChange(explicit, "explicit")}></input>
+                                                                <input type="checkbox" id={`${itemNumber}_${itemName}_explicit_precision_${i}`} className="h-fit" onChange={() => handleCustomPrecisionChange(explicit, "explicit")}></input>
                                                             </div>
                                                         </>
                                                     :

@@ -87,6 +87,20 @@ function convertExplicitRangeText(explicit){
     return explicit
 }
 
+function formatExplicit(explicit){
+    const r = /-?(\d+)/g;
+    const modValue = explicit.match(r);
+    const modText = explicit.replace(r,"#")
+            .replaceAll('#.#', '#')
+            .replaceAll("##", "#")
+            .replaceAll('#-#', '#')
+            .replaceAll("(#)", '#')
+            .replaceAll('+#', "#")
+            .replaceAll('-#', '#')
+            .trimStart();
+    return {modValue, modText}
+}
+
 export function addOrder(buildItemArray){
     let tempBuildItemArray = [];
 
@@ -313,7 +327,7 @@ export function createItemObj(item, allItemData){
         explicits: itemExplicitsArray,
         corrupted: itemIsCorrupted
     }
-    console.log(newItem);
+    console.log(newItem)
     return newItem
 }
 
@@ -337,52 +351,94 @@ export function translateModifiersRare(item, allItemTypes){
         }
 
         //retrieve mod value and explicit text
-        const r = /-?(\d+)/g;
-        let modValue = modPreText.match(r);
-        let modText = modPreText.replace(r,"#").replaceAll('#.#', '#').replaceAll("##", "#").replaceAll('#-#', '#').replaceAll("(#)", '#').replaceAll('+#', "#").replaceAll('-#', '#').trimStart();
-
-        const targetedExplicitArr = allItemTypes[itemCategoryIndex].list[itemBaseTypeIndex].explicits;
+        let { modValue, modText } = formatExplicit(modPreText);
 
         let index = null;
-        let typeLabel = null;
-        for(let i = 0; i < targetedExplicitArr.length; i++){
-            index = targetedExplicitArr[i].affixes.findIndex(i => i.text === modText);
-            if(index !== -1){
-                typeLabel = i;
-                break;
+        const targetedExplicitArr = allItemTypes[itemCategoryIndex].list[itemBaseTypeIndex].explicits;
+        
+        if(specialMod === "fractured"){
+            modInfluence = "fractured";
+            index = allItemTypes[5].affixes.findIndex(x => x.text === modText);
+            if(index === -1){ 
+                modFilter += ' (Local)';
+                index = allItemTypes[5].affixes.findIndex(x => x.text === modText);
             }
-        }
-        if(index === -1){
-            if(modText.includes('reduced')){
-                modText = modText.replace('reduced', 'increased');
-            }else if(modText.includes('less')){
-                modText = modText.replace('less', 'more');
-            }else{
+            if(index !== -1){ modFilter = allItemTypes[5].affixes[index].trade }else{ modFilter = null };
+            
+        }else if(specialMod === "crafted"){
+            modInfluence = "crafted";
+            index = targetedExplicitArr[9].affixes.findIndex(x => x.text === modText);
+            if(index === -1){ 
                 modText += ' (Local)';
+                index = targetedExplicitArr[9].affixes.findIndex(x => x.text === modText);
             }
+            if(index !== -1){ modFilter = targetedExplicitArr[9].affixes[index].trade }else{ modFilter = null };
+        }else{
             for(let i = 0; i < targetedExplicitArr.length; i++){
-                index = targetedExplicitArr[i].affixes.findIndex(i => i.text === modText);
+                index = targetedExplicitArr[i].affixes.findIndex(x => x.text === modText);
                 if(index !== -1){
-                    typeLabel = i;
+                    modFilter = targetedExplicitArr[i].affixes[index].trade
+                    modInfluence = targetedExplicitArr[i].types;
                     break;
                 }
+            }           
+            if(index === -1 ){
+                if(modText.includes('reduced')){
+                    modText = modText.replace('reduced', 'increased')
+                    for(let i = 0; i < targetedExplicitArr.length; i++){
+                        index = targetedExplicitArr[i].affixes.findIndex(x => x.text === modText);
+                        if(index !== -1){
+                            modFilter = targetedExplicitArr[i].affixes[index].trade
+                            modInfluence = targetedExplicitArr[i].types;
+                            break;
+                        }
+                    }
+                }else if(modText.includes('less')){
+                    modText = modText .replace('less', 'more')
+                    for(let i = 0; i < targetedExplicitArr.length; i++){
+                        index = targetedExplicitArr[i].affixes.findIndex(x => x.text === modText);
+                        if(index !== -1){
+                            modFilter = targetedExplicitArr[i].affixes[index].trade
+                            modInfluence = targetedExplicitArr[i].types;
+                            break;
+                        }
+                    }
+                }else{
+                    modText += ' (Local)';
+                    for(let i = 0; i < targetedExplicitArr.length; i++){
+                        index = targetedExplicitArr[i].affixes.findIndex(x => x.text === modText);
+                        if(index !== -1){
+                            modFilter = targetedExplicitArr[i].affixes[index].trade
+                            modInfluence = targetedExplicitArr[i].types;
+                            break;
+                        }
+                    }
+                } 
             }
         }
-        if(index !== -1){
-            modFilter = targetedExplicitArr[typeLabel].affixes[index].trade;
-            modInfluence = targetedExplicitArr[typeLabel].types;
-            console.log('Trade found !: ', modFilter);
-        }else{
-            console.log("Not found: ", modText)
+        
+        if(index === -1){
+            console.log(mod);
+            console.log('Special mod: ', specialMod);
+            console.log("Mod text before traitment: ", modPreText)
+            console.log("Mod after traitment: ", modText)
+            console.log('Mod value: ', modValue);
+            console.log("Mod Filter: ", modFilter);
+            console.log("Mod Options: ", modOption);
         }
-        mod.influence = modInfluence;
-        mod.filter = modFilter;
-        mod.value = modValue;
+
+        if(!Object.hasOwn(mod, 'influence')){ mod.influence = modInfluence }
+        if(!Object.hasOwn(mod, 'filter')){ mod.filter = modFilter }
+        if(!Object.hasOwn(mod, 'value')){ mod.value = modValue }
+        if(!Object.hasOwn(mod, 'option')){ mod.option = modOption }
     })
 }
 
 export function translateModifiers(item, allModifiers, type){
     let modArray = item[`${type}s`];
+    if(item.base === "Small Cluster Jewel"){
+        console.log(item);
+    }
     modArray.map((mod) =>{
         //remove bracket
         let label = null;
@@ -390,7 +446,7 @@ export function translateModifiers(item, allModifiers, type){
         let modFilter = null;
         let modOption = null;
 
-        if(type === "Implicit"){
+        if(type === "implicit"){
             switch(true){
                 case (/Allocates/.test(mod.text)): {
                     mod.filter = "enchant.stat_2954116742";
@@ -466,12 +522,6 @@ export function translateModifiers(item, allModifiers, type){
         }
         if(index !== -1){
             modFilter = filteredAllModifiers[0].entries[index].id;
-            if((item.rarity !== "UNIQUE") && ("influence" in filteredAllModifiers[0].entries[index])){
-                if(filteredAllModifiers[0].entries[index].influence.length < 3){
-                    console.log(filteredAllModifiers[0].entries[index].influence);
-                    filteredAllModifiers[0].entries[index].influence.forEach((inf) => item.influence.push(inf))
-                }
-            }
         }
 
         //debug
