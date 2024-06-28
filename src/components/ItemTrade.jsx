@@ -273,7 +273,7 @@ export default function ItemTrade({ itemNumber, item, league, allFetchItemData }
             </div>
             <p className={`item_split item_split-${item.rarity.toLowerCase()}`}></p>
             <div className="flex justify-center w-full">
-                <div className="flex flex-col md:flex-row items-center justify-evenly w-full md:w-3/4">
+                <div className="flex flex-col md:flex-row items-center justify-evenly w-full md:w-3/4 gap-2">
                     <div className="flex flex-col gap-2">
                         <label htmlFor={`${itemNumber}_${itemName}_sorting`}>Trading Precision</label>
                         <select name="sorting" id={`${itemNumber}_${itemName}_sorting`} className='text-black p-1' defaultValue={"min"} onChange={(e) => handleChangePrecision(e.target.value)}>
@@ -289,25 +289,36 @@ export default function ItemTrade({ itemNumber, item, league, allFetchItemData }
                                 {(itemEstimatedPriceArr.length !== 1)?
                                     <>
                                         <button onClick={() => setIsOpen(true)} className="text-black bg-slate-200 rounded-md p-2 decoration-inherit">Check Prices</button>
-                                        <Modal open={isOpen}>
-                                            <div>
-                                                <h3 className='text-center'>Estimated Prices for:</h3>
-                                                <p className="text-lg">{`${itemName}`}</p>
+                                        <Modal open={isOpen} close={() => setIsOpen(false)}>
+                                            <div className="w-full">
+                                                <h3 className='text-center text-2xl m-2 font-bold'></h3>
                                                 <ul className="flex flex-col items-center justify-center">
-                                                    {itemEstimatedPriceArr.map((price,i) => {
-                                                        return  (
-                                                            <>
-                                                                <li key={i} className="flex flex-row items-center justify-center text-lg gap-2">
-                                                                    <p className="m-0 p-0">{`Item level: ${price.levelRequired} ${price.variant? `- Influence: ${price.variant}` : ''}`}</p>
-                                                                    <p className="m-0 p-0">{displayEstimatedPrice(price)}</p>
-                                                                </li>
-                                                                <p className={`item_split item_split-${item.rarity.toLowerCase()}`}></p>
-                                                            </>
-                                                        )
-                                                    })}
+                                                    <table className="w-3/4 border-collapse border border-black m-0 p-0">
+                                                        <caption className="text-xl m-2">Estimated Prices :</caption>
+                                                        <thead>
+                                                            <tr className="text-lg font-bold uppercase">
+                                                                <th>Item Name</th>
+                                                                <th>Item Level</th>
+                                                                <th>Influence</th>
+                                                                <th>Estimed Price</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            {itemEstimatedPriceArr.map((price,i) => {
+                                                                return  (
+                                                                    <tr key={`${itemName}_${i}`}>
+                                                                        <td data-label="Item Name">{itemName}</td>
+                                                                        <td data-label="Item Level">{price.levelRequired}</td>
+                                                                        <td data-label="Influence">{price.variant? price.variant : 'None'}</td>
+                                                                        <td data-label="Estimed Price" className="flex flex-row justify-between md:justify-center items-center">{displayEstimatedPrice(price)}</td>
+                                                                    </tr>
+                                                                )
+                                                            })} 
+                                                        </tbody>
+                                                    </table>
                                                 </ul>
                                                 <div className="flex justify-center md:justify-end">
-                                                    <button onClick={ () => setIsOpen(false)} className="bg-stone-500 text-white text-center p-2 rounded-sm">Close</button>
+                                                    <button onClick={() => setIsOpen(false)} className="bg-stone-500 text-white text-center p-2 rounded-sm">Close</button>
                                                 </div>
                                             </div>
                                         </Modal>
@@ -316,7 +327,9 @@ export default function ItemTrade({ itemNumber, item, league, allFetchItemData }
                                     <>
                                         <div className="flex flex-row md:flex-col">
                                             <p className="flex items-center"><strong>Estimated Price: </strong></p>
-                                            {displayEstimatedPrice(itemEstimatedPriceArr[0])}
+                                            <div className="text-xl flex justify-center items-center">
+                                                {displayEstimatedPrice(itemEstimatedPriceArr[0])}
+                                            </div>
                                         </div>
                                     </>
                                 }

@@ -576,19 +576,10 @@ export function handleInfluenceExplicits(item, allItemTypes){
 
     tempInfArr.forEach((inf) => {
         if(inf.length === 1){
-            resultInf.push(inf)
+            resultInf.push(inf[0])
         }
     })
-    console.log(resultInf); 
     if((resultInf.length > 0) && (resultInf.length < 3)){
         resultInf.forEach(i => item.influence.push(i));
     }
-    
-    /* item.explicits.forEach(exp => { 
-        if(exp.hasOwnProperty('influence')){
-           if(/hunter|shaper|crusader|warlord|elder|redeemer/.test(exp.influence)){
-              item.influence.push(exp.influence);
-           }
-        }
-     }) */
 }

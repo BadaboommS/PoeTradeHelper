@@ -75,10 +75,96 @@ input[type=checkbox]{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-Color: #FFF;
-    padding: 50px;
-    z-Index: 2000;
+    overflow: hidden;
+    width: 90%;
+    background-Color: lightgrey;
+    padding: 1rem;
+    z-Index: 2001;
 }
+
+.modal_content table tr{
+    border: 1px solid black;
+    padding: 0.35em;
+}
+
+/* modal table*/
+table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+}
+  
+table caption {
+    font-size: 1.5em;
+    margin: .5em 0 .75em;
+}
+  
+table tr {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: .5rem;
+}
+  
+table th,
+table td {
+    padding: .5rem;
+    text-align: center;
+    vertical-align: center;
+}
+  
+table th {
+    font-size: 1em;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+}
+  
+@media screen and (max-width: 768px) {
+    table {
+      border: 0;
+    }
+  
+    table caption {
+      font-size: 1.5rem;
+    }
+    
+    table thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+    
+    table tr {
+      border-bottom: 3px solid #ddd;
+      display: block;
+      margin-bottom: .5rem;
+    }
+    
+    table td {
+      border-bottom: 1px solid #ddd;
+      display: block;
+      font-size: 1rem;
+      text-align: right;
+    }
+    
+    table td::before {
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    
+    table td:last-child {
+      border-bottom: 0;
+    }
+  }
 
 /*Item socket*/
 .socket-R{
