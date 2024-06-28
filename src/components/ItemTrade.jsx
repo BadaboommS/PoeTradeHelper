@@ -6,6 +6,7 @@ import { handleClusterPrice, handleUniquePrice, handleBaseTypePrice, displayEsti
 import Modal from "./Modal";
 
 export default function ItemTrade({ itemNumber, item, league, allFetchItemData }){
+    const [tradeInfluence, setTradeInfluence] = useState([]);
     const [tradeDefence, setTradeDefence] = useState([]);
     const [tradeIlv, setTradeIlv] = useState(0);
     const [tradeLinks, setTradeLinks] = useState(0);
@@ -45,9 +46,15 @@ export default function ItemTrade({ itemNumber, item, league, allFetchItemData }
         }, 200);
     },[allFetchItemData])
 
-    function handleChangeIlv(e){ (tradeIlv === 0)? setTradeIlv(e) : setTradeIlv(0) }
-
-    function handleChangeLinks(e){ (tradeLinks === 0)? setTradeLinks(e) : setTradeLinks(0) }
+    function handleTradeInfluence(e){
+        if(tradeInfluence.indexOf(e) === -1){
+            setTradeInfluence([...tradeInfluence, e]);
+        }else{
+            let tempArray = [...tradeInfluence];
+            tempArray.splice(tradeInfluence.indexOf(e), 1);
+            setTradeInfluence(tempArray);
+        }
+    }
 
     function handleTradeDefence(e){
         if(tradeDefence.indexOf(e) === -1){
@@ -58,6 +65,10 @@ export default function ItemTrade({ itemNumber, item, league, allFetchItemData }
             setTradeDefence(tempArray);
         }
     }
+
+    function handleChangeIlv(e){ (tradeIlv === 0)? setTradeIlv(e) : setTradeIlv(0) }
+
+    function handleChangeLinks(e){ (tradeLinks === 0)? setTradeLinks(e) : setTradeLinks(0) }
 
     function handleChangeImplicits(e){
         let tempArray = [...tradeImplicits];
@@ -119,10 +130,10 @@ export default function ItemTrade({ itemNumber, item, league, allFetchItemData }
         }
     }
 
-    let tradeUrl = generateTradeUrl(tradeIlv, tradeLinks, tradeCorrupted, tradeDefence, tradeImplicits, tradeExplicits, item, league);
+    let tradeUrl = generateTradeUrl(tradeInfluence, tradeDefence, tradeIlv, tradeLinks, tradeCorrupted, tradeImplicits, tradeExplicits, item, league);
 
     useEffect(()=>{
-        tradeUrl = generateTradeUrl(tradeIlv, tradeLinks, tradeCorrupted, tradeDefence, tradeImplicits, tradeExplicits, item, league);
+        tradeUrl = generateTradeUrl(tradeInfluence, tradeDefence, tradeIlv, tradeLinks, tradeCorrupted, tradeImplicits, tradeExplicits, item, league);
     },[]);
 
     return(
@@ -135,6 +146,18 @@ export default function ItemTrade({ itemNumber, item, league, allFetchItemData }
             }
             <div className="flex flex-col items-center text-start item_stats">
                 <div className="w-full">
+                    {item.influence[0]?
+                        item.influence.map((inf,i) => {
+                            return (
+                                <div className="flex flex-row my-2 gap-4 items-center w-full" key={i}>
+                                    <input type="checkbox" id={`${itemNumber}_${itemName}_influence_${i}`} className="h-fit" onChange={()=> handleTradeInfluence(inf)}/>
+                                    <label htmlFor={`${itemNumber}_${itemName}_influence_${i}`}>Has <strong className="item_rarity-normal">{inf}</strong> Influence</label>
+                                </div>
+                            ) 
+                        })
+                    :
+                        <></>
+                    }
                     {item.defence[0]?
                         item.defence.map((def,i) => {
                             return (
@@ -186,7 +209,7 @@ export default function ItemTrade({ itemNumber, item, league, allFetchItemData }
                         <div>
                             {
                                 item.implicits.map((implicit,i) => {
-                                    return(
+                                    return (implicit.filter !== null)?
                                         <div className="flex flex-row my-2 gap-4 justify-between w-full" key={i}>
                                             <div className="flex flex-row gap-4 max-w-3/4 items-center">
                                                 <input type="checkbox" id={`${itemNumber}_${itemName}_implicit_${i}`} className="h-fit" onChange={() => handleChangeImplicits(implicit.text)}/>
@@ -204,7 +227,8 @@ export default function ItemTrade({ itemNumber, item, league, allFetchItemData }
                                                         <></>
                                             }
                                         </div>
-                                    )
+                                    :
+                                        <></>
                                 })
                             }
                         </div>
@@ -219,7 +243,7 @@ export default function ItemTrade({ itemNumber, item, league, allFetchItemData }
                         <div>
                             {
                                 item.explicits.map((explicit, i) => {
-                                    return (
+                                    return (explicit.filter !== null)?
                                         <div className="flex flex-row my-2 gap-4 justify-between w-full" key={i}>
                                             <div className="flex flex-row gap-4 max-w-3/4 items-center">
                                                 <input type="checkbox" id={`${itemNumber}_${itemName}_explicit_${i}`} className="h-fit" onChange={() => handleChangeExplicits(explicit.text)}/>
@@ -237,7 +261,8 @@ export default function ItemTrade({ itemNumber, item, league, allFetchItemData }
                                                         <></>
                                             }
                                         </div>
-                                    )
+                                    :
+                                        <></>
                                 })
                             }
                         </div>

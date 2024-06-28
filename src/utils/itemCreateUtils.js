@@ -184,7 +184,6 @@ export function findItemBaseType(itemBase, allItemData, flask, jewel){
 }
 
 export function createItemObj(item, allItemData){
-
     let cleanItemInfoArray = formatItemInfoArray(item);
 
     //Corrupted
@@ -230,11 +229,12 @@ export function createItemObj(item, allItemData){
         itemBaseInfo = findItemBaseType(itemName, allItemData, flask, abyss);
         itemBase = itemBaseInfo.item_base;
     }else{
-        if(cleanItemInfoArray[1].includes("Implicits:") || cleanItemInfoArray[1].includes("Sockets:") || cleanItemInfoArray[1].includes("Armour:") || cleanItemInfoArray[1].includes("Evasion:") || cleanItemInfoArray[1].includes("Energy Shield:")|| cleanItemInfoArray[1].includes("Item Level:")){
+        if(/Implicits:|Sockets:|Armour:|Evasion:|Energy Shield:|Item Level:/.test(cleanItemInfoArray[1])){
             itemName = null;
             itemBase = cleanItemInfoArray[0];
             if(itemBase.includes("Jewel")){
-                itemBase = itemBase.split(' ')[1] + " " + itemBase.split(' ')[2];
+                let jewelType = itemBase.split(' Jewel')[0].split(' ').pop()
+                itemBase = jewelType + " Jewel";
             }
         }else{
             itemName = cleanItemInfoArray[0];
@@ -260,7 +260,6 @@ export function createItemObj(item, allItemData){
     //Item Influences
     let itemInfluences = [];
     while((cleanItemInfoArray[0].indexOf(' Item')) !== -1){
-        itemInfluences.push(cleanItemInfoArray[0].split(" Item")[0]);
         cleanItemInfoArray.shift();
     }
 
@@ -327,11 +326,10 @@ export function createItemObj(item, allItemData){
         explicits: itemExplicitsArray,
         corrupted: itemIsCorrupted
     }
-    console.log(newItem)
     return newItem
 }
 
-export function translateModifiersRare(item, allItemTypes){
+export function translateModifiersRare(item, allItemTypes, allModifiers){
     let modArray = item.explicits;
     const itemCategoryIndex = allItemTypes.findIndex(x => x.id === item.baseInfo.item_category);
     const itemBaseTypeIndex = allItemTypes[itemCategoryIndex].list.findIndex(x => (x.base_type === item.baseInfo.base_type) && (item.baseInfo.stat_type !== null? x.stat_type === item.baseInfo.stat_type : true));
@@ -363,7 +361,7 @@ export function translateModifiersRare(item, allItemTypes){
                 modFilter += ' (Local)';
                 index = allItemTypes[5].affixes.findIndex(x => x.text === modText);
             }
-            if(index !== -1){ modFilter = allItemTypes[5].affixes[index].trade }else{ modFilter = null };
+            if(index !== -1){ modFilter = allItemTypes[5].affixes[index].id }else{ modFilter = null };
             
         }else if(specialMod === "crafted"){
             modInfluence = "crafted";
@@ -418,27 +416,17 @@ export function translateModifiersRare(item, allItemTypes){
         }
         
         if(index === -1){
-            console.log(mod);
-            console.log('Special mod: ', specialMod);
-            console.log("Mod text before traitment: ", modPreText)
-            console.log("Mod after traitment: ", modText)
-            console.log('Mod value: ', modValue);
-            console.log("Mod Filter: ", modFilter);
-            console.log("Mod Options: ", modOption);
+            translateModifiers([mod], allModifiers, 'Explicit');
+        }else{
+            if(!mod.hasOwnProperty('influence')){ mod.influence = modInfluence }
+            if(!mod.hasOwnProperty('filter')){ mod.filter = modFilter }
+            if(!mod.hasOwnProperty('value')){ mod.value = modValue }
+            if(!mod.hasOwnProperty('option')){ mod.option = modOption }
         }
-
-        if(!Object.hasOwn(mod, 'influence')){ mod.influence = modInfluence }
-        if(!Object.hasOwn(mod, 'filter')){ mod.filter = modFilter }
-        if(!Object.hasOwn(mod, 'value')){ mod.value = modValue }
-        if(!Object.hasOwn(mod, 'option')){ mod.option = modOption }
     })
 }
 
-export function translateModifiers(item, allModifiers, type){
-    let modArray = item[`${type}s`];
-    if(item.base === "Small Cluster Jewel"){
-        console.log(item);
-    }
+export function translateModifiers(modArray, allModifiers, type){
     modArray.map((mod) =>{
         //remove bracket
         let label = null;
@@ -473,7 +461,7 @@ export function translateModifiers(item, allModifiers, type){
                     mod.option = allModifiers[1].entries[981].option.options[allModifiers[1].entries[1549].option.options.findIndex(i => i.text === mod.text.split('Allocates ')[1].split(" if")[0])].id;
                     return null;
                 }
-                case (/Passives in radius of/.test(mod.text)): {
+                case (/Passives in Radius of/.test(mod.text)): {
                     mod.filter = "explicit.stat_2422708892";
                     mod.option = allModifiers[1].entries[1894].option.options[allModifiers[1].entries[1894].option.options.findIndex(i => i.text === mod.text.split('of ')[1].split(" can")[0])].id;
                     return null;
@@ -525,19 +513,82 @@ export function translateModifiers(item, allModifiers, type){
         }
 
         //debug
-        /* if(modFilter === null){
+        if(modFilter === null){
             console.log(mod);
             console.log("Mod label: ",label);
-            console.log("Mod text before traitment: ", modPreText)
+            console.log("Mod text before traitment: ", modPreText);
+            console.log("Mod text after traitment: ", modText)
             console.log('Mod value: ', modValue);
             console.log("Searching in: ",filteredAllModifiers[0].id);
             console.log("Found in index: ",index);
             console.log("Mod Filter: ", modFilter);
             console.log("Mod Options: ", modOption);
-        } */
+        }
 
         mod.filter = modFilter;
         mod.value = modValue;
         mod.option = modOption;
     })
+}
+
+export function handleInfluenceExplicits(item, allItemTypes){
+    let filteredInfArray = item.explicits.filter(m => /hunter|shaper|crusader|warlord|elder|redeemer/.test(m.influence))
+    let tempInfArr = [];
+    let resultInf = [];
+
+    const itemCategoryIndex = allItemTypes.findIndex(x => x.id === item.baseInfo.item_category);
+    const itemBaseTypeIndex = allItemTypes[itemCategoryIndex].list.findIndex(x => (x.base_type === item.baseInfo.base_type) && (item.baseInfo.stat_type !== null? x.stat_type === item.baseInfo.stat_type : true));
+    const targetedExplicitArr = allItemTypes[itemCategoryIndex].list[itemBaseTypeIndex].explicits;
+
+    filteredInfArray.forEach((mod) => {
+        let { modText } = formatExplicit(mod.text);
+        let tempInf = []
+        let index = null;
+
+        for(let i = 0; i < targetedExplicitArr.length; i++){
+            index = targetedExplicitArr[i].affixes.findIndex(x => x.text === modText);
+            if(index !== -1){ tempInf.push(targetedExplicitArr[i].types) }
+        }           
+        if(index === -1 ){
+            if(modText.includes('reduced')){
+                modText = modText.replace('reduced', 'increased')
+                for(let i = 0; i < targetedExplicitArr.length; i++){
+                    index = targetedExplicitArr[i].affixes.findIndex(x => x.text === modText);
+                    if(index !== -1){ tempInf.push(targetedExplicitArr[i].types) }
+                }
+            }else if(modText.includes('less')){
+                modText = modText .replace('less', 'more')
+                for(let i = 0; i < targetedExplicitArr.length; i++){
+                    index = targetedExplicitArr[i].affixes.findIndex(x => x.text === modText);
+                    if(index !== -1){ tempInf.push(targetedExplicitArr[i].types) }
+                }
+            }else{
+                modText += ' (Local)';
+                for(let i = 0; i < targetedExplicitArr.length; i++){
+                    index = targetedExplicitArr[i].affixes.findIndex(x => x.text === modText);
+                    if(index !== -1){ tempInf.push(targetedExplicitArr[i].types) }
+                }
+            } 
+        }
+        tempInfArr.push(tempInf)
+    })
+    tempInfArr = tempInfArr.map(inf => { return inf.filter(i => /hunter|shaper|crusader|warlord|elder|redeemer/.test(i)) });
+
+    tempInfArr.forEach((inf) => {
+        if(inf.length === 1){
+            resultInf.push(inf)
+        }
+    })
+    console.log(resultInf); 
+    if((resultInf.length > 0) && (resultInf.length < 3)){
+        resultInf.forEach(i => item.influence.push(i));
+    }
+    
+    /* item.explicits.forEach(exp => { 
+        if(exp.hasOwnProperty('influence')){
+           if(/hunter|shaper|crusader|warlord|elder|redeemer/.test(exp.influence)){
+              item.influence.push(exp.influence);
+           }
+        }
+     }) */
 }

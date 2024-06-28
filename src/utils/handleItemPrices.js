@@ -8,9 +8,22 @@ export function handleUniquePrice(item, fetchItemData){
 }
 
 export function handleBaseTypePrice(item, fetchItemData){
-    let itemPriceResults = fetchItemData.baseType.lines.filter(c => (c.baseType === item.base) && (c.levelRequired >= parseInt(item.iLv)));
-    if(itemPriceResults.length !== 0){
-        return itemPriceResults
+    let itemPrices = fetchItemData.baseType.lines.filter(c => (c.baseType === item.base) && (c.levelRequired >= parseInt(item.iLv)));
+    let itemPricesResult = null;
+    /* if(item.influence.length > 0){
+        let allInfluences = item.influence.flatMap((v, i) => item.influence.slice(i+1).map( w => v + '/' + w ));
+        allInfluences.map(i => allInfluences.push(i))
+
+        itemPricesResult = [];
+        allInfluences.forEach((i) => {
+            itemPrices.forEach(p => {if(p === i){itemPricesResult.push(p)}})
+        })
+    }else{
+        
+    } */
+    itemPricesResult = itemPrices.filter(r => !r.hasOwnProperty('variant'))
+    if(itemPricesResult.length > 0){
+        return itemPricesResult
     }
 }
 

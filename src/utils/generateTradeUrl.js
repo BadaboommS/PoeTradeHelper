@@ -1,4 +1,4 @@
-export function generateTradeUrl(tradeIlv, tradeLinks, tradeCorrupted, tradeDefence, tradeImplicits, tradeExplicits, item, league){
+export function generateTradeUrl(tradeInfluence, tradeDefence, tradeIlv, tradeLinks, tradeCorrupted, tradeImplicits, tradeExplicits, item, league){
     const leagueChoice = league;
 
     //setup Filters
@@ -44,12 +44,21 @@ export function generateTradeUrl(tradeIlv, tradeLinks, tradeCorrupted, tradeDefe
     
     //stats Filter
     let tempItemModifiersArray = [];
+
+    if(tradeInfluence[0]){
+      tradeInfluence.map(inf => {
+        let tempInfFilter = `{"id":"pseudo.pseudo_has_${inf}_influence"}`
+        tempItemModifiersArray.push(tempInfFilter);
+      })
+    };
+
     tradeImplicits.map((implicit)=> {
       if((implicit.filter !== undefined) && (implicit.filter !== null)){
         let tempModFilter = `{"id":"${implicit.filter}"${implicit.option? `,"value":{"option":${implicit.option}}` : ''}${implicit.value? `,"value":{"min":${implicit.value[0]}${(implicit.value && implicit.precision)? `,"max":${implicit.value[0]}` : ''}}` : ''}, "disabled": ${!implicit.display}}`;
         tempItemModifiersArray.push(tempModFilter);
       }
     });
+
     tradeExplicits.map((explicit) => {
       if((explicit.filter !== undefined) && (explicit.filter !== null)){
         let tempModFilter = `{"id":"${explicit.filter}"${explicit.option? `,"value":{"option":${explicit.option}}` : ''}${explicit.value? `,"value":{"min":${explicit.value[0]}${(explicit.value && explicit.precision)? `,"max":${explicit.value[0]}` : ''}}` : ''}, "disabled": ${!explicit.display}}`;

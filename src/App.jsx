@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 //utils
 import { fetchData, codeDecompress, isIterable } from './utils/generalUtils';
-import { createItemObj, addOrder, translateModifiers, translateModifiersRare } from './utils/itemCreateUtils';
+import { createItemObj, addOrder, translateModifiers, translateModifiersRare, handleInfluenceExplicits } from './utils/itemCreateUtils';
 //components
 import ItemFeed from './components/ItemFeed';
 import InputCode from './components/InputCode';
@@ -23,7 +23,7 @@ export function App() {
       allItemData = await fetchData('./item_mods/allItemTypes.json');
    }
 
-   if(allModifiers === null && allItemData === null){handleFetchItemData()};
+   if(allModifiers === null && allItemData === null){ handleFetchItemData() };
 
    function handleSubmit(event){
       event.preventDefault();
@@ -55,8 +55,9 @@ export function App() {
       
       //Translate mods for filter
       tempItemArray.map((item) => {
-         translateModifiers(item, allModifiers, 'implicit');
-         item.rarity === "UNIQUE"? translateModifiers(item, allModifiers, 'explicit') : translateModifiersRare(item, allItemData);
+         translateModifiers(item.implicits, allModifiers, 'implicit');
+         item.rarity === "UNIQUE"? translateModifiers(item.explicits, allModifiers, 'explicit') : translateModifiersRare(item, allItemData, allModifiers);
+         if(item.explicits.some(i => /hunter|shaper|crusader|warlord|elder|redeemer/.test(i.influence))){ handleInfluenceExplicits(item, allItemData) };
       })
       buildItemArray = addOrder(tempItemArray);
       

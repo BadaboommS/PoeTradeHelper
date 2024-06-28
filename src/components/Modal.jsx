@@ -6,7 +6,7 @@ const Modal = ({ open, children }) => {
     return ReactDom.createPortal(
         <>
             <div className="modal_bg"/>
-            <div className="modal_content rounded-sm">
+            <div className="modal_content rounded-sm max-h-[90%] overflow-y-scroll">
                 { children }
             </div>
         </>,
