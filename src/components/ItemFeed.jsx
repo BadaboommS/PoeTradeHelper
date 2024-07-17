@@ -69,17 +69,17 @@ export default function ItemFeed ({ items, leagueChoice }){
    
    return (
       items.map((item, i) => {
-         return (
-            <Fragment key={i}>
-               <Item 
-                  itemNumber = {i}
-                  item = {item}
-                  league = {leagueChoice}
-                  allFetchItemData = {allFetchItemData}
-               />
-               <p className={`item_split item_split-normal`}></p>
-            </Fragment>
-         );
+         (item.baseInfo.item_category !== undefined)
+            ?  <Fragment key={i}>
+                  <Item 
+                     itemNumber = {i}
+                     item = {item}
+                     league = {leagueChoice}
+                     allFetchItemData = {allFetchItemData}
+                  />
+                  <p className={`item_split item_split-normal`}></p>
+               </Fragment>
+            : <></>
       })
    )
 }
