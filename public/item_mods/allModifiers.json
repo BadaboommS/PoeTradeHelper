@@ -46912,7 +46912,11 @@
                         },
                         {
                             "id": 33,
-                            "text": "12% increased Trap Damage\n12% increased Mine Damage"
+                            "text": "12% increased Mine Damage"
+                        },
+                        {
+                            "id": 33,
+                            "text": "12% increased Trap Damage"
                         },
                         {
                             "id": 34,

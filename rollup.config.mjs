@@ -7,7 +7,7 @@ import postcss from 'rollup-plugin-postcss';
 export default {
    input: 'src/index.js',
    output: {
-      file: 'public/bundle.js',
+      file: 'public/script/bundle.js',
       format: 'iife'
    },
    plugins: [

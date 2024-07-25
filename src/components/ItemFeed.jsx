@@ -69,7 +69,7 @@ export default function ItemFeed ({ items, leagueChoice }){
    
    return (
       items.map((item, i) => {
-         (item.baseInfo.item_category !== undefined)
+         return (item.baseInfo.item_category !== undefined)
             ?  <Fragment key={i}>
                   <Item 
                      itemNumber = {i}

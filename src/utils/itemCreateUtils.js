@@ -456,7 +456,7 @@ export function translateModifiers(modArray, allModifiers, type){
                 }
                 case (/Small Passive Skills/.test(mod.text)): {
                     mod.filter = "enchant.stat_3948993189";
-                    mod.option = allModifiers[4].entries[1].option.options[allModifiers[4].entries[1].option.options.findIndex(i => i.text === mod.text.split(': ')[1])].id;
+                    mod.option = allModifiers[4].entries[1].option.options[allModifiers[4].entries[1].option.options.findIndex(i => i.text === mod.text.split('grant: ')[1])].id;
                     return null;
                 }
                 case (/crafted/.test(mod.text)): label = "Enchant"; break;
@@ -526,7 +526,7 @@ export function translateModifiers(modArray, allModifiers, type){
         }
 
         //debug
-        if(modFilter === null){
+        /* if(modFilter === null){
             console.log(mod);
             console.log("Mod label: ",label);
             console.log("Mod text before traitment: ", modPreText);
@@ -536,7 +536,7 @@ export function translateModifiers(modArray, allModifiers, type){
             console.log("Found in index: ",index);
             console.log("Mod Filter: ", modFilter);
             console.log("Mod Options: ", modOption);
-        }
+        } */
 
         mod.filter = modFilter;
         mod.value = modValue;
