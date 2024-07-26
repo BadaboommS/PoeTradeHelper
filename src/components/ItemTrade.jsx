@@ -139,136 +139,128 @@ export default function ItemTrade({ itemNumber, item, league, allFetchItemData }
     return(
         <section className="flex flex-col p-5 w-full lg:w-6/12">
             <p>Select desired modifiers for trade:</p>
-            {(item.defence[0] || item.iLv || item.sockets[0] || item.corrupted)? 
-                    <p className={`item_split item_split-${item.rarity.toLowerCase()}`}></p>
-                :
-                    <></>
+            {(item.defence[0] || item.iLv || item.sockets[0] || item.corrupted)
+                ?   <p className={`item_split item_split-${item.rarity.toLowerCase()}`}></p>
+                :   <></>
             }
             <div className="flex flex-col items-center text-start item_stats">
                 <div className="w-full">
-                    {item.influence[0]?
-                        item.influence.map((inf,i) => {
-                            return (
-                                <div className="flex flex-row my-2 gap-4 items-center w-full" key={i}>
-                                    <input type="checkbox" id={`${itemNumber}_${itemName}_influence_${i}`} className="h-fit" onChange={()=> handleTradeInfluence(inf)}/>
-                                    <label htmlFor={`${itemNumber}_${itemName}_influence_${i}`}>Has <strong className="item_rarity-normal">{inf}</strong> Influence</label>
-                                </div>
-                            ) 
-                        })
-                    :
-                        <></>
+                    {(item.influence[0])
+                        ?   item.influence.map((inf,i) => {
+                                return (
+                                    <div className="flex flex-row my-2 gap-4 items-center w-full" key={i}>
+                                        <input type="checkbox" id={`${itemNumber}_${itemName}_influence_${i}`} className="h-fit" onChange={()=> handleTradeInfluence(inf)}/>
+                                        <label htmlFor={`${itemNumber}_${itemName}_influence_${i}`}>Has <strong className="item_rarity-normal">{inf}</strong> Influence</label>
+                                    </div>
+                                ) 
+                            })
+                        :   <></>
                     }
-                    {item.defence[0]?
-                        item.defence.map((def,i) => {
-                            return (
-                                <div className="flex flex-row my-2 gap-4 items-center w-full" key={i}>
-                                    <input type="checkbox" id={`${itemNumber}_${itemName}_defence_${i}`} className="h-fit" onChange={()=> handleTradeDefence(def)}/>
-                                    <label htmlFor={`${itemNumber}_${itemName}_defence_${i}`}><strong className="item_rarity-normal">{def.split(': ')[0]}:</strong> {def.split(': ')[1]}</label>
-                                </div>
-                            )
-                        })
-                    :
-                        <></>
+                    {(item.defence[0])
+                        ?   item.defence.map((def,i) => {
+                                return (
+                                    <div className="flex flex-row my-2 gap-4 items-center w-full" key={i}>
+                                        <input type="checkbox" id={`${itemNumber}_${itemName}_defence_${i}`} className="h-fit" onChange={()=> handleTradeDefence(def)}/>
+                                        <label htmlFor={`${itemNumber}_${itemName}_defence_${i}`}><strong className="item_rarity-normal">{def.split(': ')[0]}:</strong> {def.split(': ')[1]}</label>
+                                    </div>
+                                )
+                            })
+                        :   <></>
                     }
-                    {item.iLv?
-                        <div className="flex flex-row my-2 gap-4 items-center w-full">
-                            <input type="checkbox" id={`${itemNumber}_${itemName}_ilv`} className="h-fit" onChange={() => handleChangeIlv(item.iLv)}/>
-                            <label htmlFor={`${itemNumber}_${itemName}_ilv`}><strong className="item_rarity-normal">Item level:</strong> {item.iLv}</label>
-                        </div>
-                    :
-                        <></>
+                    {(item.iLv)
+                        ?   <div className="flex flex-row my-2 gap-4 items-center w-full">
+                                <input type="checkbox" id={`${itemNumber}_${itemName}_ilv`} className="h-fit" onChange={() => handleChangeIlv(item.iLv)}/>
+                                <label htmlFor={`${itemNumber}_${itemName}_ilv`}><strong className="item_rarity-normal">Item level:</strong> {item.iLv}</label>
+                            </div>
+                        :   <></>
                     }
                     
-                    {item.sockets[0]?
-                        <div className="flex flex-row my-2 gap-4 items-center w-full">
-                            <input type="checkbox" id={`${itemNumber}_${itemName}_link`} className="h-fit" onChange={()=> handleChangeLinks(item.sockets.length)}/>
-                            <label htmlFor={`${itemNumber}_${itemName}_link`}><strong className="item_rarity-normal">Socket Links:</strong> {item.sockets.length}</label>
-                        </div>
-                    :
-                        <></>
+                    {(item.sockets[0])
+                        ?   <div className="flex flex-row my-2 gap-4 items-center w-full">
+                                <input type="checkbox" id={`${itemNumber}_${itemName}_link`} className="h-fit" onChange={()=> handleChangeLinks(item.sockets.length)}/>
+                                <label htmlFor={`${itemNumber}_${itemName}_link`}><strong className="item_rarity-normal">Socket Links:</strong> {item.sockets.length}</label>
+                            </div>
+                        :   <></>
                     }
-                    {item.corrupted?
-                        <div className="flex flex-row my-2 gap-4 items-center w-full">
-                            <select name="corruptingSorting" id={`${itemNumber}_${itemName}_corrupted`} className='text-black p-1 h-fit' defaultValue={"any"} onChange={(e) => setTradeCorrupted(e.target.value)}>
-                                <option value="any">any</option>
-                                <option value="yes">yes</option>
-                                <option value="no">no</option>
-                            </select>
-                            <label htmlFor={`${itemNumber}_${itemName}_corrupted`} className="item_corrupted">Corrupted</label>
-                        </div>
-                    :
-                        <></>
+                    {(item.corrupted)
+                        ?   <div className="flex flex-row my-2 gap-4 items-center w-full">
+                                <select name="corruptingSorting" id={`${itemNumber}_${itemName}_corrupted`} className='text-black p-1 h-fit' defaultValue={"any"} onChange={(e) => setTradeCorrupted(e.target.value)}>
+                                    <option value="any">any</option>
+                                    <option value="yes">yes</option>
+                                    <option value="no">no</option>
+                                </select>
+                                <label htmlFor={`${itemNumber}_${itemName}_corrupted`} className="item_corrupted">Corrupted</label>
+                            </div>
+                        :   <></>
                     }
                 </div>
-                {item.implicits.length? 
-                    <div className="w-full">
-                        <div>
-                            <p className={`item_split item_split-${item.rarity.toLowerCase()}`}></p>
-                            <p className="text-center">Implicits: </p>
-                        </div>
-                        <div>
-                            {
-                                item.implicits.map((implicit,i) => {
-                                    return (implicit.filter !== null)?
-                                        <div className="flex flex-row my-2 gap-4 justify-between w-full" key={i}>
-                                            <div className="flex flex-row gap-4 max-w-3/4 items-center">
-                                                <input type="checkbox" id={`${itemNumber}_${itemName}_implicit_${i}`} className="h-fit" onChange={() => handleChangeImplicits(implicit.text)}/>
-                                                <label htmlFor={`${itemNumber}_${itemName}_implicit_${i}`} className={handleExplicitClass(implicit.text)}>{implicit.text}</label>
-                                            </div>
-                                            {
-                                                customPrecision?
-                                                        <>
-                                                        <div className="flex flex-row gap-4 items-center">
-                                                            <label htmlFor={`${itemNumber}_${itemName}_implicit_precision_${i}`} className={handleExplicitClass(implicit.text)}>Exact:</label>
-                                                            <input type="checkbox" id={`${itemNumber}_${itemName}_implicit_precision_${i}`} className="h-fit" onChange={() => handleCustomPrecisionChange(implicit, "implicit")}></input>
-                                                        </div>
-                                                        </>
-                                                    :
-                                                        <></>
-                                            }
-                                        </div>
-                                    :
-                                        <></>
-                                })
-                            }
-                        </div>
-                    </div>
-                :
-                    <></>
-                }
-                {item.explicits.length?
-                    <div className="w-full">
-                        <p className={`item_split item_split-${item.rarity.toLowerCase()}`}></p>
-                        <p className="text-center">Explicits: </p>
-                        <div>
-                            {
-                                item.explicits.map((explicit, i) => {
-                                    return (explicit.filter !== null)?
-                                        <div className="flex flex-row my-2 gap-4 justify-between w-full" key={i}>
-                                            <div className="flex flex-row gap-4 max-w-3/4 items-center">
-                                                <input type="checkbox" id={`${itemNumber}_${itemName}_explicit_${i}`} className="h-fit" onChange={() => handleChangeExplicits(explicit.text)}/>
-                                                <label htmlFor={`${itemNumber}_${itemName}_explicit_${i}`} className={handleExplicitClass(explicit.text)}>{explicit.text}</label>
-                                            </div>
-                                            {
-                                                customPrecision?
-                                                        <>
+                {(item.implicits.length)
+                    ?   <div className="w-full">
+                            <div>
+                                <p className={`item_split item_split-${item.rarity.toLowerCase()}`}></p>
+                                <p className="text-center">Implicits: </p>
+                            </div>
+                            <div>
+                                {
+                                    item.implicits.map((implicit,i) => {
+                                        return (implicit.filter !== null)?
+                                            <div className="flex flex-row my-2 gap-4 justify-between w-full" key={i}>
+                                                <div className="flex flex-row gap-4 max-w-3/4 items-center">
+                                                    <input type="checkbox" id={`${itemNumber}_${itemName}_implicit_${i}`} className="h-fit" onChange={() => handleChangeImplicits(implicit.text)}/>
+                                                    <label htmlFor={`${itemNumber}_${itemName}_implicit_${i}`} className={handleExplicitClass(implicit.text)}>{implicit.text}</label>
+                                                </div>
+                                                {
+                                                    customPrecision?
+                                                            <>
                                                             <div className="flex flex-row gap-4 items-center">
-                                                                <label htmlFor={`${itemNumber}_${itemName}_explicit_precision_${i}`} className={handleExplicitClass(explicit.text)}>Exact: </label>
-                                                                <input type="checkbox" id={`${itemNumber}_${itemName}_explicit_precision_${i}`} className="h-fit" onChange={() => handleCustomPrecisionChange(explicit, "explicit")}></input>
+                                                                <label htmlFor={`${itemNumber}_${itemName}_implicit_precision_${i}`} className={handleExplicitClass(implicit.text)}>Exact:</label>
+                                                                <input type="checkbox" id={`${itemNumber}_${itemName}_implicit_precision_${i}`} className="h-fit" onChange={() => handleCustomPrecisionChange(implicit, "implicit")}></input>
                                                             </div>
-                                                        </>
-                                                    :
-                                                        <></>
-                                            }
-                                        </div>
-                                    :
-                                        <></>
-                                })
-                            }
+                                                            </>
+                                                        :
+                                                            <></>
+                                                }
+                                            </div>
+                                        :
+                                            <></>
+                                    })
+                                }
+                            </div>
                         </div>
-                    </div>
-                :
-                    <></>
+                    :   <></>
+                }
+                {(item.explicits.length)
+                    ?   <div className="w-full">
+                            <p className={`item_split item_split-${item.rarity.toLowerCase()}`}></p>
+                            <p className="text-center">Explicits: </p>
+                            <div>
+                                {
+                                    item.explicits.map((explicit, i) => {
+                                        return (explicit.filter !== null)?
+                                            <div className="flex flex-row my-2 gap-4 justify-between w-full" key={i}>
+                                                <div className="flex flex-row gap-4 max-w-3/4 items-center">
+                                                    <input type="checkbox" id={`${itemNumber}_${itemName}_explicit_${i}`} className="h-fit" onChange={() => handleChangeExplicits(explicit.text)}/>
+                                                    <label htmlFor={`${itemNumber}_${itemName}_explicit_${i}`} className={handleExplicitClass(explicit.text)}>{explicit.text}</label>
+                                                </div>
+                                                {
+                                                    customPrecision?
+                                                            <>
+                                                                <div className="flex flex-row gap-4 items-center">
+                                                                    <label htmlFor={`${itemNumber}_${itemName}_explicit_precision_${i}`} className={handleExplicitClass(explicit.text)}>Exact: </label>
+                                                                    <input type="checkbox" id={`${itemNumber}_${itemName}_explicit_precision_${i}`} className="h-fit" onChange={() => handleCustomPrecisionChange(explicit, "explicit")}></input>
+                                                                </div>
+                                                            </>
+                                                        :
+                                                            <></>
+                                                }
+                                            </div>
+                                        :
+                                            <></>
+                                    })
+                                }
+                            </div>
+                        </div>
+                    :   <></>
                 }
             </div>
             <p className={`item_split item_split-${item.rarity.toLowerCase()}`}></p>
@@ -282,60 +274,58 @@ export default function ItemTrade({ itemNumber, item, league, allFetchItemData }
                             <option value="custom">custom</option>
                         </select>
                     </div>
-                    {loader? <div className="lds-dual-ring"></div> : <></>}
-                    {
-                        (!loader && itemEstimatedPriceArr !== undefined && itemEstimatedPriceArr.length !== 0 )?
-                            <>
-                                {(itemEstimatedPriceArr.length !== 1)?
-                                    <>
-                                        <button onClick={() => setIsOpen(true)} className="text-black bg-slate-200 rounded-md p-2 decoration-inherit">Check Prices</button>
-                                        <Modal open={isOpen} close={() => setIsOpen(false)}>
-                                            <div className="w-full">
-                                                <h3 className='text-center text-2xl m-2 font-bold'></h3>
-                                                <ul className="flex flex-col items-center justify-center">
-                                                    <table className="w-3/4 border-collapse border border-black m-0 p-0">
-                                                        <caption className="text-xl m-2">Estimated Prices :</caption>
-                                                        <thead>
-                                                            <tr className="text-lg font-bold uppercase">
-                                                                <th>Item Name</th>
-                                                                <th>Item Level</th>
-                                                                <th>Influence</th>
-                                                                <th>Estimed Price</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            {itemEstimatedPriceArr.map((price,i) => {
-                                                                return  (
-                                                                    <tr key={`${itemName}_${i}`}>
-                                                                        <td data-label="Item Name">{itemName}</td>
-                                                                        <td data-label="Item Level">{price.levelRequired}</td>
-                                                                        <td data-label="Influence">{price.variant? price.variant : 'None'}</td>
-                                                                        <td data-label="Estimed Price" className="flex flex-row justify-between md:justify-center items-center">{displayEstimatedPrice(price)}</td>
+                    {(loader)? <div className="lds-dual-ring"></div> : <></>}
+                    {(!loader && (itemEstimatedPriceArr !== undefined && itemEstimatedPriceArr.length !== 0))
+                        ?   <>
+                                {
+                                    (itemEstimatedPriceArr.length !== 1)
+                                        ?   <>
+                                                <button onClick={() => setIsOpen(true)} className="text-black bg-slate-200 rounded-md p-2 decoration-inherit">Check Prices</button>
+                                                <Modal open={isOpen} close={() => setIsOpen(false)}>
+                                                    <div className="w-full">
+                                                        <h3 className='text-center text-2xl m-2 font-bold'></h3>
+                                                        <ul className="flex flex-col items-center justify-center">
+                                                            <table className="w-3/4 border-collapse border border-black m-0 p-0">
+                                                                <caption className="text-xl m-2">Estimated Prices :</caption>
+                                                                <thead>
+                                                                    <tr className="text-lg font-bold uppercase">
+                                                                        <th>Item Name</th>
+                                                                        <th>Item Level</th>
+                                                                        <th>Influence</th>
+                                                                        <th>Estimed Price</th>
                                                                     </tr>
-                                                                )
-                                                            })} 
-                                                        </tbody>
-                                                    </table>
-                                                </ul>
-                                                <div className="flex justify-center md:justify-end">
-                                                    <button onClick={() => setIsOpen(false)} className="bg-stone-500 text-white text-center p-2 rounded-sm">Close</button>
+                                                                </thead>
+                                                                <tbody>
+                                                                    {itemEstimatedPriceArr.map((price,i) => {
+                                                                        return  (
+                                                                            <tr key={`${itemName}_${i}`}>
+                                                                                <td data-label="Item Name">{itemName}</td>
+                                                                                <td data-label="Item Level">{price.levelRequired}</td>
+                                                                                <td data-label="Influence">{price.variant? price.variant : 'None'}</td>
+                                                                                <td data-label="Estimed Price" className="flex flex-row justify-between md:justify-center items-center">{displayEstimatedPrice(price)}</td>
+                                                                            </tr>
+                                                                        )
+                                                                    })} 
+                                                                </tbody>
+                                                            </table>
+                                                        </ul>
+                                                        <div className="flex justify-center md:justify-end">
+                                                            <button onClick={() => setIsOpen(false)} className="bg-stone-500 text-white text-center p-2 rounded-sm">Close</button>
+                                                        </div>
+                                                    </div>
+                                                </Modal>
+                                            </>
+                                        :   <>
+                                                <div className="flex flex-row md:flex-col">
+                                                    <p className="flex items-center"><strong>Estimated Price: </strong></p>
+                                                    <div className="text-xl flex justify-center items-center">
+                                                        {displayEstimatedPrice(itemEstimatedPriceArr[0])}
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </Modal>
-                                    </>
-                                :
-                                    <>
-                                        <div className="flex flex-row md:flex-col">
-                                            <p className="flex items-center"><strong>Estimated Price: </strong></p>
-                                            <div className="text-xl flex justify-center items-center">
-                                                {displayEstimatedPrice(itemEstimatedPriceArr[0])}
-                                            </div>
-                                        </div>
-                                    </>
+                                            </>
                                 }
                             </>
-                        :
-                            <>
+                        :   <>
                                 <div className="flex flex-row md:flex-col">
                                     <p className="flex items-center"><strong>Estimated Price:</strong></p>
                                     <p>Not fetched</p>

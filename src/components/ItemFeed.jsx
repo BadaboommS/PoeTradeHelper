@@ -79,7 +79,7 @@ export default function ItemFeed ({ items, leagueChoice }){
                   />
                   <p className={`item_split item_split-normal`}></p>
                </Fragment>
-            : <></>
+            :  <></>
       })
    )
 }
