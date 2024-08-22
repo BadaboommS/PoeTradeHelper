@@ -137,7 +137,7 @@ export function App() {
          }
          {(inputError)
             ? <p className='text-white text-center'>Build code not recognized! Try another Code.</p> 
-            : ''
+            : <></>
          }
          {(!loader && !inputError && buildItemArray[0])
             ?
