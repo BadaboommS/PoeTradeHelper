@@ -1,5 +1,11 @@
 export async function fetchData(url){
-    const response = await fetch(url);
+    const response = await fetch(url, {
+        mode: 'cors',
+        method: 'GET',
+        headers: {
+            'Content-Type': "application/json"
+        }
+    });
     const data = response.json();
     return data;
  }

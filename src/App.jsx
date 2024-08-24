@@ -6,10 +6,11 @@ import { createItemObj, addOrder, translateModifiers, translateModifiersRare, ha
 import ItemFeed from './components/ItemFeed';
 import InputCode from './components/InputCode';
 import Modal from './components/Modal';
+import Nav from './components/Nav';
 
 //init
 let buildItemArray = [];
-let defaultLeagueChoice = "Necropolis";
+let defaultLeagueChoice = "Settlers";
 let allModifiers = null;
 let allItemData = null;
 
@@ -18,8 +19,8 @@ export function App() {
    const [isLoaded, setIsLoaded] = useState(false);
    const [loader, setLoader] = useState(false);
    const [isOpen, setIsOpen] = useState(false);
-   const [showScrollButton, setShowScrollButton] = useState(false);
-   
+   const [isMobile, setIsMobile] = useState(false)
+    
    const handleFetchItemData = async () => {
       allModifiers = await fetchData('./item_mods/allModifiers.json');
       allItemData = await fetchData('./item_mods/allItemTypes.json');
@@ -69,24 +70,23 @@ export function App() {
       }, 500);
    };
 
-   const handleScrollTop = () => {
-      window.scrollTo({top: 0, behavior:'smooth'});
-   };
+   
 
    useEffect(() => {
-      const handleScrollButtonVisibility = () => {
-         window.scrollY > 300 ? setShowScrollButton(true) : setShowScrollButton(false);
-      };
-
-      window.addEventListener('scroll', handleScrollButtonVisibility);
+      const handleResize = () => (window.innerWidth < 720)? setIsMobile(true) : setIsMobile(false);
+      window.addEventListener("resize", handleResize);
 
       return () => {
-         window.removeEventListener('scroll', handleScrollButtonVisibility);
+         window.removeEventListener("resize", handleResize);
       };
    }, []);
 
    return (
       <div>
+         {(isLoaded && buildItemArray[0] && !isMobile)
+            ?  <Nav itemsList={buildItemArray}/>
+            :  <></>
+         }
          {(isLoaded === false)
             ?  <>
                   <div>
@@ -139,21 +139,13 @@ export function App() {
             ? <p className='text-white text-center'>Build code not recognized! Try another Code.</p> 
             : <></>
          }
-         {(!loader && !inputError && buildItemArray[0])
+         {(isLoaded && !inputError && buildItemArray[0])
             ?
                <article className='flex flex-col items-center m-auto text-white'>
                      <ItemFeed items={buildItemArray} leagueChoice={defaultLeagueChoice} />
                </article>
             :
                <></>
-         }
-         {(showScrollButton)
-            ?  <div>
-                  <button className='fixed bottom-5 right-7 z-50 cursor-pointer rounded-md p-4' onClick={handleScrollTop}>
-                     ↑
-                  </button>
-               </div> 
-            :  <></>
          }
       </div>
    )

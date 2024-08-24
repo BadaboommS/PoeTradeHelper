@@ -20,6 +20,9 @@
     --hsla-color-rare: 60,100%,73%;
     --hsla-color-unique: 26,65%,42%;
 }
+html{
+    scroll-behavior: smooth;
+}
 body{
     background-color: var(--mainbgcolor);
     font-size: calc(12px + 0.4vw);
@@ -42,6 +45,23 @@ input[type=checkbox]{
   transform: scale(2);
   padding: 10px;
   cursor: pointer;
+}
+.navModal{
+    position: fixed;
+    top: 50%;
+    right: 10px;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 10px;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+#Nav::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
 }
 .openModalBtn{
     position: fixed;
