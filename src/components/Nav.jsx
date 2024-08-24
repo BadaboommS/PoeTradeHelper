@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 export default function Nav({ itemsList }){
 
     const [isOpen, setIsOpen] = useState(false);
     const [showScrollButton, setShowScrollButton] = useState(false);
+
+    const navRef = useRef(null);
+    handleClickOutside(navRef, isOpen);
 
     const handleScrollTop = () => {
         window.scrollTo({top: 0, behavior:'smooth'});
@@ -17,16 +20,28 @@ export default function Nav({ itemsList }){
         };
      }, []);
 
+    function handleClickOutside(ref, state){
+        useEffect(() => {
+            const onClickListener = (event) => {
+                if(state && ref.current && !ref.current.contains(event.target)){ setIsOpen(false); }            
+            };
+            window.addEventListener('click', onClickListener);
+            return () => {
+                window.removeEventListener('click', onClickListener);
+            };
+        }, [state, ref]);
+    }
+
     return(
-        <>
-            <div className="navModal">
-                <button className="p-2 rounded" onClick={() => setIsOpen(!isOpen)}>{isOpen? "Close" : "Open"}</button>
+        <div ref={navRef}>
+            <button className="fixed top-2 right-2 p-2 rounded" onClick={() => setIsOpen(!isOpen)}>{isOpen? "Close" : "Open"}</button>
+            <div className={`navModal ${isOpen? "z-50" : "-z-10"}`}>
                 <div className={`
-                        relative transition-all bg-black border border-gray-500 rounded
-                        overflow-hidden
+                        relative bg-black border border-gray-500 rounded
+                        overflow-hidden transition-all
                         ${isOpen? "right-0" : "-right-[200%]"}
                 `}>
-                    <ul id='Nav' className="max-h-96 overflow-y-scroll text-center px-2">
+                    <ul id='Nav' className="max-h-96 overflow-y-scroll text-center px-4">
                         {
                             itemsList.map((item, i) => {
                                 return (item.baseInfo.item_category !== undefined)
@@ -47,6 +62,6 @@ export default function Nav({ itemsList }){
                     </div> 
                 :  <></>
             }
-        </>
+        </div>
     )
 }

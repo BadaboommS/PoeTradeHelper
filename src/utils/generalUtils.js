@@ -1,6 +1,6 @@
 export async function fetchData(url){
     const response = await fetch(url, {
-        mode: 'cors',
+        mode: 'no-cors',
         method: 'GET',
         headers: {
             'Content-Type': "application/json"

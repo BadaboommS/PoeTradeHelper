@@ -184,7 +184,7 @@ export function findItemBaseType(itemBase, allItemData, flask, jewel){
         }
     }catch(err){
         console.log(err);
-        console.log(itemBase);
+        console.log(`Error finding base for ${itemBase}`);
         const err_base_info = {
             item_category: undefined,
             item_sort: undefined,
@@ -197,149 +197,162 @@ export function findItemBaseType(itemBase, allItemData, flask, jewel){
 }
 
 export function createItemObj(item, allItemData){
-    let cleanItemInfoArray = formatItemInfoArray(item);
+    try{
+        let cleanItemInfoArray = formatItemInfoArray(item);
 
-    //Corrupted
-    let itemIsCorrupted = false;
-    if(cleanItemInfoArray[cleanItemInfoArray.length-1] === 'Corrupted'){
-        itemIsCorrupted = true;
-        cleanItemInfoArray.pop();
-    }
+        //Corrupted
+        let itemIsCorrupted = false;
+        if(cleanItemInfoArray[cleanItemInfoArray.length-1] === 'Corrupted'){
+            itemIsCorrupted = true;
+            cleanItemInfoArray.pop();
+        }
 
-    //Item Rarity
-    let itemRarity;
-    if((cleanItemInfoArray[0].indexOf('Rarity:')) !== -1){
-        itemRarity = cleanItemInfoArray[0].split(': ')[1];
-        cleanItemInfoArray.shift();
-    }else if(itemRarity === "RELIC"){
-        itemRarity = 'UNIQUE';
-    }
+        //Item Rarity
+        let itemRarity;
+        if((cleanItemInfoArray[0].indexOf('Rarity:')) !== -1){
+            itemRarity = cleanItemInfoArray[0].split(': ')[1];
+            cleanItemInfoArray.shift();
+        }else if(itemRarity === "RELIC"){
+            itemRarity = 'UNIQUE';
+        }
 
-    //Item Name & Base
-    let itemName;
-    let itemBase;
-    let itemBaseInfo;
-    let flask = null;
-    let abyss = null;
+        //Item Name & Base
+        let itemName;
+        let itemBase;
+        let itemBaseInfo;
+        let flask = null;
+        let abyss = null;
 
-    if(cleanItemInfoArray[0].indexOf('Flask') !== -1){
-        itemName = cleanItemInfoArray[0];
-        cleanItemInfoArray.shift();
         if(cleanItemInfoArray[0].indexOf('Flask') !== -1){
-            cleanItemInfoArray.shift();
-        }
-        
-        //Base Info
-        flask = true;
-        itemBaseInfo = findItemBaseType(itemName, allItemData, flask, abyss);
-        itemBase = itemBaseInfo.item_base;
-    }else if(itemRarity !== "UNIQUE" && cleanItemInfoArray[0].indexOf('Eye Jewel') !== -1){
-        itemName = cleanItemInfoArray[0];
-        cleanItemInfoArray.shift();
-        
-        //Base Info
-        let abyss = true;
-        itemBaseInfo = findItemBaseType(itemName, allItemData, flask, abyss);
-        itemBase = itemBaseInfo.item_base;
-    }else{
-        if(/Implicits:|Sockets:|Armour:|Evasion:|Energy Shield:|Item Level:/.test(cleanItemInfoArray[1])){
-            itemName = null;
-            itemBase = cleanItemInfoArray[0];
-            if(itemBase.includes("Jewel")){
-                let jewelType = itemBase.split(' Jewel')[0].split(' ').pop()
-                itemBase = jewelType + " Jewel";
-            }
-        }else{
             itemName = cleanItemInfoArray[0];
-            itemBase = cleanItemInfoArray[1];
+            cleanItemInfoArray.shift();
+            if(cleanItemInfoArray[0].indexOf('Flask') !== -1){
+                cleanItemInfoArray.shift();
+            }
+            
+            //Base Info
+            flask = true;
+            itemBaseInfo = findItemBaseType(itemName, allItemData, flask, abyss);
+            itemBase = itemBaseInfo.item_base;
+        }else if(itemRarity !== "UNIQUE" && cleanItemInfoArray[0].indexOf('Eye Jewel') !== -1){
+            itemName = cleanItemInfoArray[0];
+            cleanItemInfoArray.shift();
+            
+            //Base Info
+            let abyss = true;
+            itemBaseInfo = findItemBaseType(itemName, allItemData, flask, abyss);
+            if(itemBaseInfo === null | itemBaseInfo === undefined){
+                throw "Problem with Base finding";
+            }
+            itemBase = itemBaseInfo.item_base;
+        }else{
+            if(/Implicits:|Sockets:|Armour:|Evasion:|Energy Shield:|Item Level:/.test(cleanItemInfoArray[1])){
+                itemName = null;
+                itemBase = cleanItemInfoArray[0];
+                if(itemBase.includes("Jewel")){
+                    let jewelType = itemBase.split(' Jewel')[0].split(' ').pop()
+                    itemBase = jewelType + " Jewel";
+                }
+            }else{
+                itemName = cleanItemInfoArray[0];
+                itemBase = cleanItemInfoArray[1];
+                cleanItemInfoArray.shift();
+            }
+            cleanItemInfoArray.shift();
+            //Base Info
+            itemBaseInfo = findItemBaseType(itemBase, allItemData);
+            if(itemBaseInfo === null | itemBaseInfo === undefined){
+                throw "Problem with Base finding";
+            }
+        }
+
+        //Item Defences
+        let itemDefences = [];
+        cleanItemInfoArray.map((line, i) => {
+            if(line.includes("Armour: ") || line.includes("Energy Shield: ") || line.includes("Evasion: ")|| line.includes("Ward: ")){
+                itemDefences.push(line);
+            }
+        })
+        for(let i = 0, l = itemDefences.length; i < l; i++){
             cleanItemInfoArray.shift();
         }
-        cleanItemInfoArray.shift();
-        //Base Info
-        itemBaseInfo = findItemBaseType(itemBase, allItemData);
-    }
 
-    //Item Defences
-    let itemDefences = [];
-    cleanItemInfoArray.map((line, i) => {
-        if(line.includes("Armour: ") || line.includes("Energy Shield: ") || line.includes("Evasion: ")|| line.includes("Ward: ")){
-            itemDefences.push(line);
+        //Item Influences
+        let itemInfluences = [];
+        while((cleanItemInfoArray[0].indexOf(' Item')) !== -1){
+            cleanItemInfoArray.shift();
         }
-    })
-    for(let i = 0, l = itemDefences.length; i < l; i++){
-        cleanItemInfoArray.shift();
-    }
 
-    //Item Influences
-    let itemInfluences = [];
-    while((cleanItemInfoArray[0].indexOf(' Item')) !== -1){
-        cleanItemInfoArray.shift();
-    }
+        //Item Lv
+        let itemIlv = null;
+        if((cleanItemInfoArray[0].indexOf("Item Level:")) !== -1){
+            itemIlv = cleanItemInfoArray[0].split(": ")[1];
+            cleanItemInfoArray.shift();
+        }
 
-    //Item Lv
-    let itemIlv = null;
-    if((cleanItemInfoArray[0].indexOf("Item Level:")) !== -1){
-        itemIlv = cleanItemInfoArray[0].split(": ")[1];
-        cleanItemInfoArray.shift();
-    }
+        //Item Sockets
+        let itemSockets = [];
+        if((cleanItemInfoArray[0].indexOf("Sockets:")) !== -1){
+            itemSockets = cleanItemInfoArray[0].split(": ")[1].split(/-| /);
+            cleanItemInfoArray.shift();
+        }
 
-    //Item Sockets
-    let itemSockets = [];
-    if((cleanItemInfoArray[0].indexOf("Sockets:")) !== -1){
-        itemSockets = cleanItemInfoArray[0].split(": ")[1].split(/-| /);
-        cleanItemInfoArray.shift();
-    }
-
-    //Item Implicit
-    let itemImplicitNumber = 0;
-    let itemImplicitArray = [];
-    if((cleanItemInfoArray[0].indexOf("Implicits:")) !== -1){
+        //Item Implicit
+        let itemImplicitNumber = 0;
+        let itemImplicitArray = [];
+        if((cleanItemInfoArray[0].indexOf("Implicits:")) !== -1){
+                itemImplicitNumber = cleanItemInfoArray[0].split(": ")[1];
+                cleanItemInfoArray.shift();
+        }else{
+            cleanItemInfoArray.shift();
             itemImplicitNumber = cleanItemInfoArray[0].split(": ")[1];
             cleanItemInfoArray.shift();
-    }else{
-        cleanItemInfoArray.shift();
-        itemImplicitNumber = cleanItemInfoArray[0].split(": ")[1];
-        cleanItemInfoArray.shift();
-    }
-    if(itemImplicitNumber !== 0){
-        for(let i = 0; i < itemImplicitNumber; i++){
-            let newImplicit = {
+        }
+        if(itemImplicitNumber !== 0){
+            for(let i = 0; i < itemImplicitNumber; i++){
+                let newImplicit = {
+                    text: convertExplicitRangeText(cleanItemInfoArray[0]),
+                    display: false,
+                    precision: false
+                };
+                itemImplicitArray.push(newImplicit);
+                cleanItemInfoArray.shift();
+            }
+        };
+        
+        //Item Modifiers
+        let itemExplicitsArray = [];
+        while(cleanItemInfoArray.length > 0){
+            let newExplicit = {
                 text: convertExplicitRangeText(cleanItemInfoArray[0]),
                 display: false,
                 precision: false
             };
-            itemImplicitArray.push(newImplicit);
+            itemExplicitsArray.push(newExplicit);
             cleanItemInfoArray.shift();
         }
-    };
-    
-    //Item Modifiers
-    let itemExplicitsArray = [];
-    while(cleanItemInfoArray.length > 0){
-        let newExplicit = {
-            text: convertExplicitRangeText(cleanItemInfoArray[0]),
-            display: false,
-            precision: false
-        };
-        itemExplicitsArray.push(newExplicit);
-        cleanItemInfoArray.shift();
+        
+        //return new item object
+        let newItem = {
+            name: itemName,
+            base: itemBase,
+            baseInfo: itemBaseInfo,
+            influence: itemInfluences,
+            defence: itemDefences,
+            rarity: itemRarity,
+            iLv: itemIlv,
+            sockets : itemSockets,
+            implicits: itemImplicitArray,
+            explicits: itemExplicitsArray,
+            corrupted: itemIsCorrupted
+        }
+        return newItem
+
+    }catch(err){
+        console.log(err)
+        console.log(`Error creating item: ${item}`);
+        return null
     }
-    
-    //return new item object
-    let newItem = {
-        name: itemName,
-        base: itemBase,
-        baseInfo: itemBaseInfo,
-        influence: itemInfluences,
-        defence: itemDefences,
-        rarity: itemRarity,
-        iLv: itemIlv,
-        sockets : itemSockets,
-        implicits: itemImplicitArray,
-        explicits: itemExplicitsArray,
-        corrupted: itemIsCorrupted
-    }
-    return newItem
 }
 
 export function translateModifiersRare(item, allItemTypes, allModifiers){
@@ -348,199 +361,213 @@ export function translateModifiersRare(item, allItemTypes, allModifiers){
     const itemBaseTypeIndex = allItemTypes[itemCategoryIndex].list.findIndex(x => (x.base_type === item.baseInfo.base_type) && (item.baseInfo.stat_type !== null? x.stat_type === item.baseInfo.stat_type : true));
 
     modArray.map((mod) => {
-        let specialMod = null;
-        let modPreText = null;
-        let modFilter = null;
-        let modInfluence = null;
-        let modOption = null;
+        try{
+            let specialMod = null;
+            let modPreText = null;
+            let modFilter = null;
+            let modInfluence = null;
+            let modOption = null;
 
-        //split special if needed
-        switch(true){
-            case(mod.text.includes('{crafted}')): specialMod = 'crafted'; modPreText = mod.text.split('}')[1]; break;
-            case(mod.text.includes('{fractured}')): specialMod = 'fractured'; modPreText = mod.text.split('}')[1]; break;
-            default: modPreText = mod.text;
-        }
-
-        //retrieve mod value and explicit text
-        let { modValue, modText } = formatExplicit(modPreText);
-
-        let index = null;
-        const targetedExplicitArr = allItemTypes[itemCategoryIndex].list[itemBaseTypeIndex].explicits;
-        
-        if(specialMod === "fractured"){
-            modInfluence = "fractured";
-            index = allItemTypes[5].affixes.findIndex(x => x.text === modText);
-            if(index === -1){ 
-                modFilter += ' (Local)';
-                index = allItemTypes[5].affixes.findIndex(x => x.text === modText);
+            //split special if needed
+            switch(true){
+                case(mod.text.includes('{crafted}')): specialMod = 'crafted'; modPreText = mod.text.split('}')[1]; break;
+                case(mod.text.includes('{fractured}')): specialMod = 'fractured'; modPreText = mod.text.split('}')[1]; break;
+                default: modPreText = mod.text;
             }
-            if(index !== -1){ modFilter = allItemTypes[5].affixes[index].id }else{ modFilter = null };
+
+            //retrieve mod value and explicit text
+            let { modValue, modText } = formatExplicit(modPreText);
+
+            let index = null;
+            const targetedExplicitArr = allItemTypes[itemCategoryIndex].list[itemBaseTypeIndex].explicits;
             
-        }else if(specialMod === "crafted"){
-            modInfluence = "crafted";
-            index = targetedExplicitArr[9].affixes.findIndex(x => x.text === modText);
-            if(index === -1){ 
-                modText += ' (Local)';
-                index = targetedExplicitArr[9].affixes.findIndex(x => x.text === modText);
-            }
-            if(index !== -1){ modFilter = targetedExplicitArr[9].affixes[index].trade }else{ modFilter = null };
-        }else{
-            for(let i = 0; i < targetedExplicitArr.length; i++){
-                index = targetedExplicitArr[i].affixes.findIndex(x => x.text === modText);
-                if(index !== -1){
-                    modFilter = targetedExplicitArr[i].affixes[index].trade
-                    modInfluence = targetedExplicitArr[i].types;
-                    break;
+            if(specialMod === "fractured"){
+                modInfluence = "fractured";
+                index = allItemTypes[5].affixes.findIndex(x => x.text === modText);
+                if(index === -1){ 
+                    modFilter += ' (Local)';
+                    index = allItemTypes[5].affixes.findIndex(x => x.text === modText);
                 }
-            }           
-            if(index === -1 ){
-                if(modText.includes('reduced')){
-                    modText = modText.replace('reduced', 'increased')
-                    for(let i = 0; i < targetedExplicitArr.length; i++){
-                        index = targetedExplicitArr[i].affixes.findIndex(x => x.text === modText);
-                        if(index !== -1){
-                            modFilter = targetedExplicitArr[i].affixes[index].trade
-                            modInfluence = targetedExplicitArr[i].types;
-                            break;
-                        }
-                    }
-                }else if(modText.includes('less')){
-                    modText = modText .replace('less', 'more')
-                    for(let i = 0; i < targetedExplicitArr.length; i++){
-                        index = targetedExplicitArr[i].affixes.findIndex(x => x.text === modText);
-                        if(index !== -1){
-                            modFilter = targetedExplicitArr[i].affixes[index].trade
-                            modInfluence = targetedExplicitArr[i].types;
-                            break;
-                        }
-                    }
-                }else{
+                if(index !== -1){ modFilter = allItemTypes[5].affixes[index].id }else{ modFilter = null };
+                
+            }else if(specialMod === "crafted"){
+                modInfluence = "crafted";
+                index = targetedExplicitArr[9].affixes.findIndex(x => x.text === modText);
+                if(index === -1){ 
                     modText += ' (Local)';
-                    for(let i = 0; i < targetedExplicitArr.length; i++){
-                        index = targetedExplicitArr[i].affixes.findIndex(x => x.text === modText);
-                        if(index !== -1){
-                            modFilter = targetedExplicitArr[i].affixes[index].trade
-                            modInfluence = targetedExplicitArr[i].types;
-                            break;
-                        }
+                    index = targetedExplicitArr[9].affixes.findIndex(x => x.text === modText);
+                }
+                if(index !== -1){ modFilter = targetedExplicitArr[9].affixes[index].trade }else{ modFilter = null };
+            }else{
+                for(let i = 0; i < targetedExplicitArr.length; i++){
+                    index = targetedExplicitArr[i].affixes.findIndex(x => x.text === modText);
+                    if(index !== -1){
+                        modFilter = targetedExplicitArr[i].affixes[index].trade
+                        modInfluence = targetedExplicitArr[i].types;
+                        break;
                     }
-                } 
+                }           
+                if(index === -1 ){
+                    if(modText.includes('reduced')){
+                        modText = modText.replace('reduced', 'increased')
+                        for(let i = 0; i < targetedExplicitArr.length; i++){
+                            index = targetedExplicitArr[i].affixes.findIndex(x => x.text === modText);
+                            if(index !== -1){
+                                modFilter = targetedExplicitArr[i].affixes[index].trade
+                                modInfluence = targetedExplicitArr[i].types;
+                                break;
+                            }
+                        }
+                    }else if(modText.includes('less')){
+                        modText = modText .replace('less', 'more')
+                        for(let i = 0; i < targetedExplicitArr.length; i++){
+                            index = targetedExplicitArr[i].affixes.findIndex(x => x.text === modText);
+                            if(index !== -1){
+                                modFilter = targetedExplicitArr[i].affixes[index].trade
+                                modInfluence = targetedExplicitArr[i].types;
+                                break;
+                            }
+                        }
+                    }else{
+                        modText += ' (Local)';
+                        for(let i = 0; i < targetedExplicitArr.length; i++){
+                            index = targetedExplicitArr[i].affixes.findIndex(x => x.text === modText);
+                            if(index !== -1){
+                                modFilter = targetedExplicitArr[i].affixes[index].trade
+                                modInfluence = targetedExplicitArr[i].types;
+                                break;
+                            }
+                        }
+                    } 
+                }
             }
-        }
-        
-        if(index === -1){
-            translateModifiers([mod], allModifiers, 'Explicit');
-        }else{
-            if(!mod.hasOwnProperty('influence')){ mod.influence = modInfluence }
-            if(!mod.hasOwnProperty('filter')){ mod.filter = modFilter }
-            if(!mod.hasOwnProperty('value')){ mod.value = modValue }
-            if(!mod.hasOwnProperty('option')){ mod.option = modOption }
+            
+            if(index === -1){
+                translateModifiers([mod], allModifiers, 'Explicit');
+            }else{
+                if(!mod.hasOwnProperty('influence')){ mod.influence = modInfluence }
+                if(!mod.hasOwnProperty('filter')){ mod.filter = modFilter }
+                if(!mod.hasOwnProperty('value')){ mod.value = modValue }
+                if(!mod.hasOwnProperty('option')){ mod.option = modOption }
+            }
+        }catch(err){
+            console.log(err);
+            console.log(`Problem translating rare modifier: ${mod}`)
+            mod.filter = null;
+            mod.option = null;
         }
     })
 }
 
 export function translateModifiers(modArray, allModifiers, type){
-    modArray.map((mod) =>{
-        //remove bracket
-        let label = null;
-        let modPreText = null;
-        let modFilter = null;
-        let modOption = null;
+        modArray.map((mod) =>{
+            try{
+                //remove bracket
+                let label = null;
+                let modPreText = null;
+                let modFilter = null;
+                let modOption = null;
 
-        if(type === "implicit"){
-            switch(true){
-                case (/Allocates/.test(mod.text)): {
-                    mod.filter = "enchant.stat_2954116742";
-                    mod.option = allModifiers[4].entries[4].option.options[allModifiers[4].entries[4].option.options.findIndex(i => i.text === mod.text.split('Allocates ')[1])].id;
-                    return null;
+                if(type === "implicit"){
+                    switch(true){
+                        case (/Allocates/.test(mod.text)): {
+                            mod.filter = "enchant.stat_2954116742";
+                            mod.option = allModifiers[4].entries[4].option.options[allModifiers[4].entries[4].option.options.findIndex(i => i.text === mod.text.split('Allocates ')[1])].id;
+                            return null;
+                        }
+                        case (/Small Passive Skills/.test(mod.text)): {
+                            mod.filter = "enchant.stat_3948993189";
+                            mod.option = allModifiers[4].entries[1].option.options[allModifiers[4].entries[1].option.options.findIndex(i => i.text === mod.text.split('grant: ')[1])].id;
+                            return null;
+                        }
+                        case (/crafted/.test(mod.text)): label = "Enchant"; break;
+                        default: label = "Implicit";
+                    }
+                }else{
+                    switch(true){
+                        case (/Forbidden Flesh/.test(mod.text)): {
+                            mod.filter = "explicit.stat_1190333629";
+                            mod.option = allModifiers[1].entries[1549].option.options[allModifiers[1].entries[1549].option.options.findIndex(i => i.text === mod.text.split('Allocates ')[1].split(" if")[0])].id;
+                            return null;
+                        }
+                        case (/Forbidden Flame/.test(mod.text)): {
+                            mod.filter = "explicit.stat_2460506030";
+                            mod.option = allModifiers[1].entries[981].option.options[allModifiers[1].entries[1549].option.options.findIndex(i => i.text === mod.text.split('Allocates ')[1].split(" if")[0])].id;
+                            return null;
+                        }
+                        case (/Passives in Radius of/.test(mod.text)): {
+                            mod.filter = "explicit.stat_2422708892";
+                            mod.option = allModifiers[1].entries[1894].option.options[allModifiers[1].entries[1894].option.options.findIndex(i => i.text === mod.text.split('of ')[1].split(" can")[0])].id;
+                            return null;
+                        }
+                        case (/Only affects Passives in/.test(mod.text)): {
+                            mod.filter = "explicit.stat_3642528642";
+                            mod.option = allModifiers[1].entries[906].option.options[allModifiers[1].entries[906].option.options.findIndex(i => i.text === mod.text.split('in ')[1].split(" Ring")[0])].id;
+                            return null;
+                        }
+                        case (/crafted/.test(mod.text)): label = "Crafted"; break;
+                        case (/fractured/.test(mod.text)): label = "Fractured"; break;
+                        default: label = "Explicit";
+                    }
                 }
-                case (/Small Passive Skills/.test(mod.text)): {
-                    mod.filter = "enchant.stat_3948993189";
-                    mod.option = allModifiers[4].entries[1].option.options[allModifiers[4].entries[1].option.options.findIndex(i => i.text === mod.text.split('grant: ')[1])].id;
-                    return null;
+                //split special if needed
+                /}/.test(mod.text)? modPreText = mod.text.split('}')[1] : modPreText = mod.text;
+
+                //retrieve mod value and explicit text
+                const r = /-?(\d+)/g;
+                let modValue = modPreText.match(r);
+                let modText = modPreText.replace(r,"#").replaceAll('#.#', '#').replaceAll("##", "#").replaceAll('#-#', '#').replaceAll("(#)", '#').replaceAll('+#', "#").replaceAll('-#', '#').trimStart();
+
+                //exceptions
+                const filteredAllModifiers = allModifiers.filter(lab => lab.label === label);
+                let index = filteredAllModifiers[0].entries.findIndex(i => i.text.replace(r,"#") === modText);
+                if(index === -1){
+                    if(/Total Mana Cost/.test(modText)){
+                        modText = modText.replace("# to", "+# to");
+                    }else if(/Small Passive Skill which grants nothing/.test(modText)){
+                        modText = modText.replace("Skill which grants", "Skills which grant");
+                    }else if(/reduced/.test(modText)){
+                        modText = modText.replace("reduced", "increased");
+                        modValue = modValue.map(v => '-' + v);
+                    }else if(/Devotion/.test(modText)){
+                        modText = modText.replace("# Devotion", "10 Devotion");
+                        modValue.pop();
+                    }else if(/Charges/.test(modText)){
+                        modText = modText.replace("Charges", "Charge");
+                    }else if(/to all Elemental Resistances/.test(modText)){
+                        modText = modText.replace("#", "+#");
+                        modValue = modValue.map(v => '-' + v);
+                    }else{
+                        modText += ' (Local)';
+                    }
+                    index = filteredAllModifiers[0].entries.findIndex(i => i.text.replace(r,"#") === modText); 
                 }
-                case (/crafted/.test(mod.text)): label = "Enchant"; break;
-                default: label = "Implicit";
+                if(index !== -1){
+                    modFilter = filteredAllModifiers[0].entries[index].id;
+                }
+
+                //debug
+                /* if(modFilter === null){
+                    console.log(mod);
+                    console.log("Mod label: ",label);
+                    console.log("Mod text before traitment: ", modPreText);
+                    console.log("Mod text after traitment: ", modText)
+                    console.log('Mod value: ', modValue);
+                    console.log("Searching in: ",filteredAllModifiers[0].id);
+                    console.log("Found in index: ",index);
+                    console.log("Mod Filter: ", modFilter);
+                    console.log("Mod Options: ", modOption);
+                } */
+
+                mod.filter = modFilter;
+                mod.value = modValue;
+                mod.option = modOption;
+            }catch(err){
+                console.log(err);
+                console.log(`Problem translating modifier: ${mod}`)
+                mod.filter = null;
+                mod.option = null;
             }
-        }else{
-            switch(true){
-                case (/Forbidden Flesh/.test(mod.text)): {
-                    mod.filter = "explicit.stat_1190333629";
-                    mod.option = allModifiers[1].entries[1549].option.options[allModifiers[1].entries[1549].option.options.findIndex(i => i.text === mod.text.split('Allocates ')[1].split(" if")[0])].id;
-                    return null;
-                }
-                case (/Forbidden Flame/.test(mod.text)): {
-                    mod.filter = "explicit.stat_2460506030";
-                    mod.option = allModifiers[1].entries[981].option.options[allModifiers[1].entries[1549].option.options.findIndex(i => i.text === mod.text.split('Allocates ')[1].split(" if")[0])].id;
-                    return null;
-                }
-                case (/Passives in Radius of/.test(mod.text)): {
-                    mod.filter = "explicit.stat_2422708892";
-                    mod.option = allModifiers[1].entries[1894].option.options[allModifiers[1].entries[1894].option.options.findIndex(i => i.text === mod.text.split('of ')[1].split(" can")[0])].id;
-                    return null;
-                }
-                case (/Only affects Passives in/.test(mod.text)): {
-                    mod.filter = "explicit.stat_3642528642";
-                    mod.option = allModifiers[1].entries[906].option.options[allModifiers[1].entries[906].option.options.findIndex(i => i.text === mod.text.split('in ')[1].split(" Ring")[0])].id;
-                    return null;
-                }
-                case (/crafted/.test(mod.text)): label = "Crafted"; break;
-                case (/fractured/.test(mod.text)): label = "Fractured"; break;
-                default: label = "Explicit";
-            }
-        }
-        //split special if needed
-        /}/.test(mod.text)? modPreText = mod.text.split('}')[1] : modPreText = mod.text;
-
-        //retrieve mod value and explicit text
-        const r = /-?(\d+)/g;
-        let modValue = modPreText.match(r);
-        let modText = modPreText.replace(r,"#").replaceAll('#.#', '#').replaceAll("##", "#").replaceAll('#-#', '#').replaceAll("(#)", '#').replaceAll('+#', "#").replaceAll('-#', '#').trimStart();
-
-        //exceptions
-        const filteredAllModifiers = allModifiers.filter(lab => lab.label === label);
-        let index = filteredAllModifiers[0].entries.findIndex(i => i.text.replace(r,"#") === modText);
-        if(index === -1){
-            if(/Total Mana Cost/.test(modText)){
-                modText = modText.replace("# to", "+# to");
-            }else if(/Small Passive Skill which grants nothing/.test(modText)){
-                modText = modText.replace("Skill which grants", "Skills which grant");
-            }else if(/reduced/.test(modText)){
-                modText = modText.replace("reduced", "increased");
-                modValue = modValue.map(v => '-' + v);
-            }else if(/Devotion/.test(modText)){
-                modText = modText.replace("# Devotion", "10 Devotion");
-                modValue.pop();
-            }else if(/Charges/.test(modText)){
-                modText = modText.replace("Charges", "Charge");
-            }else if(/to all Elemental Resistances/.test(modText)){
-                modText = modText.replace("#", "+#");
-                modValue = modValue.map(v => '-' + v);
-            }else{
-                modText += ' (Local)';
-            }
-            index = filteredAllModifiers[0].entries.findIndex(i => i.text.replace(r,"#") === modText); 
-        }
-        if(index !== -1){
-            modFilter = filteredAllModifiers[0].entries[index].id;
-        }
-
-        //debug
-        /* if(modFilter === null){
-            console.log(mod);
-            console.log("Mod label: ",label);
-            console.log("Mod text before traitment: ", modPreText);
-            console.log("Mod text after traitment: ", modText)
-            console.log('Mod value: ', modValue);
-            console.log("Searching in: ",filteredAllModifiers[0].id);
-            console.log("Found in index: ",index);
-            console.log("Mod Filter: ", modFilter);
-            console.log("Mod Options: ", modOption);
-        } */
-
-        mod.filter = modFilter;
-        mod.value = modValue;
-        mod.option = modOption;
     })
 }
 

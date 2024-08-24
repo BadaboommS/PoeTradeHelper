@@ -7855,7 +7855,7 @@
 	  }
 	}
 
-	var css_248z$1 = "/*! tailwindcss v3.4.3 | MIT License | https://tailwindcss.com*/*,:after,:before{border:0 solid #e5e7eb;box-sizing:border-box}:after,:before{--tw-content:\"\"}:host,html{-webkit-text-size-adjust:100%;font-feature-settings:normal;-webkit-tap-highlight-color:transparent;font-family:ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-variation-settings:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4}body{line-height:inherit;margin:0}hr{border-top-width:1px;color:inherit;height:0}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-feature-settings:normal;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-size:1em;font-variation-settings:normal}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{border-collapse:collapse;border-color:inherit;text-indent:0}button,input,optgroup,select,textarea{font-feature-settings:inherit;color:inherit;font-family:inherit;font-size:100%;font-variation-settings:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{color:#9ca3af;opacity:1}input::placeholder,textarea::placeholder{color:#9ca3af;opacity:1}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{height:auto;max-width:100%}[hidden]{display:none}*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }h1{font-size:1.5rem;line-height:2rem}h2{font-size:1.25rem}h2,h3{line-height:1.75rem}h3{font-size:1.125rem}button{background-color:#fff}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.bottom-5{bottom:1.25rem}.right-7{right:1.75rem}.left-0{left:0}.left-1\\/2{left:50%}.left-full{left:100%}.-right-full{right:-100%}.right-0{right:0}.-right-\\[200\\%\\]{right:-200%}.bottom-0{bottom:0}.right-\\[-17px\\]{right:-17px}.top-0{top:0}.top-5{top:1.25rem}.right-2{right:.5rem}.z-50{z-index:50}.m-0{margin:0}.m-2{margin:.5rem}.m-auto{margin:auto}.my-0{margin-bottom:0;margin-top:0}.my-2{margin-bottom:.5rem;margin-top:.5rem}.my-4{margin-bottom:1rem;margin-top:1rem}.ml-1{margin-left:.25rem}.ml-5{margin-left:1.25rem}.ml-0{margin-left:0}.mr-0{margin-right:0}.box-border{box-sizing:border-box}.block{display:block}.flex{display:flex}.table{display:table}.h-10{height:2.5rem}.h-fit{height:-moz-fit-content;height:fit-content}.h-full{height:100%}.max-h-\\[90\\%\\]{max-height:90%}.max-h-\\[70\\%\\]{max-height:70%}.max-h-80{max-height:20rem}.max-h-\\[50\\%\\]{max-height:50%}.max-h-full{max-height:100%}.max-h-96{max-height:24rem}.w-3\\/4{width:75%}.w-8{width:2rem}.w-fit{width:-moz-fit-content;width:fit-content}.w-full{width:100%}.min-w-10{min-width:2.5rem}.max-w-4xl{max-width:56rem}.max-w-\\[90\\%\\]{max-width:90%}.border-collapse{border-collapse:collapse}.scale-100{--tw-scale-x:1;--tw-scale-y:1;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.cursor-pointer{cursor:pointer}.resize{resize:both}.flex-row{flex-direction:row}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.justify-evenly{justify-content:space-evenly}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.gap-1{gap:.25rem}.overflow-hidden{overflow:hidden}.overflow-scroll{overflow:scroll}.overflow-y-auto{overflow-y:auto}.overflow-y-scroll{overflow-y:scroll}.rounded-md{border-radius:.375rem}.rounded-sm{border-radius:.125rem}.rounded{border-radius:.25rem}.border{border-width:1px}.border-black{--tw-border-opacity:1;border-color:rgb(0 0 0/var(--tw-border-opacity))}.border-gray-500{--tw-border-opacity:1;border-color:rgb(107 114 128/var(--tw-border-opacity))}.bg-slate-200{--tw-bg-opacity:1;background-color:rgb(226 232 240/var(--tw-bg-opacity))}.bg-slate-950{--tw-bg-opacity:1;background-color:rgb(2 6 23/var(--tw-bg-opacity))}.bg-stone-500{--tw-bg-opacity:1;background-color:rgb(120 113 108/var(--tw-bg-opacity))}.bg-black{--tw-bg-opacity:1;background-color:rgb(0 0 0/var(--tw-bg-opacity))}.p-0{padding:0}.p-1{padding:.25rem}.p-2{padding:.5rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-3{padding:.75rem}.px-8{padding-left:2rem;padding-right:2rem}.px-2{padding-left:.5rem;padding-right:.5rem}.pr-\\[17px\\]{padding-right:17px}.pl-1{padding-left:.25rem}.pl-2{padding-left:.5rem}.pb-5{padding-bottom:1.25rem}.pt-5{padding-top:1.25rem}.text-center{text-align:center}.text-start{text-align:start}.text-2xl{font-size:1.5rem;line-height:2rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.font-bold{font-weight:700}.uppercase{text-transform:uppercase}.capitalize{text-transform:capitalize}.text-black{--tw-text-opacity:1;color:rgb(0 0 0/var(--tw-text-opacity))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity))}.decoration-inherit{text-decoration-color:inherit}.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.transition-all{transition-duration:.15s;transition-property:all;transition-timing-function:cubic-bezier(.4,0,.2,1)}.hover\\:-left-1:hover{left:-.25rem}.hover\\:right-1:hover{right:.25rem}.hover\\:ml-1:hover{margin-left:.25rem}.hover\\:ml-5:hover{margin-left:1.25rem}.hover\\:mr-5:hover{margin-right:1.25rem}.hover\\:scale-125:hover{--tw-scale-x:1.25;--tw-scale-y:1.25;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\\:pl-0:hover{padding-left:0}.hover\\:pl-1:hover{padding-left:.25rem}.hover\\:text-left:hover{text-align:left}@media (min-width:768px){.md\\:w-3\\/4{width:75%}.md\\:flex-row{flex-direction:row}.md\\:flex-col{flex-direction:column}.md\\:justify-end{justify-content:flex-end}.md\\:justify-center{justify-content:center}.md\\:justify-evenly{justify-content:space-evenly}.md\\:px-0{padding-left:0;padding-right:0}}@media (min-width:1024px){.lg\\:my-2{margin-bottom:.5rem;margin-top:.5rem}.lg\\:w-5\\/12{width:41.666667%}.lg\\:w-6\\/12{width:50%}.lg\\:w-full{width:100%}.lg\\:scale-110{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.lg\\:flex-row{flex-direction:row}}@media (min-width:1280px){.xl\\:my-4{margin-bottom:1rem;margin-top:1rem}.xl\\:scale-125{--tw-scale-x:1.25;--tw-scale-y:1.25;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}}";
+	var css_248z$1 = "/*! tailwindcss v3.4.3 | MIT License | https://tailwindcss.com*/*,:after,:before{border:0 solid #e5e7eb;box-sizing:border-box}:after,:before{--tw-content:\"\"}:host,html{-webkit-text-size-adjust:100%;font-feature-settings:normal;-webkit-tap-highlight-color:transparent;font-family:ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-variation-settings:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4}body{line-height:inherit;margin:0}hr{border-top-width:1px;color:inherit;height:0}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-feature-settings:normal;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-size:1em;font-variation-settings:normal}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{border-collapse:collapse;border-color:inherit;text-indent:0}button,input,optgroup,select,textarea{font-feature-settings:inherit;color:inherit;font-family:inherit;font-size:100%;font-variation-settings:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{color:#9ca3af;opacity:1}input::placeholder,textarea::placeholder{color:#9ca3af;opacity:1}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{height:auto;max-width:100%}[hidden]{display:none}*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }h1{font-size:1.5rem;line-height:2rem}h2{font-size:1.25rem}h2,h3{line-height:1.75rem}h3{font-size:1.125rem}button{background-color:#fff}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.bottom-5{bottom:1.25rem}.right-7{right:1.75rem}.left-0{left:0}.left-1\\/2{left:50%}.left-full{left:100%}.-right-full{right:-100%}.right-0{right:0}.-right-\\[200\\%\\]{right:-200%}.bottom-0{bottom:0}.right-\\[-17px\\]{right:-17px}.top-0{top:0}.top-5{top:1.25rem}.right-2{right:.5rem}.top-2{top:.5rem}.z-50{z-index:50}.-z-10{z-index:-10}.z-0{z-index:0}.m-0{margin:0}.m-2{margin:.5rem}.m-auto{margin:auto}.my-0{margin-bottom:0;margin-top:0}.my-2{margin-bottom:.5rem;margin-top:.5rem}.my-4{margin-bottom:1rem;margin-top:1rem}.ml-1{margin-left:.25rem}.ml-5{margin-left:1.25rem}.ml-0{margin-left:0}.mr-0{margin-right:0}.box-border{box-sizing:border-box}.block{display:block}.flex{display:flex}.table{display:table}.hidden{display:none}.h-10{height:2.5rem}.h-fit{height:-moz-fit-content;height:fit-content}.h-full{height:100%}.max-h-\\[90\\%\\]{max-height:90%}.max-h-\\[70\\%\\]{max-height:70%}.max-h-80{max-height:20rem}.max-h-\\[50\\%\\]{max-height:50%}.max-h-full{max-height:100%}.max-h-96{max-height:24rem}.w-3\\/4{width:75%}.w-8{width:2rem}.w-fit{width:-moz-fit-content;width:fit-content}.w-full{width:100%}.min-w-10{min-width:2.5rem}.max-w-4xl{max-width:56rem}.max-w-\\[90\\%\\]{max-width:90%}.border-collapse{border-collapse:collapse}.scale-100{--tw-scale-x:1;--tw-scale-y:1;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.cursor-pointer{cursor:pointer}.resize{resize:both}.flex-row{flex-direction:row}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.justify-evenly{justify-content:space-evenly}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.gap-1{gap:.25rem}.overflow-hidden{overflow:hidden}.overflow-scroll{overflow:scroll}.overflow-y-auto{overflow-y:auto}.overflow-y-scroll{overflow-y:scroll}.rounded-md{border-radius:.375rem}.rounded-sm{border-radius:.125rem}.rounded{border-radius:.25rem}.border{border-width:1px}.border-black{--tw-border-opacity:1;border-color:rgb(0 0 0/var(--tw-border-opacity))}.border-gray-500{--tw-border-opacity:1;border-color:rgb(107 114 128/var(--tw-border-opacity))}.bg-slate-200{--tw-bg-opacity:1;background-color:rgb(226 232 240/var(--tw-bg-opacity))}.bg-slate-950{--tw-bg-opacity:1;background-color:rgb(2 6 23/var(--tw-bg-opacity))}.bg-stone-500{--tw-bg-opacity:1;background-color:rgb(120 113 108/var(--tw-bg-opacity))}.bg-black{--tw-bg-opacity:1;background-color:rgb(0 0 0/var(--tw-bg-opacity))}.p-0{padding:0}.p-1{padding:.25rem}.p-2{padding:.5rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-3{padding:.75rem}.px-8{padding-left:2rem;padding-right:2rem}.px-2{padding-left:.5rem;padding-right:.5rem}.px-4{padding-left:1rem;padding-right:1rem}.pr-\\[17px\\]{padding-right:17px}.pl-1{padding-left:.25rem}.pl-2{padding-left:.5rem}.pb-5{padding-bottom:1.25rem}.pt-5{padding-top:1.25rem}.text-center{text-align:center}.text-start{text-align:start}.text-2xl{font-size:1.5rem;line-height:2rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.font-bold{font-weight:700}.uppercase{text-transform:uppercase}.capitalize{text-transform:capitalize}.text-black{--tw-text-opacity:1;color:rgb(0 0 0/var(--tw-text-opacity))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity))}.decoration-inherit{text-decoration-color:inherit}.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.transition-all{transition-duration:.15s;transition-property:all;transition-timing-function:cubic-bezier(.4,0,.2,1)}.hover\\:-left-1:hover{left:-.25rem}.hover\\:right-1:hover{right:.25rem}.hover\\:z-50:hover{z-index:50}.hover\\:ml-1:hover{margin-left:.25rem}.hover\\:ml-5:hover{margin-left:1.25rem}.hover\\:mr-5:hover{margin-right:1.25rem}.hover\\:scale-125:hover{--tw-scale-x:1.25;--tw-scale-y:1.25;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\\:pl-0:hover{padding-left:0}.hover\\:pl-1:hover{padding-left:.25rem}.hover\\:text-left:hover{text-align:left}@media (min-width:768px){.md\\:w-3\\/4{width:75%}.md\\:flex-row{flex-direction:row}.md\\:flex-col{flex-direction:column}.md\\:justify-end{justify-content:flex-end}.md\\:justify-center{justify-content:center}.md\\:justify-evenly{justify-content:space-evenly}.md\\:px-0{padding-left:0;padding-right:0}}@media (min-width:1024px){.lg\\:my-2{margin-bottom:.5rem;margin-top:.5rem}.lg\\:w-5\\/12{width:41.666667%}.lg\\:w-6\\/12{width:50%}.lg\\:w-full{width:100%}.lg\\:scale-110{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.lg\\:flex-row{flex-direction:row}}@media (min-width:1280px){.xl\\:my-4{margin-bottom:1rem;margin-top:1rem}.xl\\:scale-125{--tw-scale-x:1.25;--tw-scale-y:1.25;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}}";
 	styleInject(css_248z$1,{"insertAt":"top"});
 
 	var css_248z = "[data-tooltip]{cursor:help;display:inline-block;padding:4px;position:relative}[data-tooltip]:before{background:#000;border-radius:4px;color:#fff;content:attr(data-tooltip);display:none;font-size:14px;line-height:1.4;min-width:100px;padding:4px 8px;position:absolute;text-align:center}[data-tooltip-position=bottom]:before,[data-tooltip-position=top]:before{left:50%;transform:translateX(-50%)}[data-tooltip-position=left]:before,[data-tooltip-position=right]:before{top:50%;transform:translateY(-50%)}[data-tooltip-position=top]:before{bottom:100%;margin-bottom:6px}[data-tooltip-position=right]:before{left:100%;margin-left:6px}[data-tooltip-position=bottom]:before{margin-top:6px;top:100%}[data-tooltip-position=left]:before{margin-right:6px;right:100%}[data-tooltip]:after{border-color:transparent;border-style:solid;content:\"\";display:none;height:0;position:absolute;width:0}[data-tooltip-position=bottom]:after,[data-tooltip-position=top]:after{left:50%;margin-left:-6px}[data-tooltip-position=left]:after,[data-tooltip-position=right]:after{margin-top:-6px;top:50%}[data-tooltip-position=top]:after{border-top-color:#000;border-width:6px 6px 0;bottom:100%}[data-tooltip-position=right]:after{border-right-color:#000;border-width:6px 6px 6px 0;left:100%}[data-tooltip-position=bottom]:after{border-bottom-color:#000;border-width:0 6px 6px;top:100%}[data-tooltip-position=left]:after{border-left-color:#000;border-width:6px 0 6px 6px;right:100%}[data-tooltip]:hover:after,[data-tooltip]:hover:before{display:block;z-index:50}";
@@ -7863,7 +7863,7 @@
 
 	async function fetchData(url) {
 	  const response = await fetch(url, {
-	    mode: 'cors',
+	    mode: 'no-cors',
 	    method: 'GET',
 	    headers: {
 	      'Content-Type': "application/json"
@@ -8087,7 +8087,7 @@
 	    }
 	  } catch (err) {
 	    console.log(err);
-	    console.log(itemBase);
+	    console.log(`Error finding base for ${itemBase}`);
 	    const err_base_info = {
 	      item_category: undefined,
 	      item_sort: undefined,
@@ -8099,381 +8099,410 @@
 	  }
 	}
 	function createItemObj(item, allItemData) {
-	  let cleanItemInfoArray = formatItemInfoArray(item);
+	  try {
+	    let cleanItemInfoArray = formatItemInfoArray(item);
 
-	  //Corrupted
-	  let itemIsCorrupted = false;
-	  if (cleanItemInfoArray[cleanItemInfoArray.length - 1] === 'Corrupted') {
-	    itemIsCorrupted = true;
-	    cleanItemInfoArray.pop();
-	  }
+	    //Corrupted
+	    let itemIsCorrupted = false;
+	    if (cleanItemInfoArray[cleanItemInfoArray.length - 1] === 'Corrupted') {
+	      itemIsCorrupted = true;
+	      cleanItemInfoArray.pop();
+	    }
 
-	  //Item Rarity
-	  let itemRarity;
-	  if (cleanItemInfoArray[0].indexOf('Rarity:') !== -1) {
-	    itemRarity = cleanItemInfoArray[0].split(': ')[1];
-	    cleanItemInfoArray.shift();
-	  } else if (itemRarity === "RELIC") {
-	    itemRarity = 'UNIQUE';
-	  }
+	    //Item Rarity
+	    let itemRarity;
+	    if (cleanItemInfoArray[0].indexOf('Rarity:') !== -1) {
+	      itemRarity = cleanItemInfoArray[0].split(': ')[1];
+	      cleanItemInfoArray.shift();
+	    } else if (itemRarity === "RELIC") {
+	      itemRarity = 'UNIQUE';
+	    }
 
-	  //Item Name & Base
-	  let itemName;
-	  let itemBase;
-	  let itemBaseInfo;
-	  let flask = null;
-	  let abyss = null;
-	  if (cleanItemInfoArray[0].indexOf('Flask') !== -1) {
-	    itemName = cleanItemInfoArray[0];
-	    cleanItemInfoArray.shift();
+	    //Item Name & Base
+	    let itemName;
+	    let itemBase;
+	    let itemBaseInfo;
+	    let flask = null;
+	    let abyss = null;
 	    if (cleanItemInfoArray[0].indexOf('Flask') !== -1) {
-	      cleanItemInfoArray.shift();
-	    }
-
-	    //Base Info
-	    flask = true;
-	    itemBaseInfo = findItemBaseType(itemName, allItemData, flask, abyss);
-	    itemBase = itemBaseInfo.item_base;
-	  } else if (itemRarity !== "UNIQUE" && cleanItemInfoArray[0].indexOf('Eye Jewel') !== -1) {
-	    itemName = cleanItemInfoArray[0];
-	    cleanItemInfoArray.shift();
-
-	    //Base Info
-	    let abyss = true;
-	    itemBaseInfo = findItemBaseType(itemName, allItemData, flask, abyss);
-	    itemBase = itemBaseInfo.item_base;
-	  } else {
-	    if (/Implicits:|Sockets:|Armour:|Evasion:|Energy Shield:|Item Level:/.test(cleanItemInfoArray[1])) {
-	      itemName = null;
-	      itemBase = cleanItemInfoArray[0];
-	      if (itemBase.includes("Jewel")) {
-	        let jewelType = itemBase.split(' Jewel')[0].split(' ').pop();
-	        itemBase = jewelType + " Jewel";
-	      }
-	    } else {
 	      itemName = cleanItemInfoArray[0];
-	      itemBase = cleanItemInfoArray[1];
+	      cleanItemInfoArray.shift();
+	      if (cleanItemInfoArray[0].indexOf('Flask') !== -1) {
+	        cleanItemInfoArray.shift();
+	      }
+
+	      //Base Info
+	      flask = true;
+	      itemBaseInfo = findItemBaseType(itemName, allItemData, flask, abyss);
+	      itemBase = itemBaseInfo.item_base;
+	    } else if (itemRarity !== "UNIQUE" && cleanItemInfoArray[0].indexOf('Eye Jewel') !== -1) {
+	      itemName = cleanItemInfoArray[0];
+	      cleanItemInfoArray.shift();
+
+	      //Base Info
+	      let abyss = true;
+	      itemBaseInfo = findItemBaseType(itemName, allItemData, flask, abyss);
+	      if (itemBaseInfo === null | itemBaseInfo === undefined) {
+	        throw "Problem with Base finding";
+	      }
+	      itemBase = itemBaseInfo.item_base;
+	    } else {
+	      if (/Implicits:|Sockets:|Armour:|Evasion:|Energy Shield:|Item Level:/.test(cleanItemInfoArray[1])) {
+	        itemName = null;
+	        itemBase = cleanItemInfoArray[0];
+	        if (itemBase.includes("Jewel")) {
+	          let jewelType = itemBase.split(' Jewel')[0].split(' ').pop();
+	          itemBase = jewelType + " Jewel";
+	        }
+	      } else {
+	        itemName = cleanItemInfoArray[0];
+	        itemBase = cleanItemInfoArray[1];
+	        cleanItemInfoArray.shift();
+	      }
+	      cleanItemInfoArray.shift();
+	      //Base Info
+	      itemBaseInfo = findItemBaseType(itemBase, allItemData);
+	      if (itemBaseInfo === null | itemBaseInfo === undefined) {
+	        throw "Problem with Base finding";
+	      }
+	    }
+
+	    //Item Defences
+	    let itemDefences = [];
+	    cleanItemInfoArray.map((line, i) => {
+	      if (line.includes("Armour: ") || line.includes("Energy Shield: ") || line.includes("Evasion: ") || line.includes("Ward: ")) {
+	        itemDefences.push(line);
+	      }
+	    });
+	    for (let i = 0, l = itemDefences.length; i < l; i++) {
 	      cleanItemInfoArray.shift();
 	    }
-	    cleanItemInfoArray.shift();
-	    //Base Info
-	    itemBaseInfo = findItemBaseType(itemBase, allItemData);
-	  }
 
-	  //Item Defences
-	  let itemDefences = [];
-	  cleanItemInfoArray.map((line, i) => {
-	    if (line.includes("Armour: ") || line.includes("Energy Shield: ") || line.includes("Evasion: ") || line.includes("Ward: ")) {
-	      itemDefences.push(line);
+	    //Item Influences
+	    let itemInfluences = [];
+	    while (cleanItemInfoArray[0].indexOf(' Item') !== -1) {
+	      cleanItemInfoArray.shift();
 	    }
-	  });
-	  for (let i = 0, l = itemDefences.length; i < l; i++) {
-	    cleanItemInfoArray.shift();
-	  }
 
-	  //Item Influences
-	  let itemInfluences = [];
-	  while (cleanItemInfoArray[0].indexOf(' Item') !== -1) {
-	    cleanItemInfoArray.shift();
-	  }
+	    //Item Lv
+	    let itemIlv = null;
+	    if (cleanItemInfoArray[0].indexOf("Item Level:") !== -1) {
+	      itemIlv = cleanItemInfoArray[0].split(": ")[1];
+	      cleanItemInfoArray.shift();
+	    }
 
-	  //Item Lv
-	  let itemIlv = null;
-	  if (cleanItemInfoArray[0].indexOf("Item Level:") !== -1) {
-	    itemIlv = cleanItemInfoArray[0].split(": ")[1];
-	    cleanItemInfoArray.shift();
-	  }
+	    //Item Sockets
+	    let itemSockets = [];
+	    if (cleanItemInfoArray[0].indexOf("Sockets:") !== -1) {
+	      itemSockets = cleanItemInfoArray[0].split(": ")[1].split(/-| /);
+	      cleanItemInfoArray.shift();
+	    }
 
-	  //Item Sockets
-	  let itemSockets = [];
-	  if (cleanItemInfoArray[0].indexOf("Sockets:") !== -1) {
-	    itemSockets = cleanItemInfoArray[0].split(": ")[1].split(/-| /);
-	    cleanItemInfoArray.shift();
-	  }
+	    //Item Implicit
+	    let itemImplicitNumber = 0;
+	    let itemImplicitArray = [];
+	    if (cleanItemInfoArray[0].indexOf("Implicits:") !== -1) {
+	      itemImplicitNumber = cleanItemInfoArray[0].split(": ")[1];
+	      cleanItemInfoArray.shift();
+	    } else {
+	      cleanItemInfoArray.shift();
+	      itemImplicitNumber = cleanItemInfoArray[0].split(": ")[1];
+	      cleanItemInfoArray.shift();
+	    }
+	    if (itemImplicitNumber !== 0) {
+	      for (let i = 0; i < itemImplicitNumber; i++) {
+	        let newImplicit = {
+	          text: convertExplicitRangeText(cleanItemInfoArray[0]),
+	          display: false,
+	          precision: false
+	        };
+	        itemImplicitArray.push(newImplicit);
+	        cleanItemInfoArray.shift();
+	      }
+	    }
+	    ;
 
-	  //Item Implicit
-	  let itemImplicitNumber = 0;
-	  let itemImplicitArray = [];
-	  if (cleanItemInfoArray[0].indexOf("Implicits:") !== -1) {
-	    itemImplicitNumber = cleanItemInfoArray[0].split(": ")[1];
-	    cleanItemInfoArray.shift();
-	  } else {
-	    cleanItemInfoArray.shift();
-	    itemImplicitNumber = cleanItemInfoArray[0].split(": ")[1];
-	    cleanItemInfoArray.shift();
-	  }
-	  if (itemImplicitNumber !== 0) {
-	    for (let i = 0; i < itemImplicitNumber; i++) {
-	      let newImplicit = {
+	    //Item Modifiers
+	    let itemExplicitsArray = [];
+	    while (cleanItemInfoArray.length > 0) {
+	      let newExplicit = {
 	        text: convertExplicitRangeText(cleanItemInfoArray[0]),
 	        display: false,
 	        precision: false
 	      };
-	      itemImplicitArray.push(newImplicit);
+	      itemExplicitsArray.push(newExplicit);
 	      cleanItemInfoArray.shift();
 	    }
-	  }
 
-	  //Item Modifiers
-	  let itemExplicitsArray = [];
-	  while (cleanItemInfoArray.length > 0) {
-	    let newExplicit = {
-	      text: convertExplicitRangeText(cleanItemInfoArray[0]),
-	      display: false,
-	      precision: false
+	    //return new item object
+	    let newItem = {
+	      name: itemName,
+	      base: itemBase,
+	      baseInfo: itemBaseInfo,
+	      influence: itemInfluences,
+	      defence: itemDefences,
+	      rarity: itemRarity,
+	      iLv: itemIlv,
+	      sockets: itemSockets,
+	      implicits: itemImplicitArray,
+	      explicits: itemExplicitsArray,
+	      corrupted: itemIsCorrupted
 	    };
-	    itemExplicitsArray.push(newExplicit);
-	    cleanItemInfoArray.shift();
+	    return newItem;
+	  } catch (err) {
+	    console.log(err);
+	    console.log(`Error creating item: ${item}`);
+	    return null;
 	  }
-
-	  //return new item object
-	  let newItem = {
-	    name: itemName,
-	    base: itemBase,
-	    baseInfo: itemBaseInfo,
-	    influence: itemInfluences,
-	    defence: itemDefences,
-	    rarity: itemRarity,
-	    iLv: itemIlv,
-	    sockets: itemSockets,
-	    implicits: itemImplicitArray,
-	    explicits: itemExplicitsArray,
-	    corrupted: itemIsCorrupted
-	  };
-	  return newItem;
 	}
 	function translateModifiersRare(item, allItemTypes, allModifiers) {
 	  let modArray = item.explicits;
 	  const itemCategoryIndex = allItemTypes.findIndex(x => x.id === item.baseInfo.item_category);
 	  const itemBaseTypeIndex = allItemTypes[itemCategoryIndex].list.findIndex(x => x.base_type === item.baseInfo.base_type && (item.baseInfo.stat_type !== null ? x.stat_type === item.baseInfo.stat_type : true));
 	  modArray.map(mod => {
-	    let specialMod = null;
-	    let modPreText = null;
-	    let modFilter = null;
-	    let modInfluence = null;
-	    let modOption = null;
+	    try {
+	      let specialMod = null;
+	      let modPreText = null;
+	      let modFilter = null;
+	      let modInfluence = null;
+	      let modOption = null;
 
-	    //split special if needed
-	    switch (true) {
-	      case mod.text.includes('{crafted}'):
-	        specialMod = 'crafted';
-	        modPreText = mod.text.split('}')[1];
-	        break;
-	      case mod.text.includes('{fractured}'):
-	        specialMod = 'fractured';
-	        modPreText = mod.text.split('}')[1];
-	        break;
-	      default:
-	        modPreText = mod.text;
-	    }
-
-	    //retrieve mod value and explicit text
-	    let {
-	      modValue,
-	      modText
-	    } = formatExplicit(modPreText);
-	    let index = null;
-	    const targetedExplicitArr = allItemTypes[itemCategoryIndex].list[itemBaseTypeIndex].explicits;
-	    if (specialMod === "fractured") {
-	      modInfluence = "fractured";
-	      index = allItemTypes[5].affixes.findIndex(x => x.text === modText);
-	      if (index === -1) {
-	        modFilter += ' (Local)';
-	        index = allItemTypes[5].affixes.findIndex(x => x.text === modText);
-	      }
-	      if (index !== -1) {
-	        modFilter = allItemTypes[5].affixes[index].id;
-	      } else {
-	        modFilter = null;
-	      }
-	    } else if (specialMod === "crafted") {
-	      modInfluence = "crafted";
-	      index = targetedExplicitArr[9].affixes.findIndex(x => x.text === modText);
-	      if (index === -1) {
-	        modText += ' (Local)';
-	        index = targetedExplicitArr[9].affixes.findIndex(x => x.text === modText);
-	      }
-	      if (index !== -1) {
-	        modFilter = targetedExplicitArr[9].affixes[index].trade;
-	      } else {
-	        modFilter = null;
-	      }
-	    } else {
-	      for (let i = 0; i < targetedExplicitArr.length; i++) {
-	        index = targetedExplicitArr[i].affixes.findIndex(x => x.text === modText);
-	        if (index !== -1) {
-	          modFilter = targetedExplicitArr[i].affixes[index].trade;
-	          modInfluence = targetedExplicitArr[i].types;
+	      //split special if needed
+	      switch (true) {
+	        case mod.text.includes('{crafted}'):
+	          specialMod = 'crafted';
+	          modPreText = mod.text.split('}')[1];
 	          break;
+	        case mod.text.includes('{fractured}'):
+	          specialMod = 'fractured';
+	          modPreText = mod.text.split('}')[1];
+	          break;
+	        default:
+	          modPreText = mod.text;
+	      }
+
+	      //retrieve mod value and explicit text
+	      let {
+	        modValue,
+	        modText
+	      } = formatExplicit(modPreText);
+	      let index = null;
+	      const targetedExplicitArr = allItemTypes[itemCategoryIndex].list[itemBaseTypeIndex].explicits;
+	      if (specialMod === "fractured") {
+	        modInfluence = "fractured";
+	        index = allItemTypes[5].affixes.findIndex(x => x.text === modText);
+	        if (index === -1) {
+	          modFilter += ' (Local)';
+	          index = allItemTypes[5].affixes.findIndex(x => x.text === modText);
+	        }
+	        if (index !== -1) {
+	          modFilter = allItemTypes[5].affixes[index].id;
+	        } else {
+	          modFilter = null;
+	        }
+	        ;
+	      } else if (specialMod === "crafted") {
+	        modInfluence = "crafted";
+	        index = targetedExplicitArr[9].affixes.findIndex(x => x.text === modText);
+	        if (index === -1) {
+	          modText += ' (Local)';
+	          index = targetedExplicitArr[9].affixes.findIndex(x => x.text === modText);
+	        }
+	        if (index !== -1) {
+	          modFilter = targetedExplicitArr[9].affixes[index].trade;
+	        } else {
+	          modFilter = null;
+	        }
+	        ;
+	      } else {
+	        for (let i = 0; i < targetedExplicitArr.length; i++) {
+	          index = targetedExplicitArr[i].affixes.findIndex(x => x.text === modText);
+	          if (index !== -1) {
+	            modFilter = targetedExplicitArr[i].affixes[index].trade;
+	            modInfluence = targetedExplicitArr[i].types;
+	            break;
+	          }
+	        }
+	        if (index === -1) {
+	          if (modText.includes('reduced')) {
+	            modText = modText.replace('reduced', 'increased');
+	            for (let i = 0; i < targetedExplicitArr.length; i++) {
+	              index = targetedExplicitArr[i].affixes.findIndex(x => x.text === modText);
+	              if (index !== -1) {
+	                modFilter = targetedExplicitArr[i].affixes[index].trade;
+	                modInfluence = targetedExplicitArr[i].types;
+	                break;
+	              }
+	            }
+	          } else if (modText.includes('less')) {
+	            modText = modText.replace('less', 'more');
+	            for (let i = 0; i < targetedExplicitArr.length; i++) {
+	              index = targetedExplicitArr[i].affixes.findIndex(x => x.text === modText);
+	              if (index !== -1) {
+	                modFilter = targetedExplicitArr[i].affixes[index].trade;
+	                modInfluence = targetedExplicitArr[i].types;
+	                break;
+	              }
+	            }
+	          } else {
+	            modText += ' (Local)';
+	            for (let i = 0; i < targetedExplicitArr.length; i++) {
+	              index = targetedExplicitArr[i].affixes.findIndex(x => x.text === modText);
+	              if (index !== -1) {
+	                modFilter = targetedExplicitArr[i].affixes[index].trade;
+	                modInfluence = targetedExplicitArr[i].types;
+	                break;
+	              }
+	            }
+	          }
 	        }
 	      }
 	      if (index === -1) {
-	        if (modText.includes('reduced')) {
-	          modText = modText.replace('reduced', 'increased');
-	          for (let i = 0; i < targetedExplicitArr.length; i++) {
-	            index = targetedExplicitArr[i].affixes.findIndex(x => x.text === modText);
-	            if (index !== -1) {
-	              modFilter = targetedExplicitArr[i].affixes[index].trade;
-	              modInfluence = targetedExplicitArr[i].types;
-	              break;
-	            }
-	          }
-	        } else if (modText.includes('less')) {
-	          modText = modText.replace('less', 'more');
-	          for (let i = 0; i < targetedExplicitArr.length; i++) {
-	            index = targetedExplicitArr[i].affixes.findIndex(x => x.text === modText);
-	            if (index !== -1) {
-	              modFilter = targetedExplicitArr[i].affixes[index].trade;
-	              modInfluence = targetedExplicitArr[i].types;
-	              break;
-	            }
-	          }
-	        } else {
-	          modText += ' (Local)';
-	          for (let i = 0; i < targetedExplicitArr.length; i++) {
-	            index = targetedExplicitArr[i].affixes.findIndex(x => x.text === modText);
-	            if (index !== -1) {
-	              modFilter = targetedExplicitArr[i].affixes[index].trade;
-	              modInfluence = targetedExplicitArr[i].types;
-	              break;
-	            }
-	          }
+	        translateModifiers([mod], allModifiers, 'Explicit');
+	      } else {
+	        if (!mod.hasOwnProperty('influence')) {
+	          mod.influence = modInfluence;
+	        }
+	        if (!mod.hasOwnProperty('filter')) {
+	          mod.filter = modFilter;
+	        }
+	        if (!mod.hasOwnProperty('value')) {
+	          mod.value = modValue;
+	        }
+	        if (!mod.hasOwnProperty('option')) {
+	          mod.option = modOption;
 	        }
 	      }
-	    }
-	    if (index === -1) {
-	      translateModifiers([mod], allModifiers, 'Explicit');
-	    } else {
-	      if (!mod.hasOwnProperty('influence')) {
-	        mod.influence = modInfluence;
-	      }
-	      if (!mod.hasOwnProperty('filter')) {
-	        mod.filter = modFilter;
-	      }
-	      if (!mod.hasOwnProperty('value')) {
-	        mod.value = modValue;
-	      }
-	      if (!mod.hasOwnProperty('option')) {
-	        mod.option = modOption;
-	      }
+	    } catch (err) {
+	      console.log(err);
+	      console.log(`Problem translating rare modifier: ${mod}`);
+	      mod.filter = null;
+	      mod.option = null;
 	    }
 	  });
 	}
 	function translateModifiers(modArray, allModifiers, type) {
 	  modArray.map(mod => {
-	    //remove bracket
-	    let label = null;
-	    let modPreText = null;
-	    let modFilter = null;
-	    let modOption = null;
-	    if (type === "implicit") {
-	      switch (true) {
-	        case /Allocates/.test(mod.text):
-	          {
-	            mod.filter = "enchant.stat_2954116742";
-	            mod.option = allModifiers[4].entries[4].option.options[allModifiers[4].entries[4].option.options.findIndex(i => i.text === mod.text.split('Allocates ')[1])].id;
-	            return null;
-	          }
-	        case /Small Passive Skills/.test(mod.text):
-	          {
-	            mod.filter = "enchant.stat_3948993189";
-	            mod.option = allModifiers[4].entries[1].option.options[allModifiers[4].entries[1].option.options.findIndex(i => i.text === mod.text.split('grant: ')[1])].id;
-	            return null;
-	          }
-	        case /crafted/.test(mod.text):
-	          label = "Enchant";
-	          break;
-	        default:
-	          label = "Implicit";
-	      }
-	    } else {
-	      switch (true) {
-	        case /Forbidden Flesh/.test(mod.text):
-	          {
-	            mod.filter = "explicit.stat_1190333629";
-	            mod.option = allModifiers[1].entries[1549].option.options[allModifiers[1].entries[1549].option.options.findIndex(i => i.text === mod.text.split('Allocates ')[1].split(" if")[0])].id;
-	            return null;
-	          }
-	        case /Forbidden Flame/.test(mod.text):
-	          {
-	            mod.filter = "explicit.stat_2460506030";
-	            mod.option = allModifiers[1].entries[981].option.options[allModifiers[1].entries[1549].option.options.findIndex(i => i.text === mod.text.split('Allocates ')[1].split(" if")[0])].id;
-	            return null;
-	          }
-	        case /Passives in Radius of/.test(mod.text):
-	          {
-	            mod.filter = "explicit.stat_2422708892";
-	            mod.option = allModifiers[1].entries[1894].option.options[allModifiers[1].entries[1894].option.options.findIndex(i => i.text === mod.text.split('of ')[1].split(" can")[0])].id;
-	            return null;
-	          }
-	        case /Only affects Passives in/.test(mod.text):
-	          {
-	            mod.filter = "explicit.stat_3642528642";
-	            mod.option = allModifiers[1].entries[906].option.options[allModifiers[1].entries[906].option.options.findIndex(i => i.text === mod.text.split('in ')[1].split(" Ring")[0])].id;
-	            return null;
-	          }
-	        case /crafted/.test(mod.text):
-	          label = "Crafted";
-	          break;
-	        case /fractured/.test(mod.text):
-	          label = "Fractured";
-	          break;
-	        default:
-	          label = "Explicit";
-	      }
-	    }
-	    //split special if needed
-	    /}/.test(mod.text) ? modPreText = mod.text.split('}')[1] : modPreText = mod.text;
-
-	    //retrieve mod value and explicit text
-	    const r = /-?(\d+)/g;
-	    let modValue = modPreText.match(r);
-	    let modText = modPreText.replace(r, "#").replaceAll('#.#', '#').replaceAll("##", "#").replaceAll('#-#', '#').replaceAll("(#)", '#').replaceAll('+#', "#").replaceAll('-#', '#').trimStart();
-
-	    //exceptions
-	    const filteredAllModifiers = allModifiers.filter(lab => lab.label === label);
-	    let index = filteredAllModifiers[0].entries.findIndex(i => i.text.replace(r, "#") === modText);
-	    if (index === -1) {
-	      if (/Total Mana Cost/.test(modText)) {
-	        modText = modText.replace("# to", "+# to");
-	      } else if (/Small Passive Skill which grants nothing/.test(modText)) {
-	        modText = modText.replace("Skill which grants", "Skills which grant");
-	      } else if (/reduced/.test(modText)) {
-	        modText = modText.replace("reduced", "increased");
-	        modValue = modValue.map(v => '-' + v);
-	      } else if (/Devotion/.test(modText)) {
-	        modText = modText.replace("# Devotion", "10 Devotion");
-	        modValue.pop();
-	      } else if (/Charges/.test(modText)) {
-	        modText = modText.replace("Charges", "Charge");
-	      } else if (/to all Elemental Resistances/.test(modText)) {
-	        modText = modText.replace("#", "+#");
-	        modValue = modValue.map(v => '-' + v);
+	    try {
+	      //remove bracket
+	      let label = null;
+	      let modPreText = null;
+	      let modFilter = null;
+	      let modOption = null;
+	      if (type === "implicit") {
+	        switch (true) {
+	          case /Allocates/.test(mod.text):
+	            {
+	              mod.filter = "enchant.stat_2954116742";
+	              mod.option = allModifiers[4].entries[4].option.options[allModifiers[4].entries[4].option.options.findIndex(i => i.text === mod.text.split('Allocates ')[1])].id;
+	              return null;
+	            }
+	          case /Small Passive Skills/.test(mod.text):
+	            {
+	              mod.filter = "enchant.stat_3948993189";
+	              mod.option = allModifiers[4].entries[1].option.options[allModifiers[4].entries[1].option.options.findIndex(i => i.text === mod.text.split('grant: ')[1])].id;
+	              return null;
+	            }
+	          case /crafted/.test(mod.text):
+	            label = "Enchant";
+	            break;
+	          default:
+	            label = "Implicit";
+	        }
 	      } else {
-	        modText += ' (Local)';
+	        switch (true) {
+	          case /Forbidden Flesh/.test(mod.text):
+	            {
+	              mod.filter = "explicit.stat_1190333629";
+	              mod.option = allModifiers[1].entries[1549].option.options[allModifiers[1].entries[1549].option.options.findIndex(i => i.text === mod.text.split('Allocates ')[1].split(" if")[0])].id;
+	              return null;
+	            }
+	          case /Forbidden Flame/.test(mod.text):
+	            {
+	              mod.filter = "explicit.stat_2460506030";
+	              mod.option = allModifiers[1].entries[981].option.options[allModifiers[1].entries[1549].option.options.findIndex(i => i.text === mod.text.split('Allocates ')[1].split(" if")[0])].id;
+	              return null;
+	            }
+	          case /Passives in Radius of/.test(mod.text):
+	            {
+	              mod.filter = "explicit.stat_2422708892";
+	              mod.option = allModifiers[1].entries[1894].option.options[allModifiers[1].entries[1894].option.options.findIndex(i => i.text === mod.text.split('of ')[1].split(" can")[0])].id;
+	              return null;
+	            }
+	          case /Only affects Passives in/.test(mod.text):
+	            {
+	              mod.filter = "explicit.stat_3642528642";
+	              mod.option = allModifiers[1].entries[906].option.options[allModifiers[1].entries[906].option.options.findIndex(i => i.text === mod.text.split('in ')[1].split(" Ring")[0])].id;
+	              return null;
+	            }
+	          case /crafted/.test(mod.text):
+	            label = "Crafted";
+	            break;
+	          case /fractured/.test(mod.text):
+	            label = "Fractured";
+	            break;
+	          default:
+	            label = "Explicit";
+	        }
 	      }
-	      index = filteredAllModifiers[0].entries.findIndex(i => i.text.replace(r, "#") === modText);
-	    }
-	    if (index !== -1) {
-	      modFilter = filteredAllModifiers[0].entries[index].id;
-	    }
+	      //split special if needed
+	      /}/.test(mod.text) ? modPreText = mod.text.split('}')[1] : modPreText = mod.text;
 
-	    //debug
-	    /* if(modFilter === null){
-	        console.log(mod);
-	        console.log("Mod label: ",label);
-	        console.log("Mod text before traitment: ", modPreText);
-	        console.log("Mod text after traitment: ", modText)
-	        console.log('Mod value: ', modValue);
-	        console.log("Searching in: ",filteredAllModifiers[0].id);
-	        console.log("Found in index: ",index);
-	        console.log("Mod Filter: ", modFilter);
-	        console.log("Mod Options: ", modOption);
-	    } */
+	      //retrieve mod value and explicit text
+	      const r = /-?(\d+)/g;
+	      let modValue = modPreText.match(r);
+	      let modText = modPreText.replace(r, "#").replaceAll('#.#', '#').replaceAll("##", "#").replaceAll('#-#', '#').replaceAll("(#)", '#').replaceAll('+#', "#").replaceAll('-#', '#').trimStart();
 
-	    mod.filter = modFilter;
-	    mod.value = modValue;
-	    mod.option = modOption;
+	      //exceptions
+	      const filteredAllModifiers = allModifiers.filter(lab => lab.label === label);
+	      let index = filteredAllModifiers[0].entries.findIndex(i => i.text.replace(r, "#") === modText);
+	      if (index === -1) {
+	        if (/Total Mana Cost/.test(modText)) {
+	          modText = modText.replace("# to", "+# to");
+	        } else if (/Small Passive Skill which grants nothing/.test(modText)) {
+	          modText = modText.replace("Skill which grants", "Skills which grant");
+	        } else if (/reduced/.test(modText)) {
+	          modText = modText.replace("reduced", "increased");
+	          modValue = modValue.map(v => '-' + v);
+	        } else if (/Devotion/.test(modText)) {
+	          modText = modText.replace("# Devotion", "10 Devotion");
+	          modValue.pop();
+	        } else if (/Charges/.test(modText)) {
+	          modText = modText.replace("Charges", "Charge");
+	        } else if (/to all Elemental Resistances/.test(modText)) {
+	          modText = modText.replace("#", "+#");
+	          modValue = modValue.map(v => '-' + v);
+	        } else {
+	          modText += ' (Local)';
+	        }
+	        index = filteredAllModifiers[0].entries.findIndex(i => i.text.replace(r, "#") === modText);
+	      }
+	      if (index !== -1) {
+	        modFilter = filteredAllModifiers[0].entries[index].id;
+	      }
+
+	      //debug
+	      /* if(modFilter === null){
+	          console.log(mod);
+	          console.log("Mod label: ",label);
+	          console.log("Mod text before traitment: ", modPreText);
+	          console.log("Mod text after traitment: ", modText)
+	          console.log('Mod value: ', modValue);
+	          console.log("Searching in: ",filteredAllModifiers[0].id);
+	          console.log("Found in index: ",index);
+	          console.log("Mod Filter: ", modFilter);
+	          console.log("Mod Options: ", modOption);
+	      } */
+
+	      mod.filter = modFilter;
+	      mod.value = modValue;
+	      mod.option = modOption;
+	    } catch (err) {
+	      console.log(err);
+	      console.log(`Problem translating modifier: ${mod}`);
+	      mod.filter = null;
+	      mod.option = null;
+	    }
 	  });
 	}
 	function handleInfluenceExplicits(item, allItemTypes) {
@@ -9280,7 +9309,7 @@
 	    handleFetchUniques();
 	  }, [items, leagueChoice]);
 	  return items.map((item, i) => {
-	    return item.baseInfo.item_category !== undefined ? /*#__PURE__*/React.createElement(reactExports.Fragment, {
+	    return item !== null || item.baseInfo.item_category !== undefined || item.baseInfo.item_category !== null ? /*#__PURE__*/React.createElement(reactExports.Fragment, {
 	      key: i
 	    }, /*#__PURE__*/React.createElement(Item, {
 	      itemNumber: i,
@@ -9351,6 +9380,8 @@
 	}) {
 	  const [isOpen, setIsOpen] = reactExports.useState(false);
 	  const [showScrollButton, setShowScrollButton] = reactExports.useState(false);
+	  const navRef = reactExports.useRef(null);
+	  handleClickOutside(navRef, isOpen);
 	  const handleScrollTop = () => {
 	    window.scrollTo({
 	      top: 0,
@@ -9364,20 +9395,35 @@
 	      window.removeEventListener('scroll', handleScrollButtonVisibility);
 	    };
 	  }, []);
-	  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
-	    className: "navModal"
+	  function handleClickOutside(ref, state) {
+	    reactExports.useEffect(() => {
+	      const onClickListener = event => {
+	        if (state && ref.current && !ref.current.contains(event.target)) {
+	          setIsOpen(false);
+	        }
+	      };
+	      window.addEventListener('click', onClickListener);
+	      return () => {
+	        window.removeEventListener('click', onClickListener);
+	      };
+	    }, [state, ref]);
+	  }
+	  return /*#__PURE__*/React.createElement("div", {
+	    ref: navRef
 	  }, /*#__PURE__*/React.createElement("button", {
-	    className: "p-2 rounded",
+	    className: "fixed top-2 right-2 p-2 rounded",
 	    onClick: () => setIsOpen(!isOpen)
 	  }, isOpen ? "Close" : "Open"), /*#__PURE__*/React.createElement("div", {
+	    className: `navModal ${isOpen ? "z-50" : "-z-10"}`
+	  }, /*#__PURE__*/React.createElement("div", {
 	    className: `
-                        relative transition-all bg-black border border-gray-500 rounded
-                        overflow-hidden
+                        relative bg-black border border-gray-500 rounded
+                        overflow-hidden transition-all
                         ${isOpen ? "right-0" : "-right-[200%]"}
                 `
 	  }, /*#__PURE__*/React.createElement("ul", {
 	    id: "Nav",
-	    className: "max-h-96 overflow-y-scroll text-center px-2"
+	    className: "max-h-96 overflow-y-scroll text-center px-4"
 	  }, itemsList.map((item, i) => {
 	    return item.baseInfo.item_category !== undefined ? /*#__PURE__*/React.createElement("li", {
 	      className: "scale-100 hover:scale-125 transition-all"

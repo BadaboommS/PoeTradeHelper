@@ -70,8 +70,6 @@ export function App() {
       }, 500);
    };
 
-   
-
    useEffect(() => {
       const handleResize = () => (window.innerWidth < 720)? setIsMobile(true) : setIsMobile(false);
       window.addEventListener("resize", handleResize);
