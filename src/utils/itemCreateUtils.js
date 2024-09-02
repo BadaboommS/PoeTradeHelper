@@ -356,10 +356,14 @@ export function createItemObj(item, allItemData){
 }
 
 export function translateModifiersRare(item, allItemTypes, allModifiers){
+    if(item.baseInfo.item_category === undefined){
+        return undefined
+    }
+
     let modArray = item.explicits;
     const itemCategoryIndex = allItemTypes.findIndex(x => x.id === item.baseInfo.item_category);
     const itemBaseTypeIndex = allItemTypes[itemCategoryIndex].list.findIndex(x => (x.base_type === item.baseInfo.base_type) && (item.baseInfo.stat_type !== null? x.stat_type === item.baseInfo.stat_type : true));
-
+    
     modArray.map((mod) => {
         try{
             let specialMod = null;

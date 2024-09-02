@@ -11,6 +11,7 @@
     --color-magic: rgb(136,136,255);
     --color-rare: rgb(255,255,119);
     --color-unique: rgb(175,96,37);
+    --color-relic: rgb(175,96,37);
     --color-crafted: rgb(184,218,242);
     --color-fractured: rgb(162,145,98);
     --color-corrupted: rgb(210,0,0);
@@ -19,6 +20,7 @@
     --hsla-color-magic: 240,100%,77%;
     --hsla-color-rare: 60,100%,73%;
     --hsla-color-unique: 26,65%,42%;
+    --hsla-color-relic: 26,65%,42%;
 }
 html{
     scroll-behavior: smooth;
@@ -226,6 +228,9 @@ table th {
 .item_rarity-unique{
     color: var(--color-unique);
 }
+.item_rarity-relic{
+    color: var(--color-relic);
+}
 
 /*Item border*/
 .item_border-normal{
@@ -240,6 +245,9 @@ table th {
 .item_border-unique{
     border: 1px solid var(--color-unique);
 }
+.item_border-relic{
+    border: 1px solid var(--color-relic);
+}
 
 /*Item background*/
 .item_background-normal{
@@ -253,6 +261,9 @@ table th {
 }
 .item_background-unique{
     background-color: hsla(var(--hsla-color-unique),0.1);
+}
+.item_background-relic{
+    background-color: hsla(var(--hsla-color-relic),0.1);
 }
 
 .item_split{
@@ -272,6 +283,9 @@ table th {
 }
 .item_split-unique{
     background-image: linear-gradient(to right, transparent, hsla(var(--hsla-color-unique),0.5), transparent);
+}
+.item_split-relic{
+    background-image: linear-gradient(to right, transparent, hsla(var(--hsla-color-relic),0.5), transparent);
 }
 
 .lds-dual-ring {

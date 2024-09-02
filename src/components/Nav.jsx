@@ -4,13 +4,9 @@ export default function Nav({ itemsList }){
 
     const [isOpen, setIsOpen] = useState(false);
     const [showScrollButton, setShowScrollButton] = useState(false);
-
     const navRef = useRef(null);
-    handleClickOutside(navRef, isOpen);
 
-    const handleScrollTop = () => {
-        window.scrollTo({top: 0, behavior:'smooth'});
-    };
+    const handleScrollTop = () => { window.scrollTo({top: 0, behavior:'smooth'}) };
 
     useEffect(() => {
         const handleScrollButtonVisibility = () => window.scrollY > 300 ? setShowScrollButton(true) : setShowScrollButton(false);
@@ -20,17 +16,15 @@ export default function Nav({ itemsList }){
         };
      }, []);
 
-    function handleClickOutside(ref, state){
-        useEffect(() => {
-            const onClickListener = (event) => {
-                if(state && ref.current && !ref.current.contains(event.target)){ setIsOpen(false); }            
-            };
-            window.addEventListener('click', onClickListener);
-            return () => {
-                window.removeEventListener('click', onClickListener);
-            };
-        }, [state, ref]);
-    }
+    useEffect(() => {
+        const onClickListener = (event) => {
+            if(isOpen && navRef.current && !navRef.current.contains(event.target)){ setIsOpen(false); }            
+        };
+        window.addEventListener('click', onClickListener);
+        return () => {
+            window.removeEventListener('click', onClickListener);
+        };
+    }, [isOpen, navRef]);
 
     return(
         <div ref={navRef}>
