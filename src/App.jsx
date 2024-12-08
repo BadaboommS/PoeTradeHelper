@@ -80,7 +80,7 @@ export function App() {
    }, []);
 
    return (
-      <div>
+      <div className='flex flex-col h-screen w-screen'>
          {(isLoaded && buildItemArray[0] && !isMobile)
             ?  <Nav itemsList={buildItemArray}/>
             :  <></>
@@ -128,7 +128,6 @@ export function App() {
                   <button className='text-center min-w-10 p-1 rounded-md text-xl' onClick={(event) => {event.preventDefault();location.reload()}}>Input another Code</button>
                </div>
          }
-         <p className={`item_split item_split-normal my-4`}></p>
          {(loader)
             ? <div className="lds-dual-ring"></div> 
             : <></>
