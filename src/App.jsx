@@ -80,7 +80,7 @@ export function App() {
    }, []);
 
    return (
-      <div className='flex flex-col h-screen w-screen'>
+      <div className='flex flex-col h-screen'>
          {(isLoaded && buildItemArray[0] && !isMobile)
             ?  <Nav itemsList={buildItemArray}/>
             :  <></>
